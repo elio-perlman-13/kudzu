@@ -217,8 +217,8 @@ def check(scenario_path: str, solution_path: str) -> bool:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="WTA solution feasibility checker")
     parser.add_argument("scenario", nargs="?",
-                        default="/workspaces/WTA/data/scenario_001.json")
+                        default="/workspaces/kudzu/data/scenario_001.json")
     parser.add_argument("solution", nargs="?",
-                        default="/workspaces/WTA/data/scenario_001_solution.json")
+                        default="/workspaces/kudzu/data/scenario_001_solution.json")
     args = parser.parse_args()
     sys.exit(0 if check(args.scenario, args.solution) else 1)

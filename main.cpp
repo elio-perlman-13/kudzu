@@ -294,4 +294,4 @@ int main(int argc, char* argv[]) {
 }
 
 // Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver main.cpp && ./wta_solver data/scenario_050.json [scenario.json] [--restarts N] [--alpha A] [--seed S]
-// Check && plot: python check_solution.py data/scenario_040.json /workspaces/WTA/data/scenario_040_solution.json && python plot.py data/scenario_040.json /workspaces/WTA/data/scenario_040_solution.json --out plot.png
+// Check && plot: python check_solution.py data/scenario_022.json /workspaces/kudzu/data/scenario_022_solution.json && python plot.py data/scenario_022.json /workspaces/kudzu/data/scenario_022_solution.json --out plot.png

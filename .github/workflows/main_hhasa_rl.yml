@@ -1,0 +1,230 @@
+name: Running HHASA-RL solver on all scenarios
+
+on:
+  workflow_dispatch:
+    inputs:
+      restarts:
+        description: "Number of GRASP init restarts"
+        required: false
+        default: "1"
+      grasp_alpha:
+        description: "GRASP alpha parameter (0.0 = random, 1.0 = greedy)"
+        required: false
+        default: "0.85"
+      runs:
+        description: "Independent runs per scenario"
+        required: false
+        default: "3"
+      search_seconds:
+        description: "Per-run HHASA-RL wall-clock budget in seconds (0 = disable time stop)"
+        required: false
+        default: "5"
+      macc:
+        description: "Maximum evaluations safety cap"
+        required: false
+        default: "100000"
+      iiter:
+        description: "Inner loop iterations per block"
+        required: false
+        default: "100"
+      seed:
+        description: "Random seed for reproducibility"
+        required: false
+        default: "42"
+      rl:
+        description: "RL selector (0=Rand, 2=Thompson, 3=UCB1)"
+        required: false
+        default: "3"
+      fast_mode:
+        description: "Enable fast mode (disables expensive LLHs 12/13)"
+        required: false
+        default: "false"
+      strict_success:
+        description: "Bandit success uses strict improvements only"
+        required: false
+        default: "true"
+      auto_prune:
+        description: "Enable auto-pruning of dead LLHs"
+        required: false
+        default: "true"
+      prune_min_usage:
+        description: "Minimum usage before dead-LLH pruning"
+        required: false
+        default: "300"
+      eps:
+        description: "Epsilon exploration probability"
+        required: false
+        default: "0.03"
+      kick_blocks:
+        description: "Stagnation blocks before diversification kick"
+        required: false
+        default: "6"
+      kick_val:
+        description: "Diversification kick ruin intensity (0.2-1.0)"
+        required: false
+        default: "0.9"
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      scenarios: ${{ steps.collect.outputs.scenarios }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Collect scenario list
+        id: collect
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find data -maxdepth 1 -type f -name 'scenario_*.json' ! -name '*_solution.json' | sort)
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "No scenario_*.json files found in data/"
+            exit 1
+          fi
+          json=$(printf '%s\n' "${files[@]}" | jq -R . | jq -cs .)
+          echo "scenarios=$json" >> "$GITHUB_OUTPUT"
+
+  run-scenarios:
+    needs: prepare-matrix
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 256
+      matrix:
+        scenario: ${{ fromJson(needs.prepare-matrix.outputs.scenarios) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y nlohmann-json3-dev
+
+      - name: Build solver
+        shell: bash
+        run: |
+          set -euo pipefail
+          g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp
+
+      - name: Run scenario and compute metrics
+        env:
+          RESTARTS: ${{ github.event.inputs.restarts || '1' }}
+          GRASP_ALPHA: ${{ github.event.inputs.grasp_alpha || '0.85' }}
+          RUNS: ${{ github.event.inputs.runs || '3' }}
+          SEARCH_SECONDS: ${{ github.event.inputs.search_seconds || '5' }}
+          MACC: ${{ github.event.inputs.macc || '100000' }}
+          IITER: ${{ github.event.inputs.iiter || '100' }}
+          SEED: ${{ github.event.inputs.seed || '42' }}
+          RL: ${{ github.event.inputs.rl || '3' }}
+          FAST_MODE: ${{ github.event.inputs.fast_mode || 'false' }}
+          STRICT_SUCCESS: ${{ github.event.inputs.strict_success || 'true' }}
+          AUTO_PRUNE: ${{ github.event.inputs.auto_prune || 'true' }}
+          PRUNE_MIN_USAGE: ${{ github.event.inputs.prune_min_usage || '300' }}
+          EPS: ${{ github.event.inputs.eps || '0.03' }}
+          KICK_BLOCKS: ${{ github.event.inputs.kick_blocks || '6' }}
+          KICK_VAL: ${{ github.event.inputs.kick_val || '0.9' }}
+          SCENARIO: ${{ matrix.scenario }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          log="run.log"
+          t_start=$SECONDS
+
+          extra_flags=()
+          if [[ "${FAST_MODE,,}" == "true" ]]; then
+            extra_flags+=(--fast-mode)
+          fi
+          if [[ "${STRICT_SUCCESS,,}" == "false" ]]; then
+            extra_flags+=(--non-strict-success)
+          fi
+          if [[ "${AUTO_PRUNE,,}" == "false" ]]; then
+            extra_flags+=(--no-auto-prune)
+          fi
+
+          ./wta_solver_hhasa_rl "$SCENARIO" \
+            --restarts "$RESTARTS" --grasp-alpha "$GRASP_ALPHA" \
+            --runs "$RUNS" --search-seconds "$SEARCH_SECONDS" \
+            --macc "$MACC" --iiter "$IITER" --seed "$SEED" --rl "$RL" \
+            --prune-min-usage "$PRUNE_MIN_USAGE" --eps "$EPS" \
+            --kick-blocks "$KICK_BLOCKS" --kick-val "$KICK_VAL" \
+            "${extra_flags[@]}" | tee "$log"
+          elapsed=$(( SECONDS - t_start ))
+
+          scenario_name="$(basename "$SCENARIO")"
+          initial_threat=$(jq '[.assignment_request.targets[].ThreatScore] | add // 0' "$SCENARIO")
+
+          first_init=$(grep -E '^\[run [0-9]+/[0-9]+  seed=[0-9]+\]  GRASP init obj=' "$log" | head -n 1 | sed -E 's/.*GRASP init obj=([0-9.]+).*/\1/' || true)
+
+          best=$(grep -E '^\[run [0-9]+/[0-9]+\]  best=' "$log" | sed -E 's/.*best=([0-9.]+).*/\1/' | awk 'BEGIN{b=""} {if(b=="" || $1<b)b=$1} END{if(b=="") print "nan"; else print b}')
+
+          mean=$(grep -E '^  mean    = ' "$log" | tail -n 1 | sed -E 's/.*= ([0-9.]+).*/\1/' || true)
+          sd=$(grep -E '^  std-dev = ' "$log" | tail -n 1 | sed -E 's/.*= ([0-9.]+).*/\1/' || true)
+
+          stem="${scenario_name%.json}"
+          mkdir -p metrics solutions logs
+
+          csv="metrics/${stem}.csv"
+          {
+            echo "scenario,initial_threat,initial_obj,best,mean,std_dev,elapsed_s,restarts,grasp_alpha,runs,search_seconds,macc,iiter,seed,rl,fast_mode,strict_success,auto_prune,prune_min_usage,eps,kick_blocks,kick_val"
+            echo "$scenario_name,$initial_threat,${first_init:-nan},$best,${mean:-nan},${sd:-nan},$elapsed,$RESTARTS,$GRASP_ALPHA,$RUNS,$SEARCH_SECONDS,$MACC,$IITER,$SEED,$RL,$FAST_MODE,$STRICT_SUCCESS,$AUTO_PRUNE,$PRUNE_MIN_USAGE,$EPS,$KICK_BLOCKS,$KICK_VAL"
+          } > "$csv"
+
+          cp "$log" "logs/${stem}_search_stat.txt"
+
+          sol="data/${stem}_solution.json"
+          [[ -f "$sol" ]] && cp "$sol" "solutions/${stem}_solution.json"
+
+      - name: Upload per-scenario artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ strategy.job-index }}
+          path: |
+            metrics/*.csv
+            logs/*_search_stat.txt
+            solutions/*_solution.json
+
+  aggregate:
+    needs: run-scenarios
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: results-*
+          merge-multiple: true
+
+      - name: Merge CSV files
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="hhasa_rl_metrics_all_scenarios.csv"
+          echo "scenario,initial_threat,initial_obj,best,mean,std_dev,elapsed_s,restarts,grasp_alpha,runs,search_seconds,macc,iiter,seed,rl,fast_mode,strict_success,auto_prune,prune_min_usage,eps,kick_blocks,kick_val" > "$out"
+          find artifacts -type f -name '*.csv' | sort | while read -r f; do
+            tail -n +2 "$f" >> "$out"
+          done
+          echo "Merged CSV written to $out"
+
+      - name: Upload merged metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhasa-rl-metrics-all-scenarios
+          path: hhasa_rl_metrics_all_scenarios.csv
+
+      - name: Upload all solution files
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhasa-rl-solutions-all-scenarios
+          path: artifacts/**/*_solution.json
+
+      - name: Upload all search stats
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhasa-rl-search-stats-all-scenarios
+          path: artifacts/**/*_search_stat.txt
