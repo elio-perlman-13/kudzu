@@ -1,0 +1,132 @@
+name: Benchmark GRASP Across Scenarios
+
+on:
+  workflow_dispatch:
+    inputs:
+      restarts:
+        description: "Minimum number of GRASP restarts (then runs until time budget)"
+        required: false
+        default: "1"
+      alpha:
+        description: "GRASP alpha parameter (0.0 = random, 1.0 = greedy)"
+        required: false
+        default: "0.85"
+      seed:
+        description: "Random seed for reproducibility"
+        required: false
+        default: "42"
+      search_seconds:
+        description: "Time budget per scenario (seconds)"
+        required: false
+        default: "5"
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      scenarios: ${{ steps.collect.outputs.scenarios }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Collect scenario list
+        id: collect
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find data -maxdepth 1 -type f -name 'scenario_*.json' ! -name '*_solution.json' | sort)
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "No scenario_*.json files found in data/"
+            exit 1
+          fi
+          json=$(printf '%s\n' "${files[@]}" | jq -R . | jq -cs .)
+          echo "scenarios=$json" >> "$GITHUB_OUTPUT"
+
+  run-scenarios:
+    needs: prepare-matrix
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      max-parallel: 256
+      matrix:
+        scenario: ${{ fromJson(needs.prepare-matrix.outputs.scenarios) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y nlohmann-json3-dev
+
+      - name: Build solver
+        shell: bash
+        run: |
+          set -euo pipefail
+          g++ -std=c++17 -O3 -march=native -o wta_solver main.cpp
+
+      - name: Run scenario and compute metrics
+        env:
+          RESTARTS: ${{ github.event.inputs.restarts || '1' }}
+          ALPHA: ${{ github.event.inputs.alpha || '0.85' }}
+          SEED: ${{ github.event.inputs.seed || '42' }}
+          SEARCH_SECONDS: ${{ github.event.inputs.search_seconds || '5' }}
+          SCENARIO: ${{ matrix.scenario }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          log="run.log"
+          ./wta_solver "$SCENARIO" --restarts "$RESTARTS" --alpha "$ALPHA" \
+            --seed "$SEED" --search-seconds "$SEARCH_SECONDS" | tee "$log"
+
+          scenario_name="$(basename "$SCENARIO")"
+          initial_threat=$(jq '[.assignment_request.targets[].ThreatScore] | add // 0' "$SCENARIO")
+          best=$(grep -E 'restart[[:space:]]+[0-9]+[[:space:]]+obj=' "$log" | sed -E 's/.*obj=([0-9.]+).*/\1/' | sort -g | head -n1)
+          mean=$(grep -E 'restart[[:space:]]+[0-9]+[[:space:]]+obj=' "$log" | sed -E 's/.*obj=([0-9.]+).*/\1/' | awk '{s+=$1; n+=1} END {if(n>0) printf "%.6f", s/n; else print "nan"}')
+          n_restarts=$(grep -cE 'restart[[:space:]]+[0-9]+[[:space:]]+obj=' "$log" || echo 1)
+          elapsed=$(grep -E '^Completed in ' "$log" | tail -n1 | sed -E 's/^Completed in ([0-9.]+)s.*/\1/')
+          avg_time=$(awk -v e="$elapsed" -v r="$n_restarts" 'BEGIN { if (r>0) printf "%.6f", e/r; else print "nan" }')
+
+          mkdir -p metrics
+          csv="metrics/${scenario_name%.json}.csv"
+          {
+            echo "scenario,initial_threat,best,mean,avg_time_per_run_s,n_restarts,search_seconds,alpha,seed"
+            echo "$scenario_name,$initial_threat,$best,$mean,$avg_time,$n_restarts,$SEARCH_SECONDS,$ALPHA,$SEED"
+          } > "$csv"
+
+      - name: Upload per-scenario metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: metrics-${{ strategy.job-index }}
+          path: metrics/*.csv
+
+  aggregate:
+    needs: run-scenarios
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all metrics
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: metrics-*
+          merge-multiple: true
+
+      - name: Merge CSV files
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="grasp_metrics_all_scenarios.csv"
+          echo "scenario,initial_threat,best,mean,avg_time_per_run_s,n_restarts,search_seconds,alpha,seed" > "$out"
+          find artifacts -type f -name '*.csv' | sort | while read -r f; do
+            tail -n +2 "$f" >> "$out"
+          done
+          echo "Merged CSV written to $out"
+
+      - name: Upload merged CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: grasp-metrics-all-scenarios
+          path: grasp_metrics_all_scenarios.csv
