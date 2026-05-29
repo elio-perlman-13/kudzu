@@ -1,0 +1,132 @@
+M6_RUIN_CONGESTED__H_WINDOW_CLOSURE
+
+Ruin (CONGESTED): selects bursts on weapons with the least free time (uses free_time_per_weapon(sol)), i.e., weapons that are most tightly scheduled; removes q bursts where q = ruin_count_from_val(val). This targets bottlenecked weapons to free schedule space around congested slots.
+Rebuild (H_WINDOW_CLOSURE): build_candidates enumerates feasible commits; the heuristic greedily chooses candidates with smallest slack = window_end - candidate_time (earliest window-closing first), breaking ties by earliest time then survival/target threat. Rebuild loop uses apply_one_arm_commit_inc to commit incrementally.
+When to use / benefit: use when many bursts cluster causing missed or tight windows; helps shift shots to close imminent windows.
+Drawbacks: may remove useful assignments on congested weapons; rebuild may prefer urgency over long-term threat reduction.
+M7_RUIN_LOW_MARGINAL__H_COVER_FIRST
+
+Ruin (LOW_MARGINAL_PAIR): at pair-level: score each (wid,tid) by sum of marginal contributions (using marginal_uncommit_increase); remove weakest pairs (all their bursts). Targets low marginal-value structure.
+Rebuild (H_COVER_FIRST): chooses targets with fewest feasible weapons (count_target_feasible_weapons) first, and prefers weapons that can cover scarce targets; tie-break by weapon action counts and survival. Commits incrementally.
+When to use / benefit: good when low-value assignments are crowding scarce targets and you need to reallocate capacity to under-served (scarce) targets.
+Drawbacks: may remove low-marginal bursts that are tactically necessary for feasibility; pair-level removal is coarse.
+M8_RUIN_CONGESTED__H_BACKLOG_RELIEF
+
+Ruin (CONGESTED): same congested selection as M6 — remove bursts from weapons with little free time.
+Rebuild (H_BACKLOG_RELIEF): picks a weapon with the largest backlog (most feasible actions) then selects the best candidate for that weapon (max survival). The idea is to reduce action queue pressure on overloaded weapons.
+When to use / benefit: relieves overloaded weapons so later commits can use their windows more flexibly.
+Drawbacks: may shift load elsewhere creating new bottlenecks; focusing on backlog can deprioritize high-threat targets.
+M10_RUIN_RANDOM__H_SPREAD_THEN_FOCUS
+
+Ruin (RANDOM_PAIR): removes entire random (wid,tid) pairs — introduces large structural diversity.
+Rebuild (H_SPREAD_THEN_FOCUS): phased strategy via ctx.phase: early phase favors spreading (prefer unengaged targets), mid-phase maximizes survival, late-phase prioritizes slack (urgent windows). Phase determined by remaining ammo context when selecting (apply_one_arm_commit_inc sets ctx.phase).
+When to use / benefit: exploratory move to escape deep local minima; spreading early avoids prematurely focusing on the same targets.
+Drawbacks: high randomness — may remove good structure; performance depends on phase scheduling and amount of ruin.
+M11_RUIN_CONGESTED__H_ANTI_BOTTLENECK
+
+Ruin (CONGESTED): remove bursts from weapons with low free time to relieve congestion.
+Rebuild (H_ANTI_BOTTLENECK): selects the weapon with the latest next-feasible-fire-time (largest min candidate t), then chooses the best candidate for that weapon, aiming to unblock weapons that otherwise delay scheduling.
+When to use / benefit: when bottleneck weapons are delaying assignments; helps push the schedule to use earlier opportunities elsewhere.
+Drawbacks: may focus too narrowly on a weapon while neglecting global objective; identification of bottleneck via min-t can mislead if windows differ widely.
+M12_RUIN_OVER_COVERED__H_OPPORTUNITY_LOCK
+
+Ruin (OVER_COVERED): removes bursts from targets with many shots (shots_per_target(sol)), i.e., over-covered targets.
+Rebuild (H_OPPORTUNITY_LOCK): uses ctx.prev_target_feasible_weapons to detect where feasible weapon counts have dropped and prefers moves that “lock in” scarce opportunities — tie-breaks by time and survival/threat. It tries to secure windows that are about to lose feasibility.
+When to use / benefit: when you suspect over-allocation to some targets and want to free resources for targets that risk losing feasible weapons.
+Drawbacks: relies on accurate prev-feasible counts; may remove redundant coverage that provided robustness, reducing resilience to later constraints.
+M13_RUIN_LOW_MARGINAL__H_MARGINAL_OBJECTIVE_DROP
+
+Ruin (LOW_MARGINAL_PAIR): pair-level removal of weakest pairs by summed marginal_uncommit_increase.
+Rebuild (H_MARGINAL_OBJECTIVE_DROP): chooses candidates maximizing marginal_objective_drop(sol, c) = surv * threat * p — i.e., largest immediate benefit to objective. Commits highest marginal contributors first.
+When to use / benefit: seeks quick objective improvements by rebuilding using the highest marginal-return shots.
+Drawbacks: greedy marginal maximization can be myopic (ignores interaction/slack), and pair-level ruin may still remove useful structural links.
+M14_RUIN_OVER_COVERED__H_KILL_CHAIN_FINISHER
+
+Ruin (OVER_COVERED): remove bursts from heavily-shot targets.
+Rebuild (H_KILL_CHAIN_FINISHER): prefers targets already engaged (complete kill chains) — among those picks highest marginal drop; breaks ties by scarcity, time, and survival. Intention is to finish targets efficiently once engagement started.
+When to use / benefit: when finishing engaged targets yields good bang-for-buck (reduces residual threat effectively).
+Drawbacks: can over-focus on finishing already-engaged low-threat targets instead of spreading damage to higher-threat ones.
+M15_RUIN_CONGESTED__H_FUTURE_FLEX_PRESERVER
+
+Ruin (CONGESTED): same congested selection mechanism.
+Rebuild (H_FUTURE_FLEX_PRESERVER): chooses candidates by marginal drop minus lambda/(1+weapon_action_count) penalization — discourages filling already-busy weapons to preserve future flexibility.
+When to use / benefit: maintains long-run option value, avoids overloading weapons that would reduce future feasible choices.
+Drawbacks: introduces a smoothing bias; may pass up high immediate benefit to keep flexibility, hurting short-term objective.
+M16_RUIN_RANDOM__H_BASELINE_TWO_STAGE
+
+Ruin (RANDOM_PAIR): removes whole random (wid,tid) pairs.
+Rebuild (H_BASELINE_TWO_STAGE): exact two-stage lexicographic rule: Stage 1 pick target with highest survival*threat (tie by threat, then window_end); Stage 2 for that target pick weapon with fewest feasible targets (scarcity), then by pij (probability), earliest time, wid. This encodes a conservative, structured baseline policy.
+When to use / benefit: reliable fallback rebuild that balances stage-wise priorities and scarcity; useful as a stabilizing rebuild to recover decent structure after random ruin.
+Drawbacks: rigid lexicographic priorities can miss nuanced tradeoffs; less adaptive than continuous-score heuristics.
+
+M2_RUIN_RANDOM__H_SURV_THREAT_TIE
+Ruin: RANDOM_PAIR
+selects a random set of active (wid, tid) pairs
+removes all bursts on those pairs
+this introduces broad structural diversity while keeping bursts grouped by pair
+Rebuild: H_SURV_THREAT_TIE
+chooses candidate commits by best target survival first
+if two candidates give the same survival, it breaks ties by higher threat
+then by earlier fire time, lower weapon id, lower target id
+Why use it:
+good when the current solution may be stuck in a local minimum and you want a general shuffle
+it preserves promising pairs by rebuilding with a “survival-first, threat-aware” policy
+Drawback:
+randomness can discard useful structure
+the heuristic is greedy and can be short-sighted if threat differences are not the main issue
+M4_RUIN_OVER_COVERED__H_EXCLUSIVE_RESERVE
+Ruin: OVER_COVERED
+targets bursts on goals that have the most shots already assigned
+removes either individual bursts or pairs depending on implementation
+it tries to eliminate over-allocation to saturated targets
+Rebuild: H_EXCLUSIVE_RESERVE
+if a weapon has any exclusive target options, it keeps only those exclusive targets
+otherwise it allows all feasible candidates
+among allowed candidates it selects the one with best survival
+Why use it:
+useful when some targets are “over-shot” and other targets are in danger of being left with only one feasible weapon
+it preserves scarce opportunities for exclusive targets
+Drawback:
+may over-prioritize exclusivity and ignore better non-exclusive assignments
+can be too conservative if the exclusivity condition is not actually the critical constraint
+L1_REASSIGN_BEST_DELTA
+What it does:
+scans every active weapon-target pair in sol.fire_times
+for each pair, it computes the cost of removing it and then analytically examines alternative target assignments for the same weapon
+it verifies the best candidate with a trial solution copy and applies the best improving reassignment
+Why use it:
+a focused local improvement move that tries to reassign a weapon from one target to a better one
+good for refining a solution when broad ruin is too aggressive
+Drawback:
+expensive if there are many active pairs
+it only considers single-pair reassignments, so it can miss improvements that require multiple coordinated changes
+L2_SWAP_BEST_PAIR
+What it does:
+considers pairs of active assignments (wid_a, tid_a) and (wid_b, tid_b)
+evaluates the objective effect of swapping the target assignment between the two weapons
+verifies the most promising swaps with a trial copy and applies a genuine improving swap
+Why use it:
+useful when the best local improvement is exchanging two assignments rather than moving just one
+captures trade-offs where each weapon is better suited to the other target
+Drawback:
+pairwise scanning is quadratic in active pairs, so it can be costly
+still local: cannot fix deeper structural issues that require more than one swap
+
+(rank these M* moves by expected impact for your instance size and characteristics)
+
+Metric: "Collaborativeness" = how well the ruin and repair complement each other to fix structural problems while preserving useful solution components.
+
+9/10: M6_RUIN_CONGESTED__H_WINDOW_CLOSURE — Targets congested weapons then prioritises closing urgent windows; highly coherent for timing problems.
+8/10: M7_RUIN_LOW_MARGINAL__H_COVER_FIRST — Removes low-value pairs and reallocates to scarce targets; good for rebalancing coverage.
+7/10: M8_RUIN_CONGESTED__H_BACKLOG_RELIEF — Frees overloaded weapons then reduces backlog; effective but can shift bottlenecks.
+7/10: M10_RUIN_RANDOM__H_SPREAD_THEN_FOCUS — Random structural exploration with a sensible spread→focus rebuild; exploratory but less targeted.
+8/10: M11_RUIN_CONGESTED__H_ANTI_BOTTLENECK — Relieves true bottlenecks by unblocking weapons; focused and practical.
+9/10: M12_RUIN_OVER_COVERED__H_OPPORTUNITY_LOCK — Removes over-coverage and rebuilds to secure scarce feasibility windows; very complementary.
+9/10: M13_RUIN_LOW_MARGINAL__H_MARGINAL_OBJECTIVE_DROP — Kills low-marginal structure then rebuilds by highest marginal gain; directly aligned.
+7/10: M14_RUIN_OVER_COVERED__H_KILL_CHAIN_FINISHER — Over-coverage clean-up then finishing engaged targets; strong when finishing is the right objective, otherwise tunnelled.
+8/10: M15_RUIN_CONGESTED__H_FUTURE_FLEX_PRESERVER — Unloads congested weapons then rebuilds to preserve future options; good long-term collaboration.
+7/10: M16_RUIN_RANDOM__H_BASELINE_TWO_STAGE — Random pair cuts followed by a conservative two-stage rebuild; reliable fallback but less adaptive.
+6/10: M2_RUIN_RANDOM__H_SURV_THREAT_TIE — Broad random ruin with survival-first rebuild; useful for diversity but noisy.
+8/10: M4_RUIN_OVER_COVERED__H_EXCLUSIVE_RESERVE — Removes over-allocation and protects exclusive targets on rebuild; well-matched for scarcity issues.
+7/10: L1_REASSIGN_BEST_DELTA — Focused, low-disruption reassignment; precise but limited in scope.
+7/10: L2_SWAP_BEST_PAIR — Targets pairwise trade-offs effectively; local and efficient but can’t fix multi-pair structural faults.
