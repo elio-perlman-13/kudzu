@@ -1,0 +1,6 @@
+[submodule "wta"]
+	path = wta
+	url = https://github.com/elio-perlman-13/loml.git
+[submodule "loml"]
+	path = loml
+	url = https://github.com/elio-perlman-13/loml.git

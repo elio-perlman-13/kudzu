@@ -1,0 +1,11669 @@
+{
+  "weapon_infos": [
+    {
+      "ID": 1,
+      "Code": "SAM_PK",
+      "Type": 1,
+      "MinRange": 1500,
+      "MaxRange": 10000,
+      "MinAltitude": 10,
+      "MaxAltitude": 8000,
+      "AzimuthFromDeg": 0,
+      "AzimuthToDeg": 360,
+      "ElevationMinDeg": 2,
+      "ElevationMaxDeg": 85,
+      "MaxShotsPerTarget": 4,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 3.0,
+      "ReloadTime": 6.0
+    },
+    {
+      "ID": 2,
+      "Code": "AK176",
+      "Type": 2,
+      "MinRange": 500,
+      "MaxRange": 12000,
+      "MinAltitude": -5,
+      "MaxAltitude": 3000,
+      "AzimuthFromDeg": 5,
+      "AzimuthToDeg": 355,
+      "ElevationMinDeg": -5,
+      "ElevationMaxDeg": 60,
+      "MaxShotsPerTarget": 15,
+      "RoundsPerBurst": 10,
+      "BurstInterval": 1.2,
+      "ReloadTime": 1.0
+    },
+    {
+      "ID": 3,
+      "Code": "AK630_PORT",
+      "Type": 2,
+      "MinRange": 100,
+      "MaxRange": 4000,
+      "MinAltitude": -10,
+      "MaxAltitude": 2000,
+      "AzimuthFromDeg": 30,
+      "AzimuthToDeg": 115,
+      "ElevationMinDeg": -5,
+      "ElevationMaxDeg": 70,
+      "MaxShotsPerTarget": 50,
+      "RoundsPerBurst": 100,
+      "BurstInterval": 0.4,
+      "ReloadTime": 0.3
+    },
+    {
+      "ID": 4,
+      "Code": "AK630_STBD",
+      "Type": 2,
+      "MinRange": 100,
+      "MaxRange": 4000,
+      "MinAltitude": -10,
+      "MaxAltitude": 2000,
+      "AzimuthFromDeg": 245,
+      "AzimuthToDeg": 330,
+      "ElevationMinDeg": -5,
+      "ElevationMaxDeg": 70,
+      "MaxShotsPerTarget": 50,
+      "RoundsPerBurst": 100,
+      "BurstInterval": 0.4,
+      "ReloadTime": 0.3
+    },
+    {
+      "ID": 5,
+      "Code": "TCDT_BV15",
+      "Type": 3,
+      "MinRange": 0,
+      "MaxRange": 20000,
+      "MinAltitude": 0,
+      "MaxAltitude": 8000,
+      "AzimuthFromDeg": 0,
+      "AzimuthToDeg": 360,
+      "ElevationMinDeg": 0,
+      "ElevationMaxDeg": 90,
+      "MaxShotsPerTarget": 6,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 2.0,
+      "ReloadTime": 5.0
+    },
+    {
+      "ID": 6,
+      "Code": "VCM",
+      "Type": 4,
+      "MinRange": 10000,
+      "MaxRange": 300000,
+      "MinAltitude": -5,
+      "MaxAltitude": 50,
+      "AzimuthFromDeg": 0,
+      "AzimuthToDeg": 360,
+      "ElevationMinDeg": -2,
+      "ElevationMaxDeg": 10,
+      "MaxShotsPerTarget": 2,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 5.0,
+      "ReloadTime": 5.0
+    }
+  ],
+  "target_infos": [
+    {
+      "ID": 1,
+      "Code": "TGT_ASM",
+      "Description": "Anti-Ship Missile (ASCM)",
+      "Type": 1
+    },
+    {
+      "ID": 2,
+      "Code": "TGT_FIGHTER",
+      "Description": "Fighter Jet",
+      "Type": 2
+    },
+    {
+      "ID": 3,
+      "Code": "TGT_HELICOPTER",
+      "Description": "Helicopter",
+      "Type": 2
+    },
+    {
+      "ID": 4,
+      "Code": "TGT_UAV_FIXED",
+      "Description": "Fixed-wing UAV",
+      "Type": 3
+    },
+    {
+      "ID": 5,
+      "Code": "TGT_UAV_ROTOR",
+      "Description": "Rotary UAV",
+      "Type": 3
+    },
+    {
+      "ID": 6,
+      "Code": "TGT_KAMIKAZE",
+      "Description": "Kamikaze Drone",
+      "Type": 3
+    },
+    {
+      "ID": 7,
+      "Code": "TGT_SURFACE",
+      "Description": "Surface Warship",
+      "Type": 4
+    },
+    {
+      "ID": 8,
+      "Code": "TGT_USV",
+      "Description": "Unmanned Surface Vehicle",
+      "Type": 5
+    },
+    {
+      "ID": 9,
+      "Code": "TGT_TORPEDO",
+      "Description": "Torpedo",
+      "Type": 6
+    }
+  ],
+  "probability_table": [
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_ASM"
+    },
+    {
+      "Score": 0.7,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_FIGHTER"
+    },
+    {
+      "Score": 0.7,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_HELICOPTER"
+    },
+    {
+      "Score": 0.75,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.75,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_UAV_ROTOR"
+    },
+    {
+      "Score": 0.75,
+      "WTAWeaponInfoCode": "SAM_PK",
+      "WTATargetInfoCode": "TGT_KAMIKAZE"
+    },
+    {
+      "Score": 0.3,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_SURFACE"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_TORPEDO"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_ASM"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_FIGHTER"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_HELICOPTER"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_UAV_ROTOR"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_KAMIKAZE"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_SURFACE"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630_PORT",
+      "WTATargetInfoCode": "TGT_TORPEDO"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_ASM"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_FIGHTER"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_HELICOPTER"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_UAV_ROTOR"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_KAMIKAZE"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_SURFACE"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630_STBD",
+      "WTATargetInfoCode": "TGT_TORPEDO"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_ASM"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_UAV_ROTOR"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_KAMIKAZE"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "VCM",
+      "WTATargetInfoCode": "TGT_SURFACE"
+    }
+  ],
+  "assignment_request": {
+    "vessels": [
+      {
+        "ID": 1,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Speed": 18.26,
+        "HeadingX": 0.698502,
+        "HeadingY": -0.715608,
+        "HeadingZ": 0.0,
+        "DefenseRadius": 25.0
+      },
+      {
+        "ID": 2,
+        "X": 0.3,
+        "Y": 0.45,
+        "Z": 0.0,
+        "Speed": 16.8,
+        "HeadingX": 0.375187,
+        "HeadingY": 0.926949,
+        "HeadingZ": 0.0,
+        "DefenseRadius": 25.0
+      }
+    ],
+    "weapons": [
+      {
+        "ID": 1,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 2,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 3,
+        "WTAVesselID": 1,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 4,
+        "WTAVesselID": 1,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 5,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 6,
+        "WTAVesselID": 1,
+        "Ammo": 71,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 7,
+        "WTAVesselID": 1,
+        "Ammo": 74,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 8,
+        "WTAVesselID": 1,
+        "Ammo": 58,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 9,
+        "WTAVesselID": 1,
+        "Ammo": 73,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 10,
+        "WTAVesselID": 1,
+        "Ammo": 75,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 11,
+        "WTAVesselID": 1,
+        "Ammo": 75,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 12,
+        "WTAVesselID": 1,
+        "Ammo": 76,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 13,
+        "WTAVesselID": 1,
+        "Ammo": 56,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 14,
+        "WTAVesselID": 1,
+        "Ammo": 58,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 15,
+        "WTAVesselID": 1,
+        "Ammo": 1008,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 16,
+        "WTAVesselID": 1,
+        "Ammo": 951,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 17,
+        "WTAVesselID": 1,
+        "Ammo": 909,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 18,
+        "WTAVesselID": 1,
+        "Ammo": 993,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 19,
+        "WTAVesselID": 1,
+        "Ammo": 892,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 20,
+        "WTAVesselID": 1,
+        "Ammo": 892,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 21,
+        "WTAVesselID": 1,
+        "Ammo": 993,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 22,
+        "WTAVesselID": 1,
+        "Ammo": 947,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 23,
+        "WTAVesselID": 1,
+        "Ammo": 808,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 24,
+        "WTAVesselID": 1,
+        "Ammo": 787,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 25,
+        "WTAVesselID": 1,
+        "Ammo": 764,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 26,
+        "WTAVesselID": 1,
+        "Ammo": 886,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 27,
+        "WTAVesselID": 1,
+        "Ammo": 748,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 28,
+        "WTAVesselID": 1,
+        "Ammo": 1025,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 29,
+        "WTAVesselID": 1,
+        "Ammo": 860,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 30,
+        "WTAVesselID": 1,
+        "Ammo": 911,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 31,
+        "WTAVesselID": 1,
+        "Ammo": 818,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 32,
+        "WTAVesselID": 1,
+        "Ammo": 1032,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 33,
+        "WTAVesselID": 1,
+        "Ammo": 759,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 34,
+        "WTAVesselID": 1,
+        "Ammo": 1005,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 35,
+        "WTAVesselID": 1,
+        "Ammo": 781,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 36,
+        "WTAVesselID": 1,
+        "Ammo": 875,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 37,
+        "WTAVesselID": 1,
+        "Ammo": 976,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 38,
+        "WTAVesselID": 1,
+        "Ammo": 908,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 39,
+        "WTAVesselID": 1,
+        "Ammo": 945,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 40,
+        "WTAVesselID": 1,
+        "Ammo": 744,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 41,
+        "WTAVesselID": 1,
+        "Ammo": 965,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 42,
+        "WTAVesselID": 1,
+        "Ammo": 935,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 43,
+        "WTAVesselID": 1,
+        "Ammo": 1031,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 44,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 45,
+        "WTAVesselID": 1,
+        "Ammo": 4,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 46,
+        "WTAVesselID": 1,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 47,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 48,
+        "WTAVesselID": 1,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 49,
+        "WTAVesselID": 1,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "VCM",
+        "Status": 1
+      },
+      {
+        "ID": 50,
+        "WTAVesselID": 1,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "VCM",
+        "Status": 1
+      },
+      {
+        "ID": 51,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 52,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 53,
+        "WTAVesselID": 2,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 54,
+        "WTAVesselID": 2,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 55,
+        "WTAVesselID": 2,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "SAM_PK",
+        "Status": 1
+      },
+      {
+        "ID": 56,
+        "WTAVesselID": 2,
+        "Ammo": 58,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 57,
+        "WTAVesselID": 2,
+        "Ammo": 80,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 58,
+        "WTAVesselID": 2,
+        "Ammo": 58,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 59,
+        "WTAVesselID": 2,
+        "Ammo": 59,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 60,
+        "WTAVesselID": 2,
+        "Ammo": 78,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 61,
+        "WTAVesselID": 2,
+        "Ammo": 55,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 62,
+        "WTAVesselID": 2,
+        "Ammo": 79,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 63,
+        "WTAVesselID": 2,
+        "Ammo": 79,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 64,
+        "WTAVesselID": 2,
+        "Ammo": 65,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 65,
+        "WTAVesselID": 2,
+        "Ammo": 822,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 66,
+        "WTAVesselID": 2,
+        "Ammo": 975,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 67,
+        "WTAVesselID": 2,
+        "Ammo": 928,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 68,
+        "WTAVesselID": 2,
+        "Ammo": 919,
+        "WTAWeaponInfoCode": "AK630_PORT",
+        "Status": 1
+      },
+      {
+        "ID": 69,
+        "WTAVesselID": 2,
+        "Ammo": 855,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 70,
+        "WTAVesselID": 2,
+        "Ammo": 956,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 71,
+        "WTAVesselID": 2,
+        "Ammo": 897,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 72,
+        "WTAVesselID": 2,
+        "Ammo": 920,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 73,
+        "WTAVesselID": 2,
+        "Ammo": 767,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 74,
+        "WTAVesselID": 2,
+        "Ammo": 740,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 75,
+        "WTAVesselID": 2,
+        "Ammo": 770,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 76,
+        "WTAVesselID": 2,
+        "Ammo": 828,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 77,
+        "WTAVesselID": 2,
+        "Ammo": 930,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 78,
+        "WTAVesselID": 2,
+        "Ammo": 822,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 79,
+        "WTAVesselID": 2,
+        "Ammo": 1017,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 80,
+        "WTAVesselID": 2,
+        "Ammo": 929,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 81,
+        "WTAVesselID": 2,
+        "Ammo": 856,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 82,
+        "WTAVesselID": 2,
+        "Ammo": 1027,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 83,
+        "WTAVesselID": 2,
+        "Ammo": 1023,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 84,
+        "WTAVesselID": 2,
+        "Ammo": 932,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 85,
+        "WTAVesselID": 2,
+        "Ammo": 890,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 86,
+        "WTAVesselID": 2,
+        "Ammo": 926,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 87,
+        "WTAVesselID": 2,
+        "Ammo": 900,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 88,
+        "WTAVesselID": 2,
+        "Ammo": 749,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 89,
+        "WTAVesselID": 2,
+        "Ammo": 818,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 90,
+        "WTAVesselID": 2,
+        "Ammo": 998,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 91,
+        "WTAVesselID": 2,
+        "Ammo": 814,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 92,
+        "WTAVesselID": 2,
+        "Ammo": 819,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 93,
+        "WTAVesselID": 2,
+        "Ammo": 749,
+        "WTAWeaponInfoCode": "AK630_STBD",
+        "Status": 1
+      },
+      {
+        "ID": 94,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 95,
+        "WTAVesselID": 2,
+        "Ammo": 4,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 96,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 97,
+        "WTAVesselID": 2,
+        "Ammo": 4,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 98,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 99,
+        "WTAVesselID": 2,
+        "Ammo": 2,
+        "WTAWeaponInfoCode": "VCM",
+        "Status": 1
+      },
+      {
+        "ID": 100,
+        "WTAVesselID": 2,
+        "Ammo": 3,
+        "WTAWeaponInfoCode": "VCM",
+        "Status": 1
+      }
+    ],
+    "targets": [
+      {
+        "ID": 1,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 2.5637,
+        "Y": 3.9761,
+        "Z": 0.4846,
+        "VX": -0.600067,
+        "VY": -0.790408,
+        "VZ": -0.123187,
+        "Speed": 120.1,
+        "ThreatScore": 0.726
+      },
+      {
+        "ID": 2,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -5.4941,
+        "Y": -1.5745,
+        "Z": 0.014,
+        "VX": 0.976714,
+        "VY": 0.21445,
+        "VZ": -0.006393,
+        "Speed": 289.99,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 3,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 1.7951,
+        "Y": -21.3548,
+        "Z": 0.0095,
+        "VX": -0.065508,
+        "VY": 0.997852,
+        "VZ": 0.0,
+        "Speed": 292.47,
+        "ThreatScore": 0.985
+      },
+      {
+        "ID": 4,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 5.8946,
+        "Y": 0.0456,
+        "Z": 0.0034,
+        "VX": -0.998078,
+        "VY": 0.06197,
+        "VZ": 0.0,
+        "Speed": 288.02,
+        "ThreatScore": 0.987
+      },
+      {
+        "ID": 5,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": -3.3217,
+        "Y": 2.8596,
+        "Z": 0.0286,
+        "VX": 0.73267,
+        "VY": -0.680276,
+        "VZ": 0.020487,
+        "Speed": 56.1,
+        "ThreatScore": 0.665
+      },
+      {
+        "ID": 6,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 4.2486,
+        "Y": 0.3245,
+        "Z": 0.1257,
+        "VX": -0.985893,
+        "VY": -0.166285,
+        "VZ": 0.019106,
+        "Speed": 65.66,
+        "ThreatScore": 0.776
+      },
+      {
+        "ID": 7,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.037,
+        "Y": 3.9584,
+        "Z": 0.4762,
+        "VX": 0.519459,
+        "VY": -0.851315,
+        "VZ": -0.073652,
+        "Speed": 70.31,
+        "ThreatScore": 0.689
+      },
+      {
+        "ID": 8,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 8.1497,
+        "Y": -8.6882,
+        "Z": 0.0003,
+        "VX": -0.675361,
+        "VY": 0.737487,
+        "VZ": 0.0,
+        "Speed": 18.25,
+        "ThreatScore": 0.959
+      },
+      {
+        "ID": 9,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 3.6096,
+        "Y": 2.1383,
+        "Z": 0.2444,
+        "VX": -0.90177,
+        "VY": -0.410162,
+        "VZ": -0.136306,
+        "Speed": 67.8,
+        "ThreatScore": 0.67
+      },
+      {
+        "ID": 10,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 2.8037,
+        "Y": 3.3979,
+        "Z": 0.1535,
+        "VX": -0.675205,
+        "VY": -0.73643,
+        "VZ": 0.042063,
+        "Speed": 61.91,
+        "ThreatScore": 0.72
+      },
+      {
+        "ID": 11,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.5498,
+        "Y": 1.1557,
+        "Z": 0.0052,
+        "VX": -0.953705,
+        "VY": -0.300742,
+        "VZ": 0.0,
+        "Speed": 274.22,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 12,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 7.3047,
+        "Y": -9.3676,
+        "Z": 0.0033,
+        "VX": -0.582782,
+        "VY": 0.812628,
+        "VZ": 0.0,
+        "Speed": 19.31,
+        "ThreatScore": 0.974
+      },
+      {
+        "ID": 13,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": -2.7679,
+        "Y": 2.9333,
+        "Z": 0.0846,
+        "VX": 0.736644,
+        "VY": -0.675969,
+        "VZ": -0.020516,
+        "Speed": 46.54,
+        "ThreatScore": 0.611
+      },
+      {
+        "ID": 14,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 2.6838,
+        "Y": 4.003,
+        "Z": 0.2703,
+        "VX": -0.614064,
+        "VY": -0.782158,
+        "VZ": -0.105614,
+        "Speed": 55.58,
+        "ThreatScore": 0.699
+      },
+      {
+        "ID": 15,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 4.1492,
+        "Y": -0.2222,
+        "Z": 0.4633,
+        "VX": -0.979843,
+        "VY": -0.00254,
+        "VZ": -0.199754,
+        "Speed": 91.47,
+        "ThreatScore": 0.821
+      },
+      {
+        "ID": 16,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 9.8642,
+        "Y": -7.1299,
+        "Z": -0.0012,
+        "VX": -0.831955,
+        "VY": 0.554843,
+        "VZ": 0.0,
+        "Speed": 30.74,
+        "ThreatScore": 0.8
+      },
+      {
+        "ID": 17,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 3.4548,
+        "Y": 3.0192,
+        "Z": -0.0013,
+        "VX": -0.811724,
+        "VY": -0.584041,
+        "VZ": 0.0,
+        "Speed": 38.77,
+        "ThreatScore": 0.793
+      },
+      {
+        "ID": 18,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 8.1501,
+        "Y": -8.8286,
+        "Z": 0.0038,
+        "VX": -0.663211,
+        "VY": 0.748432,
+        "VZ": 0.0,
+        "Speed": 9.3,
+        "ThreatScore": 0.906
+      },
+      {
+        "ID": 19,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.1783,
+        "Y": 3.3969,
+        "Z": 0.0595,
+        "VX": -0.589826,
+        "VY": -0.803205,
+        "VZ": -0.083473,
+        "Speed": 13.66,
+        "ThreatScore": 0.675
+      },
+      {
+        "ID": 20,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.9581,
+        "Y": 2.8762,
+        "Z": 0.2238,
+        "VX": 0.700087,
+        "VY": -0.710448,
+        "VZ": -0.071706,
+        "Speed": 51.25,
+        "ThreatScore": 0.743
+      },
+      {
+        "ID": 21,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -3.9225,
+        "Y": 1.7721,
+        "Z": 0.0957,
+        "VX": 0.860851,
+        "VY": -0.5087,
+        "VZ": -0.012677,
+        "Speed": 89.57,
+        "ThreatScore": 0.903
+      },
+      {
+        "ID": 22,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.4844,
+        "Y": 3.4891,
+        "Z": 0.0045,
+        "VX": -0.816979,
+        "VY": -0.576667,
+        "VZ": 0.0,
+        "Speed": 278.66,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 23,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -1.9857,
+        "Y": 4.0284,
+        "Z": 0.0648,
+        "VX": 0.52719,
+        "VY": -0.849517,
+        "VZ": -0.019786,
+        "Speed": 73.51,
+        "ThreatScore": 0.843
+      },
+      {
+        "ID": 24,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 3.5784,
+        "Y": 3.0855,
+        "Z": 0.0708,
+        "VX": -0.792857,
+        "VY": -0.609302,
+        "VZ": -0.011343,
+        "Speed": 60.03,
+        "ThreatScore": 0.641
+      },
+      {
+        "ID": 25,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 2.8924,
+        "Y": 3.202,
+        "Z": 0.2756,
+        "VX": -0.653045,
+        "VY": -0.754996,
+        "VZ": -0.059274,
+        "Speed": 52.87,
+        "ThreatScore": 0.641
+      },
+      {
+        "ID": 26,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 5.1756,
+        "Y": 10.859,
+        "Z": 0.0007,
+        "VX": -0.431934,
+        "VY": -0.901905,
+        "VZ": 0.0,
+        "Speed": 17.44,
+        "ThreatScore": 0.925
+      },
+      {
+        "ID": 27,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 9.5071,
+        "Y": -7.393,
+        "Z": -0.0018,
+        "VX": -0.806744,
+        "VY": 0.590901,
+        "VZ": 0.0,
+        "Speed": 27.04,
+        "ThreatScore": 0.743
+      },
+      {
+        "ID": 28,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 7.4893,
+        "Y": 19.1269,
+        "Z": 0.0544,
+        "VX": -0.362303,
+        "VY": -0.930873,
+        "VZ": -0.04704,
+        "Speed": 11.91,
+        "ThreatScore": 0.681
+      },
+      {
+        "ID": 29,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": 2.3935,
+        "Y": 3.2643,
+        "Z": 0.0014,
+        "VX": -0.622878,
+        "VY": -0.782319,
+        "VZ": 0.0,
+        "Speed": 21.79,
+        "ThreatScore": 0.649
+      },
+      {
+        "ID": 30,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": -3.1199,
+        "Y": 2.7035,
+        "Z": 0.3246,
+        "VX": 0.781679,
+        "VY": -0.623177,
+        "VZ": -0.025067,
+        "Speed": 59.39,
+        "ThreatScore": 0.654
+      },
+      {
+        "ID": 31,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.4242,
+        "Y": 3.2731,
+        "Z": 0.2116,
+        "VX": 0.646669,
+        "VY": -0.762721,
+        "VZ": 0.008755,
+        "Speed": 32.73,
+        "ThreatScore": 0.737
+      },
+      {
+        "ID": 32,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.3808,
+        "Y": 3.701,
+        "Z": 0.6566,
+        "VX": 0.623392,
+        "VY": -0.77943,
+        "VZ": -0.06222,
+        "Speed": 31.95,
+        "ThreatScore": 0.829
+      },
+      {
+        "ID": 33,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 4.0793,
+        "Y": -1.6153,
+        "Z": 0.1965,
+        "VX": -0.925727,
+        "VY": 0.353056,
+        "VZ": -0.135575,
+        "Speed": 58.76,
+        "ThreatScore": 0.86
+      },
+      {
+        "ID": 34,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 5.166,
+        "Y": 0.2165,
+        "Z": 0.0079,
+        "VX": -0.995642,
+        "VY": 0.093258,
+        "VZ": 0.0,
+        "Speed": 298.23,
+        "ThreatScore": 0.953
+      },
+      {
+        "ID": 35,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 4.9041,
+        "Y": 11.6045,
+        "Z": 0.0028,
+        "VX": -0.359018,
+        "VY": -0.933331,
+        "VZ": 0.0,
+        "Speed": 12.77,
+        "ThreatScore": 0.968
+      },
+      {
+        "ID": 36,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 5.3659,
+        "Y": 10.9445,
+        "Z": -0.0001,
+        "VX": -0.473489,
+        "VY": -0.8808,
+        "VZ": 0.0,
+        "Speed": 39.61,
+        "ThreatScore": 0.735
+      },
+      {
+        "ID": 37,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 2.5675,
+        "Y": 3.96,
+        "Z": 0.2808,
+        "VX": -0.506598,
+        "VY": -0.862091,
+        "VZ": 0.012531,
+        "Speed": 44.98,
+        "ThreatScore": 0.67
+      },
+      {
+        "ID": 38,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.7223,
+        "Y": 3.1191,
+        "Z": 0.0808,
+        "VX": -0.687217,
+        "VY": -0.726393,
+        "VZ": -0.009269,
+        "Speed": 25.37,
+        "ThreatScore": 0.667
+      },
+      {
+        "ID": 39,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 7.3795,
+        "Y": -9.3288,
+        "Z": 0.002,
+        "VX": -0.55591,
+        "VY": 0.831243,
+        "VZ": 0.0,
+        "Speed": 17.88,
+        "ThreatScore": 0.959
+      },
+      {
+        "ID": 40,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 4.0748,
+        "Y": 2.6105,
+        "Z": 0.1484,
+        "VX": -0.915791,
+        "VY": -0.40103,
+        "VZ": 0.022389,
+        "Speed": 54.86,
+        "ThreatScore": 0.633
+      },
+      {
+        "ID": 41,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -3.5554,
+        "Y": 4.1923,
+        "Z": 0.0045,
+        "VX": 0.691197,
+        "VY": -0.722666,
+        "VZ": 0.0,
+        "Speed": 288.46,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 42,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.6535,
+        "Y": 3.0753,
+        "Z": 0.0244,
+        "VX": -0.690554,
+        "VY": -0.718002,
+        "VZ": -0.087225,
+        "Speed": 29.12,
+        "ThreatScore": 0.693
+      },
+      {
+        "ID": 43,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 9.8747,
+        "Y": 4.507,
+        "Z": 0.0111,
+        "VX": -0.921619,
+        "VY": -0.388085,
+        "VZ": -0.002949,
+        "Speed": 273.51,
+        "ThreatScore": 0.957
+      },
+      {
+        "ID": 44,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 3.4235,
+        "Y": 2.7049,
+        "Z": 0.2007,
+        "VX": -0.819268,
+        "VY": -0.550571,
+        "VZ": -0.160222,
+        "Speed": 63.3,
+        "ThreatScore": 0.601
+      },
+      {
+        "ID": 45,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -2.7611,
+        "Y": 2.9672,
+        "Z": 0.318,
+        "VX": 0.737924,
+        "VY": -0.674876,
+        "VZ": -0.003363,
+        "Speed": 94.04,
+        "ThreatScore": 0.731
+      },
+      {
+        "ID": 46,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -2.235,
+        "Y": 4.3443,
+        "Z": 0.2258,
+        "VX": 0.556811,
+        "VY": -0.830412,
+        "VZ": -0.019434,
+        "Speed": 103.67,
+        "ThreatScore": 0.909
+      },
+      {
+        "ID": 47,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -4.4737,
+        "Y": 2.6596,
+        "Z": 0.004,
+        "VX": 0.89763,
+        "VY": -0.440749,
+        "VZ": 0.0,
+        "Speed": 274.09,
+        "ThreatScore": 0.995
+      },
+      {
+        "ID": 48,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -4.0884,
+        "Y": 1.1067,
+        "Z": 0.2057,
+        "VX": 0.935418,
+        "VY": -0.34876,
+        "VZ": -0.057966,
+        "Speed": 60.24,
+        "ThreatScore": 0.848
+      },
+      {
+        "ID": 49,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": -2.8154,
+        "Y": 3.0311,
+        "Z": -0.0006,
+        "VX": 0.705872,
+        "VY": -0.708339,
+        "VZ": 0.0,
+        "Speed": 20.69,
+        "ThreatScore": 0.828
+      },
+      {
+        "ID": 50,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.0724,
+        "Y": 3.4536,
+        "Z": 0.1646,
+        "VX": -0.555806,
+        "VY": -0.830887,
+        "VZ": 0.026583,
+        "Speed": 11.98,
+        "ThreatScore": 0.716
+      },
+      {
+        "ID": 51,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.5681,
+        "Y": 3.3189,
+        "Z": 0.1342,
+        "VX": -0.636323,
+        "VY": -0.769449,
+        "VZ": -0.055152,
+        "Speed": 28.82,
+        "ThreatScore": 0.68
+      },
+      {
+        "ID": 52,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.145,
+        "Y": 2.4133,
+        "Z": 0.0069,
+        "VX": -0.934888,
+        "VY": -0.354942,
+        "VZ": 0.0,
+        "Speed": 274.58,
+        "ThreatScore": 0.947
+      },
+      {
+        "ID": 53,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 9.1283,
+        "Y": 18.616,
+        "Z": 0.2294,
+        "VX": -0.443123,
+        "VY": -0.896107,
+        "VZ": -0.025197,
+        "Speed": 52.99,
+        "ThreatScore": 0.882
+      },
+      {
+        "ID": 54,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 5.7253,
+        "Y": 11.2588,
+        "Z": 0.0036,
+        "VX": -0.470236,
+        "VY": -0.882541,
+        "VZ": 0.0,
+        "Speed": 15.68,
+        "ThreatScore": 0.885
+      },
+      {
+        "ID": 55,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 2.7142,
+        "Y": 3.0584,
+        "Z": -0.0027,
+        "VX": -0.69217,
+        "VY": -0.721734,
+        "VZ": 0.0,
+        "Speed": 36.57,
+        "ThreatScore": 0.776
+      },
+      {
+        "ID": 56,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": 2.4401,
+        "Y": 3.9654,
+        "Z": 0.0003,
+        "VX": -0.437193,
+        "VY": -0.899368,
+        "VZ": 0.0,
+        "Speed": 29.86,
+        "ThreatScore": 0.662
+      },
+      {
+        "ID": 57,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 3.3197,
+        "Y": 3.2963,
+        "Z": 0.3817,
+        "VX": -0.783157,
+        "VY": -0.621054,
+        "VZ": 0.030957,
+        "Speed": 69.95,
+        "ThreatScore": 0.673
+      },
+      {
+        "ID": 58,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 3.208,
+        "Y": 3.4235,
+        "Z": -0.0002,
+        "VX": -0.761078,
+        "VY": -0.64866,
+        "VZ": 0.0,
+        "Speed": 33.11,
+        "ThreatScore": 0.804
+      },
+      {
+        "ID": 59,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 3.8452,
+        "Y": -1.4938,
+        "Z": -0.0004,
+        "VX": -0.957255,
+        "VY": 0.289244,
+        "VZ": 0.0,
+        "Speed": 33.96,
+        "ThreatScore": 0.81
+      },
+      {
+        "ID": 60,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 8.5954,
+        "Y": -8.4161,
+        "Z": 0.0025,
+        "VX": -0.738685,
+        "VY": 0.674051,
+        "VZ": 0.0,
+        "Speed": 9.04,
+        "ThreatScore": 0.861
+      },
+      {
+        "ID": 61,
+        "WTATargetInfoCode": "TGT_FIGHTER",
+        "X": 1.9105,
+        "Y": -10.1855,
+        "Z": 5.6185,
+        "VX": -0.159854,
+        "VY": 0.859736,
+        "VZ": -0.485077,
+        "Speed": 294.21,
+        "ThreatScore": 0.808
+      },
+      {
+        "ID": 62,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.8169,
+        "Y": 3.5815,
+        "Z": 0.6758,
+        "VX": 0.661886,
+        "VY": -0.74812,
+        "VZ": -0.047146,
+        "Speed": 62.75,
+        "ThreatScore": 0.738
+      },
+      {
+        "ID": 63,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 2.2079,
+        "Y": 3.6011,
+        "Z": 0.2203,
+        "VX": -0.515346,
+        "VY": -0.856479,
+        "VZ": -0.029358,
+        "Speed": 67.01,
+        "ThreatScore": 0.678
+      },
+      {
+        "ID": 64,
+        "WTATargetInfoCode": "TGT_FIGHTER",
+        "X": -7.558,
+        "Y": 9.7832,
+        "Z": 5.5479,
+        "VX": 0.576837,
+        "VY": -0.706593,
+        "VZ": -0.409859,
+        "Speed": 317.83,
+        "ThreatScore": 0.855
+      },
+      {
+        "ID": 65,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 8.8228,
+        "Y": -8.2099,
+        "Z": 0.0019,
+        "VX": -0.722519,
+        "VY": 0.691351,
+        "VZ": 0.0,
+        "Speed": 8.7,
+        "ThreatScore": 0.917
+      },
+      {
+        "ID": 66,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.119,
+        "Y": 3.4928,
+        "Z": 0.1272,
+        "VX": -0.523873,
+        "VY": -0.847529,
+        "VZ": -0.085153,
+        "Speed": 16.14,
+        "ThreatScore": 0.69
+      },
+      {
+        "ID": 67,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 2.5687,
+        "Y": 3.2308,
+        "Z": 0.0492,
+        "VX": -0.689835,
+        "VY": -0.723717,
+        "VZ": -0.019041,
+        "Speed": 54.16,
+        "ThreatScore": 0.614
+      },
+      {
+        "ID": 68,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.5475,
+        "Y": -0.4654,
+        "Z": 0.0137,
+        "VX": -0.995589,
+        "VY": 0.093557,
+        "VZ": -0.006991,
+        "Speed": 273.33,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 69,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -13.4992,
+        "Y": 17.0685,
+        "Z": 0.0119,
+        "VX": 0.624829,
+        "VY": -0.780759,
+        "VZ": 0.001932,
+        "Speed": 276.16,
+        "ThreatScore": 0.936
+      },
+      {
+        "ID": 70,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": 3.9275,
+        "Y": -1.1762,
+        "Z": 0.0009,
+        "VX": -0.982524,
+        "VY": 0.186137,
+        "VZ": 0.0,
+        "Speed": 32.82,
+        "ThreatScore": 0.605
+      },
+      {
+        "ID": 71,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 3.2143,
+        "Y": 3.8152,
+        "Z": 0.3817,
+        "VX": -0.681342,
+        "VY": -0.731739,
+        "VZ": -0.01819,
+        "Speed": 66.27,
+        "ThreatScore": 0.673
+      },
+      {
+        "ID": 72,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -4.2362,
+        "Y": 1.1272,
+        "Z": 0.462,
+        "VX": 0.931989,
+        "VY": -0.338848,
+        "VZ": -0.128755,
+        "Speed": 69.78,
+        "ThreatScore": 0.869
+      },
+      {
+        "ID": 73,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.7542,
+        "Y": 1.9435,
+        "Z": 0.0055,
+        "VX": -0.949204,
+        "VY": -0.314661,
+        "VZ": 0.0,
+        "Speed": 270.4,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 74,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 4.6277,
+        "Y": 3.6841,
+        "Z": 0.0035,
+        "VX": -0.764817,
+        "VY": -0.644248,
+        "VZ": 0.0,
+        "Speed": 277.99,
+        "ThreatScore": 0.975
+      },
+      {
+        "ID": 75,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -1.9527,
+        "Y": 3.9686,
+        "Z": 0.7022,
+        "VX": 0.547269,
+        "VY": -0.835374,
+        "VZ": -0.051457,
+        "Speed": 59.61,
+        "ThreatScore": 0.829
+      },
+      {
+        "ID": 76,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 4.4729,
+        "Y": -0.1116,
+        "Z": 0.3126,
+        "VX": -0.999888,
+        "VY": -0.011466,
+        "VZ": -0.009605,
+        "Speed": 103.92,
+        "ThreatScore": 0.84
+      },
+      {
+        "ID": 77,
+        "WTATargetInfoCode": "TGT_FIGHTER",
+        "X": -7.8488,
+        "Y": 8.1699,
+        "Z": 1.2803,
+        "VX": 0.702275,
+        "VY": -0.705921,
+        "VZ": -0.092113,
+        "Speed": 210.57,
+        "ThreatScore": 0.864
+      },
+      {
+        "ID": 78,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": -3.4269,
+        "Y": 2.1913,
+        "Z": 0.134,
+        "VX": 0.945217,
+        "VY": -0.326114,
+        "VZ": -0.014636,
+        "Speed": 119.03,
+        "ThreatScore": 0.81
+      },
+      {
+        "ID": 79,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 4.4016,
+        "Y": -0.0245,
+        "Z": 0.5496,
+        "VX": -0.99486,
+        "VY": -0.068796,
+        "VZ": -0.074295,
+        "Speed": 71.41,
+        "ThreatScore": 0.752
+      },
+      {
+        "ID": 80,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": -3.1988,
+        "Y": 2.649,
+        "Z": -0.0017,
+        "VX": 0.753652,
+        "VY": -0.657273,
+        "VZ": 0.0,
+        "Speed": 38.81,
+        "ThreatScore": 0.853
+      },
+      {
+        "ID": 81,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 5.2811,
+        "Y": -20.0483,
+        "Z": 0.0092,
+        "VX": -0.228972,
+        "VY": 0.973433,
+        "VZ": 0.0,
+        "Speed": 299.2,
+        "ThreatScore": 0.981
+      },
+      {
+        "ID": 82,
+        "WTATargetInfoCode": "TGT_FIGHTER",
+        "X": 1.6135,
+        "Y": -10.4822,
+        "Z": 3.8887,
+        "VX": -0.114596,
+        "VY": 0.918094,
+        "VZ": -0.379434,
+        "Speed": 208.28,
+        "ThreatScore": 0.916
+      },
+      {
+        "ID": 83,
+        "WTATargetInfoCode": "TGT_SURFACE",
+        "X": 8.7502,
+        "Y": -8.2683,
+        "Z": 0.0006,
+        "VX": -0.702493,
+        "VY": 0.711691,
+        "VZ": 0.0,
+        "Speed": 13.34,
+        "ThreatScore": 0.96
+      },
+      {
+        "ID": 84,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 7.1202,
+        "Y": 18.7271,
+        "Z": 0.124,
+        "VX": -0.341728,
+        "VY": -0.938838,
+        "VZ": 0.042482,
+        "Speed": 7.3,
+        "ThreatScore": 0.713
+      },
+      {
+        "ID": 85,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -5.4439,
+        "Y": 0.8055,
+        "Z": 0.0061,
+        "VX": 0.98355,
+        "VY": -0.180634,
+        "VZ": 0.0,
+        "Speed": 300.3,
+        "ThreatScore": 0.967
+      },
+      {
+        "ID": 86,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 3.9268,
+        "Y": 2.5192,
+        "Z": 0.0137,
+        "VX": -0.847944,
+        "VY": -0.530084,
+        "VZ": -0.001493,
+        "Speed": 271.72,
+        "ThreatScore": 1.0
+      },
+      {
+        "ID": 87,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.4036,
+        "Y": 3.2536,
+        "Z": 0.0776,
+        "VX": -0.655882,
+        "VY": -0.753653,
+        "VZ": 0.042728,
+        "Speed": 15.29,
+        "ThreatScore": 0.648
+      },
+      {
+        "ID": 88,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -13.4161,
+        "Y": 16.0666,
+        "Z": 0.0109,
+        "VX": 0.653886,
+        "VY": -0.756588,
+        "VZ": 0.002904,
+        "Speed": 278.1,
+        "ThreatScore": 0.955
+      },
+      {
+        "ID": 89,
+        "WTATargetInfoCode": "TGT_HELICOPTER",
+        "X": 2.56,
+        "Y": 3.8055,
+        "Z": 0.2761,
+        "VX": -0.528232,
+        "VY": -0.834924,
+        "VZ": -0.154507,
+        "Speed": 38.42,
+        "ThreatScore": 0.644
+      },
+      {
+        "ID": 90,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -1.0126,
+        "Y": -11.0815,
+        "Z": 0.012,
+        "VX": 0.08895,
+        "VY": 0.996034,
+        "VZ": 0.001988,
+        "Speed": 308.55,
+        "ThreatScore": 0.975
+      },
+      {
+        "ID": 91,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 5.0149,
+        "Y": 11.6167,
+        "Z": -0.0003,
+        "VX": -0.411159,
+        "VY": -0.911564,
+        "VZ": 0.0,
+        "Speed": 23.36,
+        "ThreatScore": 0.757
+      },
+      {
+        "ID": 92,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": 2.6677,
+        "Y": 3.1917,
+        "Z": 0.0004,
+        "VX": -0.712409,
+        "VY": -0.701765,
+        "VZ": 0.0,
+        "Speed": 29.97,
+        "ThreatScore": 0.715
+      },
+      {
+        "ID": 93,
+        "WTATargetInfoCode": "TGT_FIGHTER",
+        "X": 3.9324,
+        "Y": 10.7064,
+        "Z": 1.4385,
+        "VX": -0.309939,
+        "VY": -0.936818,
+        "VZ": -0.162202,
+        "Speed": 248.55,
+        "ThreatScore": 0.937
+      },
+      {
+        "ID": 94,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": -4.1332,
+        "Y": 2.0769,
+        "Z": 0.0104,
+        "VX": 0.853627,
+        "VY": -0.520885,
+        "VZ": -0.000152,
+        "Speed": 271.06,
+        "ThreatScore": 0.906
+      },
+      {
+        "ID": 95,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": -2.6285,
+        "Y": 3.2897,
+        "Z": 0.0027,
+        "VX": 0.651789,
+        "VY": -0.758401,
+        "VZ": 0.0,
+        "Speed": 32.79,
+        "ThreatScore": 0.634
+      },
+      {
+        "ID": 96,
+        "WTATargetInfoCode": "TGT_UAV_ROTOR",
+        "X": 2.44,
+        "Y": 3.9769,
+        "Z": 0.0234,
+        "VX": -0.482133,
+        "VY": -0.870112,
+        "VZ": 0.10224,
+        "Speed": 27.75,
+        "ThreatScore": 0.75
+      },
+      {
+        "ID": 97,
+        "WTATargetInfoCode": "TGT_ASM",
+        "X": 3.1749,
+        "Y": 4.0405,
+        "Z": 0.0077,
+        "VX": -0.613124,
+        "VY": -0.789987,
+        "VZ": 0.0,
+        "Speed": 302.91,
+        "ThreatScore": 0.998
+      },
+      {
+        "ID": 98,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": -2.8039,
+        "Y": 3.2181,
+        "Z": -0.0013,
+        "VX": 0.676759,
+        "VY": -0.736205,
+        "VZ": 0.0,
+        "Speed": 26.28,
+        "ThreatScore": 0.791
+      },
+      {
+        "ID": 99,
+        "WTATargetInfoCode": "TGT_TORPEDO",
+        "X": 5.2925,
+        "Y": 10.858,
+        "Z": -0.0003,
+        "VX": -0.458004,
+        "VY": -0.88895,
+        "VZ": 0.0,
+        "Speed": 34.03,
+        "ThreatScore": 0.855
+      },
+      {
+        "ID": 100,
+        "WTATargetInfoCode": "TGT_KAMIKAZE",
+        "X": 2.8276,
+        "Y": 3.7693,
+        "Z": 0.4127,
+        "VX": -0.653656,
+        "VY": -0.756104,
+        "VZ": -0.032267,
+        "Speed": 60.76,
+        "ThreatScore": 0.83
+      }
+    ]
+  },
+  "engagement_windows": {
+    "1_6": [
+      5.85,
+      20.0
+    ],
+    "1_7": [
+      0.0,
+      20.0
+    ],
+    "1_15": [
+      0.0,
+      20.0
+    ],
+    "1_20": [
+      0.0,
+      20.0
+    ],
+    "1_30": [
+      0.0,
+      20.0
+    ],
+    "1_31": [
+      0.0,
+      20.0
+    ],
+    "1_32": [
+      0.0,
+      20.0
+    ],
+    "1_33": [
+      0.0,
+      8.09
+    ],
+    "1_45": [
+      0.0,
+      20.0
+    ],
+    "1_46": [
+      0.0,
+      20.0
+    ],
+    "1_48": [
+      0.0,
+      20.0
+    ],
+    "1_61": [
+      5.81,
+      20.0
+    ],
+    "1_62": [
+      0.0,
+      20.0
+    ],
+    "1_64": [
+      11.79,
+      20.0
+    ],
+    "1_72": [
+      0.0,
+      20.0
+    ],
+    "1_75": [
+      0.0,
+      20.0
+    ],
+    "1_76": [
+      0.0,
+      20.0
+    ],
+    "1_77": [
+      7.29,
+      20.0
+    ],
+    "1_79": [
+      0.0,
+      20.0
+    ],
+    "1_82": [
+      5.84,
+      20.0
+    ],
+    "2_6": [
+      5.85,
+      20.0
+    ],
+    "2_7": [
+      0.0,
+      20.0
+    ],
+    "2_15": [
+      0.0,
+      20.0
+    ],
+    "2_20": [
+      0.0,
+      20.0
+    ],
+    "2_30": [
+      0.0,
+      20.0
+    ],
+    "2_31": [
+      0.0,
+      20.0
+    ],
+    "2_32": [
+      0.0,
+      20.0
+    ],
+    "2_33": [
+      0.0,
+      8.09
+    ],
+    "2_45": [
+      0.0,
+      20.0
+    ],
+    "2_46": [
+      0.0,
+      20.0
+    ],
+    "2_48": [
+      0.0,
+      20.0
+    ],
+    "2_61": [
+      5.81,
+      20.0
+    ],
+    "2_62": [
+      0.0,
+      20.0
+    ],
+    "2_64": [
+      11.79,
+      20.0
+    ],
+    "2_72": [
+      0.0,
+      20.0
+    ],
+    "2_75": [
+      0.0,
+      20.0
+    ],
+    "2_76": [
+      0.0,
+      20.0
+    ],
+    "2_77": [
+      7.29,
+      20.0
+    ],
+    "2_79": [
+      0.0,
+      20.0
+    ],
+    "2_82": [
+      5.84,
+      20.0
+    ],
+    "3_6": [
+      5.85,
+      20.0
+    ],
+    "3_7": [
+      0.0,
+      20.0
+    ],
+    "3_15": [
+      0.0,
+      20.0
+    ],
+    "3_20": [
+      0.0,
+      20.0
+    ],
+    "3_30": [
+      0.0,
+      20.0
+    ],
+    "3_31": [
+      0.0,
+      20.0
+    ],
+    "3_32": [
+      0.0,
+      20.0
+    ],
+    "3_33": [
+      0.0,
+      8.09
+    ],
+    "3_45": [
+      0.0,
+      20.0
+    ],
+    "3_46": [
+      0.0,
+      20.0
+    ],
+    "3_48": [
+      0.0,
+      20.0
+    ],
+    "3_61": [
+      5.81,
+      20.0
+    ],
+    "3_62": [
+      0.0,
+      20.0
+    ],
+    "3_64": [
+      11.79,
+      20.0
+    ],
+    "3_72": [
+      0.0,
+      20.0
+    ],
+    "3_75": [
+      0.0,
+      20.0
+    ],
+    "3_76": [
+      0.0,
+      20.0
+    ],
+    "3_77": [
+      7.29,
+      20.0
+    ],
+    "3_79": [
+      0.0,
+      20.0
+    ],
+    "3_82": [
+      5.84,
+      20.0
+    ],
+    "4_6": [
+      5.85,
+      20.0
+    ],
+    "4_7": [
+      0.0,
+      20.0
+    ],
+    "4_15": [
+      0.0,
+      20.0
+    ],
+    "4_20": [
+      0.0,
+      20.0
+    ],
+    "4_30": [
+      0.0,
+      20.0
+    ],
+    "4_31": [
+      0.0,
+      20.0
+    ],
+    "4_32": [
+      0.0,
+      20.0
+    ],
+    "4_33": [
+      0.0,
+      8.09
+    ],
+    "4_45": [
+      0.0,
+      20.0
+    ],
+    "4_46": [
+      0.0,
+      20.0
+    ],
+    "4_48": [
+      0.0,
+      20.0
+    ],
+    "4_61": [
+      5.81,
+      20.0
+    ],
+    "4_62": [
+      0.0,
+      20.0
+    ],
+    "4_64": [
+      11.79,
+      20.0
+    ],
+    "4_72": [
+      0.0,
+      20.0
+    ],
+    "4_75": [
+      0.0,
+      20.0
+    ],
+    "4_76": [
+      0.0,
+      20.0
+    ],
+    "4_77": [
+      7.29,
+      20.0
+    ],
+    "4_79": [
+      0.0,
+      20.0
+    ],
+    "4_82": [
+      5.84,
+      20.0
+    ],
+    "5_6": [
+      5.85,
+      20.0
+    ],
+    "5_7": [
+      0.0,
+      20.0
+    ],
+    "5_15": [
+      0.0,
+      20.0
+    ],
+    "5_20": [
+      0.0,
+      20.0
+    ],
+    "5_30": [
+      0.0,
+      20.0
+    ],
+    "5_31": [
+      0.0,
+      20.0
+    ],
+    "5_32": [
+      0.0,
+      20.0
+    ],
+    "5_33": [
+      0.0,
+      8.09
+    ],
+    "5_45": [
+      0.0,
+      20.0
+    ],
+    "5_46": [
+      0.0,
+      20.0
+    ],
+    "5_48": [
+      0.0,
+      20.0
+    ],
+    "5_61": [
+      5.81,
+      20.0
+    ],
+    "5_62": [
+      0.0,
+      20.0
+    ],
+    "5_64": [
+      11.79,
+      20.0
+    ],
+    "5_72": [
+      0.0,
+      20.0
+    ],
+    "5_75": [
+      0.0,
+      20.0
+    ],
+    "5_76": [
+      0.0,
+      20.0
+    ],
+    "5_77": [
+      7.29,
+      20.0
+    ],
+    "5_79": [
+      0.0,
+      20.0
+    ],
+    "5_82": [
+      5.84,
+      20.0
+    ],
+    "6_2": [
+      0.0,
+      10.25
+    ],
+    "6_5": [
+      0.0,
+      20.0
+    ],
+    "6_6": [
+      0.0,
+      20.0
+    ],
+    "6_7": [
+      0.0,
+      20.0
+    ],
+    "6_8": [
+      0.0,
+      20.0
+    ],
+    "6_11": [
+      0.0,
+      14.82
+    ],
+    "6_12": [
+      0.0,
+      20.0
+    ],
+    "6_13": [
+      0.0,
+      20.0
+    ],
+    "6_15": [
+      0.0,
+      20.0
+    ],
+    "6_16": [
+      3.51,
+      20.0
+    ],
+    "6_18": [
+      0.56,
+      20.0
+    ],
+    "6_20": [
+      0.0,
+      20.0
+    ],
+    "6_21": [
+      0.0,
+      20.0
+    ],
+    "6_23": [
+      0.0,
+      20.0
+    ],
+    "6_27": [
+      0.96,
+      20.0
+    ],
+    "6_30": [
+      0.0,
+      20.0
+    ],
+    "6_31": [
+      0.0,
+      20.0
+    ],
+    "6_32": [
+      0.0,
+      20.0
+    ],
+    "6_33": [
+      0.0,
+      20.0
+    ],
+    "6_39": [
+      0.0,
+      20.0
+    ],
+    "6_41": [
+      0.0,
+      18.81
+    ],
+    "6_45": [
+      0.0,
+      20.0
+    ],
+    "6_46": [
+      0.0,
+      20.0
+    ],
+    "6_48": [
+      0.0,
+      20.0
+    ],
+    "6_49": [
+      0.0,
+      20.0
+    ],
+    "6_59": [
+      0.0,
+      20.0
+    ],
+    "6_60": [
+      1.09,
+      20.0
+    ],
+    "6_61": [
+      18.35,
+      20.0
+    ],
+    "6_62": [
+      0.0,
+      20.0
+    ],
+    "6_65": [
+      1.92,
+      20.0
+    ],
+    "6_68": [
+      0.0,
+      9.79
+    ],
+    "6_70": [
+      0.0,
+      20.0
+    ],
+    "6_72": [
+      0.0,
+      20.0
+    ],
+    "6_74": [
+      0.0,
+      19.51
+    ],
+    "6_75": [
+      0.0,
+      20.0
+    ],
+    "6_76": [
+      0.0,
+      20.0
+    ],
+    "6_77": [
+      0.0,
+      20.0
+    ],
+    "6_79": [
+      0.0,
+      20.0
+    ],
+    "6_80": [
+      0.0,
+      20.0
+    ],
+    "6_82": [
+      11.25,
+      20.0
+    ],
+    "6_83": [
+      1.23,
+      20.0
+    ],
+    "6_85": [
+      0.0,
+      17.52
+    ],
+    "6_86": [
+      0.0,
+      15.57
+    ],
+    "6_94": [
+      0.0,
+      16.63
+    ],
+    "6_95": [
+      0.0,
+      20.0
+    ],
+    "6_97": [
+      0.0,
+      15.67
+    ],
+    "6_98": [
+      0.0,
+      20.0
+    ],
+    "7_2": [
+      0.0,
+      10.25
+    ],
+    "7_5": [
+      0.0,
+      20.0
+    ],
+    "7_6": [
+      0.0,
+      20.0
+    ],
+    "7_7": [
+      0.0,
+      20.0
+    ],
+    "7_8": [
+      0.0,
+      20.0
+    ],
+    "7_11": [
+      0.0,
+      14.82
+    ],
+    "7_12": [
+      0.0,
+      20.0
+    ],
+    "7_13": [
+      0.0,
+      20.0
+    ],
+    "7_15": [
+      0.0,
+      20.0
+    ],
+    "7_16": [
+      3.51,
+      20.0
+    ],
+    "7_18": [
+      0.56,
+      20.0
+    ],
+    "7_20": [
+      0.0,
+      20.0
+    ],
+    "7_21": [
+      0.0,
+      20.0
+    ],
+    "7_23": [
+      0.0,
+      20.0
+    ],
+    "7_27": [
+      0.96,
+      20.0
+    ],
+    "7_30": [
+      0.0,
+      20.0
+    ],
+    "7_31": [
+      0.0,
+      20.0
+    ],
+    "7_32": [
+      0.0,
+      20.0
+    ],
+    "7_33": [
+      0.0,
+      20.0
+    ],
+    "7_39": [
+      0.0,
+      20.0
+    ],
+    "7_41": [
+      0.0,
+      18.81
+    ],
+    "7_45": [
+      0.0,
+      20.0
+    ],
+    "7_46": [
+      0.0,
+      20.0
+    ],
+    "7_48": [
+      0.0,
+      20.0
+    ],
+    "7_49": [
+      0.0,
+      20.0
+    ],
+    "7_59": [
+      0.0,
+      20.0
+    ],
+    "7_60": [
+      1.09,
+      20.0
+    ],
+    "7_61": [
+      18.35,
+      20.0
+    ],
+    "7_62": [
+      0.0,
+      20.0
+    ],
+    "7_65": [
+      1.92,
+      20.0
+    ],
+    "7_68": [
+      0.0,
+      9.79
+    ],
+    "7_70": [
+      0.0,
+      20.0
+    ],
+    "7_72": [
+      0.0,
+      20.0
+    ],
+    "7_74": [
+      0.0,
+      19.51
+    ],
+    "7_75": [
+      0.0,
+      20.0
+    ],
+    "7_76": [
+      0.0,
+      20.0
+    ],
+    "7_77": [
+      0.0,
+      20.0
+    ],
+    "7_79": [
+      0.0,
+      20.0
+    ],
+    "7_80": [
+      0.0,
+      20.0
+    ],
+    "7_82": [
+      11.25,
+      20.0
+    ],
+    "7_83": [
+      1.23,
+      20.0
+    ],
+    "7_85": [
+      0.0,
+      17.52
+    ],
+    "7_86": [
+      0.0,
+      15.57
+    ],
+    "7_94": [
+      0.0,
+      16.63
+    ],
+    "7_95": [
+      0.0,
+      20.0
+    ],
+    "7_97": [
+      0.0,
+      15.67
+    ],
+    "7_98": [
+      0.0,
+      20.0
+    ],
+    "8_2": [
+      0.0,
+      10.25
+    ],
+    "8_5": [
+      0.0,
+      20.0
+    ],
+    "8_6": [
+      0.0,
+      20.0
+    ],
+    "8_7": [
+      0.0,
+      20.0
+    ],
+    "8_8": [
+      0.0,
+      20.0
+    ],
+    "8_11": [
+      0.0,
+      14.82
+    ],
+    "8_12": [
+      0.0,
+      20.0
+    ],
+    "8_13": [
+      0.0,
+      20.0
+    ],
+    "8_15": [
+      0.0,
+      20.0
+    ],
+    "8_16": [
+      3.51,
+      20.0
+    ],
+    "8_18": [
+      0.56,
+      20.0
+    ],
+    "8_20": [
+      0.0,
+      20.0
+    ],
+    "8_21": [
+      0.0,
+      20.0
+    ],
+    "8_23": [
+      0.0,
+      20.0
+    ],
+    "8_27": [
+      0.96,
+      20.0
+    ],
+    "8_30": [
+      0.0,
+      20.0
+    ],
+    "8_31": [
+      0.0,
+      20.0
+    ],
+    "8_32": [
+      0.0,
+      20.0
+    ],
+    "8_33": [
+      0.0,
+      20.0
+    ],
+    "8_39": [
+      0.0,
+      20.0
+    ],
+    "8_41": [
+      0.0,
+      18.81
+    ],
+    "8_45": [
+      0.0,
+      20.0
+    ],
+    "8_46": [
+      0.0,
+      20.0
+    ],
+    "8_48": [
+      0.0,
+      20.0
+    ],
+    "8_49": [
+      0.0,
+      20.0
+    ],
+    "8_59": [
+      0.0,
+      20.0
+    ],
+    "8_60": [
+      1.09,
+      20.0
+    ],
+    "8_61": [
+      18.35,
+      20.0
+    ],
+    "8_62": [
+      0.0,
+      20.0
+    ],
+    "8_65": [
+      1.92,
+      20.0
+    ],
+    "8_68": [
+      0.0,
+      9.79
+    ],
+    "8_70": [
+      0.0,
+      20.0
+    ],
+    "8_72": [
+      0.0,
+      20.0
+    ],
+    "8_74": [
+      0.0,
+      19.51
+    ],
+    "8_75": [
+      0.0,
+      20.0
+    ],
+    "8_76": [
+      0.0,
+      20.0
+    ],
+    "8_77": [
+      0.0,
+      20.0
+    ],
+    "8_79": [
+      0.0,
+      20.0
+    ],
+    "8_80": [
+      0.0,
+      20.0
+    ],
+    "8_82": [
+      11.25,
+      20.0
+    ],
+    "8_83": [
+      1.23,
+      20.0
+    ],
+    "8_85": [
+      0.0,
+      17.52
+    ],
+    "8_86": [
+      0.0,
+      15.57
+    ],
+    "8_94": [
+      0.0,
+      16.63
+    ],
+    "8_95": [
+      0.0,
+      20.0
+    ],
+    "8_97": [
+      0.0,
+      15.67
+    ],
+    "8_98": [
+      0.0,
+      20.0
+    ],
+    "9_2": [
+      0.0,
+      10.25
+    ],
+    "9_5": [
+      0.0,
+      20.0
+    ],
+    "9_6": [
+      0.0,
+      20.0
+    ],
+    "9_7": [
+      0.0,
+      20.0
+    ],
+    "9_8": [
+      0.0,
+      20.0
+    ],
+    "9_11": [
+      0.0,
+      14.82
+    ],
+    "9_12": [
+      0.0,
+      20.0
+    ],
+    "9_13": [
+      0.0,
+      20.0
+    ],
+    "9_15": [
+      0.0,
+      20.0
+    ],
+    "9_16": [
+      3.51,
+      20.0
+    ],
+    "9_18": [
+      0.56,
+      20.0
+    ],
+    "9_20": [
+      0.0,
+      20.0
+    ],
+    "9_21": [
+      0.0,
+      20.0
+    ],
+    "9_23": [
+      0.0,
+      20.0
+    ],
+    "9_27": [
+      0.96,
+      20.0
+    ],
+    "9_30": [
+      0.0,
+      20.0
+    ],
+    "9_31": [
+      0.0,
+      20.0
+    ],
+    "9_32": [
+      0.0,
+      20.0
+    ],
+    "9_33": [
+      0.0,
+      20.0
+    ],
+    "9_39": [
+      0.0,
+      20.0
+    ],
+    "9_41": [
+      0.0,
+      18.81
+    ],
+    "9_45": [
+      0.0,
+      20.0
+    ],
+    "9_46": [
+      0.0,
+      20.0
+    ],
+    "9_48": [
+      0.0,
+      20.0
+    ],
+    "9_49": [
+      0.0,
+      20.0
+    ],
+    "9_59": [
+      0.0,
+      20.0
+    ],
+    "9_60": [
+      1.09,
+      20.0
+    ],
+    "9_61": [
+      18.35,
+      20.0
+    ],
+    "9_62": [
+      0.0,
+      20.0
+    ],
+    "9_65": [
+      1.92,
+      20.0
+    ],
+    "9_68": [
+      0.0,
+      9.79
+    ],
+    "9_70": [
+      0.0,
+      20.0
+    ],
+    "9_72": [
+      0.0,
+      20.0
+    ],
+    "9_74": [
+      0.0,
+      19.51
+    ],
+    "9_75": [
+      0.0,
+      20.0
+    ],
+    "9_76": [
+      0.0,
+      20.0
+    ],
+    "9_77": [
+      0.0,
+      20.0
+    ],
+    "9_79": [
+      0.0,
+      20.0
+    ],
+    "9_80": [
+      0.0,
+      20.0
+    ],
+    "9_82": [
+      11.25,
+      20.0
+    ],
+    "9_83": [
+      1.23,
+      20.0
+    ],
+    "9_85": [
+      0.0,
+      17.52
+    ],
+    "9_86": [
+      0.0,
+      15.57
+    ],
+    "9_94": [
+      0.0,
+      16.63
+    ],
+    "9_95": [
+      0.0,
+      20.0
+    ],
+    "9_97": [
+      0.0,
+      15.67
+    ],
+    "9_98": [
+      0.0,
+      20.0
+    ],
+    "10_2": [
+      0.0,
+      10.25
+    ],
+    "10_5": [
+      0.0,
+      20.0
+    ],
+    "10_6": [
+      0.0,
+      20.0
+    ],
+    "10_7": [
+      0.0,
+      20.0
+    ],
+    "10_8": [
+      0.0,
+      20.0
+    ],
+    "10_11": [
+      0.0,
+      14.82
+    ],
+    "10_12": [
+      0.0,
+      20.0
+    ],
+    "10_13": [
+      0.0,
+      20.0
+    ],
+    "10_15": [
+      0.0,
+      20.0
+    ],
+    "10_16": [
+      3.51,
+      20.0
+    ],
+    "10_18": [
+      0.56,
+      20.0
+    ],
+    "10_20": [
+      0.0,
+      20.0
+    ],
+    "10_21": [
+      0.0,
+      20.0
+    ],
+    "10_23": [
+      0.0,
+      20.0
+    ],
+    "10_27": [
+      0.96,
+      20.0
+    ],
+    "10_30": [
+      0.0,
+      20.0
+    ],
+    "10_31": [
+      0.0,
+      20.0
+    ],
+    "10_32": [
+      0.0,
+      20.0
+    ],
+    "10_33": [
+      0.0,
+      20.0
+    ],
+    "10_39": [
+      0.0,
+      20.0
+    ],
+    "10_41": [
+      0.0,
+      18.81
+    ],
+    "10_45": [
+      0.0,
+      20.0
+    ],
+    "10_46": [
+      0.0,
+      20.0
+    ],
+    "10_48": [
+      0.0,
+      20.0
+    ],
+    "10_49": [
+      0.0,
+      20.0
+    ],
+    "10_59": [
+      0.0,
+      20.0
+    ],
+    "10_60": [
+      1.09,
+      20.0
+    ],
+    "10_61": [
+      18.35,
+      20.0
+    ],
+    "10_62": [
+      0.0,
+      20.0
+    ],
+    "10_65": [
+      1.92,
+      20.0
+    ],
+    "10_68": [
+      0.0,
+      9.79
+    ],
+    "10_70": [
+      0.0,
+      20.0
+    ],
+    "10_72": [
+      0.0,
+      20.0
+    ],
+    "10_74": [
+      0.0,
+      19.51
+    ],
+    "10_75": [
+      0.0,
+      20.0
+    ],
+    "10_76": [
+      0.0,
+      20.0
+    ],
+    "10_77": [
+      0.0,
+      20.0
+    ],
+    "10_79": [
+      0.0,
+      20.0
+    ],
+    "10_80": [
+      0.0,
+      20.0
+    ],
+    "10_82": [
+      11.25,
+      20.0
+    ],
+    "10_83": [
+      1.23,
+      20.0
+    ],
+    "10_85": [
+      0.0,
+      17.52
+    ],
+    "10_86": [
+      0.0,
+      15.57
+    ],
+    "10_94": [
+      0.0,
+      16.63
+    ],
+    "10_95": [
+      0.0,
+      20.0
+    ],
+    "10_97": [
+      0.0,
+      15.67
+    ],
+    "10_98": [
+      0.0,
+      20.0
+    ],
+    "11_2": [
+      0.0,
+      10.25
+    ],
+    "11_5": [
+      0.0,
+      20.0
+    ],
+    "11_6": [
+      0.0,
+      20.0
+    ],
+    "11_7": [
+      0.0,
+      20.0
+    ],
+    "11_8": [
+      0.0,
+      20.0
+    ],
+    "11_11": [
+      0.0,
+      14.82
+    ],
+    "11_12": [
+      0.0,
+      20.0
+    ],
+    "11_13": [
+      0.0,
+      20.0
+    ],
+    "11_15": [
+      0.0,
+      20.0
+    ],
+    "11_16": [
+      3.51,
+      20.0
+    ],
+    "11_18": [
+      0.56,
+      20.0
+    ],
+    "11_20": [
+      0.0,
+      20.0
+    ],
+    "11_21": [
+      0.0,
+      20.0
+    ],
+    "11_23": [
+      0.0,
+      20.0
+    ],
+    "11_27": [
+      0.96,
+      20.0
+    ],
+    "11_30": [
+      0.0,
+      20.0
+    ],
+    "11_31": [
+      0.0,
+      20.0
+    ],
+    "11_32": [
+      0.0,
+      20.0
+    ],
+    "11_33": [
+      0.0,
+      20.0
+    ],
+    "11_39": [
+      0.0,
+      20.0
+    ],
+    "11_41": [
+      0.0,
+      18.81
+    ],
+    "11_45": [
+      0.0,
+      20.0
+    ],
+    "11_46": [
+      0.0,
+      20.0
+    ],
+    "11_48": [
+      0.0,
+      20.0
+    ],
+    "11_49": [
+      0.0,
+      20.0
+    ],
+    "11_59": [
+      0.0,
+      20.0
+    ],
+    "11_60": [
+      1.09,
+      20.0
+    ],
+    "11_61": [
+      18.35,
+      20.0
+    ],
+    "11_62": [
+      0.0,
+      20.0
+    ],
+    "11_65": [
+      1.92,
+      20.0
+    ],
+    "11_68": [
+      0.0,
+      9.79
+    ],
+    "11_70": [
+      0.0,
+      20.0
+    ],
+    "11_72": [
+      0.0,
+      20.0
+    ],
+    "11_74": [
+      0.0,
+      19.51
+    ],
+    "11_75": [
+      0.0,
+      20.0
+    ],
+    "11_76": [
+      0.0,
+      20.0
+    ],
+    "11_77": [
+      0.0,
+      20.0
+    ],
+    "11_79": [
+      0.0,
+      20.0
+    ],
+    "11_80": [
+      0.0,
+      20.0
+    ],
+    "11_82": [
+      11.25,
+      20.0
+    ],
+    "11_83": [
+      1.23,
+      20.0
+    ],
+    "11_85": [
+      0.0,
+      17.52
+    ],
+    "11_86": [
+      0.0,
+      15.57
+    ],
+    "11_94": [
+      0.0,
+      16.63
+    ],
+    "11_95": [
+      0.0,
+      20.0
+    ],
+    "11_97": [
+      0.0,
+      15.67
+    ],
+    "11_98": [
+      0.0,
+      20.0
+    ],
+    "12_2": [
+      0.0,
+      10.25
+    ],
+    "12_5": [
+      0.0,
+      20.0
+    ],
+    "12_6": [
+      0.0,
+      20.0
+    ],
+    "12_7": [
+      0.0,
+      20.0
+    ],
+    "12_8": [
+      0.0,
+      20.0
+    ],
+    "12_11": [
+      0.0,
+      14.82
+    ],
+    "12_12": [
+      0.0,
+      20.0
+    ],
+    "12_13": [
+      0.0,
+      20.0
+    ],
+    "12_15": [
+      0.0,
+      20.0
+    ],
+    "12_16": [
+      3.51,
+      20.0
+    ],
+    "12_18": [
+      0.56,
+      20.0
+    ],
+    "12_20": [
+      0.0,
+      20.0
+    ],
+    "12_21": [
+      0.0,
+      20.0
+    ],
+    "12_23": [
+      0.0,
+      20.0
+    ],
+    "12_27": [
+      0.96,
+      20.0
+    ],
+    "12_30": [
+      0.0,
+      20.0
+    ],
+    "12_31": [
+      0.0,
+      20.0
+    ],
+    "12_32": [
+      0.0,
+      20.0
+    ],
+    "12_33": [
+      0.0,
+      20.0
+    ],
+    "12_39": [
+      0.0,
+      20.0
+    ],
+    "12_41": [
+      0.0,
+      18.81
+    ],
+    "12_45": [
+      0.0,
+      20.0
+    ],
+    "12_46": [
+      0.0,
+      20.0
+    ],
+    "12_48": [
+      0.0,
+      20.0
+    ],
+    "12_49": [
+      0.0,
+      20.0
+    ],
+    "12_59": [
+      0.0,
+      20.0
+    ],
+    "12_60": [
+      1.09,
+      20.0
+    ],
+    "12_61": [
+      18.35,
+      20.0
+    ],
+    "12_62": [
+      0.0,
+      20.0
+    ],
+    "12_65": [
+      1.92,
+      20.0
+    ],
+    "12_68": [
+      0.0,
+      9.79
+    ],
+    "12_70": [
+      0.0,
+      20.0
+    ],
+    "12_72": [
+      0.0,
+      20.0
+    ],
+    "12_74": [
+      0.0,
+      19.51
+    ],
+    "12_75": [
+      0.0,
+      20.0
+    ],
+    "12_76": [
+      0.0,
+      20.0
+    ],
+    "12_77": [
+      0.0,
+      20.0
+    ],
+    "12_79": [
+      0.0,
+      20.0
+    ],
+    "12_80": [
+      0.0,
+      20.0
+    ],
+    "12_82": [
+      11.25,
+      20.0
+    ],
+    "12_83": [
+      1.23,
+      20.0
+    ],
+    "12_85": [
+      0.0,
+      17.52
+    ],
+    "12_86": [
+      0.0,
+      15.57
+    ],
+    "12_94": [
+      0.0,
+      16.63
+    ],
+    "12_95": [
+      0.0,
+      20.0
+    ],
+    "12_97": [
+      0.0,
+      15.67
+    ],
+    "12_98": [
+      0.0,
+      20.0
+    ],
+    "13_2": [
+      0.0,
+      10.25
+    ],
+    "13_5": [
+      0.0,
+      20.0
+    ],
+    "13_6": [
+      0.0,
+      20.0
+    ],
+    "13_7": [
+      0.0,
+      20.0
+    ],
+    "13_8": [
+      0.0,
+      20.0
+    ],
+    "13_11": [
+      0.0,
+      14.82
+    ],
+    "13_12": [
+      0.0,
+      20.0
+    ],
+    "13_13": [
+      0.0,
+      20.0
+    ],
+    "13_15": [
+      0.0,
+      20.0
+    ],
+    "13_16": [
+      3.51,
+      20.0
+    ],
+    "13_18": [
+      0.56,
+      20.0
+    ],
+    "13_20": [
+      0.0,
+      20.0
+    ],
+    "13_21": [
+      0.0,
+      20.0
+    ],
+    "13_23": [
+      0.0,
+      20.0
+    ],
+    "13_27": [
+      0.96,
+      20.0
+    ],
+    "13_30": [
+      0.0,
+      20.0
+    ],
+    "13_31": [
+      0.0,
+      20.0
+    ],
+    "13_32": [
+      0.0,
+      20.0
+    ],
+    "13_33": [
+      0.0,
+      20.0
+    ],
+    "13_39": [
+      0.0,
+      20.0
+    ],
+    "13_41": [
+      0.0,
+      18.81
+    ],
+    "13_45": [
+      0.0,
+      20.0
+    ],
+    "13_46": [
+      0.0,
+      20.0
+    ],
+    "13_48": [
+      0.0,
+      20.0
+    ],
+    "13_49": [
+      0.0,
+      20.0
+    ],
+    "13_59": [
+      0.0,
+      20.0
+    ],
+    "13_60": [
+      1.09,
+      20.0
+    ],
+    "13_61": [
+      18.35,
+      20.0
+    ],
+    "13_62": [
+      0.0,
+      20.0
+    ],
+    "13_65": [
+      1.92,
+      20.0
+    ],
+    "13_68": [
+      0.0,
+      9.79
+    ],
+    "13_70": [
+      0.0,
+      20.0
+    ],
+    "13_72": [
+      0.0,
+      20.0
+    ],
+    "13_74": [
+      0.0,
+      19.51
+    ],
+    "13_75": [
+      0.0,
+      20.0
+    ],
+    "13_76": [
+      0.0,
+      20.0
+    ],
+    "13_77": [
+      0.0,
+      20.0
+    ],
+    "13_79": [
+      0.0,
+      20.0
+    ],
+    "13_80": [
+      0.0,
+      20.0
+    ],
+    "13_82": [
+      11.25,
+      20.0
+    ],
+    "13_83": [
+      1.23,
+      20.0
+    ],
+    "13_85": [
+      0.0,
+      17.52
+    ],
+    "13_86": [
+      0.0,
+      15.57
+    ],
+    "13_94": [
+      0.0,
+      16.63
+    ],
+    "13_95": [
+      0.0,
+      20.0
+    ],
+    "13_97": [
+      0.0,
+      15.67
+    ],
+    "13_98": [
+      0.0,
+      20.0
+    ],
+    "14_2": [
+      0.0,
+      10.25
+    ],
+    "14_5": [
+      0.0,
+      20.0
+    ],
+    "14_6": [
+      0.0,
+      20.0
+    ],
+    "14_7": [
+      0.0,
+      20.0
+    ],
+    "14_8": [
+      0.0,
+      20.0
+    ],
+    "14_11": [
+      0.0,
+      14.82
+    ],
+    "14_12": [
+      0.0,
+      20.0
+    ],
+    "14_13": [
+      0.0,
+      20.0
+    ],
+    "14_15": [
+      0.0,
+      20.0
+    ],
+    "14_16": [
+      3.51,
+      20.0
+    ],
+    "14_18": [
+      0.56,
+      20.0
+    ],
+    "14_20": [
+      0.0,
+      20.0
+    ],
+    "14_21": [
+      0.0,
+      20.0
+    ],
+    "14_23": [
+      0.0,
+      20.0
+    ],
+    "14_27": [
+      0.96,
+      20.0
+    ],
+    "14_30": [
+      0.0,
+      20.0
+    ],
+    "14_31": [
+      0.0,
+      20.0
+    ],
+    "14_32": [
+      0.0,
+      20.0
+    ],
+    "14_33": [
+      0.0,
+      20.0
+    ],
+    "14_39": [
+      0.0,
+      20.0
+    ],
+    "14_41": [
+      0.0,
+      18.81
+    ],
+    "14_45": [
+      0.0,
+      20.0
+    ],
+    "14_46": [
+      0.0,
+      20.0
+    ],
+    "14_48": [
+      0.0,
+      20.0
+    ],
+    "14_49": [
+      0.0,
+      20.0
+    ],
+    "14_59": [
+      0.0,
+      20.0
+    ],
+    "14_60": [
+      1.09,
+      20.0
+    ],
+    "14_61": [
+      18.35,
+      20.0
+    ],
+    "14_62": [
+      0.0,
+      20.0
+    ],
+    "14_65": [
+      1.92,
+      20.0
+    ],
+    "14_68": [
+      0.0,
+      9.79
+    ],
+    "14_70": [
+      0.0,
+      20.0
+    ],
+    "14_72": [
+      0.0,
+      20.0
+    ],
+    "14_74": [
+      0.0,
+      19.51
+    ],
+    "14_75": [
+      0.0,
+      20.0
+    ],
+    "14_76": [
+      0.0,
+      20.0
+    ],
+    "14_77": [
+      0.0,
+      20.0
+    ],
+    "14_79": [
+      0.0,
+      20.0
+    ],
+    "14_80": [
+      0.0,
+      20.0
+    ],
+    "14_82": [
+      11.25,
+      20.0
+    ],
+    "14_83": [
+      1.23,
+      20.0
+    ],
+    "14_85": [
+      0.0,
+      17.52
+    ],
+    "14_86": [
+      0.0,
+      15.57
+    ],
+    "14_94": [
+      0.0,
+      16.63
+    ],
+    "14_95": [
+      0.0,
+      20.0
+    ],
+    "14_97": [
+      0.0,
+      15.67
+    ],
+    "14_98": [
+      0.0,
+      20.0
+    ],
+    "15_6": [
+      3.41,
+      20.0
+    ],
+    "15_11": [
+      2.45,
+      16.24
+    ],
+    "15_15": [
+      1.73,
+      20.0
+    ],
+    "15_33": [
+      5.22,
+      20.0
+    ],
+    "15_59": [
+      2.48,
+      20.0
+    ],
+    "15_68": [
+      1.99,
+      12.4
+    ],
+    "15_70": [
+      2.05,
+      20.0
+    ],
+    "15_74": [
+      6.85,
+      19.31
+    ],
+    "15_76": [
+      4.16,
+      20.0
+    ],
+    "15_79": [
+      5.2,
+      20.0
+    ],
+    "15_86": [
+      2.42,
+      14.76
+    ],
+    "15_97": [
+      3.79,
+      12.41
+    ],
+    "16_6": [
+      3.41,
+      20.0
+    ],
+    "16_11": [
+      2.45,
+      16.24
+    ],
+    "16_15": [
+      1.73,
+      20.0
+    ],
+    "16_33": [
+      5.22,
+      20.0
+    ],
+    "16_59": [
+      2.48,
+      20.0
+    ],
+    "16_68": [
+      1.99,
+      12.4
+    ],
+    "16_70": [
+      2.05,
+      20.0
+    ],
+    "16_74": [
+      6.85,
+      19.31
+    ],
+    "16_76": [
+      4.16,
+      20.0
+    ],
+    "16_79": [
+      5.2,
+      20.0
+    ],
+    "16_86": [
+      2.42,
+      14.76
+    ],
+    "16_97": [
+      3.79,
+      12.41
+    ],
+    "17_6": [
+      3.41,
+      20.0
+    ],
+    "17_11": [
+      2.45,
+      16.24
+    ],
+    "17_15": [
+      1.73,
+      20.0
+    ],
+    "17_33": [
+      5.22,
+      20.0
+    ],
+    "17_59": [
+      2.48,
+      20.0
+    ],
+    "17_68": [
+      1.99,
+      12.4
+    ],
+    "17_70": [
+      2.05,
+      20.0
+    ],
+    "17_74": [
+      6.85,
+      19.31
+    ],
+    "17_76": [
+      4.16,
+      20.0
+    ],
+    "17_79": [
+      5.2,
+      20.0
+    ],
+    "17_86": [
+      2.42,
+      14.76
+    ],
+    "17_97": [
+      3.79,
+      12.41
+    ],
+    "18_6": [
+      3.41,
+      20.0
+    ],
+    "18_11": [
+      2.45,
+      16.24
+    ],
+    "18_15": [
+      1.73,
+      20.0
+    ],
+    "18_33": [
+      5.22,
+      20.0
+    ],
+    "18_59": [
+      2.48,
+      20.0
+    ],
+    "18_68": [
+      1.99,
+      12.4
+    ],
+    "18_70": [
+      2.05,
+      20.0
+    ],
+    "18_74": [
+      6.85,
+      19.31
+    ],
+    "18_76": [
+      4.16,
+      20.0
+    ],
+    "18_79": [
+      5.2,
+      20.0
+    ],
+    "18_86": [
+      2.42,
+      14.76
+    ],
+    "18_97": [
+      3.79,
+      12.41
+    ],
+    "19_2": [
+      6.11,
+      12.95
+    ],
+    "19_5": [
+      10.12,
+      20.0
+    ],
+    "19_11": [
+      16.94,
+      20.0
+    ],
+    "19_13": [
+      1.21,
+      20.0
+    ],
+    "19_20": [
+      4.0,
+      20.0
+    ],
+    "19_21": [
+      4.24,
+      20.0
+    ],
+    "19_30": [
+      3.43,
+      20.0
+    ],
+    "19_31": [
+      5.41,
+      20.0
+    ],
+    "19_41": [
+      5.55,
+      15.38
+    ],
+    "19_45": [
+      0.87,
+      20.0
+    ],
+    "19_48": [
+      5.43,
+      20.0
+    ],
+    "19_62": [
+      13.67,
+      20.0
+    ],
+    "19_72": [
+      7.57,
+      20.0
+    ],
+    "19_80": [
+      7.43,
+      20.0
+    ],
+    "19_85": [
+      5.26,
+      18.92
+    ],
+    "19_86": [
+      16.88,
+      20.0
+    ],
+    "19_94": [
+      2.48,
+      17.4
+    ],
+    "19_95": [
+      14.44,
+      20.0
+    ],
+    "19_97": [
+      16.74,
+      19.15
+    ],
+    "20_2": [
+      6.11,
+      12.95
+    ],
+    "20_5": [
+      10.12,
+      20.0
+    ],
+    "20_11": [
+      16.94,
+      20.0
+    ],
+    "20_13": [
+      1.21,
+      20.0
+    ],
+    "20_20": [
+      4.0,
+      20.0
+    ],
+    "20_21": [
+      4.24,
+      20.0
+    ],
+    "20_30": [
+      3.43,
+      20.0
+    ],
+    "20_31": [
+      5.41,
+      20.0
+    ],
+    "20_41": [
+      5.55,
+      15.38
+    ],
+    "20_45": [
+      0.87,
+      20.0
+    ],
+    "20_48": [
+      5.43,
+      20.0
+    ],
+    "20_62": [
+      13.67,
+      20.0
+    ],
+    "20_72": [
+      7.57,
+      20.0
+    ],
+    "20_80": [
+      7.43,
+      20.0
+    ],
+    "20_85": [
+      5.26,
+      18.92
+    ],
+    "20_86": [
+      16.88,
+      20.0
+    ],
+    "20_94": [
+      2.48,
+      17.4
+    ],
+    "20_95": [
+      14.44,
+      20.0
+    ],
+    "20_97": [
+      16.74,
+      19.15
+    ],
+    "21_2": [
+      6.11,
+      12.95
+    ],
+    "21_5": [
+      10.12,
+      20.0
+    ],
+    "21_11": [
+      16.94,
+      20.0
+    ],
+    "21_13": [
+      1.21,
+      20.0
+    ],
+    "21_20": [
+      4.0,
+      20.0
+    ],
+    "21_21": [
+      4.24,
+      20.0
+    ],
+    "21_30": [
+      3.43,
+      20.0
+    ],
+    "21_31": [
+      5.41,
+      20.0
+    ],
+    "21_41": [
+      5.55,
+      15.38
+    ],
+    "21_45": [
+      0.87,
+      20.0
+    ],
+    "21_48": [
+      5.43,
+      20.0
+    ],
+    "21_62": [
+      13.67,
+      20.0
+    ],
+    "21_72": [
+      7.57,
+      20.0
+    ],
+    "21_80": [
+      7.43,
+      20.0
+    ],
+    "21_85": [
+      5.26,
+      18.92
+    ],
+    "21_86": [
+      16.88,
+      20.0
+    ],
+    "21_94": [
+      2.48,
+      17.4
+    ],
+    "21_95": [
+      14.44,
+      20.0
+    ],
+    "21_97": [
+      16.74,
+      19.15
+    ],
+    "22_2": [
+      6.11,
+      12.95
+    ],
+    "22_5": [
+      10.12,
+      20.0
+    ],
+    "22_11": [
+      16.94,
+      20.0
+    ],
+    "22_13": [
+      1.21,
+      20.0
+    ],
+    "22_20": [
+      4.0,
+      20.0
+    ],
+    "22_21": [
+      4.24,
+      20.0
+    ],
+    "22_30": [
+      3.43,
+      20.0
+    ],
+    "22_31": [
+      5.41,
+      20.0
+    ],
+    "22_41": [
+      5.55,
+      15.38
+    ],
+    "22_45": [
+      0.87,
+      20.0
+    ],
+    "22_48": [
+      5.43,
+      20.0
+    ],
+    "22_62": [
+      13.67,
+      20.0
+    ],
+    "22_72": [
+      7.57,
+      20.0
+    ],
+    "22_80": [
+      7.43,
+      20.0
+    ],
+    "22_85": [
+      5.26,
+      18.92
+    ],
+    "22_86": [
+      16.88,
+      20.0
+    ],
+    "22_94": [
+      2.48,
+      17.4
+    ],
+    "22_95": [
+      14.44,
+      20.0
+    ],
+    "22_97": [
+      16.74,
+      19.15
+    ],
+    "23_2": [
+      6.11,
+      12.95
+    ],
+    "23_5": [
+      10.12,
+      20.0
+    ],
+    "23_11": [
+      16.94,
+      20.0
+    ],
+    "23_13": [
+      1.21,
+      20.0
+    ],
+    "23_20": [
+      4.0,
+      20.0
+    ],
+    "23_21": [
+      4.24,
+      20.0
+    ],
+    "23_30": [
+      3.43,
+      20.0
+    ],
+    "23_31": [
+      5.41,
+      20.0
+    ],
+    "23_41": [
+      5.55,
+      15.38
+    ],
+    "23_45": [
+      0.87,
+      20.0
+    ],
+    "23_48": [
+      5.43,
+      20.0
+    ],
+    "23_62": [
+      13.67,
+      20.0
+    ],
+    "23_72": [
+      7.57,
+      20.0
+    ],
+    "23_80": [
+      7.43,
+      20.0
+    ],
+    "23_85": [
+      5.26,
+      18.92
+    ],
+    "23_86": [
+      16.88,
+      20.0
+    ],
+    "23_94": [
+      2.48,
+      17.4
+    ],
+    "23_95": [
+      14.44,
+      20.0
+    ],
+    "23_97": [
+      16.74,
+      19.15
+    ],
+    "24_2": [
+      6.11,
+      12.95
+    ],
+    "24_5": [
+      10.12,
+      20.0
+    ],
+    "24_11": [
+      16.94,
+      20.0
+    ],
+    "24_13": [
+      1.21,
+      20.0
+    ],
+    "24_20": [
+      4.0,
+      20.0
+    ],
+    "24_21": [
+      4.24,
+      20.0
+    ],
+    "24_30": [
+      3.43,
+      20.0
+    ],
+    "24_31": [
+      5.41,
+      20.0
+    ],
+    "24_41": [
+      5.55,
+      15.38
+    ],
+    "24_45": [
+      0.87,
+      20.0
+    ],
+    "24_48": [
+      5.43,
+      20.0
+    ],
+    "24_62": [
+      13.67,
+      20.0
+    ],
+    "24_72": [
+      7.57,
+      20.0
+    ],
+    "24_80": [
+      7.43,
+      20.0
+    ],
+    "24_85": [
+      5.26,
+      18.92
+    ],
+    "24_86": [
+      16.88,
+      20.0
+    ],
+    "24_94": [
+      2.48,
+      17.4
+    ],
+    "24_95": [
+      14.44,
+      20.0
+    ],
+    "24_97": [
+      16.74,
+      19.15
+    ],
+    "25_2": [
+      6.11,
+      12.95
+    ],
+    "25_5": [
+      10.12,
+      20.0
+    ],
+    "25_11": [
+      16.94,
+      20.0
+    ],
+    "25_13": [
+      1.21,
+      20.0
+    ],
+    "25_20": [
+      4.0,
+      20.0
+    ],
+    "25_21": [
+      4.24,
+      20.0
+    ],
+    "25_30": [
+      3.43,
+      20.0
+    ],
+    "25_31": [
+      5.41,
+      20.0
+    ],
+    "25_41": [
+      5.55,
+      15.38
+    ],
+    "25_45": [
+      0.87,
+      20.0
+    ],
+    "25_48": [
+      5.43,
+      20.0
+    ],
+    "25_62": [
+      13.67,
+      20.0
+    ],
+    "25_72": [
+      7.57,
+      20.0
+    ],
+    "25_80": [
+      7.43,
+      20.0
+    ],
+    "25_85": [
+      5.26,
+      18.92
+    ],
+    "25_86": [
+      16.88,
+      20.0
+    ],
+    "25_94": [
+      2.48,
+      17.4
+    ],
+    "25_95": [
+      14.44,
+      20.0
+    ],
+    "25_97": [
+      16.74,
+      19.15
+    ],
+    "26_2": [
+      6.11,
+      12.95
+    ],
+    "26_5": [
+      10.12,
+      20.0
+    ],
+    "26_11": [
+      16.94,
+      20.0
+    ],
+    "26_13": [
+      1.21,
+      20.0
+    ],
+    "26_20": [
+      4.0,
+      20.0
+    ],
+    "26_21": [
+      4.24,
+      20.0
+    ],
+    "26_30": [
+      3.43,
+      20.0
+    ],
+    "26_31": [
+      5.41,
+      20.0
+    ],
+    "26_41": [
+      5.55,
+      15.38
+    ],
+    "26_45": [
+      0.87,
+      20.0
+    ],
+    "26_48": [
+      5.43,
+      20.0
+    ],
+    "26_62": [
+      13.67,
+      20.0
+    ],
+    "26_72": [
+      7.57,
+      20.0
+    ],
+    "26_80": [
+      7.43,
+      20.0
+    ],
+    "26_85": [
+      5.26,
+      18.92
+    ],
+    "26_86": [
+      16.88,
+      20.0
+    ],
+    "26_94": [
+      2.48,
+      17.4
+    ],
+    "26_95": [
+      14.44,
+      20.0
+    ],
+    "26_97": [
+      16.74,
+      19.15
+    ],
+    "27_2": [
+      6.11,
+      12.95
+    ],
+    "27_5": [
+      10.12,
+      20.0
+    ],
+    "27_11": [
+      16.94,
+      20.0
+    ],
+    "27_13": [
+      1.21,
+      20.0
+    ],
+    "27_20": [
+      4.0,
+      20.0
+    ],
+    "27_21": [
+      4.24,
+      20.0
+    ],
+    "27_30": [
+      3.43,
+      20.0
+    ],
+    "27_31": [
+      5.41,
+      20.0
+    ],
+    "27_41": [
+      5.55,
+      15.38
+    ],
+    "27_45": [
+      0.87,
+      20.0
+    ],
+    "27_48": [
+      5.43,
+      20.0
+    ],
+    "27_62": [
+      13.67,
+      20.0
+    ],
+    "27_72": [
+      7.57,
+      20.0
+    ],
+    "27_80": [
+      7.43,
+      20.0
+    ],
+    "27_85": [
+      5.26,
+      18.92
+    ],
+    "27_86": [
+      16.88,
+      20.0
+    ],
+    "27_94": [
+      2.48,
+      17.4
+    ],
+    "27_95": [
+      14.44,
+      20.0
+    ],
+    "27_97": [
+      16.74,
+      19.15
+    ],
+    "28_2": [
+      6.11,
+      12.95
+    ],
+    "28_5": [
+      10.12,
+      20.0
+    ],
+    "28_11": [
+      16.94,
+      20.0
+    ],
+    "28_13": [
+      1.21,
+      20.0
+    ],
+    "28_20": [
+      4.0,
+      20.0
+    ],
+    "28_21": [
+      4.24,
+      20.0
+    ],
+    "28_30": [
+      3.43,
+      20.0
+    ],
+    "28_31": [
+      5.41,
+      20.0
+    ],
+    "28_41": [
+      5.55,
+      15.38
+    ],
+    "28_45": [
+      0.87,
+      20.0
+    ],
+    "28_48": [
+      5.43,
+      20.0
+    ],
+    "28_62": [
+      13.67,
+      20.0
+    ],
+    "28_72": [
+      7.57,
+      20.0
+    ],
+    "28_80": [
+      7.43,
+      20.0
+    ],
+    "28_85": [
+      5.26,
+      18.92
+    ],
+    "28_86": [
+      16.88,
+      20.0
+    ],
+    "28_94": [
+      2.48,
+      17.4
+    ],
+    "28_95": [
+      14.44,
+      20.0
+    ],
+    "28_97": [
+      16.74,
+      19.15
+    ],
+    "29_2": [
+      6.11,
+      12.95
+    ],
+    "29_5": [
+      10.12,
+      20.0
+    ],
+    "29_11": [
+      16.94,
+      20.0
+    ],
+    "29_13": [
+      1.21,
+      20.0
+    ],
+    "29_20": [
+      4.0,
+      20.0
+    ],
+    "29_21": [
+      4.24,
+      20.0
+    ],
+    "29_30": [
+      3.43,
+      20.0
+    ],
+    "29_31": [
+      5.41,
+      20.0
+    ],
+    "29_41": [
+      5.55,
+      15.38
+    ],
+    "29_45": [
+      0.87,
+      20.0
+    ],
+    "29_48": [
+      5.43,
+      20.0
+    ],
+    "29_62": [
+      13.67,
+      20.0
+    ],
+    "29_72": [
+      7.57,
+      20.0
+    ],
+    "29_80": [
+      7.43,
+      20.0
+    ],
+    "29_85": [
+      5.26,
+      18.92
+    ],
+    "29_86": [
+      16.88,
+      20.0
+    ],
+    "29_94": [
+      2.48,
+      17.4
+    ],
+    "29_95": [
+      14.44,
+      20.0
+    ],
+    "29_97": [
+      16.74,
+      19.15
+    ],
+    "30_2": [
+      6.11,
+      12.95
+    ],
+    "30_5": [
+      10.12,
+      20.0
+    ],
+    "30_11": [
+      16.94,
+      20.0
+    ],
+    "30_13": [
+      1.21,
+      20.0
+    ],
+    "30_20": [
+      4.0,
+      20.0
+    ],
+    "30_21": [
+      4.24,
+      20.0
+    ],
+    "30_30": [
+      3.43,
+      20.0
+    ],
+    "30_31": [
+      5.41,
+      20.0
+    ],
+    "30_41": [
+      5.55,
+      15.38
+    ],
+    "30_45": [
+      0.87,
+      20.0
+    ],
+    "30_48": [
+      5.43,
+      20.0
+    ],
+    "30_62": [
+      13.67,
+      20.0
+    ],
+    "30_72": [
+      7.57,
+      20.0
+    ],
+    "30_80": [
+      7.43,
+      20.0
+    ],
+    "30_85": [
+      5.26,
+      18.92
+    ],
+    "30_86": [
+      16.88,
+      20.0
+    ],
+    "30_94": [
+      2.48,
+      17.4
+    ],
+    "30_95": [
+      14.44,
+      20.0
+    ],
+    "30_97": [
+      16.74,
+      19.15
+    ],
+    "31_2": [
+      6.11,
+      12.95
+    ],
+    "31_5": [
+      10.12,
+      20.0
+    ],
+    "31_11": [
+      16.94,
+      20.0
+    ],
+    "31_13": [
+      1.21,
+      20.0
+    ],
+    "31_20": [
+      4.0,
+      20.0
+    ],
+    "31_21": [
+      4.24,
+      20.0
+    ],
+    "31_30": [
+      3.43,
+      20.0
+    ],
+    "31_31": [
+      5.41,
+      20.0
+    ],
+    "31_41": [
+      5.55,
+      15.38
+    ],
+    "31_45": [
+      0.87,
+      20.0
+    ],
+    "31_48": [
+      5.43,
+      20.0
+    ],
+    "31_62": [
+      13.67,
+      20.0
+    ],
+    "31_72": [
+      7.57,
+      20.0
+    ],
+    "31_80": [
+      7.43,
+      20.0
+    ],
+    "31_85": [
+      5.26,
+      18.92
+    ],
+    "31_86": [
+      16.88,
+      20.0
+    ],
+    "31_94": [
+      2.48,
+      17.4
+    ],
+    "31_95": [
+      14.44,
+      20.0
+    ],
+    "31_97": [
+      16.74,
+      19.15
+    ],
+    "32_2": [
+      6.11,
+      12.95
+    ],
+    "32_5": [
+      10.12,
+      20.0
+    ],
+    "32_11": [
+      16.94,
+      20.0
+    ],
+    "32_13": [
+      1.21,
+      20.0
+    ],
+    "32_20": [
+      4.0,
+      20.0
+    ],
+    "32_21": [
+      4.24,
+      20.0
+    ],
+    "32_30": [
+      3.43,
+      20.0
+    ],
+    "32_31": [
+      5.41,
+      20.0
+    ],
+    "32_41": [
+      5.55,
+      15.38
+    ],
+    "32_45": [
+      0.87,
+      20.0
+    ],
+    "32_48": [
+      5.43,
+      20.0
+    ],
+    "32_62": [
+      13.67,
+      20.0
+    ],
+    "32_72": [
+      7.57,
+      20.0
+    ],
+    "32_80": [
+      7.43,
+      20.0
+    ],
+    "32_85": [
+      5.26,
+      18.92
+    ],
+    "32_86": [
+      16.88,
+      20.0
+    ],
+    "32_94": [
+      2.48,
+      17.4
+    ],
+    "32_95": [
+      14.44,
+      20.0
+    ],
+    "32_97": [
+      16.74,
+      19.15
+    ],
+    "33_2": [
+      6.11,
+      12.95
+    ],
+    "33_5": [
+      10.12,
+      20.0
+    ],
+    "33_11": [
+      16.94,
+      20.0
+    ],
+    "33_13": [
+      1.21,
+      20.0
+    ],
+    "33_20": [
+      4.0,
+      20.0
+    ],
+    "33_21": [
+      4.24,
+      20.0
+    ],
+    "33_30": [
+      3.43,
+      20.0
+    ],
+    "33_31": [
+      5.41,
+      20.0
+    ],
+    "33_41": [
+      5.55,
+      15.38
+    ],
+    "33_45": [
+      0.87,
+      20.0
+    ],
+    "33_48": [
+      5.43,
+      20.0
+    ],
+    "33_62": [
+      13.67,
+      20.0
+    ],
+    "33_72": [
+      7.57,
+      20.0
+    ],
+    "33_80": [
+      7.43,
+      20.0
+    ],
+    "33_85": [
+      5.26,
+      18.92
+    ],
+    "33_86": [
+      16.88,
+      20.0
+    ],
+    "33_94": [
+      2.48,
+      17.4
+    ],
+    "33_95": [
+      14.44,
+      20.0
+    ],
+    "33_97": [
+      16.74,
+      19.15
+    ],
+    "34_2": [
+      6.11,
+      12.95
+    ],
+    "34_5": [
+      10.12,
+      20.0
+    ],
+    "34_11": [
+      16.94,
+      20.0
+    ],
+    "34_13": [
+      1.21,
+      20.0
+    ],
+    "34_20": [
+      4.0,
+      20.0
+    ],
+    "34_21": [
+      4.24,
+      20.0
+    ],
+    "34_30": [
+      3.43,
+      20.0
+    ],
+    "34_31": [
+      5.41,
+      20.0
+    ],
+    "34_41": [
+      5.55,
+      15.38
+    ],
+    "34_45": [
+      0.87,
+      20.0
+    ],
+    "34_48": [
+      5.43,
+      20.0
+    ],
+    "34_62": [
+      13.67,
+      20.0
+    ],
+    "34_72": [
+      7.57,
+      20.0
+    ],
+    "34_80": [
+      7.43,
+      20.0
+    ],
+    "34_85": [
+      5.26,
+      18.92
+    ],
+    "34_86": [
+      16.88,
+      20.0
+    ],
+    "34_94": [
+      2.48,
+      17.4
+    ],
+    "34_95": [
+      14.44,
+      20.0
+    ],
+    "34_97": [
+      16.74,
+      19.15
+    ],
+    "35_2": [
+      6.11,
+      12.95
+    ],
+    "35_5": [
+      10.12,
+      20.0
+    ],
+    "35_11": [
+      16.94,
+      20.0
+    ],
+    "35_13": [
+      1.21,
+      20.0
+    ],
+    "35_20": [
+      4.0,
+      20.0
+    ],
+    "35_21": [
+      4.24,
+      20.0
+    ],
+    "35_30": [
+      3.43,
+      20.0
+    ],
+    "35_31": [
+      5.41,
+      20.0
+    ],
+    "35_41": [
+      5.55,
+      15.38
+    ],
+    "35_45": [
+      0.87,
+      20.0
+    ],
+    "35_48": [
+      5.43,
+      20.0
+    ],
+    "35_62": [
+      13.67,
+      20.0
+    ],
+    "35_72": [
+      7.57,
+      20.0
+    ],
+    "35_80": [
+      7.43,
+      20.0
+    ],
+    "35_85": [
+      5.26,
+      18.92
+    ],
+    "35_86": [
+      16.88,
+      20.0
+    ],
+    "35_94": [
+      2.48,
+      17.4
+    ],
+    "35_95": [
+      14.44,
+      20.0
+    ],
+    "35_97": [
+      16.74,
+      19.15
+    ],
+    "36_2": [
+      6.11,
+      12.95
+    ],
+    "36_5": [
+      10.12,
+      20.0
+    ],
+    "36_11": [
+      16.94,
+      20.0
+    ],
+    "36_13": [
+      1.21,
+      20.0
+    ],
+    "36_20": [
+      4.0,
+      20.0
+    ],
+    "36_21": [
+      4.24,
+      20.0
+    ],
+    "36_30": [
+      3.43,
+      20.0
+    ],
+    "36_31": [
+      5.41,
+      20.0
+    ],
+    "36_41": [
+      5.55,
+      15.38
+    ],
+    "36_45": [
+      0.87,
+      20.0
+    ],
+    "36_48": [
+      5.43,
+      20.0
+    ],
+    "36_62": [
+      13.67,
+      20.0
+    ],
+    "36_72": [
+      7.57,
+      20.0
+    ],
+    "36_80": [
+      7.43,
+      20.0
+    ],
+    "36_85": [
+      5.26,
+      18.92
+    ],
+    "36_86": [
+      16.88,
+      20.0
+    ],
+    "36_94": [
+      2.48,
+      17.4
+    ],
+    "36_95": [
+      14.44,
+      20.0
+    ],
+    "36_97": [
+      16.74,
+      19.15
+    ],
+    "37_2": [
+      6.11,
+      12.95
+    ],
+    "37_5": [
+      10.12,
+      20.0
+    ],
+    "37_11": [
+      16.94,
+      20.0
+    ],
+    "37_13": [
+      1.21,
+      20.0
+    ],
+    "37_20": [
+      4.0,
+      20.0
+    ],
+    "37_21": [
+      4.24,
+      20.0
+    ],
+    "37_30": [
+      3.43,
+      20.0
+    ],
+    "37_31": [
+      5.41,
+      20.0
+    ],
+    "37_41": [
+      5.55,
+      15.38
+    ],
+    "37_45": [
+      0.87,
+      20.0
+    ],
+    "37_48": [
+      5.43,
+      20.0
+    ],
+    "37_62": [
+      13.67,
+      20.0
+    ],
+    "37_72": [
+      7.57,
+      20.0
+    ],
+    "37_80": [
+      7.43,
+      20.0
+    ],
+    "37_85": [
+      5.26,
+      18.92
+    ],
+    "37_86": [
+      16.88,
+      20.0
+    ],
+    "37_94": [
+      2.48,
+      17.4
+    ],
+    "37_95": [
+      14.44,
+      20.0
+    ],
+    "37_97": [
+      16.74,
+      19.15
+    ],
+    "38_2": [
+      6.11,
+      12.95
+    ],
+    "38_5": [
+      10.12,
+      20.0
+    ],
+    "38_11": [
+      16.94,
+      20.0
+    ],
+    "38_13": [
+      1.21,
+      20.0
+    ],
+    "38_20": [
+      4.0,
+      20.0
+    ],
+    "38_21": [
+      4.24,
+      20.0
+    ],
+    "38_30": [
+      3.43,
+      20.0
+    ],
+    "38_31": [
+      5.41,
+      20.0
+    ],
+    "38_41": [
+      5.55,
+      15.38
+    ],
+    "38_45": [
+      0.87,
+      20.0
+    ],
+    "38_48": [
+      5.43,
+      20.0
+    ],
+    "38_62": [
+      13.67,
+      20.0
+    ],
+    "38_72": [
+      7.57,
+      20.0
+    ],
+    "38_80": [
+      7.43,
+      20.0
+    ],
+    "38_85": [
+      5.26,
+      18.92
+    ],
+    "38_86": [
+      16.88,
+      20.0
+    ],
+    "38_94": [
+      2.48,
+      17.4
+    ],
+    "38_95": [
+      14.44,
+      20.0
+    ],
+    "38_97": [
+      16.74,
+      19.15
+    ],
+    "39_2": [
+      6.11,
+      12.95
+    ],
+    "39_5": [
+      10.12,
+      20.0
+    ],
+    "39_11": [
+      16.94,
+      20.0
+    ],
+    "39_13": [
+      1.21,
+      20.0
+    ],
+    "39_20": [
+      4.0,
+      20.0
+    ],
+    "39_21": [
+      4.24,
+      20.0
+    ],
+    "39_30": [
+      3.43,
+      20.0
+    ],
+    "39_31": [
+      5.41,
+      20.0
+    ],
+    "39_41": [
+      5.55,
+      15.38
+    ],
+    "39_45": [
+      0.87,
+      20.0
+    ],
+    "39_48": [
+      5.43,
+      20.0
+    ],
+    "39_62": [
+      13.67,
+      20.0
+    ],
+    "39_72": [
+      7.57,
+      20.0
+    ],
+    "39_80": [
+      7.43,
+      20.0
+    ],
+    "39_85": [
+      5.26,
+      18.92
+    ],
+    "39_86": [
+      16.88,
+      20.0
+    ],
+    "39_94": [
+      2.48,
+      17.4
+    ],
+    "39_95": [
+      14.44,
+      20.0
+    ],
+    "39_97": [
+      16.74,
+      19.15
+    ],
+    "40_2": [
+      6.11,
+      12.95
+    ],
+    "40_5": [
+      10.12,
+      20.0
+    ],
+    "40_11": [
+      16.94,
+      20.0
+    ],
+    "40_13": [
+      1.21,
+      20.0
+    ],
+    "40_20": [
+      4.0,
+      20.0
+    ],
+    "40_21": [
+      4.24,
+      20.0
+    ],
+    "40_30": [
+      3.43,
+      20.0
+    ],
+    "40_31": [
+      5.41,
+      20.0
+    ],
+    "40_41": [
+      5.55,
+      15.38
+    ],
+    "40_45": [
+      0.87,
+      20.0
+    ],
+    "40_48": [
+      5.43,
+      20.0
+    ],
+    "40_62": [
+      13.67,
+      20.0
+    ],
+    "40_72": [
+      7.57,
+      20.0
+    ],
+    "40_80": [
+      7.43,
+      20.0
+    ],
+    "40_85": [
+      5.26,
+      18.92
+    ],
+    "40_86": [
+      16.88,
+      20.0
+    ],
+    "40_94": [
+      2.48,
+      17.4
+    ],
+    "40_95": [
+      14.44,
+      20.0
+    ],
+    "40_97": [
+      16.74,
+      19.15
+    ],
+    "41_2": [
+      6.11,
+      12.95
+    ],
+    "41_5": [
+      10.12,
+      20.0
+    ],
+    "41_11": [
+      16.94,
+      20.0
+    ],
+    "41_13": [
+      1.21,
+      20.0
+    ],
+    "41_20": [
+      4.0,
+      20.0
+    ],
+    "41_21": [
+      4.24,
+      20.0
+    ],
+    "41_30": [
+      3.43,
+      20.0
+    ],
+    "41_31": [
+      5.41,
+      20.0
+    ],
+    "41_41": [
+      5.55,
+      15.38
+    ],
+    "41_45": [
+      0.87,
+      20.0
+    ],
+    "41_48": [
+      5.43,
+      20.0
+    ],
+    "41_62": [
+      13.67,
+      20.0
+    ],
+    "41_72": [
+      7.57,
+      20.0
+    ],
+    "41_80": [
+      7.43,
+      20.0
+    ],
+    "41_85": [
+      5.26,
+      18.92
+    ],
+    "41_86": [
+      16.88,
+      20.0
+    ],
+    "41_94": [
+      2.48,
+      17.4
+    ],
+    "41_95": [
+      14.44,
+      20.0
+    ],
+    "41_97": [
+      16.74,
+      19.15
+    ],
+    "42_2": [
+      6.11,
+      12.95
+    ],
+    "42_5": [
+      10.12,
+      20.0
+    ],
+    "42_11": [
+      16.94,
+      20.0
+    ],
+    "42_13": [
+      1.21,
+      20.0
+    ],
+    "42_20": [
+      4.0,
+      20.0
+    ],
+    "42_21": [
+      4.24,
+      20.0
+    ],
+    "42_30": [
+      3.43,
+      20.0
+    ],
+    "42_31": [
+      5.41,
+      20.0
+    ],
+    "42_41": [
+      5.55,
+      15.38
+    ],
+    "42_45": [
+      0.87,
+      20.0
+    ],
+    "42_48": [
+      5.43,
+      20.0
+    ],
+    "42_62": [
+      13.67,
+      20.0
+    ],
+    "42_72": [
+      7.57,
+      20.0
+    ],
+    "42_80": [
+      7.43,
+      20.0
+    ],
+    "42_85": [
+      5.26,
+      18.92
+    ],
+    "42_86": [
+      16.88,
+      20.0
+    ],
+    "42_94": [
+      2.48,
+      17.4
+    ],
+    "42_95": [
+      14.44,
+      20.0
+    ],
+    "42_97": [
+      16.74,
+      19.15
+    ],
+    "43_2": [
+      6.11,
+      12.95
+    ],
+    "43_5": [
+      10.12,
+      20.0
+    ],
+    "43_11": [
+      16.94,
+      20.0
+    ],
+    "43_13": [
+      1.21,
+      20.0
+    ],
+    "43_20": [
+      4.0,
+      20.0
+    ],
+    "43_21": [
+      4.24,
+      20.0
+    ],
+    "43_30": [
+      3.43,
+      20.0
+    ],
+    "43_31": [
+      5.41,
+      20.0
+    ],
+    "43_41": [
+      5.55,
+      15.38
+    ],
+    "43_45": [
+      0.87,
+      20.0
+    ],
+    "43_48": [
+      5.43,
+      20.0
+    ],
+    "43_62": [
+      13.67,
+      20.0
+    ],
+    "43_72": [
+      7.57,
+      20.0
+    ],
+    "43_80": [
+      7.43,
+      20.0
+    ],
+    "43_85": [
+      5.26,
+      18.92
+    ],
+    "43_86": [
+      16.88,
+      20.0
+    ],
+    "43_94": [
+      2.48,
+      17.4
+    ],
+    "43_95": [
+      14.44,
+      20.0
+    ],
+    "43_97": [
+      16.74,
+      19.15
+    ],
+    "44_2": [
+      0.0,
+      7.55
+    ],
+    "44_3": [
+      4.67,
+      20.0
+    ],
+    "44_5": [
+      0.0,
+      20.0
+    ],
+    "44_6": [
+      0.0,
+      20.0
+    ],
+    "44_7": [
+      0.0,
+      20.0
+    ],
+    "44_8": [
+      0.0,
+      20.0
+    ],
+    "44_11": [
+      0.0,
+      20.0
+    ],
+    "44_12": [
+      0.0,
+      20.0
+    ],
+    "44_13": [
+      0.0,
+      20.0
+    ],
+    "44_15": [
+      0.0,
+      20.0
+    ],
+    "44_18": [
+      0.0,
+      20.0
+    ],
+    "44_20": [
+      0.0,
+      20.0
+    ],
+    "44_21": [
+      0.0,
+      20.0
+    ],
+    "44_23": [
+      0.0,
+      20.0
+    ],
+    "44_30": [
+      0.0,
+      20.0
+    ],
+    "44_31": [
+      0.0,
+      20.0
+    ],
+    "44_32": [
+      0.0,
+      20.0
+    ],
+    "44_33": [
+      0.0,
+      20.0
+    ],
+    "44_39": [
+      0.0,
+      20.0
+    ],
+    "44_41": [
+      0.0,
+      20.0
+    ],
+    "44_45": [
+      0.0,
+      20.0
+    ],
+    "44_46": [
+      0.0,
+      20.0
+    ],
+    "44_48": [
+      0.0,
+      20.0
+    ],
+    "44_60": [
+      0.0,
+      20.0
+    ],
+    "44_61": [
+      0.0,
+      20.0
+    ],
+    "44_62": [
+      0.0,
+      20.0
+    ],
+    "44_64": [
+      0.0,
+      20.0
+    ],
+    "44_65": [
+      0.0,
+      20.0
+    ],
+    "44_68": [
+      0.0,
+      7.17
+    ],
+    "44_69": [
+      6.83,
+      20.0
+    ],
+    "44_70": [
+      0.0,
+      20.0
+    ],
+    "44_72": [
+      0.0,
+      20.0
+    ],
+    "44_74": [
+      0.0,
+      20.0
+    ],
+    "44_75": [
+      0.0,
+      20.0
+    ],
+    "44_76": [
+      0.0,
+      20.0
+    ],
+    "44_77": [
+      0.0,
+      20.0
+    ],
+    "44_79": [
+      0.0,
+      20.0
+    ],
+    "44_81": [
+      2.32,
+      20.0
+    ],
+    "44_82": [
+      0.0,
+      20.0
+    ],
+    "44_83": [
+      0.0,
+      20.0
+    ],
+    "44_85": [
+      0.0,
+      20.0
+    ],
+    "44_86": [
+      0.0,
+      20.0
+    ],
+    "44_88": [
+      3.58,
+      20.0
+    ],
+    "44_94": [
+      0.0,
+      20.0
+    ],
+    "44_95": [
+      0.0,
+      20.0
+    ],
+    "44_97": [
+      0.0,
+      20.0
+    ],
+    "45_2": [
+      0.0,
+      7.55
+    ],
+    "45_3": [
+      4.67,
+      20.0
+    ],
+    "45_5": [
+      0.0,
+      20.0
+    ],
+    "45_6": [
+      0.0,
+      20.0
+    ],
+    "45_7": [
+      0.0,
+      20.0
+    ],
+    "45_8": [
+      0.0,
+      20.0
+    ],
+    "45_11": [
+      0.0,
+      20.0
+    ],
+    "45_12": [
+      0.0,
+      20.0
+    ],
+    "45_13": [
+      0.0,
+      20.0
+    ],
+    "45_15": [
+      0.0,
+      20.0
+    ],
+    "45_18": [
+      0.0,
+      20.0
+    ],
+    "45_20": [
+      0.0,
+      20.0
+    ],
+    "45_21": [
+      0.0,
+      20.0
+    ],
+    "45_23": [
+      0.0,
+      20.0
+    ],
+    "45_30": [
+      0.0,
+      20.0
+    ],
+    "45_31": [
+      0.0,
+      20.0
+    ],
+    "45_32": [
+      0.0,
+      20.0
+    ],
+    "45_33": [
+      0.0,
+      20.0
+    ],
+    "45_39": [
+      0.0,
+      20.0
+    ],
+    "45_41": [
+      0.0,
+      20.0
+    ],
+    "45_45": [
+      0.0,
+      20.0
+    ],
+    "45_46": [
+      0.0,
+      20.0
+    ],
+    "45_48": [
+      0.0,
+      20.0
+    ],
+    "45_60": [
+      0.0,
+      20.0
+    ],
+    "45_61": [
+      0.0,
+      20.0
+    ],
+    "45_62": [
+      0.0,
+      20.0
+    ],
+    "45_64": [
+      0.0,
+      20.0
+    ],
+    "45_65": [
+      0.0,
+      20.0
+    ],
+    "45_68": [
+      0.0,
+      7.17
+    ],
+    "45_69": [
+      6.83,
+      20.0
+    ],
+    "45_70": [
+      0.0,
+      20.0
+    ],
+    "45_72": [
+      0.0,
+      20.0
+    ],
+    "45_74": [
+      0.0,
+      20.0
+    ],
+    "45_75": [
+      0.0,
+      20.0
+    ],
+    "45_76": [
+      0.0,
+      20.0
+    ],
+    "45_77": [
+      0.0,
+      20.0
+    ],
+    "45_79": [
+      0.0,
+      20.0
+    ],
+    "45_81": [
+      2.32,
+      20.0
+    ],
+    "45_82": [
+      0.0,
+      20.0
+    ],
+    "45_83": [
+      0.0,
+      20.0
+    ],
+    "45_85": [
+      0.0,
+      20.0
+    ],
+    "45_86": [
+      0.0,
+      20.0
+    ],
+    "45_88": [
+      3.58,
+      20.0
+    ],
+    "45_94": [
+      0.0,
+      20.0
+    ],
+    "45_95": [
+      0.0,
+      20.0
+    ],
+    "45_97": [
+      0.0,
+      20.0
+    ],
+    "46_2": [
+      0.0,
+      7.55
+    ],
+    "46_3": [
+      4.67,
+      20.0
+    ],
+    "46_5": [
+      0.0,
+      20.0
+    ],
+    "46_6": [
+      0.0,
+      20.0
+    ],
+    "46_7": [
+      0.0,
+      20.0
+    ],
+    "46_8": [
+      0.0,
+      20.0
+    ],
+    "46_11": [
+      0.0,
+      20.0
+    ],
+    "46_12": [
+      0.0,
+      20.0
+    ],
+    "46_13": [
+      0.0,
+      20.0
+    ],
+    "46_15": [
+      0.0,
+      20.0
+    ],
+    "46_18": [
+      0.0,
+      20.0
+    ],
+    "46_20": [
+      0.0,
+      20.0
+    ],
+    "46_21": [
+      0.0,
+      20.0
+    ],
+    "46_23": [
+      0.0,
+      20.0
+    ],
+    "46_30": [
+      0.0,
+      20.0
+    ],
+    "46_31": [
+      0.0,
+      20.0
+    ],
+    "46_32": [
+      0.0,
+      20.0
+    ],
+    "46_33": [
+      0.0,
+      20.0
+    ],
+    "46_39": [
+      0.0,
+      20.0
+    ],
+    "46_41": [
+      0.0,
+      20.0
+    ],
+    "46_45": [
+      0.0,
+      20.0
+    ],
+    "46_46": [
+      0.0,
+      20.0
+    ],
+    "46_48": [
+      0.0,
+      20.0
+    ],
+    "46_60": [
+      0.0,
+      20.0
+    ],
+    "46_61": [
+      0.0,
+      20.0
+    ],
+    "46_62": [
+      0.0,
+      20.0
+    ],
+    "46_64": [
+      0.0,
+      20.0
+    ],
+    "46_65": [
+      0.0,
+      20.0
+    ],
+    "46_68": [
+      0.0,
+      7.17
+    ],
+    "46_69": [
+      6.83,
+      20.0
+    ],
+    "46_70": [
+      0.0,
+      20.0
+    ],
+    "46_72": [
+      0.0,
+      20.0
+    ],
+    "46_74": [
+      0.0,
+      20.0
+    ],
+    "46_75": [
+      0.0,
+      20.0
+    ],
+    "46_76": [
+      0.0,
+      20.0
+    ],
+    "46_77": [
+      0.0,
+      20.0
+    ],
+    "46_79": [
+      0.0,
+      20.0
+    ],
+    "46_81": [
+      2.32,
+      20.0
+    ],
+    "46_82": [
+      0.0,
+      20.0
+    ],
+    "46_83": [
+      0.0,
+      20.0
+    ],
+    "46_85": [
+      0.0,
+      20.0
+    ],
+    "46_86": [
+      0.0,
+      20.0
+    ],
+    "46_88": [
+      3.58,
+      20.0
+    ],
+    "46_94": [
+      0.0,
+      20.0
+    ],
+    "46_95": [
+      0.0,
+      20.0
+    ],
+    "46_97": [
+      0.0,
+      20.0
+    ],
+    "47_2": [
+      0.0,
+      7.55
+    ],
+    "47_3": [
+      4.67,
+      20.0
+    ],
+    "47_5": [
+      0.0,
+      20.0
+    ],
+    "47_6": [
+      0.0,
+      20.0
+    ],
+    "47_7": [
+      0.0,
+      20.0
+    ],
+    "47_8": [
+      0.0,
+      20.0
+    ],
+    "47_11": [
+      0.0,
+      20.0
+    ],
+    "47_12": [
+      0.0,
+      20.0
+    ],
+    "47_13": [
+      0.0,
+      20.0
+    ],
+    "47_15": [
+      0.0,
+      20.0
+    ],
+    "47_18": [
+      0.0,
+      20.0
+    ],
+    "47_20": [
+      0.0,
+      20.0
+    ],
+    "47_21": [
+      0.0,
+      20.0
+    ],
+    "47_23": [
+      0.0,
+      20.0
+    ],
+    "47_30": [
+      0.0,
+      20.0
+    ],
+    "47_31": [
+      0.0,
+      20.0
+    ],
+    "47_32": [
+      0.0,
+      20.0
+    ],
+    "47_33": [
+      0.0,
+      20.0
+    ],
+    "47_39": [
+      0.0,
+      20.0
+    ],
+    "47_41": [
+      0.0,
+      20.0
+    ],
+    "47_45": [
+      0.0,
+      20.0
+    ],
+    "47_46": [
+      0.0,
+      20.0
+    ],
+    "47_48": [
+      0.0,
+      20.0
+    ],
+    "47_60": [
+      0.0,
+      20.0
+    ],
+    "47_61": [
+      0.0,
+      20.0
+    ],
+    "47_62": [
+      0.0,
+      20.0
+    ],
+    "47_64": [
+      0.0,
+      20.0
+    ],
+    "47_65": [
+      0.0,
+      20.0
+    ],
+    "47_68": [
+      0.0,
+      7.17
+    ],
+    "47_69": [
+      6.83,
+      20.0
+    ],
+    "47_70": [
+      0.0,
+      20.0
+    ],
+    "47_72": [
+      0.0,
+      20.0
+    ],
+    "47_74": [
+      0.0,
+      20.0
+    ],
+    "47_75": [
+      0.0,
+      20.0
+    ],
+    "47_76": [
+      0.0,
+      20.0
+    ],
+    "47_77": [
+      0.0,
+      20.0
+    ],
+    "47_79": [
+      0.0,
+      20.0
+    ],
+    "47_81": [
+      2.32,
+      20.0
+    ],
+    "47_82": [
+      0.0,
+      20.0
+    ],
+    "47_83": [
+      0.0,
+      20.0
+    ],
+    "47_85": [
+      0.0,
+      20.0
+    ],
+    "47_86": [
+      0.0,
+      20.0
+    ],
+    "47_88": [
+      3.58,
+      20.0
+    ],
+    "47_94": [
+      0.0,
+      20.0
+    ],
+    "47_95": [
+      0.0,
+      20.0
+    ],
+    "47_97": [
+      0.0,
+      20.0
+    ],
+    "48_2": [
+      0.0,
+      7.55
+    ],
+    "48_3": [
+      4.67,
+      20.0
+    ],
+    "48_5": [
+      0.0,
+      20.0
+    ],
+    "48_6": [
+      0.0,
+      20.0
+    ],
+    "48_7": [
+      0.0,
+      20.0
+    ],
+    "48_8": [
+      0.0,
+      20.0
+    ],
+    "48_11": [
+      0.0,
+      20.0
+    ],
+    "48_12": [
+      0.0,
+      20.0
+    ],
+    "48_13": [
+      0.0,
+      20.0
+    ],
+    "48_15": [
+      0.0,
+      20.0
+    ],
+    "48_18": [
+      0.0,
+      20.0
+    ],
+    "48_20": [
+      0.0,
+      20.0
+    ],
+    "48_21": [
+      0.0,
+      20.0
+    ],
+    "48_23": [
+      0.0,
+      20.0
+    ],
+    "48_30": [
+      0.0,
+      20.0
+    ],
+    "48_31": [
+      0.0,
+      20.0
+    ],
+    "48_32": [
+      0.0,
+      20.0
+    ],
+    "48_33": [
+      0.0,
+      20.0
+    ],
+    "48_39": [
+      0.0,
+      20.0
+    ],
+    "48_41": [
+      0.0,
+      20.0
+    ],
+    "48_45": [
+      0.0,
+      20.0
+    ],
+    "48_46": [
+      0.0,
+      20.0
+    ],
+    "48_48": [
+      0.0,
+      20.0
+    ],
+    "48_60": [
+      0.0,
+      20.0
+    ],
+    "48_61": [
+      0.0,
+      20.0
+    ],
+    "48_62": [
+      0.0,
+      20.0
+    ],
+    "48_64": [
+      0.0,
+      20.0
+    ],
+    "48_65": [
+      0.0,
+      20.0
+    ],
+    "48_68": [
+      0.0,
+      7.17
+    ],
+    "48_69": [
+      6.83,
+      20.0
+    ],
+    "48_70": [
+      0.0,
+      20.0
+    ],
+    "48_72": [
+      0.0,
+      20.0
+    ],
+    "48_74": [
+      0.0,
+      20.0
+    ],
+    "48_75": [
+      0.0,
+      20.0
+    ],
+    "48_76": [
+      0.0,
+      20.0
+    ],
+    "48_77": [
+      0.0,
+      20.0
+    ],
+    "48_79": [
+      0.0,
+      20.0
+    ],
+    "48_81": [
+      2.32,
+      20.0
+    ],
+    "48_82": [
+      0.0,
+      20.0
+    ],
+    "48_83": [
+      0.0,
+      20.0
+    ],
+    "48_85": [
+      0.0,
+      20.0
+    ],
+    "48_86": [
+      0.0,
+      20.0
+    ],
+    "48_88": [
+      3.58,
+      20.0
+    ],
+    "48_94": [
+      0.0,
+      20.0
+    ],
+    "48_95": [
+      0.0,
+      20.0
+    ],
+    "48_97": [
+      0.0,
+      20.0
+    ],
+    "49_3": [
+      0.0,
+      20.0
+    ],
+    "49_8": [
+      0.0,
+      20.0
+    ],
+    "49_12": [
+      0.0,
+      20.0
+    ],
+    "49_16": [
+      0.0,
+      20.0
+    ],
+    "49_18": [
+      0.0,
+      20.0
+    ],
+    "49_27": [
+      0.0,
+      20.0
+    ],
+    "49_39": [
+      0.0,
+      20.0
+    ],
+    "49_60": [
+      0.0,
+      20.0
+    ],
+    "49_65": [
+      0.0,
+      20.0
+    ],
+    "49_69": [
+      0.0,
+      20.0
+    ],
+    "49_81": [
+      0.0,
+      20.0
+    ],
+    "49_83": [
+      0.0,
+      20.0
+    ],
+    "49_88": [
+      0.0,
+      20.0
+    ],
+    "50_3": [
+      0.0,
+      20.0
+    ],
+    "50_8": [
+      0.0,
+      20.0
+    ],
+    "50_12": [
+      0.0,
+      20.0
+    ],
+    "50_16": [
+      0.0,
+      20.0
+    ],
+    "50_18": [
+      0.0,
+      20.0
+    ],
+    "50_27": [
+      0.0,
+      20.0
+    ],
+    "50_39": [
+      0.0,
+      20.0
+    ],
+    "50_60": [
+      0.0,
+      20.0
+    ],
+    "50_65": [
+      0.0,
+      20.0
+    ],
+    "50_69": [
+      0.0,
+      20.0
+    ],
+    "50_81": [
+      0.0,
+      20.0
+    ],
+    "50_83": [
+      0.0,
+      20.0
+    ],
+    "50_88": [
+      0.0,
+      20.0
+    ],
+    "51_1": [
+      0.0,
+      20.0
+    ],
+    "51_9": [
+      0.0,
+      17.74
+    ],
+    "51_10": [
+      0.0,
+      20.0
+    ],
+    "51_14": [
+      0.0,
+      20.0
+    ],
+    "51_25": [
+      0.0,
+      20.0
+    ],
+    "51_37": [
+      0.0,
+      20.0
+    ],
+    "51_40": [
+      0.97,
+      20.0
+    ],
+    "51_44": [
+      0.0,
+      8.86
+    ],
+    "51_50": [
+      0.0,
+      20.0
+    ],
+    "51_51": [
+      0.0,
+      20.0
+    ],
+    "51_57": [
+      0.0,
+      20.0
+    ],
+    "51_63": [
+      0.0,
+      20.0
+    ],
+    "51_66": [
+      0.0,
+      14.57
+    ],
+    "51_71": [
+      0.0,
+      20.0
+    ],
+    "51_78": [
+      3.99,
+      20.0
+    ],
+    "51_89": [
+      0.0,
+      20.0
+    ],
+    "51_93": [
+      3.68,
+      20.0
+    ],
+    "51_100": [
+      0.0,
+      20.0
+    ],
+    "52_1": [
+      0.0,
+      20.0
+    ],
+    "52_9": [
+      0.0,
+      17.74
+    ],
+    "52_10": [
+      0.0,
+      20.0
+    ],
+    "52_14": [
+      0.0,
+      20.0
+    ],
+    "52_25": [
+      0.0,
+      20.0
+    ],
+    "52_37": [
+      0.0,
+      20.0
+    ],
+    "52_40": [
+      0.97,
+      20.0
+    ],
+    "52_44": [
+      0.0,
+      8.86
+    ],
+    "52_50": [
+      0.0,
+      20.0
+    ],
+    "52_51": [
+      0.0,
+      20.0
+    ],
+    "52_57": [
+      0.0,
+      20.0
+    ],
+    "52_63": [
+      0.0,
+      20.0
+    ],
+    "52_66": [
+      0.0,
+      14.57
+    ],
+    "52_71": [
+      0.0,
+      20.0
+    ],
+    "52_78": [
+      3.99,
+      20.0
+    ],
+    "52_89": [
+      0.0,
+      20.0
+    ],
+    "52_93": [
+      3.68,
+      20.0
+    ],
+    "52_100": [
+      0.0,
+      20.0
+    ],
+    "53_1": [
+      0.0,
+      20.0
+    ],
+    "53_9": [
+      0.0,
+      17.74
+    ],
+    "53_10": [
+      0.0,
+      20.0
+    ],
+    "53_14": [
+      0.0,
+      20.0
+    ],
+    "53_25": [
+      0.0,
+      20.0
+    ],
+    "53_37": [
+      0.0,
+      20.0
+    ],
+    "53_40": [
+      0.97,
+      20.0
+    ],
+    "53_44": [
+      0.0,
+      8.86
+    ],
+    "53_50": [
+      0.0,
+      20.0
+    ],
+    "53_51": [
+      0.0,
+      20.0
+    ],
+    "53_57": [
+      0.0,
+      20.0
+    ],
+    "53_63": [
+      0.0,
+      20.0
+    ],
+    "53_66": [
+      0.0,
+      14.57
+    ],
+    "53_71": [
+      0.0,
+      20.0
+    ],
+    "53_78": [
+      3.99,
+      20.0
+    ],
+    "53_89": [
+      0.0,
+      20.0
+    ],
+    "53_93": [
+      3.68,
+      20.0
+    ],
+    "53_100": [
+      0.0,
+      20.0
+    ],
+    "54_1": [
+      0.0,
+      20.0
+    ],
+    "54_9": [
+      0.0,
+      17.74
+    ],
+    "54_10": [
+      0.0,
+      20.0
+    ],
+    "54_14": [
+      0.0,
+      20.0
+    ],
+    "54_25": [
+      0.0,
+      20.0
+    ],
+    "54_37": [
+      0.0,
+      20.0
+    ],
+    "54_40": [
+      0.97,
+      20.0
+    ],
+    "54_44": [
+      0.0,
+      8.86
+    ],
+    "54_50": [
+      0.0,
+      20.0
+    ],
+    "54_51": [
+      0.0,
+      20.0
+    ],
+    "54_57": [
+      0.0,
+      20.0
+    ],
+    "54_63": [
+      0.0,
+      20.0
+    ],
+    "54_66": [
+      0.0,
+      14.57
+    ],
+    "54_71": [
+      0.0,
+      20.0
+    ],
+    "54_78": [
+      3.99,
+      20.0
+    ],
+    "54_89": [
+      0.0,
+      20.0
+    ],
+    "54_93": [
+      3.68,
+      20.0
+    ],
+    "54_100": [
+      0.0,
+      20.0
+    ],
+    "55_1": [
+      0.0,
+      20.0
+    ],
+    "55_9": [
+      0.0,
+      17.74
+    ],
+    "55_10": [
+      0.0,
+      20.0
+    ],
+    "55_14": [
+      0.0,
+      20.0
+    ],
+    "55_25": [
+      0.0,
+      20.0
+    ],
+    "55_37": [
+      0.0,
+      20.0
+    ],
+    "55_40": [
+      0.97,
+      20.0
+    ],
+    "55_44": [
+      0.0,
+      8.86
+    ],
+    "55_50": [
+      0.0,
+      20.0
+    ],
+    "55_51": [
+      0.0,
+      20.0
+    ],
+    "55_57": [
+      0.0,
+      20.0
+    ],
+    "55_63": [
+      0.0,
+      20.0
+    ],
+    "55_66": [
+      0.0,
+      14.57
+    ],
+    "55_71": [
+      0.0,
+      20.0
+    ],
+    "55_78": [
+      3.99,
+      20.0
+    ],
+    "55_89": [
+      0.0,
+      20.0
+    ],
+    "55_93": [
+      3.68,
+      20.0
+    ],
+    "55_100": [
+      0.0,
+      20.0
+    ],
+    "56_1": [
+      0.0,
+      20.0
+    ],
+    "56_4": [
+      0.0,
+      17.88
+    ],
+    "56_9": [
+      0.0,
+      20.0
+    ],
+    "56_10": [
+      0.0,
+      20.0
+    ],
+    "56_14": [
+      0.0,
+      20.0
+    ],
+    "56_17": [
+      0.0,
+      20.0
+    ],
+    "56_19": [
+      0.0,
+      20.0
+    ],
+    "56_22": [
+      0.0,
+      15.97
+    ],
+    "56_24": [
+      0.0,
+      20.0
+    ],
+    "56_25": [
+      0.0,
+      20.0
+    ],
+    "56_26": [
+      0.0,
+      20.0
+    ],
+    "56_29": [
+      0.0,
+      20.0
+    ],
+    "56_34": [
+      0.0,
+      14.41
+    ],
+    "56_35": [
+      2.28,
+      20.0
+    ],
+    "56_36": [
+      0.0,
+      20.0
+    ],
+    "56_37": [
+      0.0,
+      20.0
+    ],
+    "56_38": [
+      0.0,
+      20.0
+    ],
+    "56_40": [
+      0.0,
+      20.0
+    ],
+    "56_41": [
+      0.0,
+      17.59
+    ],
+    "56_42": [
+      0.0,
+      11.57
+    ],
+    "56_43": [
+      0.0,
+      19.96
+    ],
+    "56_44": [
+      0.0,
+      20.0
+    ],
+    "56_47": [
+      0.0,
+      18.14
+    ],
+    "56_50": [
+      0.0,
+      20.0
+    ],
+    "56_51": [
+      0.0,
+      20.0
+    ],
+    "56_52": [
+      0.0,
+      13.61
+    ],
+    "56_54": [
+      2.9,
+      20.0
+    ],
+    "56_55": [
+      0.0,
+      20.0
+    ],
+    "56_56": [
+      0.0,
+      20.0
+    ],
+    "56_57": [
+      0.0,
+      20.0
+    ],
+    "56_58": [
+      0.0,
+      20.0
+    ],
+    "56_63": [
+      0.0,
+      20.0
+    ],
+    "56_66": [
+      0.0,
+      20.0
+    ],
+    "56_67": [
+      0.0,
+      20.0
+    ],
+    "56_71": [
+      0.0,
+      20.0
+    ],
+    "56_73": [
+      0.0,
+      15.04
+    ],
+    "56_74": [
+      0.0,
+      17.7
+    ],
+    "56_78": [
+      0.0,
+      20.0
+    ],
+    "56_86": [
+      0.0,
+      13.22
+    ],
+    "56_87": [
+      0.0,
+      20.0
+    ],
+    "56_89": [
+      0.0,
+      20.0
+    ],
+    "56_90": [
+      0.0,
+      20.0
+    ],
+    "56_91": [
+      3.02,
+      20.0
+    ],
+    "56_92": [
+      0.0,
+      20.0
+    ],
+    "56_93": [
+      0.0,
+      20.0
+    ],
+    "56_96": [
+      0.0,
+      20.0
+    ],
+    "56_97": [
+      0.0,
+      12.9
+    ],
+    "56_99": [
+      0.0,
+      20.0
+    ],
+    "56_100": [
+      0.0,
+      20.0
+    ],
+    "57_1": [
+      0.0,
+      20.0
+    ],
+    "57_4": [
+      0.0,
+      17.88
+    ],
+    "57_9": [
+      0.0,
+      20.0
+    ],
+    "57_10": [
+      0.0,
+      20.0
+    ],
+    "57_14": [
+      0.0,
+      20.0
+    ],
+    "57_17": [
+      0.0,
+      20.0
+    ],
+    "57_19": [
+      0.0,
+      20.0
+    ],
+    "57_22": [
+      0.0,
+      15.97
+    ],
+    "57_24": [
+      0.0,
+      20.0
+    ],
+    "57_25": [
+      0.0,
+      20.0
+    ],
+    "57_26": [
+      0.0,
+      20.0
+    ],
+    "57_29": [
+      0.0,
+      20.0
+    ],
+    "57_34": [
+      0.0,
+      14.41
+    ],
+    "57_35": [
+      2.28,
+      20.0
+    ],
+    "57_36": [
+      0.0,
+      20.0
+    ],
+    "57_37": [
+      0.0,
+      20.0
+    ],
+    "57_38": [
+      0.0,
+      20.0
+    ],
+    "57_40": [
+      0.0,
+      20.0
+    ],
+    "57_41": [
+      0.0,
+      17.59
+    ],
+    "57_42": [
+      0.0,
+      11.57
+    ],
+    "57_43": [
+      0.0,
+      19.96
+    ],
+    "57_44": [
+      0.0,
+      20.0
+    ],
+    "57_47": [
+      0.0,
+      18.14
+    ],
+    "57_50": [
+      0.0,
+      20.0
+    ],
+    "57_51": [
+      0.0,
+      20.0
+    ],
+    "57_52": [
+      0.0,
+      13.61
+    ],
+    "57_54": [
+      2.9,
+      20.0
+    ],
+    "57_55": [
+      0.0,
+      20.0
+    ],
+    "57_56": [
+      0.0,
+      20.0
+    ],
+    "57_57": [
+      0.0,
+      20.0
+    ],
+    "57_58": [
+      0.0,
+      20.0
+    ],
+    "57_63": [
+      0.0,
+      20.0
+    ],
+    "57_66": [
+      0.0,
+      20.0
+    ],
+    "57_67": [
+      0.0,
+      20.0
+    ],
+    "57_71": [
+      0.0,
+      20.0
+    ],
+    "57_73": [
+      0.0,
+      15.04
+    ],
+    "57_74": [
+      0.0,
+      17.7
+    ],
+    "57_78": [
+      0.0,
+      20.0
+    ],
+    "57_86": [
+      0.0,
+      13.22
+    ],
+    "57_87": [
+      0.0,
+      20.0
+    ],
+    "57_89": [
+      0.0,
+      20.0
+    ],
+    "57_90": [
+      0.0,
+      20.0
+    ],
+    "57_91": [
+      3.02,
+      20.0
+    ],
+    "57_92": [
+      0.0,
+      20.0
+    ],
+    "57_93": [
+      0.0,
+      20.0
+    ],
+    "57_96": [
+      0.0,
+      20.0
+    ],
+    "57_97": [
+      0.0,
+      12.9
+    ],
+    "57_99": [
+      0.0,
+      20.0
+    ],
+    "57_100": [
+      0.0,
+      20.0
+    ],
+    "58_1": [
+      0.0,
+      20.0
+    ],
+    "58_4": [
+      0.0,
+      17.88
+    ],
+    "58_9": [
+      0.0,
+      20.0
+    ],
+    "58_10": [
+      0.0,
+      20.0
+    ],
+    "58_14": [
+      0.0,
+      20.0
+    ],
+    "58_17": [
+      0.0,
+      20.0
+    ],
+    "58_19": [
+      0.0,
+      20.0
+    ],
+    "58_22": [
+      0.0,
+      15.97
+    ],
+    "58_24": [
+      0.0,
+      20.0
+    ],
+    "58_25": [
+      0.0,
+      20.0
+    ],
+    "58_26": [
+      0.0,
+      20.0
+    ],
+    "58_29": [
+      0.0,
+      20.0
+    ],
+    "58_34": [
+      0.0,
+      14.41
+    ],
+    "58_35": [
+      2.28,
+      20.0
+    ],
+    "58_36": [
+      0.0,
+      20.0
+    ],
+    "58_37": [
+      0.0,
+      20.0
+    ],
+    "58_38": [
+      0.0,
+      20.0
+    ],
+    "58_40": [
+      0.0,
+      20.0
+    ],
+    "58_41": [
+      0.0,
+      17.59
+    ],
+    "58_42": [
+      0.0,
+      11.57
+    ],
+    "58_43": [
+      0.0,
+      19.96
+    ],
+    "58_44": [
+      0.0,
+      20.0
+    ],
+    "58_47": [
+      0.0,
+      18.14
+    ],
+    "58_50": [
+      0.0,
+      20.0
+    ],
+    "58_51": [
+      0.0,
+      20.0
+    ],
+    "58_52": [
+      0.0,
+      13.61
+    ],
+    "58_54": [
+      2.9,
+      20.0
+    ],
+    "58_55": [
+      0.0,
+      20.0
+    ],
+    "58_56": [
+      0.0,
+      20.0
+    ],
+    "58_57": [
+      0.0,
+      20.0
+    ],
+    "58_58": [
+      0.0,
+      20.0
+    ],
+    "58_63": [
+      0.0,
+      20.0
+    ],
+    "58_66": [
+      0.0,
+      20.0
+    ],
+    "58_67": [
+      0.0,
+      20.0
+    ],
+    "58_71": [
+      0.0,
+      20.0
+    ],
+    "58_73": [
+      0.0,
+      15.04
+    ],
+    "58_74": [
+      0.0,
+      17.7
+    ],
+    "58_78": [
+      0.0,
+      20.0
+    ],
+    "58_86": [
+      0.0,
+      13.22
+    ],
+    "58_87": [
+      0.0,
+      20.0
+    ],
+    "58_89": [
+      0.0,
+      20.0
+    ],
+    "58_90": [
+      0.0,
+      20.0
+    ],
+    "58_91": [
+      3.02,
+      20.0
+    ],
+    "58_92": [
+      0.0,
+      20.0
+    ],
+    "58_93": [
+      0.0,
+      20.0
+    ],
+    "58_96": [
+      0.0,
+      20.0
+    ],
+    "58_97": [
+      0.0,
+      12.9
+    ],
+    "58_99": [
+      0.0,
+      20.0
+    ],
+    "58_100": [
+      0.0,
+      20.0
+    ],
+    "59_1": [
+      0.0,
+      20.0
+    ],
+    "59_4": [
+      0.0,
+      17.88
+    ],
+    "59_9": [
+      0.0,
+      20.0
+    ],
+    "59_10": [
+      0.0,
+      20.0
+    ],
+    "59_14": [
+      0.0,
+      20.0
+    ],
+    "59_17": [
+      0.0,
+      20.0
+    ],
+    "59_19": [
+      0.0,
+      20.0
+    ],
+    "59_22": [
+      0.0,
+      15.97
+    ],
+    "59_24": [
+      0.0,
+      20.0
+    ],
+    "59_25": [
+      0.0,
+      20.0
+    ],
+    "59_26": [
+      0.0,
+      20.0
+    ],
+    "59_29": [
+      0.0,
+      20.0
+    ],
+    "59_34": [
+      0.0,
+      14.41
+    ],
+    "59_35": [
+      2.28,
+      20.0
+    ],
+    "59_36": [
+      0.0,
+      20.0
+    ],
+    "59_37": [
+      0.0,
+      20.0
+    ],
+    "59_38": [
+      0.0,
+      20.0
+    ],
+    "59_40": [
+      0.0,
+      20.0
+    ],
+    "59_41": [
+      0.0,
+      17.59
+    ],
+    "59_42": [
+      0.0,
+      11.57
+    ],
+    "59_43": [
+      0.0,
+      19.96
+    ],
+    "59_44": [
+      0.0,
+      20.0
+    ],
+    "59_47": [
+      0.0,
+      18.14
+    ],
+    "59_50": [
+      0.0,
+      20.0
+    ],
+    "59_51": [
+      0.0,
+      20.0
+    ],
+    "59_52": [
+      0.0,
+      13.61
+    ],
+    "59_54": [
+      2.9,
+      20.0
+    ],
+    "59_55": [
+      0.0,
+      20.0
+    ],
+    "59_56": [
+      0.0,
+      20.0
+    ],
+    "59_57": [
+      0.0,
+      20.0
+    ],
+    "59_58": [
+      0.0,
+      20.0
+    ],
+    "59_63": [
+      0.0,
+      20.0
+    ],
+    "59_66": [
+      0.0,
+      20.0
+    ],
+    "59_67": [
+      0.0,
+      20.0
+    ],
+    "59_71": [
+      0.0,
+      20.0
+    ],
+    "59_73": [
+      0.0,
+      15.04
+    ],
+    "59_74": [
+      0.0,
+      17.7
+    ],
+    "59_78": [
+      0.0,
+      20.0
+    ],
+    "59_86": [
+      0.0,
+      13.22
+    ],
+    "59_87": [
+      0.0,
+      20.0
+    ],
+    "59_89": [
+      0.0,
+      20.0
+    ],
+    "59_90": [
+      0.0,
+      20.0
+    ],
+    "59_91": [
+      3.02,
+      20.0
+    ],
+    "59_92": [
+      0.0,
+      20.0
+    ],
+    "59_93": [
+      0.0,
+      20.0
+    ],
+    "59_96": [
+      0.0,
+      20.0
+    ],
+    "59_97": [
+      0.0,
+      12.9
+    ],
+    "59_99": [
+      0.0,
+      20.0
+    ],
+    "59_100": [
+      0.0,
+      20.0
+    ],
+    "60_1": [
+      0.0,
+      20.0
+    ],
+    "60_4": [
+      0.0,
+      17.88
+    ],
+    "60_9": [
+      0.0,
+      20.0
+    ],
+    "60_10": [
+      0.0,
+      20.0
+    ],
+    "60_14": [
+      0.0,
+      20.0
+    ],
+    "60_17": [
+      0.0,
+      20.0
+    ],
+    "60_19": [
+      0.0,
+      20.0
+    ],
+    "60_22": [
+      0.0,
+      15.97
+    ],
+    "60_24": [
+      0.0,
+      20.0
+    ],
+    "60_25": [
+      0.0,
+      20.0
+    ],
+    "60_26": [
+      0.0,
+      20.0
+    ],
+    "60_29": [
+      0.0,
+      20.0
+    ],
+    "60_34": [
+      0.0,
+      14.41
+    ],
+    "60_35": [
+      2.28,
+      20.0
+    ],
+    "60_36": [
+      0.0,
+      20.0
+    ],
+    "60_37": [
+      0.0,
+      20.0
+    ],
+    "60_38": [
+      0.0,
+      20.0
+    ],
+    "60_40": [
+      0.0,
+      20.0
+    ],
+    "60_41": [
+      0.0,
+      17.59
+    ],
+    "60_42": [
+      0.0,
+      11.57
+    ],
+    "60_43": [
+      0.0,
+      19.96
+    ],
+    "60_44": [
+      0.0,
+      20.0
+    ],
+    "60_47": [
+      0.0,
+      18.14
+    ],
+    "60_50": [
+      0.0,
+      20.0
+    ],
+    "60_51": [
+      0.0,
+      20.0
+    ],
+    "60_52": [
+      0.0,
+      13.61
+    ],
+    "60_54": [
+      2.9,
+      20.0
+    ],
+    "60_55": [
+      0.0,
+      20.0
+    ],
+    "60_56": [
+      0.0,
+      20.0
+    ],
+    "60_57": [
+      0.0,
+      20.0
+    ],
+    "60_58": [
+      0.0,
+      20.0
+    ],
+    "60_63": [
+      0.0,
+      20.0
+    ],
+    "60_66": [
+      0.0,
+      20.0
+    ],
+    "60_67": [
+      0.0,
+      20.0
+    ],
+    "60_71": [
+      0.0,
+      20.0
+    ],
+    "60_73": [
+      0.0,
+      15.04
+    ],
+    "60_74": [
+      0.0,
+      17.7
+    ],
+    "60_78": [
+      0.0,
+      20.0
+    ],
+    "60_86": [
+      0.0,
+      13.22
+    ],
+    "60_87": [
+      0.0,
+      20.0
+    ],
+    "60_89": [
+      0.0,
+      20.0
+    ],
+    "60_90": [
+      0.0,
+      20.0
+    ],
+    "60_91": [
+      3.02,
+      20.0
+    ],
+    "60_92": [
+      0.0,
+      20.0
+    ],
+    "60_93": [
+      0.0,
+      20.0
+    ],
+    "60_96": [
+      0.0,
+      20.0
+    ],
+    "60_97": [
+      0.0,
+      12.9
+    ],
+    "60_99": [
+      0.0,
+      20.0
+    ],
+    "60_100": [
+      0.0,
+      20.0
+    ],
+    "61_1": [
+      0.0,
+      20.0
+    ],
+    "61_4": [
+      0.0,
+      17.88
+    ],
+    "61_9": [
+      0.0,
+      20.0
+    ],
+    "61_10": [
+      0.0,
+      20.0
+    ],
+    "61_14": [
+      0.0,
+      20.0
+    ],
+    "61_17": [
+      0.0,
+      20.0
+    ],
+    "61_19": [
+      0.0,
+      20.0
+    ],
+    "61_22": [
+      0.0,
+      15.97
+    ],
+    "61_24": [
+      0.0,
+      20.0
+    ],
+    "61_25": [
+      0.0,
+      20.0
+    ],
+    "61_26": [
+      0.0,
+      20.0
+    ],
+    "61_29": [
+      0.0,
+      20.0
+    ],
+    "61_34": [
+      0.0,
+      14.41
+    ],
+    "61_35": [
+      2.28,
+      20.0
+    ],
+    "61_36": [
+      0.0,
+      20.0
+    ],
+    "61_37": [
+      0.0,
+      20.0
+    ],
+    "61_38": [
+      0.0,
+      20.0
+    ],
+    "61_40": [
+      0.0,
+      20.0
+    ],
+    "61_41": [
+      0.0,
+      17.59
+    ],
+    "61_42": [
+      0.0,
+      11.57
+    ],
+    "61_43": [
+      0.0,
+      19.96
+    ],
+    "61_44": [
+      0.0,
+      20.0
+    ],
+    "61_47": [
+      0.0,
+      18.14
+    ],
+    "61_50": [
+      0.0,
+      20.0
+    ],
+    "61_51": [
+      0.0,
+      20.0
+    ],
+    "61_52": [
+      0.0,
+      13.61
+    ],
+    "61_54": [
+      2.9,
+      20.0
+    ],
+    "61_55": [
+      0.0,
+      20.0
+    ],
+    "61_56": [
+      0.0,
+      20.0
+    ],
+    "61_57": [
+      0.0,
+      20.0
+    ],
+    "61_58": [
+      0.0,
+      20.0
+    ],
+    "61_63": [
+      0.0,
+      20.0
+    ],
+    "61_66": [
+      0.0,
+      20.0
+    ],
+    "61_67": [
+      0.0,
+      20.0
+    ],
+    "61_71": [
+      0.0,
+      20.0
+    ],
+    "61_73": [
+      0.0,
+      15.04
+    ],
+    "61_74": [
+      0.0,
+      17.7
+    ],
+    "61_78": [
+      0.0,
+      20.0
+    ],
+    "61_86": [
+      0.0,
+      13.22
+    ],
+    "61_87": [
+      0.0,
+      20.0
+    ],
+    "61_89": [
+      0.0,
+      20.0
+    ],
+    "61_90": [
+      0.0,
+      20.0
+    ],
+    "61_91": [
+      3.02,
+      20.0
+    ],
+    "61_92": [
+      0.0,
+      20.0
+    ],
+    "61_93": [
+      0.0,
+      20.0
+    ],
+    "61_96": [
+      0.0,
+      20.0
+    ],
+    "61_97": [
+      0.0,
+      12.9
+    ],
+    "61_99": [
+      0.0,
+      20.0
+    ],
+    "61_100": [
+      0.0,
+      20.0
+    ],
+    "62_1": [
+      0.0,
+      20.0
+    ],
+    "62_4": [
+      0.0,
+      17.88
+    ],
+    "62_9": [
+      0.0,
+      20.0
+    ],
+    "62_10": [
+      0.0,
+      20.0
+    ],
+    "62_14": [
+      0.0,
+      20.0
+    ],
+    "62_17": [
+      0.0,
+      20.0
+    ],
+    "62_19": [
+      0.0,
+      20.0
+    ],
+    "62_22": [
+      0.0,
+      15.97
+    ],
+    "62_24": [
+      0.0,
+      20.0
+    ],
+    "62_25": [
+      0.0,
+      20.0
+    ],
+    "62_26": [
+      0.0,
+      20.0
+    ],
+    "62_29": [
+      0.0,
+      20.0
+    ],
+    "62_34": [
+      0.0,
+      14.41
+    ],
+    "62_35": [
+      2.28,
+      20.0
+    ],
+    "62_36": [
+      0.0,
+      20.0
+    ],
+    "62_37": [
+      0.0,
+      20.0
+    ],
+    "62_38": [
+      0.0,
+      20.0
+    ],
+    "62_40": [
+      0.0,
+      20.0
+    ],
+    "62_41": [
+      0.0,
+      17.59
+    ],
+    "62_42": [
+      0.0,
+      11.57
+    ],
+    "62_43": [
+      0.0,
+      19.96
+    ],
+    "62_44": [
+      0.0,
+      20.0
+    ],
+    "62_47": [
+      0.0,
+      18.14
+    ],
+    "62_50": [
+      0.0,
+      20.0
+    ],
+    "62_51": [
+      0.0,
+      20.0
+    ],
+    "62_52": [
+      0.0,
+      13.61
+    ],
+    "62_54": [
+      2.9,
+      20.0
+    ],
+    "62_55": [
+      0.0,
+      20.0
+    ],
+    "62_56": [
+      0.0,
+      20.0
+    ],
+    "62_57": [
+      0.0,
+      20.0
+    ],
+    "62_58": [
+      0.0,
+      20.0
+    ],
+    "62_63": [
+      0.0,
+      20.0
+    ],
+    "62_66": [
+      0.0,
+      20.0
+    ],
+    "62_67": [
+      0.0,
+      20.0
+    ],
+    "62_71": [
+      0.0,
+      20.0
+    ],
+    "62_73": [
+      0.0,
+      15.04
+    ],
+    "62_74": [
+      0.0,
+      17.7
+    ],
+    "62_78": [
+      0.0,
+      20.0
+    ],
+    "62_86": [
+      0.0,
+      13.22
+    ],
+    "62_87": [
+      0.0,
+      20.0
+    ],
+    "62_89": [
+      0.0,
+      20.0
+    ],
+    "62_90": [
+      0.0,
+      20.0
+    ],
+    "62_91": [
+      3.02,
+      20.0
+    ],
+    "62_92": [
+      0.0,
+      20.0
+    ],
+    "62_93": [
+      0.0,
+      20.0
+    ],
+    "62_96": [
+      0.0,
+      20.0
+    ],
+    "62_97": [
+      0.0,
+      12.9
+    ],
+    "62_99": [
+      0.0,
+      20.0
+    ],
+    "62_100": [
+      0.0,
+      20.0
+    ],
+    "63_1": [
+      0.0,
+      20.0
+    ],
+    "63_4": [
+      0.0,
+      17.88
+    ],
+    "63_9": [
+      0.0,
+      20.0
+    ],
+    "63_10": [
+      0.0,
+      20.0
+    ],
+    "63_14": [
+      0.0,
+      20.0
+    ],
+    "63_17": [
+      0.0,
+      20.0
+    ],
+    "63_19": [
+      0.0,
+      20.0
+    ],
+    "63_22": [
+      0.0,
+      15.97
+    ],
+    "63_24": [
+      0.0,
+      20.0
+    ],
+    "63_25": [
+      0.0,
+      20.0
+    ],
+    "63_26": [
+      0.0,
+      20.0
+    ],
+    "63_29": [
+      0.0,
+      20.0
+    ],
+    "63_34": [
+      0.0,
+      14.41
+    ],
+    "63_35": [
+      2.28,
+      20.0
+    ],
+    "63_36": [
+      0.0,
+      20.0
+    ],
+    "63_37": [
+      0.0,
+      20.0
+    ],
+    "63_38": [
+      0.0,
+      20.0
+    ],
+    "63_40": [
+      0.0,
+      20.0
+    ],
+    "63_41": [
+      0.0,
+      17.59
+    ],
+    "63_42": [
+      0.0,
+      11.57
+    ],
+    "63_43": [
+      0.0,
+      19.96
+    ],
+    "63_44": [
+      0.0,
+      20.0
+    ],
+    "63_47": [
+      0.0,
+      18.14
+    ],
+    "63_50": [
+      0.0,
+      20.0
+    ],
+    "63_51": [
+      0.0,
+      20.0
+    ],
+    "63_52": [
+      0.0,
+      13.61
+    ],
+    "63_54": [
+      2.9,
+      20.0
+    ],
+    "63_55": [
+      0.0,
+      20.0
+    ],
+    "63_56": [
+      0.0,
+      20.0
+    ],
+    "63_57": [
+      0.0,
+      20.0
+    ],
+    "63_58": [
+      0.0,
+      20.0
+    ],
+    "63_63": [
+      0.0,
+      20.0
+    ],
+    "63_66": [
+      0.0,
+      20.0
+    ],
+    "63_67": [
+      0.0,
+      20.0
+    ],
+    "63_71": [
+      0.0,
+      20.0
+    ],
+    "63_73": [
+      0.0,
+      15.04
+    ],
+    "63_74": [
+      0.0,
+      17.7
+    ],
+    "63_78": [
+      0.0,
+      20.0
+    ],
+    "63_86": [
+      0.0,
+      13.22
+    ],
+    "63_87": [
+      0.0,
+      20.0
+    ],
+    "63_89": [
+      0.0,
+      20.0
+    ],
+    "63_90": [
+      0.0,
+      20.0
+    ],
+    "63_91": [
+      3.02,
+      20.0
+    ],
+    "63_92": [
+      0.0,
+      20.0
+    ],
+    "63_93": [
+      0.0,
+      20.0
+    ],
+    "63_96": [
+      0.0,
+      20.0
+    ],
+    "63_97": [
+      0.0,
+      12.9
+    ],
+    "63_99": [
+      0.0,
+      20.0
+    ],
+    "63_100": [
+      0.0,
+      20.0
+    ],
+    "64_1": [
+      0.0,
+      20.0
+    ],
+    "64_4": [
+      0.0,
+      17.88
+    ],
+    "64_9": [
+      0.0,
+      20.0
+    ],
+    "64_10": [
+      0.0,
+      20.0
+    ],
+    "64_14": [
+      0.0,
+      20.0
+    ],
+    "64_17": [
+      0.0,
+      20.0
+    ],
+    "64_19": [
+      0.0,
+      20.0
+    ],
+    "64_22": [
+      0.0,
+      15.97
+    ],
+    "64_24": [
+      0.0,
+      20.0
+    ],
+    "64_25": [
+      0.0,
+      20.0
+    ],
+    "64_26": [
+      0.0,
+      20.0
+    ],
+    "64_29": [
+      0.0,
+      20.0
+    ],
+    "64_34": [
+      0.0,
+      14.41
+    ],
+    "64_35": [
+      2.28,
+      20.0
+    ],
+    "64_36": [
+      0.0,
+      20.0
+    ],
+    "64_37": [
+      0.0,
+      20.0
+    ],
+    "64_38": [
+      0.0,
+      20.0
+    ],
+    "64_40": [
+      0.0,
+      20.0
+    ],
+    "64_41": [
+      0.0,
+      17.59
+    ],
+    "64_42": [
+      0.0,
+      11.57
+    ],
+    "64_43": [
+      0.0,
+      19.96
+    ],
+    "64_44": [
+      0.0,
+      20.0
+    ],
+    "64_47": [
+      0.0,
+      18.14
+    ],
+    "64_50": [
+      0.0,
+      20.0
+    ],
+    "64_51": [
+      0.0,
+      20.0
+    ],
+    "64_52": [
+      0.0,
+      13.61
+    ],
+    "64_54": [
+      2.9,
+      20.0
+    ],
+    "64_55": [
+      0.0,
+      20.0
+    ],
+    "64_56": [
+      0.0,
+      20.0
+    ],
+    "64_57": [
+      0.0,
+      20.0
+    ],
+    "64_58": [
+      0.0,
+      20.0
+    ],
+    "64_63": [
+      0.0,
+      20.0
+    ],
+    "64_66": [
+      0.0,
+      20.0
+    ],
+    "64_67": [
+      0.0,
+      20.0
+    ],
+    "64_71": [
+      0.0,
+      20.0
+    ],
+    "64_73": [
+      0.0,
+      15.04
+    ],
+    "64_74": [
+      0.0,
+      17.7
+    ],
+    "64_78": [
+      0.0,
+      20.0
+    ],
+    "64_86": [
+      0.0,
+      13.22
+    ],
+    "64_87": [
+      0.0,
+      20.0
+    ],
+    "64_89": [
+      0.0,
+      20.0
+    ],
+    "64_90": [
+      0.0,
+      20.0
+    ],
+    "64_91": [
+      3.02,
+      20.0
+    ],
+    "64_92": [
+      0.0,
+      20.0
+    ],
+    "64_93": [
+      0.0,
+      20.0
+    ],
+    "64_96": [
+      0.0,
+      20.0
+    ],
+    "64_97": [
+      0.0,
+      12.9
+    ],
+    "64_99": [
+      0.0,
+      20.0
+    ],
+    "64_100": [
+      0.0,
+      20.0
+    ],
+    "65_1": [
+      1.6,
+      15.64
+    ],
+    "65_4": [
+      5.49,
+      16.36
+    ],
+    "65_9": [
+      0.0,
+      20.0
+    ],
+    "65_10": [
+      0.0,
+      20.0
+    ],
+    "65_14": [
+      4.0,
+      20.0
+    ],
+    "65_17": [
+      1.28,
+      20.0
+    ],
+    "65_19": [
+      0.0,
+      20.0
+    ],
+    "65_22": [
+      4.0,
+      17.49
+    ],
+    "65_24": [
+      2.77,
+      20.0
+    ],
+    "65_25": [
+      0.0,
+      20.0
+    ],
+    "65_29": [
+      0.0,
+      20.0
+    ],
+    "65_34": [
+      2.87,
+      15.75
+    ],
+    "65_37": [
+      3.07,
+      20.0
+    ],
+    "65_38": [
+      0.0,
+      20.0
+    ],
+    "65_40": [
+      5.2,
+      20.0
+    ],
+    "65_42": [
+      0.0,
+      13.54
+    ],
+    "65_44": [
+      0.0,
+      20.0
+    ],
+    "65_50": [
+      0.0,
+      20.0
+    ],
+    "65_51": [
+      0.0,
+      20.0
+    ],
+    "65_52": [
+      1.11,
+      13.71
+    ],
+    "65_55": [
+      0.0,
+      20.0
+    ],
+    "65_56": [
+      2.5,
+      20.0
+    ],
+    "65_57": [
+      1.98,
+      20.0
+    ],
+    "65_58": [
+      3.28,
+      20.0
+    ],
+    "65_63": [
+      0.0,
+      20.0
+    ],
+    "65_66": [
+      0.0,
+      20.0
+    ],
+    "65_67": [
+      0.0,
+      20.0
+    ],
+    "65_71": [
+      5.72,
+      20.0
+    ],
+    "65_73": [
+      2.48,
+      15.99
+    ],
+    "65_74": [
+      4.81,
+      17.7
+    ],
+    "65_86": [
+      0.62,
+      13.93
+    ],
+    "65_87": [
+      0.0,
+      20.0
+    ],
+    "65_89": [
+      1.01,
+      20.0
+    ],
+    "65_92": [
+      0.0,
+      20.0
+    ],
+    "65_96": [
+      2.84,
+      20.0
+    ],
+    "65_97": [
+      1.88,
+      14.32
+    ],
+    "65_100": [
+      2.51,
+      20.0
+    ],
+    "66_1": [
+      1.6,
+      15.64
+    ],
+    "66_4": [
+      5.49,
+      16.36
+    ],
+    "66_9": [
+      0.0,
+      20.0
+    ],
+    "66_10": [
+      0.0,
+      20.0
+    ],
+    "66_14": [
+      4.0,
+      20.0
+    ],
+    "66_17": [
+      1.28,
+      20.0
+    ],
+    "66_19": [
+      0.0,
+      20.0
+    ],
+    "66_22": [
+      4.0,
+      17.49
+    ],
+    "66_24": [
+      2.77,
+      20.0
+    ],
+    "66_25": [
+      0.0,
+      20.0
+    ],
+    "66_29": [
+      0.0,
+      20.0
+    ],
+    "66_34": [
+      2.87,
+      15.75
+    ],
+    "66_37": [
+      3.07,
+      20.0
+    ],
+    "66_38": [
+      0.0,
+      20.0
+    ],
+    "66_40": [
+      5.2,
+      20.0
+    ],
+    "66_42": [
+      0.0,
+      13.54
+    ],
+    "66_44": [
+      0.0,
+      20.0
+    ],
+    "66_50": [
+      0.0,
+      20.0
+    ],
+    "66_51": [
+      0.0,
+      20.0
+    ],
+    "66_52": [
+      1.11,
+      13.71
+    ],
+    "66_55": [
+      0.0,
+      20.0
+    ],
+    "66_56": [
+      2.5,
+      20.0
+    ],
+    "66_57": [
+      1.98,
+      20.0
+    ],
+    "66_58": [
+      3.28,
+      20.0
+    ],
+    "66_63": [
+      0.0,
+      20.0
+    ],
+    "66_66": [
+      0.0,
+      20.0
+    ],
+    "66_67": [
+      0.0,
+      20.0
+    ],
+    "66_71": [
+      5.72,
+      20.0
+    ],
+    "66_73": [
+      2.48,
+      15.99
+    ],
+    "66_74": [
+      4.81,
+      17.7
+    ],
+    "66_86": [
+      0.62,
+      13.93
+    ],
+    "66_87": [
+      0.0,
+      20.0
+    ],
+    "66_89": [
+      1.01,
+      20.0
+    ],
+    "66_92": [
+      0.0,
+      20.0
+    ],
+    "66_96": [
+      2.84,
+      20.0
+    ],
+    "66_97": [
+      1.88,
+      14.32
+    ],
+    "66_100": [
+      2.51,
+      20.0
+    ],
+    "67_1": [
+      1.6,
+      15.64
+    ],
+    "67_4": [
+      5.49,
+      16.36
+    ],
+    "67_9": [
+      0.0,
+      20.0
+    ],
+    "67_10": [
+      0.0,
+      20.0
+    ],
+    "67_14": [
+      4.0,
+      20.0
+    ],
+    "67_17": [
+      1.28,
+      20.0
+    ],
+    "67_19": [
+      0.0,
+      20.0
+    ],
+    "67_22": [
+      4.0,
+      17.49
+    ],
+    "67_24": [
+      2.77,
+      20.0
+    ],
+    "67_25": [
+      0.0,
+      20.0
+    ],
+    "67_29": [
+      0.0,
+      20.0
+    ],
+    "67_34": [
+      2.87,
+      15.75
+    ],
+    "67_37": [
+      3.07,
+      20.0
+    ],
+    "67_38": [
+      0.0,
+      20.0
+    ],
+    "67_40": [
+      5.2,
+      20.0
+    ],
+    "67_42": [
+      0.0,
+      13.54
+    ],
+    "67_44": [
+      0.0,
+      20.0
+    ],
+    "67_50": [
+      0.0,
+      20.0
+    ],
+    "67_51": [
+      0.0,
+      20.0
+    ],
+    "67_52": [
+      1.11,
+      13.71
+    ],
+    "67_55": [
+      0.0,
+      20.0
+    ],
+    "67_56": [
+      2.5,
+      20.0
+    ],
+    "67_57": [
+      1.98,
+      20.0
+    ],
+    "67_58": [
+      3.28,
+      20.0
+    ],
+    "67_63": [
+      0.0,
+      20.0
+    ],
+    "67_66": [
+      0.0,
+      20.0
+    ],
+    "67_67": [
+      0.0,
+      20.0
+    ],
+    "67_71": [
+      5.72,
+      20.0
+    ],
+    "67_73": [
+      2.48,
+      15.99
+    ],
+    "67_74": [
+      4.81,
+      17.7
+    ],
+    "67_86": [
+      0.62,
+      13.93
+    ],
+    "67_87": [
+      0.0,
+      20.0
+    ],
+    "67_89": [
+      1.01,
+      20.0
+    ],
+    "67_92": [
+      0.0,
+      20.0
+    ],
+    "67_96": [
+      2.84,
+      20.0
+    ],
+    "67_97": [
+      1.88,
+      14.32
+    ],
+    "67_100": [
+      2.51,
+      20.0
+    ],
+    "68_1": [
+      1.6,
+      15.64
+    ],
+    "68_4": [
+      5.49,
+      16.36
+    ],
+    "68_9": [
+      0.0,
+      20.0
+    ],
+    "68_10": [
+      0.0,
+      20.0
+    ],
+    "68_14": [
+      4.0,
+      20.0
+    ],
+    "68_17": [
+      1.28,
+      20.0
+    ],
+    "68_19": [
+      0.0,
+      20.0
+    ],
+    "68_22": [
+      4.0,
+      17.49
+    ],
+    "68_24": [
+      2.77,
+      20.0
+    ],
+    "68_25": [
+      0.0,
+      20.0
+    ],
+    "68_29": [
+      0.0,
+      20.0
+    ],
+    "68_34": [
+      2.87,
+      15.75
+    ],
+    "68_37": [
+      3.07,
+      20.0
+    ],
+    "68_38": [
+      0.0,
+      20.0
+    ],
+    "68_40": [
+      5.2,
+      20.0
+    ],
+    "68_42": [
+      0.0,
+      13.54
+    ],
+    "68_44": [
+      0.0,
+      20.0
+    ],
+    "68_50": [
+      0.0,
+      20.0
+    ],
+    "68_51": [
+      0.0,
+      20.0
+    ],
+    "68_52": [
+      1.11,
+      13.71
+    ],
+    "68_55": [
+      0.0,
+      20.0
+    ],
+    "68_56": [
+      2.5,
+      20.0
+    ],
+    "68_57": [
+      1.98,
+      20.0
+    ],
+    "68_58": [
+      3.28,
+      20.0
+    ],
+    "68_63": [
+      0.0,
+      20.0
+    ],
+    "68_66": [
+      0.0,
+      20.0
+    ],
+    "68_67": [
+      0.0,
+      20.0
+    ],
+    "68_71": [
+      5.72,
+      20.0
+    ],
+    "68_73": [
+      2.48,
+      15.99
+    ],
+    "68_74": [
+      4.81,
+      17.7
+    ],
+    "68_86": [
+      0.62,
+      13.93
+    ],
+    "68_87": [
+      0.0,
+      20.0
+    ],
+    "68_89": [
+      1.01,
+      20.0
+    ],
+    "68_92": [
+      0.0,
+      20.0
+    ],
+    "68_96": [
+      2.84,
+      20.0
+    ],
+    "68_97": [
+      1.88,
+      14.32
+    ],
+    "68_100": [
+      2.51,
+      20.0
+    ],
+    "69_34": [
+      16.36,
+      20.0
+    ],
+    "69_41": [
+      4.67,
+      17.64
+    ],
+    "69_47": [
+      4.59,
+      17.87
+    ],
+    "69_52": [
+      15.17,
+      20.0
+    ],
+    "69_78": [
+      0.97,
+      20.0
+    ],
+    "70_34": [
+      16.36,
+      20.0
+    ],
+    "70_41": [
+      4.67,
+      17.64
+    ],
+    "70_47": [
+      4.59,
+      17.87
+    ],
+    "70_52": [
+      15.17,
+      20.0
+    ],
+    "70_78": [
+      0.97,
+      20.0
+    ],
+    "71_34": [
+      16.36,
+      20.0
+    ],
+    "71_41": [
+      4.67,
+      17.64
+    ],
+    "71_47": [
+      4.59,
+      17.87
+    ],
+    "71_52": [
+      15.17,
+      20.0
+    ],
+    "71_78": [
+      0.97,
+      20.0
+    ],
+    "72_34": [
+      16.36,
+      20.0
+    ],
+    "72_41": [
+      4.67,
+      17.64
+    ],
+    "72_47": [
+      4.59,
+      17.87
+    ],
+    "72_52": [
+      15.17,
+      20.0
+    ],
+    "72_78": [
+      0.97,
+      20.0
+    ],
+    "73_34": [
+      16.36,
+      20.0
+    ],
+    "73_41": [
+      4.67,
+      17.64
+    ],
+    "73_47": [
+      4.59,
+      17.87
+    ],
+    "73_52": [
+      15.17,
+      20.0
+    ],
+    "73_78": [
+      0.97,
+      20.0
+    ],
+    "74_34": [
+      16.36,
+      20.0
+    ],
+    "74_41": [
+      4.67,
+      17.64
+    ],
+    "74_47": [
+      4.59,
+      17.87
+    ],
+    "74_52": [
+      15.17,
+      20.0
+    ],
+    "74_78": [
+      0.97,
+      20.0
+    ],
+    "75_34": [
+      16.36,
+      20.0
+    ],
+    "75_41": [
+      4.67,
+      17.64
+    ],
+    "75_47": [
+      4.59,
+      17.87
+    ],
+    "75_52": [
+      15.17,
+      20.0
+    ],
+    "75_78": [
+      0.97,
+      20.0
+    ],
+    "76_34": [
+      16.36,
+      20.0
+    ],
+    "76_41": [
+      4.67,
+      17.64
+    ],
+    "76_47": [
+      4.59,
+      17.87
+    ],
+    "76_52": [
+      15.17,
+      20.0
+    ],
+    "76_78": [
+      0.97,
+      20.0
+    ],
+    "77_34": [
+      16.36,
+      20.0
+    ],
+    "77_41": [
+      4.67,
+      17.64
+    ],
+    "77_47": [
+      4.59,
+      17.87
+    ],
+    "77_52": [
+      15.17,
+      20.0
+    ],
+    "77_78": [
+      0.97,
+      20.0
+    ],
+    "78_34": [
+      16.36,
+      20.0
+    ],
+    "78_41": [
+      4.67,
+      17.64
+    ],
+    "78_47": [
+      4.59,
+      17.87
+    ],
+    "78_52": [
+      15.17,
+      20.0
+    ],
+    "78_78": [
+      0.97,
+      20.0
+    ],
+    "79_34": [
+      16.36,
+      20.0
+    ],
+    "79_41": [
+      4.67,
+      17.64
+    ],
+    "79_47": [
+      4.59,
+      17.87
+    ],
+    "79_52": [
+      15.17,
+      20.0
+    ],
+    "79_78": [
+      0.97,
+      20.0
+    ],
+    "80_34": [
+      16.36,
+      20.0
+    ],
+    "80_41": [
+      4.67,
+      17.64
+    ],
+    "80_47": [
+      4.59,
+      17.87
+    ],
+    "80_52": [
+      15.17,
+      20.0
+    ],
+    "80_78": [
+      0.97,
+      20.0
+    ],
+    "81_34": [
+      16.36,
+      20.0
+    ],
+    "81_41": [
+      4.67,
+      17.64
+    ],
+    "81_47": [
+      4.59,
+      17.87
+    ],
+    "81_52": [
+      15.17,
+      20.0
+    ],
+    "81_78": [
+      0.97,
+      20.0
+    ],
+    "82_34": [
+      16.36,
+      20.0
+    ],
+    "82_41": [
+      4.67,
+      17.64
+    ],
+    "82_47": [
+      4.59,
+      17.87
+    ],
+    "82_52": [
+      15.17,
+      20.0
+    ],
+    "82_78": [
+      0.97,
+      20.0
+    ],
+    "83_34": [
+      16.36,
+      20.0
+    ],
+    "83_41": [
+      4.67,
+      17.64
+    ],
+    "83_47": [
+      4.59,
+      17.87
+    ],
+    "83_52": [
+      15.17,
+      20.0
+    ],
+    "83_78": [
+      0.97,
+      20.0
+    ],
+    "84_34": [
+      16.36,
+      20.0
+    ],
+    "84_41": [
+      4.67,
+      17.64
+    ],
+    "84_47": [
+      4.59,
+      17.87
+    ],
+    "84_52": [
+      15.17,
+      20.0
+    ],
+    "84_78": [
+      0.97,
+      20.0
+    ],
+    "85_34": [
+      16.36,
+      20.0
+    ],
+    "85_41": [
+      4.67,
+      17.64
+    ],
+    "85_47": [
+      4.59,
+      17.87
+    ],
+    "85_52": [
+      15.17,
+      20.0
+    ],
+    "85_78": [
+      0.97,
+      20.0
+    ],
+    "86_34": [
+      16.36,
+      20.0
+    ],
+    "86_41": [
+      4.67,
+      17.64
+    ],
+    "86_47": [
+      4.59,
+      17.87
+    ],
+    "86_52": [
+      15.17,
+      20.0
+    ],
+    "86_78": [
+      0.97,
+      20.0
+    ],
+    "87_34": [
+      16.36,
+      20.0
+    ],
+    "87_41": [
+      4.67,
+      17.64
+    ],
+    "87_47": [
+      4.59,
+      17.87
+    ],
+    "87_52": [
+      15.17,
+      20.0
+    ],
+    "87_78": [
+      0.97,
+      20.0
+    ],
+    "88_34": [
+      16.36,
+      20.0
+    ],
+    "88_41": [
+      4.67,
+      17.64
+    ],
+    "88_47": [
+      4.59,
+      17.87
+    ],
+    "88_52": [
+      15.17,
+      20.0
+    ],
+    "88_78": [
+      0.97,
+      20.0
+    ],
+    "89_34": [
+      16.36,
+      20.0
+    ],
+    "89_41": [
+      4.67,
+      17.64
+    ],
+    "89_47": [
+      4.59,
+      17.87
+    ],
+    "89_52": [
+      15.17,
+      20.0
+    ],
+    "89_78": [
+      0.97,
+      20.0
+    ],
+    "90_34": [
+      16.36,
+      20.0
+    ],
+    "90_41": [
+      4.67,
+      17.64
+    ],
+    "90_47": [
+      4.59,
+      17.87
+    ],
+    "90_52": [
+      15.17,
+      20.0
+    ],
+    "90_78": [
+      0.97,
+      20.0
+    ],
+    "91_34": [
+      16.36,
+      20.0
+    ],
+    "91_41": [
+      4.67,
+      17.64
+    ],
+    "91_47": [
+      4.59,
+      17.87
+    ],
+    "91_52": [
+      15.17,
+      20.0
+    ],
+    "91_78": [
+      0.97,
+      20.0
+    ],
+    "92_34": [
+      16.36,
+      20.0
+    ],
+    "92_41": [
+      4.67,
+      17.64
+    ],
+    "92_47": [
+      4.59,
+      17.87
+    ],
+    "92_52": [
+      15.17,
+      20.0
+    ],
+    "92_78": [
+      0.97,
+      20.0
+    ],
+    "93_34": [
+      16.36,
+      20.0
+    ],
+    "93_41": [
+      4.67,
+      17.64
+    ],
+    "93_47": [
+      4.59,
+      17.87
+    ],
+    "93_52": [
+      15.17,
+      20.0
+    ],
+    "93_78": [
+      0.97,
+      20.0
+    ],
+    "94_1": [
+      0.0,
+      20.0
+    ],
+    "94_4": [
+      0.0,
+      20.0
+    ],
+    "94_9": [
+      0.0,
+      20.0
+    ],
+    "94_10": [
+      0.0,
+      20.0
+    ],
+    "94_14": [
+      0.0,
+      20.0
+    ],
+    "94_19": [
+      0.0,
+      20.0
+    ],
+    "94_22": [
+      0.0,
+      20.0
+    ],
+    "94_24": [
+      0.0,
+      20.0
+    ],
+    "94_25": [
+      0.0,
+      20.0
+    ],
+    "94_26": [
+      0.0,
+      20.0
+    ],
+    "94_28": [
+      0.45,
+      20.0
+    ],
+    "94_29": [
+      0.0,
+      20.0
+    ],
+    "94_34": [
+      0.0,
+      20.0
+    ],
+    "94_35": [
+      0.0,
+      20.0
+    ],
+    "94_37": [
+      0.0,
+      20.0
+    ],
+    "94_38": [
+      0.0,
+      20.0
+    ],
+    "94_40": [
+      0.0,
+      20.0
+    ],
+    "94_41": [
+      0.0,
+      20.0
+    ],
+    "94_42": [
+      0.0,
+      9.61
+    ],
+    "94_43": [
+      0.0,
+      13.76
+    ],
+    "94_44": [
+      0.0,
+      19.79
+    ],
+    "94_47": [
+      0.0,
+      20.0
+    ],
+    "94_50": [
+      0.0,
+      20.0
+    ],
+    "94_51": [
+      0.0,
+      20.0
+    ],
+    "94_52": [
+      0.0,
+      20.0
+    ],
+    "94_53": [
+      2.85,
+      20.0
+    ],
+    "94_54": [
+      0.0,
+      20.0
+    ],
+    "94_56": [
+      0.0,
+      20.0
+    ],
+    "94_57": [
+      0.0,
+      20.0
+    ],
+    "94_63": [
+      0.0,
+      20.0
+    ],
+    "94_66": [
+      0.0,
+      20.0
+    ],
+    "94_67": [
+      0.0,
+      20.0
+    ],
+    "94_71": [
+      0.0,
+      20.0
+    ],
+    "94_73": [
+      0.0,
+      20.0
+    ],
+    "94_74": [
+      0.0,
+      20.0
+    ],
+    "94_78": [
+      0.0,
+      20.0
+    ],
+    "94_84": [
+      0.0,
+      20.0
+    ],
+    "94_86": [
+      0.0,
+      20.0
+    ],
+    "94_87": [
+      0.0,
+      20.0
+    ],
+    "94_89": [
+      0.0,
+      20.0
+    ],
+    "94_90": [
+      0.0,
+      20.0
+    ],
+    "94_92": [
+      0.0,
+      20.0
+    ],
+    "94_93": [
+      0.0,
+      20.0
+    ],
+    "94_96": [
+      0.0,
+      20.0
+    ],
+    "94_97": [
+      0.0,
+      20.0
+    ],
+    "94_100": [
+      0.0,
+      20.0
+    ],
+    "95_1": [
+      0.0,
+      20.0
+    ],
+    "95_4": [
+      0.0,
+      20.0
+    ],
+    "95_9": [
+      0.0,
+      20.0
+    ],
+    "95_10": [
+      0.0,
+      20.0
+    ],
+    "95_14": [
+      0.0,
+      20.0
+    ],
+    "95_19": [
+      0.0,
+      20.0
+    ],
+    "95_22": [
+      0.0,
+      20.0
+    ],
+    "95_24": [
+      0.0,
+      20.0
+    ],
+    "95_25": [
+      0.0,
+      20.0
+    ],
+    "95_26": [
+      0.0,
+      20.0
+    ],
+    "95_28": [
+      0.45,
+      20.0
+    ],
+    "95_29": [
+      0.0,
+      20.0
+    ],
+    "95_34": [
+      0.0,
+      20.0
+    ],
+    "95_35": [
+      0.0,
+      20.0
+    ],
+    "95_37": [
+      0.0,
+      20.0
+    ],
+    "95_38": [
+      0.0,
+      20.0
+    ],
+    "95_40": [
+      0.0,
+      20.0
+    ],
+    "95_41": [
+      0.0,
+      20.0
+    ],
+    "95_42": [
+      0.0,
+      9.61
+    ],
+    "95_43": [
+      0.0,
+      13.76
+    ],
+    "95_44": [
+      0.0,
+      19.79
+    ],
+    "95_47": [
+      0.0,
+      20.0
+    ],
+    "95_50": [
+      0.0,
+      20.0
+    ],
+    "95_51": [
+      0.0,
+      20.0
+    ],
+    "95_52": [
+      0.0,
+      20.0
+    ],
+    "95_53": [
+      2.85,
+      20.0
+    ],
+    "95_54": [
+      0.0,
+      20.0
+    ],
+    "95_56": [
+      0.0,
+      20.0
+    ],
+    "95_57": [
+      0.0,
+      20.0
+    ],
+    "95_63": [
+      0.0,
+      20.0
+    ],
+    "95_66": [
+      0.0,
+      20.0
+    ],
+    "95_67": [
+      0.0,
+      20.0
+    ],
+    "95_71": [
+      0.0,
+      20.0
+    ],
+    "95_73": [
+      0.0,
+      20.0
+    ],
+    "95_74": [
+      0.0,
+      20.0
+    ],
+    "95_78": [
+      0.0,
+      20.0
+    ],
+    "95_84": [
+      0.0,
+      20.0
+    ],
+    "95_86": [
+      0.0,
+      20.0
+    ],
+    "95_87": [
+      0.0,
+      20.0
+    ],
+    "95_89": [
+      0.0,
+      20.0
+    ],
+    "95_90": [
+      0.0,
+      20.0
+    ],
+    "95_92": [
+      0.0,
+      20.0
+    ],
+    "95_93": [
+      0.0,
+      20.0
+    ],
+    "95_96": [
+      0.0,
+      20.0
+    ],
+    "95_97": [
+      0.0,
+      20.0
+    ],
+    "95_100": [
+      0.0,
+      20.0
+    ],
+    "96_1": [
+      0.0,
+      20.0
+    ],
+    "96_4": [
+      0.0,
+      20.0
+    ],
+    "96_9": [
+      0.0,
+      20.0
+    ],
+    "96_10": [
+      0.0,
+      20.0
+    ],
+    "96_14": [
+      0.0,
+      20.0
+    ],
+    "96_19": [
+      0.0,
+      20.0
+    ],
+    "96_22": [
+      0.0,
+      20.0
+    ],
+    "96_24": [
+      0.0,
+      20.0
+    ],
+    "96_25": [
+      0.0,
+      20.0
+    ],
+    "96_26": [
+      0.0,
+      20.0
+    ],
+    "96_28": [
+      0.45,
+      20.0
+    ],
+    "96_29": [
+      0.0,
+      20.0
+    ],
+    "96_34": [
+      0.0,
+      20.0
+    ],
+    "96_35": [
+      0.0,
+      20.0
+    ],
+    "96_37": [
+      0.0,
+      20.0
+    ],
+    "96_38": [
+      0.0,
+      20.0
+    ],
+    "96_40": [
+      0.0,
+      20.0
+    ],
+    "96_41": [
+      0.0,
+      20.0
+    ],
+    "96_42": [
+      0.0,
+      9.61
+    ],
+    "96_43": [
+      0.0,
+      13.76
+    ],
+    "96_44": [
+      0.0,
+      19.79
+    ],
+    "96_47": [
+      0.0,
+      20.0
+    ],
+    "96_50": [
+      0.0,
+      20.0
+    ],
+    "96_51": [
+      0.0,
+      20.0
+    ],
+    "96_52": [
+      0.0,
+      20.0
+    ],
+    "96_53": [
+      2.85,
+      20.0
+    ],
+    "96_54": [
+      0.0,
+      20.0
+    ],
+    "96_56": [
+      0.0,
+      20.0
+    ],
+    "96_57": [
+      0.0,
+      20.0
+    ],
+    "96_63": [
+      0.0,
+      20.0
+    ],
+    "96_66": [
+      0.0,
+      20.0
+    ],
+    "96_67": [
+      0.0,
+      20.0
+    ],
+    "96_71": [
+      0.0,
+      20.0
+    ],
+    "96_73": [
+      0.0,
+      20.0
+    ],
+    "96_74": [
+      0.0,
+      20.0
+    ],
+    "96_78": [
+      0.0,
+      20.0
+    ],
+    "96_84": [
+      0.0,
+      20.0
+    ],
+    "96_86": [
+      0.0,
+      20.0
+    ],
+    "96_87": [
+      0.0,
+      20.0
+    ],
+    "96_89": [
+      0.0,
+      20.0
+    ],
+    "96_90": [
+      0.0,
+      20.0
+    ],
+    "96_92": [
+      0.0,
+      20.0
+    ],
+    "96_93": [
+      0.0,
+      20.0
+    ],
+    "96_96": [
+      0.0,
+      20.0
+    ],
+    "96_97": [
+      0.0,
+      20.0
+    ],
+    "96_100": [
+      0.0,
+      20.0
+    ],
+    "97_1": [
+      0.0,
+      20.0
+    ],
+    "97_4": [
+      0.0,
+      20.0
+    ],
+    "97_9": [
+      0.0,
+      20.0
+    ],
+    "97_10": [
+      0.0,
+      20.0
+    ],
+    "97_14": [
+      0.0,
+      20.0
+    ],
+    "97_19": [
+      0.0,
+      20.0
+    ],
+    "97_22": [
+      0.0,
+      20.0
+    ],
+    "97_24": [
+      0.0,
+      20.0
+    ],
+    "97_25": [
+      0.0,
+      20.0
+    ],
+    "97_26": [
+      0.0,
+      20.0
+    ],
+    "97_28": [
+      0.45,
+      20.0
+    ],
+    "97_29": [
+      0.0,
+      20.0
+    ],
+    "97_34": [
+      0.0,
+      20.0
+    ],
+    "97_35": [
+      0.0,
+      20.0
+    ],
+    "97_37": [
+      0.0,
+      20.0
+    ],
+    "97_38": [
+      0.0,
+      20.0
+    ],
+    "97_40": [
+      0.0,
+      20.0
+    ],
+    "97_41": [
+      0.0,
+      20.0
+    ],
+    "97_42": [
+      0.0,
+      9.61
+    ],
+    "97_43": [
+      0.0,
+      13.76
+    ],
+    "97_44": [
+      0.0,
+      19.79
+    ],
+    "97_47": [
+      0.0,
+      20.0
+    ],
+    "97_50": [
+      0.0,
+      20.0
+    ],
+    "97_51": [
+      0.0,
+      20.0
+    ],
+    "97_52": [
+      0.0,
+      20.0
+    ],
+    "97_53": [
+      2.85,
+      20.0
+    ],
+    "97_54": [
+      0.0,
+      20.0
+    ],
+    "97_56": [
+      0.0,
+      20.0
+    ],
+    "97_57": [
+      0.0,
+      20.0
+    ],
+    "97_63": [
+      0.0,
+      20.0
+    ],
+    "97_66": [
+      0.0,
+      20.0
+    ],
+    "97_67": [
+      0.0,
+      20.0
+    ],
+    "97_71": [
+      0.0,
+      20.0
+    ],
+    "97_73": [
+      0.0,
+      20.0
+    ],
+    "97_74": [
+      0.0,
+      20.0
+    ],
+    "97_78": [
+      0.0,
+      20.0
+    ],
+    "97_84": [
+      0.0,
+      20.0
+    ],
+    "97_86": [
+      0.0,
+      20.0
+    ],
+    "97_87": [
+      0.0,
+      20.0
+    ],
+    "97_89": [
+      0.0,
+      20.0
+    ],
+    "97_90": [
+      0.0,
+      20.0
+    ],
+    "97_92": [
+      0.0,
+      20.0
+    ],
+    "97_93": [
+      0.0,
+      20.0
+    ],
+    "97_96": [
+      0.0,
+      20.0
+    ],
+    "97_97": [
+      0.0,
+      20.0
+    ],
+    "97_100": [
+      0.0,
+      20.0
+    ],
+    "98_1": [
+      0.0,
+      20.0
+    ],
+    "98_4": [
+      0.0,
+      20.0
+    ],
+    "98_9": [
+      0.0,
+      20.0
+    ],
+    "98_10": [
+      0.0,
+      20.0
+    ],
+    "98_14": [
+      0.0,
+      20.0
+    ],
+    "98_19": [
+      0.0,
+      20.0
+    ],
+    "98_22": [
+      0.0,
+      20.0
+    ],
+    "98_24": [
+      0.0,
+      20.0
+    ],
+    "98_25": [
+      0.0,
+      20.0
+    ],
+    "98_26": [
+      0.0,
+      20.0
+    ],
+    "98_28": [
+      0.45,
+      20.0
+    ],
+    "98_29": [
+      0.0,
+      20.0
+    ],
+    "98_34": [
+      0.0,
+      20.0
+    ],
+    "98_35": [
+      0.0,
+      20.0
+    ],
+    "98_37": [
+      0.0,
+      20.0
+    ],
+    "98_38": [
+      0.0,
+      20.0
+    ],
+    "98_40": [
+      0.0,
+      20.0
+    ],
+    "98_41": [
+      0.0,
+      20.0
+    ],
+    "98_42": [
+      0.0,
+      9.61
+    ],
+    "98_43": [
+      0.0,
+      13.76
+    ],
+    "98_44": [
+      0.0,
+      19.79
+    ],
+    "98_47": [
+      0.0,
+      20.0
+    ],
+    "98_50": [
+      0.0,
+      20.0
+    ],
+    "98_51": [
+      0.0,
+      20.0
+    ],
+    "98_52": [
+      0.0,
+      20.0
+    ],
+    "98_53": [
+      2.85,
+      20.0
+    ],
+    "98_54": [
+      0.0,
+      20.0
+    ],
+    "98_56": [
+      0.0,
+      20.0
+    ],
+    "98_57": [
+      0.0,
+      20.0
+    ],
+    "98_63": [
+      0.0,
+      20.0
+    ],
+    "98_66": [
+      0.0,
+      20.0
+    ],
+    "98_67": [
+      0.0,
+      20.0
+    ],
+    "98_71": [
+      0.0,
+      20.0
+    ],
+    "98_73": [
+      0.0,
+      20.0
+    ],
+    "98_74": [
+      0.0,
+      20.0
+    ],
+    "98_78": [
+      0.0,
+      20.0
+    ],
+    "98_84": [
+      0.0,
+      20.0
+    ],
+    "98_86": [
+      0.0,
+      20.0
+    ],
+    "98_87": [
+      0.0,
+      20.0
+    ],
+    "98_89": [
+      0.0,
+      20.0
+    ],
+    "98_90": [
+      0.0,
+      20.0
+    ],
+    "98_92": [
+      0.0,
+      20.0
+    ],
+    "98_93": [
+      0.0,
+      20.0
+    ],
+    "98_96": [
+      0.0,
+      20.0
+    ],
+    "98_97": [
+      0.0,
+      20.0
+    ],
+    "98_100": [
+      0.0,
+      20.0
+    ],
+    "99_26": [
+      0.0,
+      20.0
+    ],
+    "99_28": [
+      7.85,
+      20.0
+    ],
+    "99_35": [
+      0.0,
+      20.0
+    ],
+    "99_36": [
+      0.0,
+      20.0
+    ],
+    "99_54": [
+      0.0,
+      20.0
+    ],
+    "99_90": [
+      0.0,
+      5.5
+    ],
+    "99_91": [
+      0.0,
+      20.0
+    ],
+    "99_99": [
+      0.0,
+      20.0
+    ],
+    "100_26": [
+      0.0,
+      20.0
+    ],
+    "100_28": [
+      7.85,
+      20.0
+    ],
+    "100_35": [
+      0.0,
+      20.0
+    ],
+    "100_36": [
+      0.0,
+      20.0
+    ],
+    "100_54": [
+      0.0,
+      20.0
+    ],
+    "100_90": [
+      0.0,
+      5.5
+    ],
+    "100_91": [
+      0.0,
+      20.0
+    ],
+    "100_99": [
+      0.0,
+      20.0
+    ]
+  }
+}
