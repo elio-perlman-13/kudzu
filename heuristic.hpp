@@ -25,7 +25,7 @@ static double score(const Solution& sol, int wid, int tid, double t,
     (void)t;
     (void)wid;
     (void)exclusive_cnt;
-    return sol.threat_score.at(tid);
+    return sol.threat_score.at(tid) * sol.survival.at(tid) * sol.p_ij->at(pair_key(wid, tid));
 }
 
 // ---------------------------------------------------------------------------
