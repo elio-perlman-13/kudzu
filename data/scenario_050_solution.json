@@ -2,10 +2,10 @@
   "assignments": [
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
       "PKill": 0.7,
       "WTATargetID": 69,
@@ -14,121 +14,253 @@
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        5.78
+        0.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 79,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 28,
       "WTAVesselID": 1,
       "WTAWeaponID": 2
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 96,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 2
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 34,
       "WTAVesselID": 1,
       "WTAWeaponID": 3
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 48,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 3
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 38,
       "WTAVesselID": 1,
       "WTAWeaponID": 4
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        5.78
+        0.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 75,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 4
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 12,
       "WTAVesselID": 1,
       "WTAWeaponID": 5
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 14,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 5
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 1,
       "WTAVesselID": 1,
       "WTAWeaponID": 6
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 69,
+      "PKill": 0.75,
+      "WTATargetID": 67,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 6
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 7,
       "WTAVesselID": 1,
       "WTAWeaponID": 7
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        5.78
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 73,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 7
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 69,
+      "WTATargetID": 20,
       "WTAVesselID": 1,
       "WTAWeaponID": 8
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        5.78
+        0.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 69,
+      "WTATargetID": 83,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 8
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 46,
       "WTAVesselID": 1,
       "WTAWeaponID": 9
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 69,
+      "WTATargetID": 72,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 9
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 58,
       "WTAVesselID": 1,
       "WTAWeaponID": 10
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.780000000000001,
-      "FireTime": 5.78,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        5.78
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 69,
+      "WTATargetID": 77,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 10
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.14,
+      "FireTime": 9.14,
+      "FireTimes": [
+        9.14
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 6,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 11
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 70,
       "WTAVesselID": 1,
       "WTAWeaponID": 11
     },
@@ -145,189 +277,16 @@
       "WTAWeaponID": 12
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 6.6000000000000005,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        4.4
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 4,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 13
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.799999999999997,
-      "FireTime": 17.599999999999998,
-      "FireTimes": [
-        17.599999999999998
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 19,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 13
-    },
-    {
       "AmmoUsed": 1,
       "EndTime": 11.0,
       "FireTime": 8.8,
       "FireTimes": [
         8.8
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 56,
+      "PKill": 0.6,
+      "WTATargetID": 9,
       "WTAVesselID": 1,
       "WTAWeaponID": 13
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 17.599999999999998,
-      "FireTime": 6.6000000000000005,
-      "FireTimes": [
-        6.6000000000000005,
-        13.2,
-        15.399999999999999
-      ],
-      "PKill": 0.657,
-      "WTATargetID": 74,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 13
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 4.4,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 91,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 13
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
-      "FireTimes": [
-        11.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 93,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 13
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.799999999999997,
-      "FireTime": 17.599999999999998,
-      "FireTimes": [
-        17.599999999999998
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 4,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 6.6000000000000005,
-      "FireTime": 4.4,
-      "FireTimes": [
-        4.4
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 19,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 6.6000000000000005,
-      "FireTimes": [
-        6.6000000000000005,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 39,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
-      "FireTimes": [
-        11.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 74,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 4.4,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 88,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 2.2,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 91,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8,
-        13.2
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 93,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 14
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 11.0,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 18,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 15
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 6.6000000000000005,
-      "FireTime": 4.4,
-      "FireTimes": [
-        4.4
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 19,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 15
     },
     {
       "AmmoUsed": 1,
@@ -337,22 +296,34 @@
         6.6000000000000005
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 56,
+      "WTATargetID": 18,
       "WTAVesselID": 1,
-      "WTAWeaponID": 15
+      "WTAWeaponID": 13
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.599999999999998,
+      "FireTime": 15.399999999999999,
+      "FireTimes": [
+        15.399999999999999
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 21,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 13
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
+      "EndTime": 4.4,
       "FireTime": 0.0,
       "FireTimes": [
         0.0,
-        13.2
+        2.2
       ],
-      "PKill": 0.51,
-      "WTATargetID": 62,
+      "PKill": 0.84,
+      "WTATargetID": 47,
       "WTAVesselID": 1,
-      "WTAWeaponID": 15
+      "WTAWeaponID": 13
     },
     {
       "AmmoUsed": 1,
@@ -362,59 +333,9 @@
         17.599999999999998
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 88,
+      "WTATargetID": 56,
       "WTAVesselID": 1,
-      "WTAWeaponID": 15
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
-      "FireTimes": [
-        11.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 91,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 15
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 93,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 15
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 13.2,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        11.0
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 4,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 16
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 11.0,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 19,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 16
+      "WTAWeaponID": 13
     },
     {
       "AmmoUsed": 1,
@@ -424,34 +345,58 @@
         13.2
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 21,
+      "WTATargetID": 74,
       "WTAVesselID": 1,
-      "WTAWeaponID": 16
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 8.8,
-      "FireTime": 6.6000000000000005,
-      "FireTimes": [
-        6.6000000000000005
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 39,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 16
+      "WTAWeaponID": 13
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
+      "EndTime": 13.2,
       "FireTime": 4.4,
       "FireTimes": [
         4.4,
-        17.599999999999998
+        11.0
       ],
       "PKill": 0.51,
-      "WTATargetID": 56,
+      "WTATargetID": 91,
       "WTAVesselID": 1,
-      "WTAWeaponID": 16
+      "WTAWeaponID": 13
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 4.4,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 9,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.2,
+      "FireTime": 11.0,
+      "FireTimes": [
+        11.0
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 18,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 11.0,
+      "FireTime": 8.8,
+      "FireTimes": [
+        8.8
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 21,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
     },
     {
       "AmmoUsed": 1,
@@ -460,10 +405,282 @@
       "FireTimes": [
         0.0
       ],
+      "PKill": 0.6,
+      "WTATargetID": 44,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 47,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.599999999999998,
+      "FireTime": 4.4,
+      "FireTimes": [
+        4.4,
+        15.399999999999999
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 74,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 15.399999999999999,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005,
+        13.2
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 93,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 14
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.799999999999997,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005,
+        17.599999999999998
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 2.2,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 9,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 6.6000000000000005,
+      "FireTime": 4.4,
+      "FireTimes": [
+        4.4
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 21,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 11.0,
+      "FireTime": 8.8,
+      "FireTimes": [
+        8.8
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 56,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.2,
+      "FireTime": 11.0,
+      "FireTimes": [
+        11.0
+      ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 74,
       "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 4.4,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 85,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.599999999999998,
+      "FireTime": 15.399999999999999,
+      "FireTimes": [
+        15.399999999999999
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 88,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.399999999999999,
+      "FireTime": 13.2,
+      "FireTimes": [
+        13.2
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 91,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 15
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.21,
+      "FireTime": 12.010000000000002,
+      "FireTimes": [
+        12.010000000000002
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
       "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.61,
+      "FireTime": 5.41,
+      "FireTimes": [
+        5.41
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 21,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.41,
+      "FireTime": 14.21,
+      "FireTimes": [
+        14.21
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 56,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 18.61,
+      "FireTime": 7.61,
+      "FireTimes": [
+        7.61,
+        9.81,
+        16.41
+      ],
+      "PKill": 0.657,
+      "WTATargetID": 62,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 3.21,
+      "FireTime": 1.01,
+      "FireTimes": [
+        1.01
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 85,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 5.41,
+      "FireTime": 3.21,
+      "FireTimes": [
+        3.21
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 88,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 16
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 4.4,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 17
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 8.8,
+      "FireTime": 4.4,
+      "FireTimes": [
+        4.4,
+        6.6000000000000005
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 19,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 17
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 13.2,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        11.0
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 47,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 17
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.399999999999999,
+      "FireTime": 13.2,
+      "FireTimes": [
+        13.2
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 62,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 17
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.799999999999997,
+      "FireTime": 8.8,
+      "FireTimes": [
+        8.8,
+        17.599999999999998
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 85,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 17
     },
     {
       "AmmoUsed": 1,
@@ -475,191 +692,204 @@
       "PKill": 0.30000000000000004,
       "WTATargetID": 91,
       "WTAVesselID": 1,
-      "WTAWeaponID": 16
+      "WTAWeaponID": 17
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
+      "EndTime": 12.010000000000002,
+      "FireTime": 9.81,
       "FireTimes": [
-        11.0
+        9.81
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 4,
       "WTAVesselID": 1,
-      "WTAWeaponID": 17
+      "WTAWeaponID": 18
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 11.0,
-      "FireTime": 8.8,
+      "EndTime": 18.61,
+      "FireTime": 16.41,
       "FireTimes": [
-        8.8
+        16.41
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 9,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 18
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.21,
+      "FireTime": 12.010000000000002,
+      "FireTimes": [
+        12.010000000000002
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 18,
+      "WTATargetID": 21,
       "WTAVesselID": 1,
-      "WTAWeaponID": 17
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
-      "FireTime": 6.6000000000000005,
-      "FireTimes": [
-        6.6000000000000005,
-        13.2
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 19,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 17
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        17.599999999999998
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 74,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 17
+      "WTAWeaponID": 18
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 6.6000000000000005,
-      "FireTime": 4.4,
+      "EndTime": 5.41,
+      "FireTime": 3.21,
       "FireTimes": [
-        4.4
+        3.21
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 44,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 18
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.61,
+      "FireTime": 5.41,
+      "FireTimes": [
+        5.41
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 56,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 18
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 3.21,
+      "FireTime": 1.01,
+      "FireTimes": [
+        1.01
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 85,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 18
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.41,
+      "FireTime": 14.21,
+      "FireTimes": [
+        14.21
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 88,
       "WTAVesselID": 1,
-      "WTAWeaponID": 17
+      "WTAWeaponID": 18
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 2.2,
-      "FireTime": 0.0,
+      "EndTime": 9.81,
+      "FireTime": 7.61,
       "FireTimes": [
-        0.0
+        7.61
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 91,
       "WTAVesselID": 1,
-      "WTAWeaponID": 17
+      "WTAWeaponID": 18
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 17.599999999999998,
-      "FireTime": 15.399999999999999,
+      "EndTime": 2.2,
+      "FireTime": 0.0,
       "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 9,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 19
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 17.599999999999998,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2,
+        13.2,
         15.399999999999999
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 93,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 17
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 9.280000000000001,
-      "FireTime": 7.080000000000001,
-      "FireTimes": [
-        7.080000000000001
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 4,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 18
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 15.879999999999999,
-      "FireTime": 13.68,
-      "FireTimes": [
-        13.68
-      ],
-      "PKill": 0.30000000000000004,
+      "PKill": 0.657,
       "WTATargetID": 18,
       "WTAVesselID": 1,
-      "WTAWeaponID": 18
+      "WTAWeaponID": 19
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 2.68,
-      "FireTime": 0.48,
+      "EndTime": 13.2,
+      "FireTime": 11.0,
       "FireTimes": [
-        0.48
+        11.0
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 19,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 19
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 39,
       "WTAVesselID": 1,
-      "WTAWeaponID": 18
+      "WTAWeaponID": 19
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 4.880000000000001,
-      "FireTime": 2.68,
+      "EndTime": 8.8,
+      "FireTime": 6.6000000000000005,
       "FireTimes": [
-        2.68
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 56,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 18
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 7.080000000000001,
-      "FireTime": 4.880000000000001,
-      "FireTimes": [
-        4.880000000000001
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 62,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 18
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 18.08,
-      "FireTime": 15.879999999999999,
-      "FireTimes": [
-        15.879999999999999
+        6.6000000000000005
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 88,
       "WTAVesselID": 1,
-      "WTAWeaponID": 18
+      "WTAWeaponID": 19
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 13.68,
-      "FireTime": 9.280000000000001,
+      "EndTime": 11.0,
+      "FireTime": 4.4,
       "FireTimes": [
-        9.280000000000001,
-        11.48
+        4.4,
+        8.8
       ],
       "PKill": 0.51,
       "WTATargetID": 93,
       "WTAVesselID": 1,
-      "WTAWeaponID": 18
+      "WTAWeaponID": 19
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
-      "FireTime": 6.6000000000000005,
+      "EndTime": 19.799999999999997,
+      "FireTime": 13.2,
       "FireTimes": [
-        6.6000000000000005,
-        13.2
+        13.2,
+        17.599999999999998
       ],
       "PKill": 0.51,
-      "WTATargetID": 21,
+      "WTATargetID": 19,
       "WTAVesselID": 1,
-      "WTAWeaponID": 19
+      "WTAWeaponID": 20
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 13.2,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        11.0
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 44,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 20
     },
     {
       "AmmoUsed": 1,
@@ -669,83 +899,19 @@
         4.4
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 39,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 19
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
       "WTATargetID": 56,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 19
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        17.599999999999998
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 62,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 19
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 2.2,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 88,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 19
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
-      "FireTimes": [
-        11.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 93,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 19
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.2,
-      "FireTime": 11.0,
-      "FireTimes": [
-        11.0
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 4,
       "WTAVesselID": 1,
       "WTAWeaponID": 20
     },
     {
-      "AmmoUsed": 3,
-      "EndTime": 11.0,
+      "AmmoUsed": 1,
+      "EndTime": 4.4,
       "FireTime": 2.2,
       "FireTimes": [
-        2.2,
-        4.4,
-        8.8
+        2.2
       ],
-      "PKill": 0.657,
-      "WTATargetID": 18,
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 62,
       "WTAVesselID": 1,
       "WTAWeaponID": 20
     },
@@ -757,46 +923,61 @@
         6.6000000000000005
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 56,
+      "WTATargetID": 74,
       "WTAVesselID": 1,
       "WTAWeaponID": 20
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 19.799999999999997,
-      "FireTime": 17.599999999999998,
+      "EndTime": 11.0,
+      "FireTime": 8.8,
       "FireTimes": [
-        17.599999999999998
+        8.8
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 62,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 20
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 13.2,
-      "FireTimes": [
-        13.2,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
       "WTATargetID": 88,
       "WTAVesselID": 1,
       "WTAWeaponID": 20
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 2.2,
-      "FireTime": 0.0,
+      "EndTime": 17.599999999999998,
+      "FireTime": 15.399999999999999,
       "FireTimes": [
-        0.0
+        15.399999999999999
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 91,
+      "WTATargetID": 93,
       "WTAVesselID": 1,
       "WTAWeaponID": 20
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 14.049999999999994,
+      "FireTime": 6.35,
+      "FireTimes": [
+        6.35,
+        8.45,
+        13.349999999999994
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 21
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 16.34,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        14.94,
+        15.639999999999999
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 21
     },
     {
       "AmmoUsed": 1,
@@ -806,51 +987,24 @@
         16.34
       ],
       "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 21
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.639999999999999,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 21
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.34,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999
-      ],
-      "PKill": 0.19999999999999996,
       "WTATargetID": 49,
       "WTAVesselID": 1,
       "WTAWeaponID": 21
     },
     {
-      "AmmoUsed": 9,
-      "EndTime": 12.919999999999995,
-      "FireTime": 6.62,
+      "AmmoUsed": 7,
+      "EndTime": 12.649999999999995,
+      "FireTime": 7.05,
       "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996,
-        12.219999999999995
+        7.05,
+        7.75,
+        9.149999999999999,
+        9.849999999999998,
+        10.549999999999997,
+        11.249999999999996,
+        11.949999999999996
       ],
-      "PKill": 0.8657822719999999,
+      "PKill": 0.7902847999999999,
       "WTATargetID": 71,
       "WTAVesselID": 1,
       "WTAWeaponID": 21
@@ -870,8 +1024,8 @@
       "WTAWeaponID": 21
     },
     {
-      "AmmoUsed": 8,
-      "EndTime": 13.619999999999994,
+      "AmmoUsed": 7,
+      "EndTime": 13.349999999999994,
       "FireTime": 1.61,
       "FireTimes": [
         1.61,
@@ -880,195 +1034,14 @@
         3.71,
         4.41,
         5.11,
-        5.8100000000000005,
-        12.919999999999995
+        12.649999999999995
       ],
-      "PKill": 0.8322278399999999,
+      "PKill": 0.7902847999999999,
       "WTATargetID": 100,
       "WTAVesselID": 1,
       "WTAWeaponID": 21
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 19.339999999999996,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999,
-        18.639999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.639999999999999,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.04,
-      "FireTime": 16.34,
-      "FireTimes": [
-        16.34
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 12.219999999999995,
-      "FireTime": 6.62,
-      "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996
-      ],
-      "PKill": 0.8322278399999999,
-      "WTATargetID": 71,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.24,
-      "FireTimes": [
-        17.24,
-        17.939999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.219999999999995,
-        12.919999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 22
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.339999999999996,
-      "FireTime": 18.639999999999997,
-      "FireTimes": [
-        18.639999999999997
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.639999999999999,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.04,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999,
-        16.34
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 49,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 12.219999999999995,
-      "FireTime": 6.62,
-      "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996
-      ],
-      "PKill": 0.8322278399999999,
-      "WTATargetID": 71,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.24,
-      "FireTimes": [
-        17.24,
-        17.939999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.219999999999995,
-        12.919999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 23
-    },
-    {
       "AmmoUsed": 1,
       "EndTime": 17.04,
       "FireTime": 16.34,
@@ -1078,176 +1051,19 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 23,
       "WTAVesselID": 1,
-      "WTAWeaponID": 24
+      "WTAWeaponID": 22
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 15.639999999999999,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 24
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.339999999999996,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999,
-        18.639999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 49,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 24
-    },
-    {
-      "AmmoUsed": 9,
+      "AmmoUsed": 1,
       "EndTime": 12.919999999999995,
-      "FireTime": 6.62,
+      "FireTime": 12.219999999999995,
       "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996,
         12.219999999999995
       ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 71,
+      "PKill": 0.6,
+      "WTATargetID": 29,
       "WTAVesselID": 1,
-      "WTAWeaponID": 24
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.24,
-      "FireTimes": [
-        17.24,
-        17.939999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 24
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 13.619999999999994,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.919999999999995
-      ],
-      "PKill": 0.8322278399999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 24
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 19.339999999999996,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999,
-        16.34,
-        18.639999999999997
-      ],
-      "PKill": 0.4879999999999999,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 25
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.639999999999999,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 25
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
-      "FireTime": 6.62,
-      "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996,
-        12.919999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 71,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 25
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.24,
-      "FireTimes": [
-        17.24,
-        17.939999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 25
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 12.919999999999995,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.219999999999995
-      ],
-      "PKill": 0.8322278399999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 25
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.04,
-      "FireTime": 16.34,
-      "FireTimes": [
-        16.34
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 26
+      "WTAWeaponID": 22
     },
     {
       "AmmoUsed": 3,
@@ -1261,109 +1077,7 @@
       "PKill": 0.4879999999999999,
       "WTATargetID": 40,
       "WTAVesselID": 1,
-      "WTAWeaponID": 26
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.339999999999996,
-      "FireTime": 18.639999999999997,
-      "FireTimes": [
-        18.639999999999997
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 26
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
-      "FireTime": 6.62,
-      "FireTimes": [
-        6.62,
-        7.32,
-        8.02,
-        8.719999999999999,
-        9.419999999999998,
-        10.119999999999997,
-        10.819999999999997,
-        11.519999999999996,
-        12.919999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 71,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 26
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.24,
-      "FireTimes": [
-        17.24,
-        17.939999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 26
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 12.919999999999995,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.219999999999995
-      ],
-      "PKill": 0.8322278399999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 26
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.34,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 27
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 17.04,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94,
-        16.34
-      ],
-      "PKill": 0.4879999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 27
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.939999999999998,
-      "FireTimes": [
-        17.939999999999998
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 27
+      "WTAWeaponID": 22
     },
     {
       "AmmoUsed": 8,
@@ -1382,68 +1096,78 @@
       "PKill": 0.8322278399999999,
       "WTATargetID": 71,
       "WTAVesselID": 1,
-      "WTAWeaponID": 27
+      "WTAWeaponID": 22
     },
     {
-      "AmmoUsed": 2,
+      "AmmoUsed": 3,
       "EndTime": 19.339999999999996,
       "FireTime": 17.24,
       "FireTimes": [
         17.24,
-        18.639999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 76,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 27
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
-      "FireTime": 1.61,
-      "FireTimes": [
-        1.61,
-        2.31,
-        3.01,
-        3.71,
-        4.41,
-        5.11,
-        5.8100000000000005,
-        12.219999999999995,
-        12.919999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 100,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 27
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 17.04,
-      "FireTime": 14.24,
-      "FireTimes": [
-        14.24,
-        14.94,
-        16.34
-      ],
-      "PKill": 0.4879999999999999,
-      "WTATargetID": 40,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 28
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 19.339999999999996,
-      "FireTime": 15.639999999999999,
-      "FireTimes": [
-        15.639999999999999,
         17.939999999999998,
         18.639999999999997
       ],
       "PKill": 0.4879999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 22
+    },
+    {
+      "AmmoUsed": 8,
+      "EndTime": 13.619999999999994,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11,
+        5.8100000000000005,
+        12.919999999999995
+      ],
+      "PKill": 0.8322278399999999,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 22
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.04,
+      "FireTime": 16.34,
+      "FireTimes": [
+        16.34
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 23
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 15.639999999999999,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        14.94
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 23
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.339999999999996,
+      "FireTime": 15.639999999999999,
+      "FireTimes": [
+        15.639999999999999,
+        18.639999999999997
+      ],
+      "PKill": 0.3599999999999999,
       "WTATargetID": 49,
       "WTAVesselID": 1,
-      "WTAWeaponID": 28
+      "WTAWeaponID": 23
     },
     {
       "AmmoUsed": 10,
@@ -1464,19 +1188,20 @@
       "PKill": 0.8926258175999999,
       "WTATargetID": 71,
       "WTAVesselID": 1,
-      "WTAWeaponID": 28
+      "WTAWeaponID": 23
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 17.939999999999998,
+      "AmmoUsed": 2,
+      "EndTime": 18.639999999999997,
       "FireTime": 17.24,
       "FireTimes": [
-        17.24
+        17.24,
+        17.939999999999998
       ],
-      "PKill": 0.19999999999999996,
+      "PKill": 0.3599999999999999,
       "WTATargetID": 76,
       "WTAVesselID": 1,
-      "WTAWeaponID": 28
+      "WTAWeaponID": 23
     },
     {
       "AmmoUsed": 7,
@@ -1494,7 +1219,7 @@
       "PKill": 0.7902847999999999,
       "WTATargetID": 100,
       "WTAVesselID": 1,
-      "WTAWeaponID": 28
+      "WTAWeaponID": 23
     },
     {
       "AmmoUsed": 1,
@@ -1506,7 +1231,7 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 23,
       "WTAVesselID": 1,
-      "WTAWeaponID": 29
+      "WTAWeaponID": 24
     },
     {
       "AmmoUsed": 3,
@@ -1520,11 +1245,11 @@
       "PKill": 0.4879999999999999,
       "WTATargetID": 40,
       "WTAVesselID": 1,
-      "WTAWeaponID": 29
+      "WTAWeaponID": 24
     },
     {
       "AmmoUsed": 9,
-      "EndTime": 13.619999999999994,
+      "EndTime": 12.919999999999995,
       "FireTime": 6.62,
       "FireTimes": [
         6.62,
@@ -1535,12 +1260,12 @@
         10.119999999999997,
         10.819999999999997,
         11.519999999999996,
-        12.919999999999995
+        12.219999999999995
       ],
       "PKill": 0.8657822719999999,
       "WTATargetID": 71,
       "WTAVesselID": 1,
-      "WTAWeaponID": 29
+      "WTAWeaponID": 24
     },
     {
       "AmmoUsed": 3,
@@ -1554,11 +1279,11 @@
       "PKill": 0.4879999999999999,
       "WTATargetID": 76,
       "WTAVesselID": 1,
-      "WTAWeaponID": 29
+      "WTAWeaponID": 24
     },
     {
       "AmmoUsed": 8,
-      "EndTime": 12.919999999999995,
+      "EndTime": 13.619999999999994,
       "FireTime": 1.61,
       "FireTimes": [
         1.61,
@@ -1568,71 +1293,82 @@
         4.41,
         5.11,
         5.8100000000000005,
-        12.219999999999995
+        12.919999999999995
       ],
       "PKill": 0.8322278399999999,
       "WTATargetID": 100,
       "WTAVesselID": 1,
-      "WTAWeaponID": 29
+      "WTAWeaponID": 24
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 18.639999999999997,
-      "FireTime": 17.939999999999998,
+      "EndTime": 16.34,
+      "FireTime": 15.639999999999999,
       "FireTimes": [
-        17.939999999999998
+        15.639999999999999
       ],
       "PKill": 0.19999999999999996,
       "WTATargetID": 23,
       "WTAVesselID": 1,
-      "WTAWeaponID": 30
+      "WTAWeaponID": 25
     },
     {
-      "AmmoUsed": 4,
+      "AmmoUsed": 2,
+      "EndTime": 10.119999999999997,
+      "FireTime": 8.719999999999999,
+      "FireTimes": [
+        8.719999999999999,
+        9.419999999999998
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 25
+    },
+    {
+      "AmmoUsed": 3,
       "EndTime": 17.04,
       "FireTime": 14.24,
       "FireTimes": [
         14.24,
         14.94,
-        15.639999999999999,
         16.34
       ],
-      "PKill": 0.5903999999999999,
+      "PKill": 0.4879999999999999,
       "WTATargetID": 40,
       "WTAVesselID": 1,
-      "WTAWeaponID": 30
+      "WTAWeaponID": 25
     },
     {
-      "AmmoUsed": 8,
+      "AmmoUsed": 6,
       "EndTime": 12.219999999999995,
       "FireTime": 6.62,
       "FireTimes": [
         6.62,
         7.32,
         8.02,
-        8.719999999999999,
-        9.419999999999998,
         10.119999999999997,
         10.819999999999997,
         11.519999999999996
       ],
-      "PKill": 0.8322278399999999,
+      "PKill": 0.7378559999999998,
       "WTATargetID": 71,
       "WTAVesselID": 1,
-      "WTAWeaponID": 30
+      "WTAWeaponID": 25
     },
     {
-      "AmmoUsed": 2,
+      "AmmoUsed": 3,
       "EndTime": 19.339999999999996,
       "FireTime": 17.24,
       "FireTimes": [
         17.24,
+        17.939999999999998,
         18.639999999999997
       ],
-      "PKill": 0.3599999999999999,
+      "PKill": 0.4879999999999999,
       "WTATargetID": 76,
       "WTAVesselID": 1,
-      "WTAWeaponID": 30
+      "WTAWeaponID": 25
     },
     {
       "AmmoUsed": 9,
@@ -1652,90 +1388,550 @@
       "PKill": 0.8657822719999999,
       "WTATargetID": 100,
       "WTAVesselID": 1,
-      "WTAWeaponID": 30
-    },
-    {
-      "AmmoUsed": 8,
-      "EndTime": 13.979999999999995,
-      "FireTime": 2.08,
-      "FireTimes": [
-        2.08,
-        2.7800000000000002,
-        3.4800000000000004,
-        4.180000000000001,
-        8.38,
-        10.479999999999999,
-        12.579999999999997,
-        13.279999999999996
-      ],
-      "PKill": 0.99934464,
-      "WTATargetID": 45,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 31
+      "WTAWeaponID": 25
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
+      "EndTime": 19.339999999999996,
+      "FireTime": 18.639999999999997,
       "FireTimes": [
-        0.0
+        18.639999999999997
       ],
-      "PKill": 0.4,
-      "WTATargetID": 47,
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
       "WTAVesselID": 1,
-      "WTAWeaponID": 31
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 8.45,
+      "FireTime": 6.35,
+      "FireTimes": [
+        6.35,
+        7.05,
+        7.75
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 16.34,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        14.94,
+        15.639999999999999
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 26
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 1.81,
-      "FireTime": 1.11,
+      "EndTime": 17.04,
+      "FireTime": 16.34,
       "FireTimes": [
-        1.11
+        16.34
       ],
       "PKill": 0.19999999999999996,
       "WTATargetID": 49,
       "WTAVesselID": 1,
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 8,
+      "EndTime": 14.049999999999994,
+      "FireTime": 8.45,
+      "FireTimes": [
+        8.45,
+        9.149999999999999,
+        9.849999999999998,
+        10.549999999999997,
+        11.249999999999996,
+        11.949999999999996,
+        12.649999999999995,
+        13.349999999999994
+      ],
+      "PKill": 0.8322278399999999,
+      "WTATargetID": 71,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.639999999999997,
+      "FireTime": 17.24,
+      "FireTimes": [
+        17.24,
+        17.939999999999998
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 6,
+      "EndTime": 5.8100000000000005,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11
+      ],
+      "PKill": 0.7378559999999998,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 26
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.77,
+      "FireTime": 15.07,
+      "FireTimes": [
+        15.07
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 12.219999999999995,
+      "FireTime": 7.32,
+      "FireTimes": [
+        7.32,
+        10.819999999999997,
+        11.519999999999996
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 16.47,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        15.77
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.169999999999998,
+      "FireTime": 16.47,
+      "FireTimes": [
+        16.47
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 7,
+      "EndTime": 13.619999999999994,
+      "FireTime": 6.62,
+      "FireTimes": [
+        6.62,
+        8.02,
+        8.719999999999999,
+        9.419999999999998,
+        10.119999999999997,
+        12.219999999999995,
+        12.919999999999995
+      ],
+      "PKill": 0.7902847999999999,
+      "WTATargetID": 71,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.339999999999996,
+      "FireTime": 17.24,
+      "FireTimes": [
+        17.24,
+        17.939999999999998,
+        18.639999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 7,
+      "EndTime": 6.510000000000001,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11,
+        5.8100000000000005
+      ],
+      "PKill": 0.7902847999999999,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 27
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.339999999999996,
+      "FireTime": 18.639999999999997,
+      "FireTimes": [
+        18.639999999999997
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 10.819999999999997,
+      "FireTime": 8.02,
+      "FireTimes": [
+        8.02,
+        10.119999999999997
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 17.04,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        14.94,
+        16.34
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.34,
+      "FireTime": 15.639999999999999,
+      "FireTimes": [
+        15.639999999999999
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 6,
+      "EndTime": 12.219999999999995,
+      "FireTime": 6.62,
+      "FireTimes": [
+        6.62,
+        7.32,
+        8.719999999999999,
+        9.419999999999998,
+        10.819999999999997,
+        11.519999999999996
+      ],
+      "PKill": 0.7378559999999998,
+      "WTATargetID": 71,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.639999999999997,
+      "FireTime": 17.24,
+      "FireTimes": [
+        17.24,
+        17.939999999999998
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 9,
+      "EndTime": 13.619999999999994,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11,
+        5.8100000000000005,
+        12.219999999999995,
+        12.919999999999995
+      ],
+      "PKill": 0.8657822719999999,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 28
+    },
+    {
+      "AmmoUsed": 6,
+      "EndTime": 13.349999999999994,
+      "FireTime": 6.35,
+      "FireTimes": [
+        6.35,
+        9.149999999999999,
+        9.849999999999998,
+        10.549999999999997,
+        11.249999999999996,
+        12.649999999999995
+      ],
+      "PKill": 0.995904,
+      "WTATargetID": 29,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.03,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24,
+        16.330000000000002
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.339999999999996,
+      "FireTime": 15.63,
+      "FireTimes": [
+        15.63,
+        18.639999999999997
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 49,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 5,
+      "EndTime": 14.049999999999994,
+      "FireTime": 7.05,
+      "FireTimes": [
+        7.05,
+        7.75,
+        8.45,
+        11.949999999999996,
+        13.349999999999994
+      ],
+      "PKill": 0.6723199999999999,
+      "WTATargetID": 71,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.639999999999997,
+      "FireTime": 17.24,
+      "FireTimes": [
+        17.24,
+        17.939999999999998
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 6,
+      "EndTime": 5.8100000000000005,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11
+      ],
+      "PKill": 0.7378559999999998,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 29
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 16.47,
+      "FireTime": 15.07,
+      "FireTimes": [
+        15.07,
+        15.77
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 23,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.94,
+      "FireTime": 14.24,
+      "FireTimes": [
+        14.24
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 40,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.169999999999998,
+      "FireTime": 16.47,
+      "FireTimes": [
+        16.47
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 9,
+      "EndTime": 12.919999999999995,
+      "FireTime": 6.62,
+      "FireTimes": [
+        6.62,
+        7.32,
+        8.02,
+        8.719999999999999,
+        9.419999999999998,
+        10.119999999999997,
+        10.819999999999997,
+        11.519999999999996,
+        12.219999999999995
+      ],
+      "PKill": 0.8657822719999999,
+      "WTATargetID": 71,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.339999999999996,
+      "FireTime": 17.24,
+      "FireTimes": [
+        17.24,
+        17.939999999999998,
+        18.639999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 76,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 8,
+      "EndTime": 13.619999999999994,
+      "FireTime": 1.61,
+      "FireTimes": [
+        1.61,
+        2.31,
+        3.01,
+        3.71,
+        4.41,
+        5.11,
+        5.8100000000000005,
+        12.919999999999995
+      ],
+      "PKill": 0.8322278399999999,
+      "WTATargetID": 100,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 30
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.979999999999995,
+      "FireTime": 13.279999999999996,
+      "FireTimes": [
+        13.279999999999996
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 1,
+      "WTAVesselID": 1,
       "WTAWeaponID": 31
     },
     {
-      "AmmoUsed": 17,
-      "EndTime": 19.57999999999999,
-      "FireTime": 4.880000000000001,
+      "AmmoUsed": 2,
+      "EndTime": 4.88,
+      "FireTime": 0.0,
       "FireTimes": [
-        4.880000000000001,
-        5.580000000000001,
-        6.280000000000001,
-        6.980000000000001,
-        7.6800000000000015,
-        9.08,
-        9.78,
-        11.179999999999998,
-        11.879999999999997,
-        13.979999999999995,
-        14.679999999999994,
-        15.379999999999994,
-        16.079999999999995,
-        16.779999999999994,
-        17.479999999999993,
-        18.179999999999993,
-        18.879999999999992
+        0.0,
+        4.18
       ],
-      "PKill": 0.9999998282013082,
-      "WTATargetID": 92,
+      "PKill": 0.75,
+      "WTATargetID": 2,
       "WTAVesselID": 1,
       "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
+      "EndTime": 16.779999999999994,
+      "FireTime": 16.079999999999995,
       "FireTimes": [
-        0.0
+        16.079999999999995
       ],
       "PKill": 0.5,
-      "WTATargetID": 20,
+      "WTATargetID": 6,
       "WTAVesselID": 1,
-      "WTAWeaponID": 32
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.57999999999999,
+      "FireTime": 18.879999999999992,
+      "FireTimes": [
+        18.879999999999992
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 7,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.479999999999993,
+      "FireTime": 16.779999999999994,
+      "FireTimes": [
+        16.779999999999994
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 14,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 1,
@@ -1744,141 +1940,481 @@
       "FireTimes": [
         11.179999999999998
       ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 40,
+      "PKill": 0.5,
+      "WTATargetID": 20,
       "WTAVesselID": 1,
-      "WTAWeaponID": 32
-    },
-    {
-      "AmmoUsed": 11,
-      "EndTime": 12.579999999999997,
-      "FireTime": 2.08,
-      "FireTimes": [
-        2.08,
-        2.7800000000000002,
-        4.880000000000001,
-        5.580000000000001,
-        6.280000000000001,
-        6.980000000000001,
-        7.6800000000000015,
-        8.38,
-        9.08,
-        9.78,
-        11.879999999999997
-      ],
-      "PKill": 0.99995805696,
-      "WTATargetID": 45,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 32
+      "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 1.81,
-      "FireTime": 1.11,
+      "EndTime": 6.98,
+      "FireTime": 6.28,
       "FireTimes": [
-        1.11
+        6.28
       ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
+      "PKill": 0.6,
+      "WTATargetID": 30,
       "WTAVesselID": 1,
-      "WTAWeaponID": 32
-    },
-    {
-      "AmmoUsed": 13,
-      "EndTime": 19.57999999999999,
-      "FireTime": 3.4800000000000004,
-      "FireTimes": [
-        3.4800000000000004,
-        4.180000000000001,
-        10.479999999999999,
-        12.579999999999997,
-        13.279999999999996,
-        13.979999999999995,
-        14.679999999999994,
-        15.379999999999994,
-        16.079999999999995,
-        16.779999999999994,
-        17.479999999999993,
-        18.179999999999993,
-        18.879999999999992
-      ],
-      "PKill": 0.9999932891136,
-      "WTATargetID": 92,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 32
+      "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
+      "EndTime": 9.78,
+      "FireTime": 9.08,
       "FireTimes": [
-        0.0
+        9.08
       ],
-      "PKill": 0.8,
-      "WTATargetID": 45,
+      "PKill": 0.6,
+      "WTATargetID": 34,
       "WTAVesselID": 1,
-      "WTAWeaponID": 33
+      "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
+      "EndTime": 18.879999999999992,
+      "FireTime": 18.179999999999993,
       "FireTimes": [
-        7.0
+        18.179999999999993
       ],
-      "PKill": 0.8,
-      "WTATargetID": 92,
+      "PKill": 0.6,
+      "WTATargetID": 38,
       "WTAVesselID": 1,
-      "WTAWeaponID": 33
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 45,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 34
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
-      "FireTimes": [
-        7.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 92,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 34
+      "WTAWeaponID": 31
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 18.95,
-      "FireTime": 4.95,
+      "EndTime": 5.58,
+      "FireTime": 1.23,
       "FireTimes": [
-        4.95,
-        11.95
+        1.23,
+        4.88
       ],
       "PKill": 0.75,
-      "WTATargetID": 27,
+      "WTATargetID": 42,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 14.679999999999994,
+      "FireTime": 2.78,
+      "FireTimes": [
+        2.78,
+        13.979999999999995
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 46,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.179999999999993,
+      "FireTime": 1.93,
+      "FireTimes": [
+        1.93,
+        17.479999999999993
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 48,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.680000000000001,
+      "FireTime": 6.98,
+      "FireTimes": [
+        6.98
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 58,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 6.28,
+      "FireTime": 5.58,
+      "FireTimes": [
+        5.58
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 60,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.08,
+      "FireTime": 8.38,
+      "FireTimes": [
+        8.38
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 67,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 12.579999999999997,
+      "FireTime": 11.879999999999997,
+      "FireTimes": [
+        11.879999999999997
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 70,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 11.179999999999998,
+      "FireTime": 3.4799999999999995,
+      "FireTimes": [
+        3.4799999999999995,
+        10.479999999999999
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 72,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.279999999999996,
+      "FireTime": 12.579999999999997,
+      "FireTimes": [
+        12.579999999999997
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 73,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.479999999999999,
+      "FireTime": 9.78,
+      "FireTimes": [
+        9.78
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 75,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 8.38,
+      "FireTime": 7.680000000000001,
+      "FireTimes": [
+        7.680000000000001
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 79,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.379999999999994,
+      "FireTime": 14.679999999999994,
+      "FireTimes": [
+        14.679999999999994
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 92,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.079999999999995,
+      "FireTime": 15.379999999999994,
+      "FireTimes": [
+        15.379999999999994
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 96,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 31
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 15.229999999999993,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        14.529999999999994
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 2,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 13.829999999999995,
+      "FireTime": 5.430000000000001,
+      "FireTimes": [
+        5.430000000000001,
+        13.129999999999995
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 6,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.02999999999999,
+      "FireTime": 8.23,
+      "FireTimes": [
+        8.23,
+        17.32999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 11,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 12.429999999999996,
+      "FireTime": 3.33,
+      "FireTimes": [
+        3.33,
+        11.729999999999997
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 20,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 15.929999999999993,
+      "FireTime": 2.63,
+      "FireTimes": [
+        2.63,
+        15.229999999999993
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 28,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 8.23,
+      "FireTime": 7.530000000000001,
+      "FireTimes": [
+        7.530000000000001
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 30,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.32999999999999,
+      "FireTime": 6.130000000000001,
+      "FireTimes": [
+        6.130000000000001,
+        16.629999999999992
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 32,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 9.629999999999999,
+      "FireTime": 1.23,
+      "FireTimes": [
+        1.23,
+        8.93
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 42,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 11.029999999999998,
+      "FireTime": 10.329999999999998,
+      "FireTimes": [
+        10.329999999999998
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 46,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.529999999999994,
+      "FireTime": 13.829999999999995,
+      "FireTimes": [
+        13.829999999999995
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 48,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 11.729999999999997,
+      "FireTime": 1.93,
+      "FireTimes": [
+        1.93,
+        11.029999999999998
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 58,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.329999999999998,
+      "FireTime": 9.629999999999999,
+      "FireTimes": [
+        9.629999999999999
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 60,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 13.129999999999995,
+      "FireTime": 6.830000000000001,
+      "FireTimes": [
+        6.830000000000001,
+        12.429999999999996
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 70,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.629999999999992,
+      "FireTime": 15.929999999999993,
+      "FireTimes": [
+        15.929999999999993
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 72,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.42999999999999,
+      "FireTime": 4.03,
+      "FireTimes": [
+        4.03,
+        18.72999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 95,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 18.72999999999999,
+      "FireTime": 4.73,
+      "FireTimes": [
+        4.73,
+        18.02999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 97,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 32
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 32,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 33
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 92,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 33
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 11,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 34
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 45,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 34
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 60,
       "WTAVesselID": 1,
       "WTAWeaponID": 35
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        7.0
+        0.0
       ],
-      "PKill": 0.5,
-      "WTATargetID": 27,
+      "PKill": 0.8,
+      "WTATargetID": 97,
       "WTAVesselID": 1,
-      "WTAWeaponID": 36
+      "WTAWeaponID": 35
     },
     {
       "AmmoUsed": 1,
@@ -1888,7 +2424,7 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 30,
       "WTAVesselID": 1,
       "WTAWeaponID": 36
     },
@@ -1899,6 +2435,18 @@
       "FireTimes": [
         7.0
       ],
+      "PKill": 0.8,
+      "WTATargetID": 95,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 36
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 11.95,
+      "FireTime": 4.95,
+      "FireTimes": [
+        4.95
+      ],
       "PKill": 0.5,
       "WTATargetID": 27,
       "WTAVesselID": 1,
@@ -1906,25 +2454,37 @@
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
+      "EndTime": 18.95,
+      "FireTime": 11.95,
       "FireTimes": [
-        0.0
+        11.95
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 80,
       "WTAVesselID": 1,
       "WTAWeaponID": 37
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
+      "EndTime": 11.95,
+      "FireTime": 4.95,
       "FireTimes": [
-        7.0
+        4.95
       ],
       "PKill": 0.5,
       "WTATargetID": 27,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 38
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.95,
+      "FireTime": 11.95,
+      "FireTimes": [
+        11.95
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 67,
       "WTAVesselID": 1,
       "WTAWeaponID": 38
     },
@@ -1936,19 +2496,7 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 38
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 14,
       "WTAVesselID": 1,
       "WTAWeaponID": 39
     },
@@ -1960,9 +2508,21 @@
         7.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 92,
+      "WTATargetID": 38,
       "WTAVesselID": 1,
       "WTAWeaponID": 39
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 73,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 40
     },
     {
       "AmmoUsed": 1,
@@ -1972,9 +2532,21 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 75,
       "WTAVesselID": 1,
       "WTAWeaponID": 40
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 12,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 41
     },
     {
       "AmmoUsed": 1,
@@ -1985,18 +2557,6 @@
       ],
       "PKill": 0.8,
       "WTATargetID": 92,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 40
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
-      "FireTimes": [
-        7.0
-      ],
-      "PKill": 0.5,
-      "WTATargetID": 27,
       "WTAVesselID": 1,
       "WTAWeaponID": 41
     },
@@ -2010,7 +2570,7 @@
       "PKill": 0.8,
       "WTATargetID": 45,
       "WTAVesselID": 1,
-      "WTAWeaponID": 41
+      "WTAWeaponID": 42
     },
     {
       "AmmoUsed": 1,
@@ -2019,10 +2579,22 @@
       "FireTimes": [
         7.0
       ],
-      "PKill": 0.5,
-      "WTATargetID": 27,
+      "PKill": 0.8,
+      "WTATargetID": 96,
       "WTAVesselID": 1,
       "WTAWeaponID": 42
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 34,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 43
     },
     {
       "AmmoUsed": 1,
@@ -2032,19 +2604,7 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 42
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 79,
       "WTAVesselID": 1,
       "WTAWeaponID": 43
     },
@@ -2056,19 +2616,7 @@
         7.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 92,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 43
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
-      "FireTimes": [
-        7.0
-      ],
-      "PKill": 0.5,
-      "WTATargetID": 27,
+      "WTATargetID": 1,
       "WTAVesselID": 1,
       "WTAWeaponID": 44
     },
@@ -2080,7 +2628,7 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 45,
+      "WTATargetID": 7,
       "WTAVesselID": 1,
       "WTAWeaponID": 44
     },
@@ -2104,22 +2652,9 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 21,
+      "WTATargetID": 39,
       "WTAVesselID": 1,
       "WTAWeaponID": 45
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 20.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        10.0
-      ],
-      "PKill": 0.96,
-      "WTATargetID": 88,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 46
     },
     {
       "AmmoUsed": 1,
@@ -2129,9 +2664,9 @@
         0.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 21,
+      "WTATargetID": 88,
       "WTAVesselID": 1,
-      "WTAWeaponID": 47
+      "WTAWeaponID": 46
     },
     {
       "AmmoUsed": 1,
@@ -2143,65 +2678,89 @@
       "PKill": 0.8,
       "WTATargetID": 93,
       "WTAVesselID": 1,
+      "WTAWeaponID": 46
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 56,
+      "WTAVesselID": 1,
       "WTAWeaponID": 47
     },
     {
       "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 74,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 47
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 19,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 48
+    },
+    {
+      "AmmoUsed": 1,
       "EndTime": 20.0,
       "FireTime": 10.0,
       "FireTimes": [
         10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 91,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 48
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 18,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 49
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 62,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 49
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
       ],
       "PKill": 0.8,
       "WTATargetID": 21,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 48
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 10.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 56,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 48
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 20.0,
-      "FireTime": 10.0,
-      "FireTimes": [
-        10.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 56,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 49
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 10.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 88,
-      "WTAVesselID": 1,
-      "WTAWeaponID": 49
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 10.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 4,
       "WTAVesselID": 1,
       "WTAWeaponID": 50
     },
@@ -2219,42 +2778,6 @@
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 14.66,
-      "FireTime": 5.66,
-      "FireTimes": [
-        5.66
-      ],
-      "PKill": 0.7,
-      "WTATargetID": 61,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 51
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 12.82,
-      "FireTime": 3.82,
-      "FireTimes": [
-        3.82
-      ],
-      "PKill": 0.7,
-      "WTATargetID": 98,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 52
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 13.219999999999999,
-      "FireTime": 4.22,
-      "FireTimes": [
-        4.22
-      ],
-      "PKill": 0.7,
-      "WTATargetID": 53,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 53
-    },
-    {
-      "AmmoUsed": 1,
       "EndTime": 13.26,
       "FireTime": 4.26,
       "FireTimes": [
@@ -2263,7 +2786,19 @@
       "PKill": 0.7,
       "WTATargetID": 37,
       "WTAVesselID": 2,
-      "WTAWeaponID": 54
+      "WTAWeaponID": 51
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.66,
+      "FireTime": 5.66,
+      "FireTimes": [
+        5.66
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 61,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 52
     },
     {
       "AmmoUsed": 1,
@@ -2275,19 +2810,43 @@
       "PKill": 0.7,
       "WTATargetID": 55,
       "WTAVesselID": 2,
+      "WTAWeaponID": 53
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 12.82,
+      "FireTime": 3.82,
+      "FireTimes": [
+        3.82
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 98,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 54
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 3,
+      "WTAVesselID": 2,
       "WTAWeaponID": 55
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 13.219999999999999,
-      "FireTime": 4.22,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        4.22
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 53,
+      "WTATargetID": 81,
       "WTAVesselID": 2,
-      "WTAWeaponID": 56
+      "WTAWeaponID": 55
     },
     {
       "AmmoUsed": 1,
@@ -2299,143 +2858,163 @@
       "PKill": 0.7,
       "WTATargetID": 22,
       "WTAVesselID": 2,
+      "WTAWeaponID": 56
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 35,
+      "WTAVesselID": 2,
       "WTAWeaponID": 57
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 17.7,
-      "FireTime": 8.7,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
       "FireTimes": [
-        8.7
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 55,
+      "WTATargetID": 68,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 57
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 53,
       "WTAVesselID": 2,
       "WTAWeaponID": 58
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 16.87,
-      "FireTime": 7.87,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        7.87
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 84,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 58
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 81,
+      "WTATargetID": 31,
       "WTAVesselID": 2,
       "WTAWeaponID": 59
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 12.82,
-      "FireTime": 3.82,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        3.82
+        0.0
       ],
-      "PKill": 0.7,
-      "WTATargetID": 98,
+      "PKill": 0.75,
+      "WTATargetID": 87,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 59
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 59,
       "WTAVesselID": 2,
       "WTAWeaponID": 60
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 15.32,
-      "FireTime": 6.32,
+      "EndTime": 18.259999999999998,
+      "FireTime": 9.26,
       "FireTimes": [
-        6.32
+        9.26
       ],
       "PKill": 0.7,
-      "WTATargetID": 68,
+      "WTATargetID": 82,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 60
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 25,
       "WTAVesselID": 2,
       "WTAWeaponID": 61
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 13.26,
-      "FireTime": 4.26,
+      "EndTime": 9.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        4.26
+        0.0
       ],
       "PKill": 0.7,
-      "WTATargetID": 37,
+      "WTATargetID": 63,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 61
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.219999999999999,
+      "FireTime": 4.22,
+      "FireTimes": [
+        4.22
+      ],
+      "PKill": 0.7,
+      "WTATargetID": 53,
       "WTAVesselID": 2,
       "WTAWeaponID": 62
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
-      "FireTime": 15.399999999999999,
-      "FireTimes": [
-        15.399999999999999,
-        17.599999999999998
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 41,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 63
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 4.4,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        2.2
-      ],
-      "PKill": 0.84,
-      "WTATargetID": 43,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 63
-    },
-    {
       "AmmoUsed": 1,
       "EndTime": 13.2,
       "FireTime": 11.0,
       "FireTimes": [
         11.0
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 64,
+      "PKill": 0.6,
+      "WTATargetID": 36,
       "WTAVesselID": 2,
       "WTAWeaponID": 63
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 15.399999999999999,
-      "FireTime": 13.2,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
       "FireTimes": [
-        13.2
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 63
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 11.0,
-      "FireTime": 4.4,
-      "FireTimes": [
-        4.4,
-        6.6000000000000005,
-        8.8
-      ],
-      "PKill": 0.657,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 63
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 15.399999999999999,
-      "FireTime": 13.2,
-      "FireTimes": [
-        13.2
+        17.599999999999998
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 41,
       "WTAVesselID": 2,
-      "WTAWeaponID": 64
+      "WTAWeaponID": 63
     },
     {
       "AmmoUsed": 2,
@@ -2446,162 +3025,9 @@
         4.4
       ],
       "PKill": 0.84,
-      "WTATargetID": 43,
+      "WTATargetID": 52,
       "WTAVesselID": 2,
-      "WTAWeaponID": 64
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 64,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 64
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 13.2,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        6.6000000000000005,
-        11.0
-      ],
-      "PKill": 0.657,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 64
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.799999999999997,
-      "FireTime": 17.599999999999998,
-      "FireTimes": [
-        17.599999999999998
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 64
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 2.6100000000000003,
-      "FireTime": 0.41,
-      "FireTimes": [
-        0.41
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 13,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.24,
-      "FireTime": 14.04,
-      "FireTimes": [
-        14.04
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 41,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 14.04,
-      "FireTime": 3.04,
-      "FireTimes": [
-        3.04,
-        5.24,
-        11.84
-      ],
-      "PKill": 0.657,
-      "WTATargetID": 54,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 11.84,
-      "FireTime": 9.64,
-      "FireTimes": [
-        9.64
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 64,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 9.64,
-      "FireTime": 7.44,
-      "FireTimes": [
-        7.44
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 18.439999999999998,
-      "FireTime": 16.24,
-      "FireTimes": [
-        16.24
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 65
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
-      "FireTime": 2.2,
-      "FireTimes": [
-        2.2,
-        13.2
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 8,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 66
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 13.2,
-      "FireTime": 4.4,
-      "FireTimes": [
-        4.4,
-        11.0
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 13,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 66
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 11.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        6.6000000000000005,
-        8.8
-      ],
-      "PKill": 0.657,
-      "WTATargetID": 41,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 66
+      "WTAWeaponID": 63
     },
     {
       "AmmoUsed": 1,
@@ -2611,84 +3037,34 @@
         15.399999999999999
       ],
       "PKill": 0.30000000000000004,
-      "WTATargetID": 64,
+      "WTATargetID": 54,
       "WTAVesselID": 2,
-      "WTAWeaponID": 66
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 19.799999999999997,
-      "FireTime": 17.599999999999998,
-      "FireTimes": [
-        17.599999999999998
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 66
+      "WTAWeaponID": 63
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 17.599999999999998,
-      "FireTime": 8.8,
-      "FireTimes": [
-        8.8,
-        15.399999999999999
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 13,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 67
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 6.6000000000000005,
-      "FireTime": 4.4,
-      "FireTimes": [
-        4.4
-      ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 41,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 67
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 13.2,
-      "FireTime": 6.6000000000000005,
-      "FireTimes": [
-        6.6000000000000005,
-        11.0
-      ],
-      "PKill": 0.84,
-      "WTATargetID": 43,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 67
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 4.4,
+      "EndTime": 11.0,
       "FireTime": 2.2,
       "FireTimes": [
-        2.2
+        2.2,
+        8.8
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 57,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 63
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 8.8,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 64,
       "WTAVesselID": 2,
-      "WTAWeaponID": 67
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        17.599999999999998
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 67
+      "WTAWeaponID": 63
     },
     {
       "AmmoUsed": 1,
@@ -2700,83 +3076,81 @@
       "PKill": 0.30000000000000004,
       "WTATargetID": 99,
       "WTAVesselID": 2,
-      "WTAWeaponID": 67
+      "WTAWeaponID": 63
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 33,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 64
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 16.22,
-      "FireTime": 11.82,
+      "EndTime": 8.8,
+      "FireTime": 4.4,
       "FireTimes": [
-        11.82,
-        14.02
+        4.4,
+        6.6000000000000005
       ],
-      "PKill": 0.51,
-      "WTATargetID": 13,
+      "PKill": 0.84,
+      "WTATargetID": 43,
       "WTAVesselID": 2,
-      "WTAWeaponID": 68
+      "WTAWeaponID": 64
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 7.420000000000001,
-      "FireTime": 5.220000000000001,
+      "EndTime": 4.4,
+      "FireTime": 2.2,
       "FireTimes": [
-        5.220000000000001
+        2.2
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 41,
+      "PKill": 0.6,
+      "WTATargetID": 52,
       "WTAVesselID": 2,
-      "WTAWeaponID": 68
+      "WTAWeaponID": 64
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 9.620000000000001,
-      "FireTime": 7.420000000000001,
+      "EndTime": 15.399999999999999,
+      "FireTime": 13.2,
       "FireTimes": [
-        7.420000000000001
+        13.2
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 54,
       "WTAVesselID": 2,
-      "WTAWeaponID": 68
+      "WTAWeaponID": 64
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 18.419999999999998,
-      "FireTime": 0.82,
-      "FireTimes": [
-        0.82,
-        16.22
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 64,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 68
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 11.82,
-      "FireTime": 3.02,
-      "FireTimes": [
-        3.02,
-        9.620000000000001
-      ],
-      "PKill": 0.51,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 68
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 4.4,
+      "AmmoUsed": 1,
+      "EndTime": 2.2,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0,
-        2.2
+        0.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 65,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 64
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.599999999999998,
+      "FireTime": 11.0,
+      "FireTimes": [
+        11.0,
+        15.399999999999999
       ],
       "PKill": 0.51,
-      "WTATargetID": 41,
+      "WTATargetID": 78,
       "WTAVesselID": 2,
-      "WTAWeaponID": 69
+      "WTAWeaponID": 64
     },
     {
       "AmmoUsed": 1,
@@ -2786,22 +3160,145 @@
         8.8
       ],
       "PKill": 0.6,
-      "WTATargetID": 43,
+      "WTATargetID": 89,
       "WTAVesselID": 2,
-      "WTAWeaponID": 69
+      "WTAWeaponID": 64
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.419999999999998,
+      "FireTime": 12.219999999999999,
+      "FireTimes": [
+        12.219999999999999
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 13,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 12.219999999999999,
+      "FireTime": 10.02,
+      "FireTimes": [
+        10.02
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 33,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 19.799999999999997,
-      "FireTime": 4.4,
+      "EndTime": 16.619999999999997,
+      "FireTime": 5.62,
       "FireTimes": [
-        4.4,
-        17.599999999999998
+        5.62,
+        14.419999999999998
       ],
       "PKill": 0.51,
+      "WTATargetID": 41,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.02,
+      "FireTime": 7.82,
+      "FireTimes": [
+        7.82
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 52,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 3.42,
+      "FireTime": 1.22,
+      "FireTimes": [
+        1.22
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 57,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 5.62,
+      "FireTime": 3.42,
+      "FireTimes": [
+        3.42
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 65,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.819999999999997,
+      "FireTime": 16.619999999999997,
+      "FireTimes": [
+        16.619999999999997
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 78,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 65
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.399999999999999,
+      "FireTime": 13.2,
+      "FireTimes": [
+        13.2
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 8,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 66
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 6.6000000000000005,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2,
+        4.4
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 33,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 66
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 13.2,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005,
+        8.8,
+        11.0
+      ],
+      "PKill": 0.657,
+      "WTATargetID": 41,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 66
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
+      ],
+      "PKill": 0.30000000000000004,
       "WTATargetID": 54,
       "WTAVesselID": 2,
-      "WTAWeaponID": 69
+      "WTAWeaponID": 66
     },
     {
       "AmmoUsed": 1,
@@ -2813,6 +3310,231 @@
       "PKill": 0.30000000000000004,
       "WTATargetID": 64,
       "WTAVesselID": 2,
+      "WTAWeaponID": 66
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 2.2,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 89,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 66
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.599999999999998,
+      "FireTime": 15.399999999999999,
+      "FireTimes": [
+        15.399999999999999
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 8,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 13,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 4.4,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        2.2
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 43,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.2,
+      "FireTime": 11.0,
+      "FireTimes": [
+        11.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 52,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 15.399999999999999,
+      "FireTime": 8.8,
+      "FireTimes": [
+        8.8,
+        13.2
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 64,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 8.8,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 65,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 6.6000000000000005,
+      "FireTime": 4.4,
+      "FireTimes": [
+        4.4
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 89,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 67
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 8.8,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        4.4,
+        6.6000000000000005
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 36,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 68
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 11.0,
+      "FireTime": 8.8,
+      "FireTimes": [
+        8.8
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 43,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 68
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 19.799999999999997,
+      "FireTime": 17.599999999999998,
+      "FireTimes": [
+        17.599999999999998
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 52,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 68
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 13.2,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2,
+        11.0
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 89,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 68
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.599999999999998,
+      "FireTime": 13.2,
+      "FireTimes": [
+        13.2,
+        15.399999999999999
+      ],
+      "PKill": 0.51,
+      "WTATargetID": 99,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 68
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.399999999999999,
+      "FireTime": 13.2,
+      "FireTimes": [
+        13.2
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 13,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 69
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 2.2,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 33,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 69
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.599999999999998,
+      "FireTime": 2.2,
+      "FireTimes": [
+        2.2,
+        15.399999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 36,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 69
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 6.6000000000000005,
+      "FireTime": 4.4,
+      "FireTimes": [
+        4.4
+      ],
+      "PKill": 0.30000000000000004,
+      "WTATargetID": 41,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 69
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.799999999999997,
+      "FireTime": 6.6000000000000005,
+      "FireTimes": [
+        6.6000000000000005,
+        8.8,
+        17.599999999999998
+      ],
+      "PKill": 0.657,
+      "WTATargetID": 64,
+      "WTAVesselID": 2,
       "WTAWeaponID": 69
     },
     {
@@ -2822,67 +3544,54 @@
       "FireTimes": [
         11.0
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 78,
+      "PKill": 0.6,
+      "WTATargetID": 65,
       "WTAVesselID": 2,
       "WTAWeaponID": 69
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 15.399999999999999,
-      "FireTime": 6.6000000000000005,
+      "EndTime": 19.799999999999997,
+      "FireTime": 13.2,
       "FireTimes": [
-        6.6000000000000005,
-        13.2
+        13.2,
+        17.599999999999998
       ],
       "PKill": 0.51,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 69
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 3.89,
-      "FireTime": 1.69,
-      "FireTimes": [
-        1.69
-      ],
-      "PKill": 0.30000000000000004,
       "WTATargetID": 8,
       "WTAVesselID": 2,
       "WTAWeaponID": 70
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 17.089999999999996,
-      "FireTime": 14.889999999999997,
+      "EndTime": 8.8,
+      "FireTime": 6.6000000000000005,
       "FireTimes": [
-        14.889999999999997
+        6.6000000000000005
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 13,
+      "PKill": 0.6,
+      "WTATargetID": 33,
       "WTAVesselID": 2,
       "WTAWeaponID": 70
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 10.489999999999998,
-      "FireTime": 6.09,
+      "AmmoUsed": 1,
+      "EndTime": 11.0,
+      "FireTime": 8.8,
       "FireTimes": [
-        6.09,
-        8.29
+        8.8
       ],
-      "PKill": 0.51,
+      "PKill": 0.30000000000000004,
       "WTATargetID": 41,
       "WTAVesselID": 2,
       "WTAWeaponID": 70
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 6.09,
-      "FireTime": 3.89,
+      "EndTime": 17.599999999999998,
+      "FireTime": 15.399999999999999,
       "FireTimes": [
-        3.89
+        15.399999999999999
       ],
       "PKill": 0.6,
       "WTATargetID": 43,
@@ -2890,23 +3599,24 @@
       "WTAWeaponID": 70
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 14.889999999999997,
-      "FireTime": 12.689999999999998,
+      "AmmoUsed": 2,
+      "EndTime": 13.2,
+      "FireTime": 2.2,
       "FireTimes": [
-        12.689999999999998
+        2.2,
+        11.0
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 54,
+      "PKill": 0.84,
+      "WTATargetID": 57,
       "WTAVesselID": 2,
       "WTAWeaponID": 70
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 19.289999999999996,
-      "FireTime": 17.089999999999996,
+      "EndTime": 6.6000000000000005,
+      "FireTime": 4.4,
       "FireTimes": [
-        17.089999999999996
+        4.4
       ],
       "PKill": 0.30000000000000004,
       "WTATargetID": 64,
@@ -2915,18 +3625,18 @@
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 12.689999999999998,
-      "FireTime": 10.489999999999998,
+      "EndTime": 2.2,
+      "FireTime": 0.0,
       "FireTimes": [
-        10.489999999999998
+        0.0
       ],
-      "PKill": 0.30000000000000004,
-      "WTATargetID": 99,
+      "PKill": 0.6,
+      "WTATargetID": 65,
       "WTAVesselID": 2,
       "WTAWeaponID": 70
     },
     {
-      "AmmoUsed": 9,
+      "AmmoUsed": 14,
       "EndTime": 15.289999999999994,
       "FireTime": 1.03,
       "FireTimes": [
@@ -2934,111 +3644,21 @@
         1.73,
         2.4299999999999997,
         3.13,
+        6.19,
         6.890000000000001,
         7.590000000000001,
         8.290000000000001,
-        13.889999999999995,
-        14.589999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 5,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.139999999999997,
-      "FireTime": 16.83,
-      "FireTimes": [
-        16.83,
-        18.439999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 23,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.64,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.839999999999996,
-      "FireTime": 17.74,
-      "FireTimes": [
-        17.74,
-        19.139999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 11,
-      "EndTime": 13.889999999999995,
-      "FireTime": 4.09,
-      "FireTimes": [
-        4.09,
-        4.79,
-        5.49,
-        6.19,
         8.99,
-        9.69,
         10.389999999999999,
         11.089999999999998,
         11.789999999999997,
-        12.489999999999997,
-        13.189999999999996
-      ],
-      "PKill": 0.99995805696,
-      "WTATargetID": 51,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 66,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 71
-    },
-    {
-      "AmmoUsed": 12,
-      "EndTime": 15.289999999999994,
-      "FireTime": 1.03,
-      "FireTimes": [
-        1.03,
-        1.73,
-        2.4299999999999997,
-        3.13,
-        6.19,
-        6.890000000000001,
-        7.590000000000001,
-        8.290000000000001,
-        9.69,
-        11.789999999999997,
-        13.189999999999996,
+        13.889999999999995,
         14.589999999999995
       ],
-      "PKill": 0.931280523264,
+      "PKill": 0.95601953488896,
       "WTATargetID": 5,
       "WTAVesselID": 2,
-      "WTAWeaponID": 72
+      "WTAWeaponID": 71
     },
     {
       "AmmoUsed": 1,
@@ -3050,64 +3670,62 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 23,
       "WTAVesselID": 2,
-      "WTAWeaponID": 72
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.839999999999996,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94,
-        19.139999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 72
+      "WTAWeaponID": 71
     },
     {
       "AmmoUsed": 2,
       "EndTime": 19.139999999999997,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94,
+        18.439999999999998
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 71
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.839999999999996,
       "FireTime": 17.74,
       "FireTimes": [
         17.74,
-        18.439999999999998
+        19.139999999999997
       ],
       "PKill": 0.3599999999999999,
       "WTATargetID": 50,
       "WTAVesselID": 2,
-      "WTAWeaponID": 72
+      "WTAWeaponID": 71
     },
     {
-      "AmmoUsed": 8,
-      "EndTime": 14.589999999999995,
+      "AmmoUsed": 3,
+      "EndTime": 13.189999999999996,
       "FireTime": 4.09,
       "FireTimes": [
         4.09,
         4.79,
-        5.49,
-        8.99,
-        10.389999999999999,
-        11.089999999999998,
-        12.489999999999997,
-        13.889999999999995
+        12.489999999999997
       ],
-      "PKill": 0.99934464,
+      "PKill": 0.9359999999999999,
       "WTATargetID": 51,
       "WTAVesselID": 2,
-      "WTAWeaponID": 72
+      "WTAWeaponID": 71
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
+      "AmmoUsed": 4,
+      "EndTime": 13.889999999999995,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        5.49,
+        9.69,
+        13.189999999999996
       ],
-      "PKill": 0.6,
+      "PKill": 0.9744,
       "WTATargetID": 66,
       "WTAVesselID": 2,
-      "WTAWeaponID": 72
+      "WTAWeaponID": 71
     },
     {
       "AmmoUsed": 10,
@@ -3118,387 +3736,17 @@
         1.73,
         2.4299999999999997,
         3.13,
+        4.79,
+        6.890000000000001,
+        8.290000000000001,
+        8.99,
         10.389999999999999,
-        11.089999999999998,
-        12.489999999999997,
-        13.189999999999996,
-        13.889999999999995,
         14.589999999999995
       ],
       "PKill": 0.8926258175999999,
       "WTATargetID": 5,
       "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.529999999999998,
-      "FireTime": 16.83,
-      "FireTimes": [
-        16.83
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.64,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 19.839999999999996,
-      "FireTime": 17.74,
-      "FireTimes": [
-        17.74,
-        18.439999999999998,
-        19.139999999999997
-      ],
-      "PKill": 0.4879999999999999,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 10,
-      "EndTime": 12.489999999999997,
-      "FireTime": 4.09,
-      "FireTimes": [
-        4.09,
-        4.79,
-        5.49,
-        6.19,
-        6.890000000000001,
-        7.590000000000001,
-        8.290000000000001,
-        8.99,
-        9.69,
-        11.789999999999997
-      ],
-      "PKill": 0.9998951424,
-      "WTATargetID": 51,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 66,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 73
-    },
-    {
-      "AmmoUsed": 10,
-      "EndTime": 13.889999999999995,
-      "FireTime": 1.03,
-      "FireTimes": [
-        1.03,
-        1.73,
-        2.4299999999999997,
-        3.13,
-        6.890000000000001,
-        8.290000000000001,
-        10.389999999999999,
-        11.089999999999998,
-        11.789999999999997,
-        13.189999999999996
-      ],
-      "PKill": 0.8926258175999999,
-      "WTATargetID": 5,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.529999999999998,
-      "FireTime": 16.83,
-      "FireTimes": [
-        16.83
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.839999999999996,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94,
-        19.139999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.139999999999997,
-      "FireTime": 17.74,
-      "FireTimes": [
-        17.74,
-        18.439999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 10,
-      "EndTime": 15.289999999999994,
-      "FireTime": 4.09,
-      "FireTimes": [
-        4.09,
-        4.79,
-        5.49,
-        6.19,
-        7.590000000000001,
-        8.99,
-        9.69,
-        12.489999999999997,
-        13.889999999999995,
-        14.589999999999995
-      ],
-      "PKill": 0.9998951424,
-      "WTATargetID": 51,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 66,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 74
-    },
-    {
-      "AmmoUsed": 11,
-      "EndTime": 15.289999999999994,
-      "FireTime": 1.03,
-      "FireTimes": [
-        1.03,
-        1.73,
-        2.4299999999999997,
-        3.13,
-        6.19,
-        7.590000000000001,
-        9.69,
-        11.089999999999998,
-        11.789999999999997,
-        13.189999999999996,
-        14.589999999999995
-      ],
-      "PKill": 0.91410065408,
-      "WTATargetID": 5,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.529999999999998,
-      "FireTime": 16.83,
-      "FireTimes": [
-        16.83
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 16.64,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 3,
-      "EndTime": 19.839999999999996,
-      "FireTime": 17.74,
-      "FireTimes": [
-        17.74,
-        18.439999999999998,
-        19.139999999999997
-      ],
-      "PKill": 0.4879999999999999,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 14.589999999999995,
-      "FireTime": 4.09,
-      "FireTimes": [
-        4.09,
-        4.79,
-        5.49,
-        6.890000000000001,
-        8.290000000000001,
-        8.99,
-        10.389999999999999,
-        12.489999999999997,
-        13.889999999999995
-      ],
-      "PKill": 0.999737856,
-      "WTATargetID": 51,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 66,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 75
-    },
-    {
-      "AmmoUsed": 9,
-      "EndTime": 14.589999999999995,
-      "FireTime": 1.03,
-      "FireTimes": [
-        1.03,
-        1.73,
-        2.4299999999999997,
-        3.13,
-        6.890000000000001,
-        8.290000000000001,
-        9.69,
-        11.089999999999998,
-        13.889999999999995
-      ],
-      "PKill": 0.8657822719999999,
-      "WTATargetID": 5,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 17.529999999999998,
-      "FireTime": 16.83,
-      "FireTimes": [
-        16.83
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 23,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.839999999999996,
-      "FireTime": 15.94,
-      "FireTimes": [
-        15.94,
-        19.139999999999997
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 49,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 19.139999999999997,
-      "FireTime": 17.74,
-      "FireTimes": [
-        17.74,
-        18.439999999999998
-      ],
-      "PKill": 0.3599999999999999,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 11,
-      "EndTime": 15.289999999999994,
-      "FireTime": 4.09,
-      "FireTimes": [
-        4.09,
-        4.79,
-        5.49,
-        6.19,
-        7.590000000000001,
-        8.99,
-        10.389999999999999,
-        11.789999999999997,
-        12.489999999999997,
-        13.189999999999996,
-        14.589999999999995
-      ],
-      "PKill": 0.99995805696,
-      "WTATargetID": 51,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 66,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 76
-    },
-    {
-      "AmmoUsed": 12,
-      "EndTime": 15.289999999999994,
-      "FireTime": 1.03,
-      "FireTimes": [
-        1.03,
-        1.73,
-        2.4299999999999997,
-        3.13,
-        6.890000000000001,
-        8.290000000000001,
-        8.99,
-        10.389999999999999,
-        11.789999999999997,
-        13.189999999999996,
-        13.889999999999995,
-        14.589999999999995
-      ],
-      "PKill": 0.931280523264,
-      "WTATargetID": 5,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
       "AmmoUsed": 3,
@@ -3512,7 +3760,7 @@
       "PKill": 0.4879999999999999,
       "WTATargetID": 23,
       "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
       "AmmoUsed": 1,
@@ -3524,7 +3772,7 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 49,
       "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
       "AmmoUsed": 1,
@@ -3536,41 +3784,43 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 50,
       "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
-      "AmmoUsed": 8,
-      "EndTime": 13.189999999999996,
+      "AmmoUsed": 6,
+      "EndTime": 13.889999999999995,
       "FireTime": 4.09,
       "FireTimes": [
         4.09,
-        4.79,
         5.49,
         6.19,
-        7.590000000000001,
         9.69,
         11.089999999999998,
-        12.489999999999997
+        13.189999999999996
       ],
-      "PKill": 0.99934464,
+      "PKill": 0.995904,
       "WTATargetID": 51,
       "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
+      "AmmoUsed": 5,
+      "EndTime": 14.589999999999995,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        7.590000000000001,
+        11.789999999999997,
+        12.489999999999997,
+        13.889999999999995
       ],
-      "PKill": 0.6,
+      "PKill": 0.98976,
       "WTATargetID": 66,
       "WTAVesselID": 2,
-      "WTAWeaponID": 77
+      "WTAWeaponID": 72
     },
     {
-      "AmmoUsed": 11,
+      "AmmoUsed": 17,
       "EndTime": 15.289999999999994,
       "FireTime": 1.03,
       "FireTimes": [
@@ -3578,18 +3828,295 @@
         1.73,
         2.4299999999999997,
         3.13,
-        7.590000000000001,
+        4.79,
+        5.49,
+        6.19,
+        6.890000000000001,
         8.290000000000001,
-        10.389999999999999,
+        8.99,
+        9.69,
         11.089999999999998,
+        11.789999999999997,
         12.489999999999997,
+        13.189999999999996,
         13.889999999999995,
         14.589999999999995
+      ],
+      "PKill": 0.9774820018631475,
+      "WTATargetID": 5,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.529999999999998,
+      "FireTime": 16.83,
+      "FireTimes": [
+        16.83
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.64,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.839999999999996,
+      "FireTime": 17.74,
+      "FireTimes": [
+        17.74,
+        18.439999999999998,
+        19.139999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 8.290000000000001,
+      "FireTime": 4.09,
+      "FireTimes": [
+        4.09,
+        7.590000000000001
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 51,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 11.089999999999998,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        10.389999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 66,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 73
+    },
+    {
+      "AmmoUsed": 11,
+      "EndTime": 13.189999999999996,
+      "FireTime": 1.03,
+      "FireTimes": [
+        1.03,
+        1.73,
+        2.4299999999999997,
+        3.13,
+        5.49,
+        6.890000000000001,
+        7.590000000000001,
+        8.99,
+        9.69,
+        11.089999999999998,
+        12.489999999999997
       ],
       "PKill": 0.91410065408,
       "WTATargetID": 5,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.839999999999996,
+      "FireTime": 16.83,
+      "FireTimes": [
+        16.83,
+        18.439999999999998,
+        19.139999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 23,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.64,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.439999999999998,
+      "FireTime": 17.74,
+      "FireTimes": [
+        17.74
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 6,
+      "EndTime": 14.589999999999995,
+      "FireTime": 4.09,
+      "FireTimes": [
+        4.09,
+        4.79,
+        8.290000000000001,
+        10.389999999999999,
+        11.789999999999997,
+        13.889999999999995
+      ],
+      "PKill": 0.995904,
+      "WTATargetID": 51,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 4,
+      "EndTime": 15.289999999999994,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        6.19,
+        13.189999999999996,
+        14.589999999999995
+      ],
+      "PKill": 0.9744,
+      "WTATargetID": 66,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 74
+    },
+    {
+      "AmmoUsed": 12,
+      "EndTime": 12.489999999999997,
+      "FireTime": 1.03,
+      "FireTimes": [
+        1.03,
+        1.73,
+        2.4299999999999997,
+        3.13,
+        4.79,
+        5.49,
+        6.19,
+        7.590000000000001,
+        8.99,
+        9.69,
+        10.389999999999999,
+        11.789999999999997
+      ],
+      "PKill": 0.931280523264,
+      "WTATargetID": 5,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.529999999999998,
+      "FireTime": 16.83,
+      "FireTimes": [
+        16.83
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.839999999999996,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94,
+        18.439999999999998,
+        19.139999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.439999999999998,
+      "FireTime": 17.74,
+      "FireTimes": [
+        17.74
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 4,
+      "EndTime": 15.289999999999994,
+      "FireTime": 4.09,
+      "FireTimes": [
+        4.09,
+        12.489999999999997,
+        13.889999999999995,
+        14.589999999999995
+      ],
+      "PKill": 0.9744,
+      "WTATargetID": 51,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 5,
+      "EndTime": 13.889999999999995,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        6.890000000000001,
+        8.290000000000001,
+        11.089999999999998,
+        13.189999999999996
+      ],
+      "PKill": 0.98976,
+      "WTATargetID": 66,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 75
+    },
+    {
+      "AmmoUsed": 12,
+      "EndTime": 13.189999999999996,
+      "FireTime": 1.03,
+      "FireTimes": [
+        1.03,
+        1.73,
+        2.4299999999999997,
+        3.13,
+        5.49,
+        6.19,
+        6.890000000000001,
+        7.590000000000001,
+        8.290000000000001,
+        9.69,
+        10.389999999999999,
+        12.489999999999997
+      ],
+      "PKill": 0.931280523264,
+      "WTATargetID": 5,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 76
     },
     {
       "AmmoUsed": 2,
@@ -3602,7 +4129,7 @@
       "PKill": 0.3599999999999999,
       "WTATargetID": 23,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 76
     },
     {
       "AmmoUsed": 1,
@@ -3614,7 +4141,7 @@
       "PKill": 0.19999999999999996,
       "WTATargetID": 49,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 76
     },
     {
       "AmmoUsed": 2,
@@ -3627,54 +4154,244 @@
       "PKill": 0.3599999999999999,
       "WTATargetID": 50,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 76
     },
     {
-      "AmmoUsed": 9,
+      "AmmoUsed": 4,
       "EndTime": 13.889999999999995,
       "FireTime": 4.09,
       "FireTimes": [
         4.09,
-        4.79,
-        5.49,
-        6.19,
-        6.890000000000001,
-        8.99,
-        9.69,
+        11.089999999999998,
         11.789999999999997,
         13.189999999999996
       ],
-      "PKill": 0.999737856,
+      "PKill": 0.9744,
       "WTATargetID": 51,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 76
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
+      "AmmoUsed": 5,
+      "EndTime": 15.289999999999994,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        4.79,
+        8.99,
+        13.889999999999995,
+        14.589999999999995
       ],
-      "PKill": 0.6,
+      "PKill": 0.98976,
       "WTATargetID": 66,
       "WTAVesselID": 2,
-      "WTAWeaponID": 78
+      "WTAWeaponID": 76
     },
     {
-      "AmmoUsed": 7,
-      "EndTime": 12.489999999999997,
+      "AmmoUsed": 12,
+      "EndTime": 14.589999999999995,
       "FireTime": 1.03,
       "FireTimes": [
         1.03,
         1.73,
         2.4299999999999997,
         3.13,
-        6.890000000000001,
-        8.99,
-        11.789999999999997
+        4.79,
+        6.19,
+        8.290000000000001,
+        10.389999999999999,
+        11.089999999999998,
+        11.789999999999997,
+        13.189999999999996,
+        13.889999999999995
       ],
-      "PKill": 0.7902847999999999,
+      "PKill": 0.931280523264,
+      "WTATargetID": 5,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 17.529999999999998,
+      "FireTime": 16.83,
+      "FireTimes": [
+        16.83
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 23,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 16.64,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 19.839999999999996,
+      "FireTime": 17.74,
+      "FireTimes": [
+        17.74,
+        18.439999999999998,
+        19.139999999999997
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 7,
+      "EndTime": 15.289999999999994,
+      "FireTime": 4.09,
+      "FireTimes": [
+        4.09,
+        6.890000000000001,
+        7.590000000000001,
+        8.99,
+        9.69,
+        12.489999999999997,
+        14.589999999999995
+      ],
+      "PKill": 0.9983616,
+      "WTATargetID": 51,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 6.19,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        5.49
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 66,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 77
+    },
+    {
+      "AmmoUsed": 13,
+      "EndTime": 13.889999999999995,
+      "FireTime": 1.03,
+      "FireTimes": [
+        1.03,
+        1.73,
+        2.4299999999999997,
+        3.13,
+        4.79,
+        6.19,
+        6.890000000000001,
+        8.290000000000001,
+        8.99,
+        9.69,
+        10.389999999999999,
+        11.089999999999998,
+        13.189999999999996
+      ],
+      "PKill": 0.9450244186112,
+      "WTATargetID": 5,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.139999999999997,
+      "FireTime": 16.83,
+      "FireTimes": [
+        16.83,
+        18.439999999999998
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 23,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.839999999999996,
+      "FireTime": 15.94,
+      "FireTimes": [
+        15.94,
+        19.139999999999997
+      ],
+      "PKill": 0.3599999999999999,
+      "WTATargetID": 49,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.439999999999998,
+      "FireTime": 17.74,
+      "FireTimes": [
+        17.74
+      ],
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 14.589999999999995,
+      "FireTime": 4.09,
+      "FireTimes": [
+        4.09,
+        5.49,
+        13.889999999999995
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 51,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 5,
+      "EndTime": 15.289999999999994,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        7.590000000000001,
+        11.789999999999997,
+        12.489999999999997,
+        14.589999999999995
+      ],
+      "PKill": 0.98976,
+      "WTATargetID": 66,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 78
+    },
+    {
+      "AmmoUsed": 14,
+      "EndTime": 15.289999999999994,
+      "FireTime": 1.03,
+      "FireTimes": [
+        1.03,
+        1.73,
+        2.4299999999999997,
+        4.79,
+        5.49,
+        6.890000000000001,
+        7.590000000000001,
+        8.99,
+        9.69,
+        10.389999999999999,
+        11.089999999999998,
+        11.789999999999997,
+        12.489999999999997,
+        14.589999999999995
+      ],
+      "PKill": 0.95601953488896,
       "WTATargetID": 5,
       "WTAVesselID": 2,
       "WTAWeaponID": 79
@@ -3692,83 +4409,76 @@
       "WTAWeaponID": 79
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 16.64,
+      "AmmoUsed": 3,
+      "EndTime": 19.839999999999996,
       "FireTime": 15.94,
       "FireTimes": [
-        15.94
+        15.94,
+        18.439999999999998,
+        19.139999999999997
       ],
-      "PKill": 0.19999999999999996,
+      "PKill": 0.4879999999999999,
       "WTATargetID": 49,
       "WTAVesselID": 2,
       "WTAWeaponID": 79
     },
     {
-      "AmmoUsed": 3,
-      "EndTime": 19.839999999999996,
+      "AmmoUsed": 1,
+      "EndTime": 18.439999999999998,
       "FireTime": 17.74,
       "FireTimes": [
-        17.74,
-        18.439999999999998,
-        19.139999999999997
+        17.74
       ],
-      "PKill": 0.4879999999999999,
+      "PKill": 0.19999999999999996,
       "WTATargetID": 50,
       "WTAVesselID": 2,
       "WTAWeaponID": 79
     },
     {
-      "AmmoUsed": 13,
-      "EndTime": 15.289999999999994,
+      "AmmoUsed": 4,
+      "EndTime": 14.589999999999995,
       "FireTime": 4.09,
       "FireTimes": [
         4.09,
-        4.79,
-        5.49,
         6.19,
-        7.590000000000001,
-        8.290000000000001,
-        9.69,
-        10.389999999999999,
-        11.089999999999998,
-        12.489999999999997,
         13.189999999999996,
-        13.889999999999995,
-        14.589999999999995
+        13.889999999999995
       ],
-      "PKill": 0.9999932891136,
+      "PKill": 0.9744,
       "WTATargetID": 51,
       "WTAVesselID": 2,
       "WTAWeaponID": 79
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
+      "AmmoUsed": 3,
+      "EndTime": 8.99,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        3.13,
+        8.290000000000001
       ],
-      "PKill": 0.6,
+      "PKill": 0.9359999999999999,
       "WTATargetID": 66,
       "WTAVesselID": 2,
       "WTAWeaponID": 79
     },
     {
       "AmmoUsed": 11,
-      "EndTime": 15.289999999999994,
+      "EndTime": 12.489999999999997,
       "FireTime": 1.03,
       "FireTimes": [
         1.03,
         1.73,
         2.4299999999999997,
         3.13,
-        6.19,
+        4.79,
+        5.49,
+        6.890000000000001,
         7.590000000000001,
-        8.290000000000001,
         8.99,
-        9.69,
         11.089999999999998,
-        14.589999999999995
+        11.789999999999997
       ],
       "PKill": 0.91410065408,
       "WTATargetID": 5,
@@ -3814,252 +4524,363 @@
       "WTAWeaponID": 80
     },
     {
-      "AmmoUsed": 9,
-      "EndTime": 14.589999999999995,
+      "AmmoUsed": 5,
+      "EndTime": 15.289999999999994,
       "FireTime": 4.09,
       "FireTimes": [
         4.09,
-        4.79,
-        5.49,
-        6.890000000000001,
-        10.389999999999999,
-        11.789999999999997,
+        8.290000000000001,
         12.489999999999997,
-        13.189999999999996,
-        13.889999999999995
+        13.889999999999995,
+        14.589999999999995
       ],
-      "PKill": 0.999737856,
+      "PKill": 0.98976,
       "WTATargetID": 51,
       "WTAVesselID": 2,
       "WTAWeaponID": 80
     },
     {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
+      "AmmoUsed": 5,
+      "EndTime": 13.889999999999995,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        6.19,
+        9.69,
+        10.389999999999999,
+        13.189999999999996
       ],
-      "PKill": 0.6,
+      "PKill": 0.98976,
       "WTATargetID": 66,
       "WTAVesselID": 2,
       "WTAWeaponID": 80
     },
     {
-      "AmmoUsed": 6,
-      "EndTime": 15.539999999999994,
-      "FireTime": 3.64,
+      "AmmoUsed": 2,
+      "EndTime": 16.759999999999994,
+      "FireTime": 0.68,
       "FireTimes": [
-        3.64,
-        4.34,
-        5.04,
-        13.439999999999996,
-        14.139999999999995,
-        14.839999999999995
+        0.68,
+        16.059999999999995
       ],
-      "PKill": 0.7378559999999998,
+      "PKill": 0.84,
+      "WTATargetID": 3,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 4,
+      "EndTime": 13.959999999999996,
+      "FireTime": 9.06,
+      "FireTimes": [
+        9.06,
+        9.76,
+        12.559999999999997,
+        13.259999999999996
+      ],
+      "PKill": 0.5903999999999999,
       "WTATargetID": 15,
       "WTAVesselID": 2,
       "WTAWeaponID": 81
     },
     {
-      "AmmoUsed": 14,
-      "EndTime": 19.73999999999999,
-      "FireTime": 1.28,
+      "AmmoUsed": 2,
+      "EndTime": 19.55999999999999,
+      "FireTime": 1.97,
       "FireTimes": [
-        1.28,
-        1.98,
-        2.6799999999999997,
-        5.74,
-        6.44,
-        7.140000000000001,
-        9.94,
-        12.039999999999997,
-        15.539999999999994,
-        16.239999999999995,
-        16.939999999999994,
-        17.639999999999993,
-        18.339999999999993,
-        19.039999999999992
+        1.97,
+        18.859999999999992
       ],
-      "PKill": 0.99921635835904,
-      "WTATargetID": 43,
+      "PKill": 0.84,
+      "WTATargetID": 24,
       "WTAVesselID": 2,
       "WTAWeaponID": 81
     },
     {
-      "AmmoUsed": 6,
-      "EndTime": 13.439999999999996,
-      "FireTime": 7.840000000000001,
+      "AmmoUsed": 2,
+      "EndTime": 11.159999999999998,
+      "FireTime": 6.260000000000001,
       "FireTimes": [
-        7.840000000000001,
-        8.540000000000001,
-        9.24,
-        10.639999999999999,
-        11.339999999999998,
-        12.739999999999997
+        6.260000000000001,
+        10.459999999999999
       ],
-      "PKill": 0.7378559999999998,
-      "WTATargetID": 50,
+      "PKill": 0.75,
+      "WTATargetID": 25,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 17.459999999999994,
+      "FireTime": 6.960000000000001,
+      "FireTimes": [
+        6.960000000000001,
+        11.859999999999998,
+        16.759999999999994
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 35,
       "WTAVesselID": 2,
       "WTAWeaponID": 81
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
+      "EndTime": 14.659999999999995,
+      "FireTime": 13.959999999999996,
       "FireTimes": [
-        0.0
+        13.959999999999996
       ],
-      "PKill": 0.6,
+      "PKill": 0.19999999999999996,
+      "WTATargetID": 50,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 16.059999999999995,
+      "FireTime": 11.159999999999998,
+      "FireTimes": [
+        11.159999999999998,
+        15.359999999999994
+      ],
+      "PKill": 0.84,
       "WTATargetID": 59,
       "WTAVesselID": 2,
       "WTAWeaponID": 81
     },
     {
-      "AmmoUsed": 12,
-      "EndTime": 16.239999999999995,
-      "FireTime": 3.64,
-      "FireTimes": [
-        3.64,
-        4.34,
-        5.04,
-        5.74,
-        6.44,
-        7.840000000000001,
-        9.24,
-        9.94,
-        11.339999999999998,
-        13.439999999999996,
-        14.839999999999995,
-        15.539999999999994
-      ],
-      "PKill": 0.931280523264,
-      "WTATargetID": 15,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 82
-    },
-    {
       "AmmoUsed": 1,
-      "EndTime": 13.439999999999996,
-      "FireTime": 12.739999999999997,
+      "EndTime": 4.83,
+      "FireTime": 4.13,
       "FireTimes": [
-        12.739999999999997
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 40,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 82
-    },
-    {
-      "AmmoUsed": 12,
-      "EndTime": 19.73999999999999,
-      "FireTime": 1.28,
-      "FireTimes": [
-        1.28,
-        1.98,
-        2.6799999999999997,
-        7.140000000000001,
-        8.540000000000001,
-        10.639999999999999,
-        12.039999999999997,
-        16.239999999999995,
-        16.939999999999994,
-        17.639999999999993,
-        18.339999999999993,
-        19.039999999999992
-      ],
-      "PKill": 0.997823217664,
-      "WTATargetID": 43,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 82
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 14.839999999999995,
-      "FireTime": 14.139999999999995,
-      "FireTimes": [
-        14.139999999999995
-      ],
-      "PKill": 0.19999999999999996,
-      "WTATargetID": 50,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 82
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 0.7,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.6,
-      "WTATargetID": 59,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 82
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 14.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        7.0
-      ],
-      "PKill": 0.75,
-      "WTATargetID": 15,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 83
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 14.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        7.0
-      ],
-      "PKill": 0.75,
-      "WTATargetID": 15,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 84
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 14.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        7.0
-      ],
-      "PKill": 0.75,
-      "WTATargetID": 94,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 85
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 14.0,
-      "FireTime": 7.0,
-      "FireTimes": [
-        7.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 10,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 86
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 7.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
+        4.13
       ],
       "PKill": 0.5,
+      "WTATargetID": 63,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 8.360000000000001,
+      "FireTime": 4.86,
+      "FireTimes": [
+        4.86,
+        7.660000000000001
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 82,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.06,
+      "FireTime": 8.360000000000001,
+      "FireTimes": [
+        8.360000000000001
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 84,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 6.260000000000001,
+      "FireTime": 3.25,
+      "FireTimes": [
+        3.25,
+        5.5600000000000005
+      ],
+      "PKill": 0.75,
+      "WTATargetID": 86,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 15.359999999999994,
+      "FireTime": 14.659999999999995,
+      "FireTimes": [
+        14.659999999999995
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 87,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.159999999999993,
+      "FireTime": 17.459999999999994,
+      "FireTimes": [
+        17.459999999999994
+      ],
+      "PKill": 0.4,
+      "WTATargetID": 89,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 18.859999999999992,
+      "FireTime": 18.159999999999993,
+      "FireTimes": [
+        18.159999999999993
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 90,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 81
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 12.349999999999996,
+      "FireTime": 11.649999999999997,
+      "FireTimes": [
+        11.649999999999997
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 3,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 16.549999999999994,
+      "FireTime": 12.349999999999996,
+      "FireTimes": [
+        12.349999999999996,
+        15.849999999999993
+      ],
+      "PKill": 0.3599999999999999,
       "WTATargetID": 15,
       "WTAVesselID": 2,
-      "WTAWeaponID": 86
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 13.749999999999995,
+      "FireTime": 13.049999999999995,
+      "FireTimes": [
+        13.049999999999995
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 24,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 15.149999999999993,
+      "FireTime": 4.65,
+      "FireTimes": [
+        4.65,
+        7.450000000000001,
+        14.449999999999994
+      ],
+      "PKill": 0.875,
+      "WTATargetID": 25,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 1.4,
+      "FireTime": 0.7,
+      "FireTimes": [
+        0.7
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 59,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 4,
+      "EndTime": 15.849999999999993,
+      "FireTime": 6.050000000000001,
+      "FireTimes": [
+        6.050000000000001,
+        6.750000000000001,
+        9.549999999999999,
+        15.149999999999993
+      ],
+      "PKill": 0.9375,
+      "WTATargetID": 63,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 4,
+      "EndTime": 18.64999999999999,
+      "FireTime": 5.3500000000000005,
+      "FireTimes": [
+        5.3500000000000005,
+        8.85,
+        13.749999999999995,
+        17.949999999999992
+      ],
+      "PKill": 0.9375,
+      "WTATargetID": 82,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 19.34999999999999,
+      "FireTime": 10.949999999999998,
+      "FireTimes": [
+        10.949999999999998,
+        18.64999999999999
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 84,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 5,
+      "EndTime": 17.949999999999992,
+      "FireTime": 3.25,
+      "FireTimes": [
+        3.25,
+        3.95,
+        8.15,
+        10.249999999999998,
+        17.249999999999993
+      ],
+      "PKill": 0.96875,
+      "WTATargetID": 86,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 2.8,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        2.0999999999999996
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 87,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 17.249999999999993,
+      "FireTime": 1.4,
+      "FireTimes": [
+        1.4,
+        16.549999999999994
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 90,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 82
     },
     {
       "AmmoUsed": 1,
@@ -4071,7 +4892,7 @@
       "PKill": 0.8,
       "WTATargetID": 10,
       "WTAVesselID": 2,
-      "WTAWeaponID": 87
+      "WTAWeaponID": 83
     },
     {
       "AmmoUsed": 1,
@@ -4083,7 +4904,19 @@
       "PKill": 0.5,
       "WTATargetID": 94,
       "WTAVesselID": 2,
-      "WTAWeaponID": 87
+      "WTAWeaponID": 83
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 24,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 84
     },
     {
       "AmmoUsed": 1,
@@ -4092,10 +4925,22 @@
       "FireTimes": [
         7.0
       ],
-      "PKill": 0.5,
-      "WTATargetID": 17,
+      "PKill": 0.8,
+      "WTATargetID": 87,
       "WTAVesselID": 2,
-      "WTAWeaponID": 88
+      "WTAWeaponID": 84
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 35,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 85
     },
     {
       "AmmoUsed": 1,
@@ -4107,7 +4952,31 @@
       "PKill": 0.5,
       "WTATargetID": 94,
       "WTAVesselID": 2,
-      "WTAWeaponID": 88
+      "WTAWeaponID": 85
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 16,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 86
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 84,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 86
     },
     {
       "AmmoUsed": 1,
@@ -4119,7 +4988,7 @@
       "PKill": 0.5,
       "WTATargetID": 15,
       "WTAVesselID": 2,
-      "WTAWeaponID": 89
+      "WTAWeaponID": 87
     },
     {
       "AmmoUsed": 1,
@@ -4131,20 +5000,44 @@
       "PKill": 0.5,
       "WTATargetID": 94,
       "WTAVesselID": 2,
-      "WTAWeaponID": 89
+      "WTAWeaponID": 87
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 15,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 88
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 90,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 88
     },
     {
       "AmmoUsed": 2,
-      "EndTime": 16.66,
-      "FireTime": 2.66,
+      "EndTime": 14.0,
+      "FireTime": 0.0,
       "FireTimes": [
-        2.66,
-        9.66
+        0.0,
+        7.0
       ],
-      "PKill": 0.96,
-      "WTATargetID": 10,
+      "PKill": 0.75,
+      "WTATargetID": 17,
       "WTAVesselID": 2,
-      "WTAWeaponID": 90
+      "WTAWeaponID": 89
     },
     {
       "AmmoUsed": 1,
@@ -4156,6 +5049,42 @@
       "PKill": 0.8,
       "WTATargetID": 10,
       "WTAVesselID": 2,
+      "WTAWeaponID": 90
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 94,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 90
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 15,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 91
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 24,
+      "WTAVesselID": 2,
       "WTAWeaponID": 91
     },
     {
@@ -4167,19 +5096,6 @@
       ],
       "PKill": 0.5,
       "WTATargetID": 17,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 91
-    },
-    {
-      "AmmoUsed": 2,
-      "EndTime": 14.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0,
-        7.0
-      ],
-      "PKill": 0.75,
-      "WTATargetID": 15,
       "WTAVesselID": 2,
       "WTAWeaponID": 92
     },
@@ -4191,7 +5107,19 @@
         7.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 10,
+      "WTATargetID": 90,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 92
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
+      "FireTimes": [
+        7.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 16,
       "WTAVesselID": 2,
       "WTAWeaponID": 93
     },
@@ -4202,83 +5130,46 @@
       "FireTimes": [
         0.0
       ],
-      "PKill": 0.5,
-      "WTATargetID": 17,
+      "PKill": 0.8,
+      "WTATargetID": 59,
       "WTAVesselID": 2,
       "WTAWeaponID": 93
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 14.0,
+      "AmmoUsed": 1,
+      "EndTime": 7.0,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0,
-        7.0
+        0.0
       ],
-      "PKill": 0.75,
-      "WTATargetID": 17,
+      "PKill": 0.8,
+      "WTATargetID": 3,
       "WTAVesselID": 2,
       "WTAWeaponID": 94
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 10.0,
-      "FireTime": 0.0,
+      "EndTime": 14.0,
+      "FireTime": 7.0,
       "FireTimes": [
-        0.0
+        7.0
+      ],
+      "PKill": 0.5,
+      "WTATargetID": 15,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 94
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
       ],
       "PKill": 0.8,
-      "WTATargetID": 64,
+      "WTATargetID": 13,
       "WTAVesselID": 2,
       "WTAWeaponID": 95
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 20.0,
-      "FireTime": 10.0,
-      "FireTimes": [
-        10.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 99,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 95
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 10.0,
-      "FireTime": 0.0,
-      "FireTimes": [
-        0.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 54,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 96
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 20.0,
-      "FireTime": 10.0,
-      "FireTimes": [
-        10.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 78,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 96
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 20.0,
-      "FireTime": 10.0,
-      "FireTimes": [
-        10.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 8,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 97
     },
     {
       "AmmoUsed": 1,
@@ -4290,7 +5181,31 @@
       "PKill": 0.8,
       "WTATargetID": 41,
       "WTAVesselID": 2,
-      "WTAWeaponID": 97
+      "WTAWeaponID": 95
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 8,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 96
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 13,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 96
     },
     {
       "AmmoUsed": 2,
@@ -4301,7 +5216,31 @@
         10.0
       ],
       "PKill": 0.96,
-      "WTATargetID": 13,
+      "WTATargetID": 99,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 97
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 8,
+      "WTAVesselID": 2,
+      "WTAWeaponID": 98
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 64,
       "WTAVesselID": 2,
       "WTAWeaponID": 98
     },
@@ -4314,34 +5253,23 @@
         10.0
       ],
       "PKill": 0.96,
-      "WTATargetID": 8,
+      "WTATargetID": 78,
       "WTAVesselID": 2,
       "WTAWeaponID": 99
     },
     {
-      "AmmoUsed": 1,
+      "AmmoUsed": 2,
       "EndTime": 20.0,
-      "FireTime": 10.0,
-      "FireTimes": [
-        10.0
-      ],
-      "PKill": 0.8,
-      "WTATargetID": 41,
-      "WTAVesselID": 2,
-      "WTAWeaponID": 100
-    },
-    {
-      "AmmoUsed": 1,
-      "EndTime": 10.0,
       "FireTime": 0.0,
       "FireTimes": [
-        0.0
+        0.0,
+        10.0
       ],
-      "PKill": 0.8,
-      "WTATargetID": 99,
+      "PKill": 0.96,
+      "WTATargetID": 54,
       "WTAVesselID": 2,
       "WTAWeaponID": 100
     }
   ],
-  "objective": 40.07986192748257
+  "objective": 5.5973451257757185
 }
