@@ -19,6 +19,10 @@ on:
         description: "Time budget per scenario (seconds)"
         required: false
         default: "5"
+      terminate_by:
+        description: "Termination mode for GRASP: restarts or search-seconds"
+        required: false
+        default: "search-seconds"
 
 jobs:
   prepare-matrix:
@@ -73,6 +77,7 @@ jobs:
           ALPHA: ${{ github.event.inputs.alpha || '0.85' }}
           SEED: ${{ github.event.inputs.seed || '42' }}
           SEARCH_SECONDS: ${{ github.event.inputs.search_seconds || '5' }}
+          TERMINATE_BY: ${{ github.event.inputs.terminate_by || 'search-seconds' }}
           SCENARIO: ${{ matrix.scenario }}
         shell: bash
         run: |
@@ -80,7 +85,8 @@ jobs:
 
           log="run.log"
           ./wta_solver "$SCENARIO" --restarts "$RESTARTS" --alpha "$ALPHA" \
-            --seed "$SEED" --search-seconds "$SEARCH_SECONDS" | tee "$log"
+            --seed "$SEED" --search-seconds "$SEARCH_SECONDS" \
+            --terminate-by "$TERMINATE_BY" | tee "$log"
 
           scenario_name="$(basename "$SCENARIO")"
           initial_threat=$(jq '[.assignment_request.targets[].ThreatScore] | add // 0' "$SCENARIO")
@@ -93,8 +99,8 @@ jobs:
           mkdir -p metrics
           csv="metrics/${scenario_name%.json}.csv"
           {
-            echo "scenario,initial_threat,best,mean,avg_time_per_run_s,n_restarts,search_seconds,alpha,seed"
-            echo "$scenario_name,$initial_threat,$best,$mean,$avg_time,$n_restarts,$SEARCH_SECONDS,$ALPHA,$SEED"
+            echo "scenario,initial_threat,best,mean,avg_time_per_run_s,n_restarts,search_seconds,terminate_by,alpha,seed"
+            echo "$scenario_name,$initial_threat,$best,$mean,$avg_time,$n_restarts,$SEARCH_SECONDS,$TERMINATE_BY,$ALPHA,$SEED"
           } > "$csv"
 
       - name: Upload per-scenario metrics

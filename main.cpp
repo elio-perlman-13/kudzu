@@ -2,7 +2,7 @@
 // Requires nlohmann/json:  sudo apt install nlohmann-json3-dev
 //
 // Build:  g++ -std=c++17 -O2 -o wta main.cpp
-// Run:    ./wta [scenario.json] [--restarts N] [--alpha A] [--seed S]
+// Run:    ./wta [scenario.json] [--restarts N] [--search-seconds S] [--terminate-by restarts|search-seconds] [--alpha A] [--seed S]
 
 #include <algorithm>
 #include <chrono>
@@ -220,12 +220,15 @@ static void print_solution(const Solution& sol, int rank) {
 // main
 // ---------------------------------------------------------------------------
 int main(int argc, char* argv[]) {
+    enum class TerminationMode { Restarts, SearchSeconds };
+
     std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
     std::string output_path;
-    int    restarts       = 1;    // minimum restarts before time check
-    double alpha           = 0.85; // GRASP alpha parameter: 0.0 = pure random, 1.0 = greedy    
-    uint32_t seed          = 42;
-    double search_seconds  = 5.0;
+    int    restarts            = 1;    // number of restarts or minimum restarts when using search-time termination
+    double alpha               = 0.85; // GRASP alpha parameter: 0.0 = pure random, 1.0 = greedy    
+    uint32_t seed              = 42;
+    double search_seconds      = 5.0;
+    TerminationMode term_mode  = TerminationMode::SearchSeconds;
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
@@ -233,6 +236,12 @@ int main(int argc, char* argv[]) {
         else if (arg == "--alpha"     && i + 1 < argc) alpha          = std::stod(argv[++i]);
         else if (arg == "--seed"      && i + 1 < argc) seed           = static_cast<uint32_t>(std::stoul(argv[++i]));
         else if (arg == "--search-seconds" && i + 1 < argc) search_seconds = std::stod(argv[++i]);
+        else if (arg == "--terminate-by" && i + 1 < argc) {
+            std::string mode = argv[++i];
+            if (mode == "restarts") term_mode = TerminationMode::Restarts;
+            else if (mode == "search-seconds") term_mode = TerminationMode::SearchSeconds;
+            else throw std::runtime_error("unknown termination mode: " + mode);
+        }
         else if (arg == "--output"    && i + 1 < argc) output_path    = argv[++i];
         else if (arg[0] != '-')                        scenario_path  = arg;
     }
@@ -252,7 +261,9 @@ int main(int argc, char* argv[]) {
               << "  pairs="   << sc.windows.size()
               << "  horizon=" << sc.horizon << "s\n";
 
-    std::cout << "\nRunning GRASP: min_restarts=" << restarts
+    std::cout << "\nRunning GRASP: term_mode="
+              << (term_mode == TerminationMode::Restarts ? "restarts" : "search-seconds")
+              << "  restarts=" << restarts
               << "  search_seconds=" << search_seconds
               << "  alpha=" << alpha << "  seed=" << seed << "\n";
 
@@ -265,7 +276,8 @@ int main(int argc, char* argv[]) {
     };
 
     int r = 0;
-    while (r < restarts || elapsed_s() < search_seconds) {
+    while ((term_mode == TerminationMode::Restarts && r < restarts)
+        || (term_mode == TerminationMode::SearchSeconds && (r < restarts || elapsed_s() < search_seconds))) {
         Solution sol = Solution::empty(
             sc.weapons, sc.targets, sc.p_ij, sc.windows,
             sc.burst_dur, sc.max_shots, sc.vessel_id_map, sc.horizon);
@@ -293,5 +305,5 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver main.cpp && ./wta_solver data/scenario_050.json [scenario.json] [--restarts N] [--alpha A] [--seed S]
+// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver main.cpp && ./wta_solver data/scenario_050.json [scenario.json] [--restarts N] [--search-seconds S] [--terminate-by restarts|search-seconds] [--alpha A] [--seed S]
 // Check && plot: python check_solution.py data/scenario_022.json /workspaces/kudzu/data/scenario_022_solution.json && python plot.py data/scenario_022.json /workspaces/kudzu/data/scenario_022_solution.json --out plot.png
