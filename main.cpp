@@ -224,11 +224,11 @@ int main(int argc, char* argv[]) {
 
     std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
     std::string output_path;
-    int    restarts            = 1;    // number of restarts or minimum restarts when using search-time termination
+    int    restarts            = 5;    // number of restarts or minimum restarts when using search-time termination
     double alpha               = 0.85; // GRASP alpha parameter: 0.0 = pure random, 1.0 = greedy    
     uint32_t seed              = 42;
     double search_seconds      = 5.0;
-    TerminationMode term_mode  = TerminationMode::SearchSeconds;
+    TerminationMode term_mode  = TerminationMode::Restarts;
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
