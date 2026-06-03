@@ -494,5 +494,5 @@ int main(int argc, char* argv[]) {
 }
 
 // Run:
-// g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_022.json
-// Check && plot: python check_solution.py data/scenario_022.json /workspaces/WTA/data/scenario_022_solution.json && python plot.py data/scenario_022.json /workspaces/WTA/data/scenario_022_solution.json --out plot.png
+// g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_035.json
+// Check && plot: python check_solution.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json && python plot.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json --out plot.png

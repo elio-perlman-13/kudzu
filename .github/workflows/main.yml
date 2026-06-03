@@ -8,7 +8,7 @@ on:
       restarts:
         description: "Minimum number of GRASP restarts (then runs until time budget)"
         required: false
-        default: "1"
+        default: "10"
       alpha:
         description: "GRASP alpha parameter (0.0 = random, 1.0 = greedy)"
         required: false
@@ -24,7 +24,7 @@ on:
       terminate_by:
         description: "Termination mode for GRASP: restarts or search-seconds"
         required: false
-        default: "search-seconds"
+        default: "restarts"
 
 jobs:
   prepare-matrix:

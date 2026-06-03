@@ -1,7 +1,8 @@
 M6_RUIN_CONGESTED__H_WINDOW_CLOSURE
 
 Ruin (CONGESTED): selects bursts on weapons with the least free time (uses free_time_per_weapon(sol)), i.e., weapons that are most tightly scheduled; removes q bursts where q = ruin_count_from_val(val). This targets bottlenecked weapons to free schedule space around congested slots.
-Rebuild (H_WINDOW_CLOSURE): build_candidates enumerates feasible commits; the heuristic greedily chooses candidates with smallest slack = window_end - candidate_time (earliest window-closing first), breaking ties by earliest time then survival/target threat. Rebuild loop uses apply_one_arm_commit_inc to commit incrementally.
+Rebuild (H_WINDOW_CLOSURE): build_candidates enumerates feasible commits;
+the heuristic greedily chooses candidates with smallest slacwk = window_end - candidate_time (earliest window-closing first), breaking ties by earliest time then survival/target threat. Rebuild loop uses apply_one_arm_commit_inc to commit incrementally.
 When to use / benefit: use when many bursts cluster causing missed or tight windows; helps shift shots to close imminent windows.
 Drawbacks: may remove useful assignments on congested weapons; rebuild may prefer urgency over long-term threat reduction.
 M7_RUIN_LOW_MARGINAL__H_COVER_FIRST
