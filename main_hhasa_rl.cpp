@@ -481,6 +481,9 @@ int main(int argc, char* argv[]) {
 	std::vector<double> run_results;
 	run_results.reserve(runs);
 
+	// Time-based tracking: second -> best objective found by that second
+	std::unordered_map<int, double> best_per_second;
+
 	const auto wall_start = std::chrono::steady_clock::now();
 
 	std::vector<char> llh_enabled(N, 1);
@@ -504,6 +507,9 @@ int main(int argc, char* argv[]) {
 
 		const auto run_start = std::chrono::steady_clock::now();
 
+		// Per-run time tracking
+		std::unordered_map<int, double> run_best_per_second;
+
 		// --- Initialization: GRASP ---
 		Solution s = grasp(
 			sc.weapons, sc.targets, sc.p_ij, sc.windows,
@@ -515,6 +521,9 @@ int main(int argc, char* argv[]) {
 				  << "[run " << (run + 1) << "/" << runs
 				  << "  seed=" << run_seed
 				  << "]  GRASP init obj=" << fit_init << "\n";
+
+		// Record initial solution at t=0
+		run_best_per_second[0] = fit_init;
 
 		Solution s_best   = s.copy();
 		double   fit_best = fit_init;
@@ -635,6 +644,21 @@ int main(int argc, char* argv[]) {
 			double delta = fit_cand - fit_cur_state;
 			acc++;
 
+			// Record cumulative best objective so far at this second
+			{
+				double elapsed = std::chrono::duration<double>(
+					std::chrono::steady_clock::now() - run_start).count();
+				int sec = static_cast<int>(elapsed);
+				
+				// Store the best found anywhere up to this point
+				if (run_best_per_second.find(sec) == run_best_per_second.end()) {
+					run_best_per_second[sec] = fit_best;
+				} else {
+					// Keep the better cumulative value
+					run_best_per_second[sec] = std::min(run_best_per_second[sec], fit_best);
+				}
+			}
+
 			bool accept = false;
 			if (delta <= 0.0) {
 				accept = true;
@@ -731,6 +755,23 @@ int main(int argc, char* argv[]) {
 					  << "  " << std::setw(11) << improved_cnt[i]
 					  << "  " << std::setw(9) << accepted_worse[i]
 					  << "  " << std::setprecision(4) << val[i] << "\n";
+		}
+
+		// Print best objective per second
+		if (!run_best_per_second.empty()) {
+			std::cout << std::fixed << std::setprecision(10)
+					  << "  Best objective per second (init=" << fit_init << "):\n";
+			for (int sec = 0; sec <= static_cast<int>(run_elapsed); ++sec) {
+				if (run_best_per_second.find(sec) != run_best_per_second.end()) {
+					double best_at_sec = run_best_per_second[sec];
+					double improvement = fit_init - best_at_sec;
+					double pct = (fit_init > 0.0) ? 100.0 * improvement / fit_init : 0.0;
+					std::cout << "    t=" << std::setw(3) << sec << "s  best=" 
+							  << best_at_sec 
+							  << "  (improvement=" << std::setprecision(10) << improvement 
+							  << " / " << std::setprecision(2) << pct << "%)\n";
+				}
+			}
 		}
 
 		if (!have_overall || fit_best < overall_best_fit) {

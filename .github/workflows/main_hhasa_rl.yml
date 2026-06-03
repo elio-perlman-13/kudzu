@@ -1,6 +1,8 @@
 name: Running HHASA-RL solver on all scenarios
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       restarts:
@@ -14,7 +16,7 @@ on:
       runs:
         description: "Independent runs per scenario"
         required: false
-        default: "3"
+        default: "1"
       search_seconds:
         description: "Per-run HHASA-RL wall-clock budget in seconds (0 = disable time stop)"
         required: false
@@ -120,7 +122,7 @@ jobs:
           MACC: ${{ github.event.inputs.macc || '100000' }}
           IITER: ${{ github.event.inputs.iiter || '100' }}
           SEED: ${{ github.event.inputs.seed || '42' }}
-          RL: ${{ github.event.inputs.rl || '3' }}
+          RL: ${{ github.event.inputs.rl || '1' }}
           FAST_MODE: ${{ github.event.inputs.fast_mode || 'false' }}
           STRICT_SUCCESS: ${{ github.event.inputs.strict_success || 'true' }}
           AUTO_PRUNE: ${{ github.event.inputs.auto_prune || 'true' }}
@@ -166,14 +168,59 @@ jobs:
           mean=$(grep -E '^  mean    = ' "$log" | tail -n 1 | sed -E 's/.*= ([0-9.]+).*/\1/' || true)
           sd=$(grep -E '^  std-dev = ' "$log" | tail -n 1 | sed -E 's/.*= ([0-9.]+).*/\1/' || true)
 
+          # Extract convergence trajectory (per-second best objectives and improvements)
+          convergence_json=$(python3 << 'EOF'
+          import sys, re, json
+
+          with open("$log") as f:
+              content = f.read()
+
+          # Find the convergence section
+          match = re.search(r'Best objective per second \(init=([\d.]+)\):\n((?:\s+t=\s+\d+s.*\n)*)', content)
+          if not match:
+              print(json.dumps({"trajectory": []}))
+              sys.exit(0)
+
+          init_val = float(match.group(1))
+          lines = match.group(2).strip().split('\n')
+
+          trajectory = []
+          for line in lines:
+              # Parse: "t=  0s  best=4.0759470969  (improvement=1.7768230930 / 30.36%)"
+              m = re.search(r't=\s+(\d+)s\s+best=([\d.]+)\s+\(improvement=([\d.]+)\s*/\s+([\d.]+)%\)', line)
+              if m:
+                  trajectory.append({
+                      "time_s": int(m.group(1)),
+                      "best": float(m.group(2)),
+                      "improvement": float(m.group(3)),
+                      "improvement_pct": float(m.group(4))
+                  })
+
+          result = {
+              "initial_obj": init_val,
+              "trajectory": trajectory,
+              "final_best": trajectory[-1]["best"] if trajectory else init_val,
+              "final_improvement_pct": trajectory[-1]["improvement_pct"] if trajectory else 0.0
+          }
+          print(json.dumps(result))
+          EOF
+          )
+
+          final_improvement_pct=$(echo "$convergence_json" | jq '.final_improvement_pct // 0' || echo "0")
+          best_at_1s=$(echo "$convergence_json" | jq '.trajectory[] | select(.time_s == 1) | .best // "nan"' | head -1)
+          [[ "$best_at_1s" == "" ]] && best_at_1s="nan"
+
           stem="${scenario_name%.json}"
-          mkdir -p metrics solutions logs
+          mkdir -p metrics solutions logs convergence
 
           csv="metrics/${stem}.csv"
           {
-            echo "scenario,initial_threat,initial_obj,best,mean,std_dev,elapsed_s,restarts,grasp_alpha,runs,search_seconds,macc,iiter,seed,rl,fast_mode,strict_success,auto_prune,prune_min_usage,eps,kick_blocks,kick_val"
-            echo "$scenario_name,$initial_threat,${first_init:-nan},$best,${mean:-nan},${sd:-nan},$elapsed,$RESTARTS,$GRASP_ALPHA,$RUNS,$SEARCH_SECONDS,$MACC,$IITER,$SEED,$RL,$FAST_MODE,$STRICT_SUCCESS,$AUTO_PRUNE,$PRUNE_MIN_USAGE,$EPS,$KICK_BLOCKS,$KICK_VAL"
+            echo "scenario,initial_threat,initial_obj,best,best_at_1s,improvement_pct,mean,std_dev,elapsed_s,restarts,grasp_alpha,runs,search_seconds,macc,iiter,seed,rl,fast_mode,strict_success,auto_prune,prune_min_usage,eps,kick_blocks,kick_val"
+            echo "$scenario_name,$initial_threat,${first_init:-nan},$best,$best_at_1s,$final_improvement_pct,${mean:-nan},${sd:-nan},$elapsed,$RESTARTS,$GRASP_ALPHA,$RUNS,$SEARCH_SECONDS,$MACC,$IITER,$SEED,$RL,$FAST_MODE,$STRICT_SUCCESS,$AUTO_PRUNE,$PRUNE_MIN_USAGE,$EPS,$KICK_BLOCKS,$KICK_VAL"
           } > "$csv"
+
+          # Save convergence trajectory JSON
+          echo "$convergence_json" > "convergence/${stem}_convergence.json"
 
           cp "$log" "logs/${stem}_search_stat.txt"
 
@@ -188,6 +235,7 @@ jobs:
             metrics/*.csv
             logs/*_search_stat.txt
             solutions/*_solution.json
+            convergence/*_convergence.json
 
   aggregate:
     needs: run-scenarios
@@ -222,6 +270,12 @@ jobs:
         with:
           name: hhasa-rl-solutions-all-scenarios
           path: artifacts/**/*_solution.json
+
+      - name: Upload all convergence trajectories
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhasa-rl-convergence-all-scenarios
+          path: artifacts/**/*_convergence.json
 
       - name: Upload all search stats
         uses: actions/upload-artifact@v4
