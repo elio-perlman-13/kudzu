@@ -1,8 +1,6 @@
 name: Running HHASA-RL solver on all scenarios
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       restarts:

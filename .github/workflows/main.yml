@@ -1,6 +1,8 @@
 name: Benchmark GRASP Across Scenarios
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       restarts:

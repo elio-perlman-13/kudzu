@@ -119,10 +119,10 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng) {
 
         // ---- Stage 2: pick best weapon for selected_tid (deterministic) ----------
         // ---- Stage 2: pick best weapon for selected_tid (deterministic) ----------
-        // 1. scarcity (fewer live targets) ascending — most constrained weapon first
-        // 2. p_ij(wid, selected_tid) descending — most effective weapon
-        // 3. earliest fire time
-        // 4. weapon id (deterministic tie-break)
+        // 1. smallest weapon id first
+        // 2. scarcity (fewer live targets) ascending — most constrained weapon first
+        // 3. p_ij(wid, selected_tid) descending — most effective weapon
+        // 4. earliest fire time
         bool   have_choice  = false;
         int    chosen_wid   = -1;
         int    chosen_tid   = selected_tid;
@@ -141,10 +141,10 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng) {
             if (pit != sol.p_ij->end()) p_this = pit->second;
 
             if (!have_choice
-                || cs.t < chosen_t - eps
-                || (std::fabs(cs.t - chosen_t) <= eps && scarcity < best_scarcity)
-                || (std::fabs(cs.t - chosen_t) <= eps && scarcity == best_scarcity && p_this > best_p + eps)
-                || (std::fabs(cs.t - chosen_t) <= eps && scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps && wid < chosen_wid)) {
+                || wid < chosen_wid
+                || (wid == chosen_wid && scarcity < best_scarcity)
+                || (wid == chosen_wid && scarcity == best_scarcity && p_this > best_p + eps)
+                || (wid == chosen_wid && scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps && cs.t < chosen_t - eps)) {
                 have_choice   = true;
                 chosen_wid    = wid;
                 chosen_t      = cs.t;
