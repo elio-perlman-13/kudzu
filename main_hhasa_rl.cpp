@@ -811,4 +811,4 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
-// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp && ./wta_solver_hhasa_rl data/scenario_022.json --runs 3 --search-seconds 1.666 --macc 100000 --iiter 100 --seed 42 --rl 3
+// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp && ./wta_solver_hhasa_rl data/scenario_022.json --runs 1 --search-seconds 5 --macc 100000 --iiter 100 --seed 42 --rl 3

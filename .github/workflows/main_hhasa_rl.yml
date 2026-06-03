@@ -169,10 +169,10 @@ jobs:
           sd=$(grep -E '^  std-dev = ' "$log" | tail -n 1 | sed -E 's/.*= ([0-9.]+).*/\1/' || true)
 
           # Extract convergence trajectory (per-second best objectives and improvements)
-          convergence_json=$(python3 << 'EOF'
+          convergence_json=$(python3 - "$log" << 'EOF'
           import sys, re, json
 
-          with open("$log") as f:
+          with open(sys.argv[1]) as f:
               content = f.read()
 
           # Find the convergence section
