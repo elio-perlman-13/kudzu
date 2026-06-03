@@ -141,8 +141,8 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng) {
             if (pit != sol.p_ij->end()) p_this = pit->second;
 
             if (!have_choice
-                || scarcity < best_scarcity
-                || (scarcity == best_scarcity && p_this > best_p + eps)
+                || p_this > best_p + eps
+                || (scarcity < best_scarcity && std::fabs(p_this - best_p) <= eps)
                 || (scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps
                     && (cs.t < chosen_t - eps
                         || (std::fabs(cs.t - chosen_t) <= eps && wid < chosen_wid)))) {
