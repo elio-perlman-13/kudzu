@@ -500,29 +500,6 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	// Post-run L1 polish: apply best-delta single reassignment repeatedly
-	// until no improvement remains.  Each call costs ~0.05ms so this is fast.
-	{
-		int l1_polish_iters = 0;
-		bool improved = true;
-		while (improved) {
-			Solution polished = best.copy();
-			improved = perturbation::apply_llh(
-				static_cast<perturbation::LLHId>(12), // L1
-				polished, rng, perturbation::ApplyParams{1.0});
-			if (improved && polished.objective() < f_best) {
-				best = polished.copy();
-				f_best = polished.objective();
-				++l1_polish_iters;
-			} else {
-				improved = false;
-			}
-		}
-		if (l1_polish_iters > 0)
-			std::cout << "L1 post-polish: " << l1_polish_iters
-					  << " improvements  final=" << std::fixed << std::setprecision(10) << f_best << "\n";
-	}
-
 	std::cout << "\nObjective before perturbation: " << std::fixed << std::setprecision(10) << f_initial << "\n";
 	std::cout << "Objective after perturbation:  " << std::fixed << std::setprecision(10) << f_best << "\n";
 	std::cout << "Perturbations attempted: " << perturbations_attempted
