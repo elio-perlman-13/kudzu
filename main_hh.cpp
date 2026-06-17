@@ -15,8 +15,8 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include "json.hpp"
 
+#include "json.hpp"
 #include "heuristic.hpp"
 #include "perturbation.hpp"
 
@@ -195,14 +195,35 @@ static void write_solution(const Solution& sol, const std::string& path) {
 int main(int argc, char* argv[]) {
 	std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
 	std::string output_path;
+	std::string config_path   = "config.json";
 	int    restarts = 1;
 	double alpha    = 0.85;
 	uint32_t seed   = 42;
 	double search_seconds = 5.0;
 
+	// --- load config.json ("lean_gihh" section) before parsing CLI args ---
+	{
+		std::ifstream cfg_f(config_path);
+		if (cfg_f) {
+			try {
+				json cfg = json::parse(cfg_f);
+				if (cfg.contains("lean_gihh")) {
+					auto& g = cfg["lean_gihh"];
+					if (g.contains("seed"))           seed           = g["seed"].get<uint32_t>();
+					if (g.contains("restarts"))       restarts       = g["restarts"].get<int>();
+					if (g.contains("alpha"))          alpha          = g["alpha"].get<double>();
+					if (g.contains("search_seconds")) search_seconds = g["search_seconds"].get<double>();
+				}
+			} catch (const std::exception& e) {
+				std::cerr << "[config] parse error: " << e.what() << "\n";
+			}
+		}
+	}
+
 	for (int i = 1; i < argc; ++i) {
 		std::string arg = argv[i];
-		if (arg == "--restarts" && i + 1 < argc) restarts = std::stoi(argv[++i]);
+		if (arg == "--config"  && i + 1 < argc) config_path = argv[++i];
+		else if (arg == "--restarts" && i + 1 < argc) restarts = std::stoi(argv[++i]);
 		else if (arg == "--alpha"  && i + 1 < argc) alpha = std::stod(argv[++i]);
 		else if (arg == "--seed"   && i + 1 < argc) seed  = static_cast<uint32_t>(std::stoul(argv[++i]));
 		else if (arg == "--search-seconds" && i + 1 < argc) search_seconds = std::stod(argv[++i]);
@@ -319,6 +340,8 @@ int main(int argc, char* argv[]) {
 	};
 
 	auto begin = std::chrono::steady_clock::now();
+	std::unordered_map<int, double> run_best_per_second;
+	run_best_per_second[0] = f_initial;
 	auto elapsed_seconds = [&]() {
 		auto now = std::chrono::steady_clock::now();
 		return std::chrono::duration<double>(now - begin).count();
@@ -438,12 +461,43 @@ int main(int argc, char* argv[]) {
 			f_incumbent = f_proposed;
 		}
 
+		// Record cumulative best objective so far at this second.
+		{
+			double elapsed = elapsed_seconds();
+			int sec = static_cast<int>(elapsed);
+			double best_so_far = std::min(f_best, f_runbest);
+			auto it = run_best_per_second.find(sec);
+			if (it == run_best_per_second.end()) {
+				run_best_per_second[sec] = best_so_far;
+			} else {
+				it->second = std::min(it->second, best_so_far);
+			}
+		}
+
 	}
+
+	double run_elapsed = elapsed_seconds();
 
 	if (f_runbest < f_best) {
 		best = runbest.copy();
 		f_best = f_runbest;
 		best_list = runbest_list;
+	}
+
+	if (!run_best_per_second.empty()) {
+		std::cout << std::fixed << std::setprecision(10)
+				  << "  Best objective per second (init=" << f_initial << "):\n";
+		for (int sec = 0; sec <= static_cast<int>(run_elapsed); ++sec) {
+			if (run_best_per_second.find(sec) != run_best_per_second.end()) {
+				double best_at_sec = run_best_per_second[sec];
+				double improvement = f_initial - best_at_sec;
+				double pct = (f_initial > 0.0) ? 100.0 * improvement / f_initial : 0.0;
+				std::cout << "    t=" << std::setw(3) << sec << "s  best=" 
+						  << best_at_sec 
+						  << "  (improvement=" << std::setprecision(10) << improvement 
+						  << " / " << std::setprecision(2) << pct << "%)\n";
+			}
+		}
 	}
 
 	// Post-run L1 polish: apply best-delta single reassignment repeatedly

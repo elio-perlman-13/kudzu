@@ -9,8 +9,8 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <nlohmann/json.hpp>
 
+#include "json.hpp"
 #include "heuristic.hpp"
 #include "perturbation.hpp"
 
@@ -184,30 +184,27 @@ static void write_solution(const Solution& sol, const std::string& path) {
 }
 
 static double dynamic_beta(
-	double progress_pct,
-	double x_ini,
-	double x_end,
-	double y_ini,
-	double y_end)
+    double progress_pct,
+    double x_ini,
+    double x_end,
+    double y_ini,
+    double y_end)
 {
-	if (std::fabs(x_end - x_ini) < 1e-12) return y_ini;
-	double m = (y_end - y_ini) / (x_end - x_ini);
-	return m * progress_pct + y_ini;
-}
+    if (std::fabs(x_end - x_ini) < 1e-12)
+        return y_ini;
 
-static int roulette_index(const std::vector<double>& weights, std::mt19937& rng) {
-	double sum = 0.0;
-	for (double w : weights) sum += std::max(0.0, w);
-	if (sum <= 0.0) {
-		return std::uniform_int_distribution<int>(0, static_cast<int>(weights.size()) - 1)(rng);
-	}
-	double pivot = std::uniform_real_distribution<double>(0.0, sum)(rng);
-	double acc = 0.0;
-	for (int i = 0; i < static_cast<int>(weights.size()); ++i) {
-		acc += std::max(0.0, weights[i]);
-		if (acc >= pivot) return i;
-	}
-	return static_cast<int>(weights.size()) - 1;
+    double x = std::clamp(
+        progress_pct,
+        std::min(x_ini, x_end),
+        std::max(x_ini, x_end)
+    );
+
+    double ratio =
+        (x - x_ini) /
+        (x_end - x_ini);
+
+    return y_ini
+         + ratio * (y_end - y_ini);
 }
 
 // UCB1 — exact EVRPSARL.m case 3: Suc/Selected + sqrt(2*ln(k)/Selected)
@@ -339,82 +336,64 @@ static bool lightweight_feasible(const Solution& sol) {
 	return true;
 }
 
-// bb_threshold: trigger only if rand > bb (paper Rutas.m: if rand()>bb).
-// bb = 1.0 - acc/(max_acc*9), ranges from 1.0 (never) -> ~0.89 (11% chance at end).
-static bool adjust_station_block(
-	Solution& s,
-	std::mt19937& rng,
-	double p_relocate,
-	double p_eliminate,
-	double bb_threshold,
-	const std::vector<double>& val)
-{
-	if (std::uniform_real_distribution<double>(0.0, 1.0)(rng) <= bb_threshold) return false;
-
-	std::vector<double> action_weights = {
-		std::max(0.0, p_relocate),
-		std::max(0.0, p_eliminate)
-	};
-	int action = roulette_index(action_weights, rng);
-
-	if (action == 0) {
-		// Relocate-like action: focused reassignment/swap local moves.
-		if (std::uniform_real_distribution<double>(0.0, 1.0)(rng) < 0.6) {
-			return perturbation::apply_llh(
-				perturbation::LLHId::L1_REASSIGN_BEST_DELTA,
-				s,
-				rng,
-				perturbation::ApplyParams{1.0});
-		}
-		return perturbation::apply_llh(
-			perturbation::LLHId::L2_SWAP_BEST_PAIR,
-			s,
-			rng,
-			perturbation::ApplyParams{1.0});
-	}
-
-	// Eliminate-like action: stronger destroy/rebuild macro move.
-	double v = val.empty() ? 0.8 : std::clamp(val[0] + 0.25, 0.2, 1.0);
-	return perturbation::apply_llh(
-		perturbation::LLHId::M2_RUIN_RANDOM__H_SURV_THREAT_TIE,
-		s,
-		rng,
-		perturbation::ApplyParams{v});
-}
-
 int main(int argc, char* argv[]) {
 	std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
 	std::string output_path;
+	std::string config_path   = "config.json";
 
 	int restarts = 1;
 	double grasp_alpha = 0.85;
 	uint32_t seed = 42;
 
-	int    max_acc       = 0;     // 0 = auto: 25000 * nc
-	int    iiter         = 0;     // 0 = auto: 40 * nc
+	int    max_acc       = 0;
+	int    iiter         = 0;
 	int    runs          = 1;
-	double search_seconds = 0.0;  // 0 = disabled (evaluation-budget mode)
+	double search_seconds = 0.0;
 	double temp_init     = -1.0;
-	double cooling_alpha = 0.99;  // paper
-	int    limit         = 20;    // paper
-	double x_ini         = 0.0;   // paper
-	double x_end         = 90.0;  // paper
-	double y_ini         = 1.0;   // paper
-	double y_end         = 0.05;  // paper
-	double p_relocate    = 0.60;  // paper
-	double p_eliminate   = 0.40;  // paper
-	int    rl_type       = 2;     // paper default: 2=Thompson Sampling (0=Rand,1=eGreedy,3=UCB1)
-	bool   fast_mode     = false; // disable expensive local LLHs (12,13)
-	bool   strict_bandit_success = true; // count success only on strict objective improvements
-	bool   auto_prune_dead_llh = true;   // disable LLHs with sustained zero improvements
-	int    prune_min_usage = 300;        // minimum uses before dead-arm pruning
-	double explore_eps = 0.03;           // epsilon exploration around policy selector
-	int    kick_blocks = 6;              // stagnation blocks before diversification kick
-	double kick_val = 0.9;               // ruin intensity for diversification kick
+	double cooling_alpha = 0.99;
+	int    limit         = 20;
+	double x_ini         = 0.0;
+	double x_end         = 90.0;
+	double y_ini         = 1.0;
+	double y_end         = 0.05;
+	int    rl_type       = 2;
+	int    hard_reset_after_blocks = 6;
+
+	// --- load config.json ("hhasa_rl" section) before parsing CLI args ---
+	{
+		std::ifstream cfg_f(config_path);
+		if (cfg_f) {
+			try {
+				json cfg = json::parse(cfg_f);
+				if (cfg.contains("hhasa_rl")) {
+					auto& g = cfg["hhasa_rl"];
+					if (g.contains("seed"))                 seed                 = g["seed"].get<uint32_t>();
+					if (g.contains("restarts"))             restarts             = g["restarts"].get<int>();
+					if (g.contains("grasp_alpha"))          grasp_alpha          = g["grasp_alpha"].get<double>();
+					if (g.contains("runs"))                 runs                 = g["runs"].get<int>();
+					if (g.contains("search_seconds"))       search_seconds       = g["search_seconds"].get<double>();
+					if (g.contains("max_acc"))              max_acc              = g["max_acc"].get<int>();
+					if (g.contains("iiter"))                iiter                = g["iiter"].get<int>();
+					if (g.contains("temp_init"))            temp_init            = g["temp_init"].get<double>();
+					if (g.contains("cooling_alpha"))        cooling_alpha        = g["cooling_alpha"].get<double>();
+					if (g.contains("limit"))                limit                = g["limit"].get<int>();
+					if (g.contains("x_ini"))                x_ini                = g["x_ini"].get<double>();
+					if (g.contains("x_end"))                x_end                = g["x_end"].get<double>();
+					if (g.contains("y_ini"))                y_ini                = g["y_ini"].get<double>();
+					if (g.contains("y_end"))                y_end                = g["y_end"].get<double>();
+					if (g.contains("rl_type"))              rl_type              = g["rl_type"].get<int>();
+					if (g.contains("hard_reset_after_blocks")) hard_reset_after_blocks = g["hard_reset_after_blocks"].get<int>();
+				}
+			} catch (const std::exception& e) {
+				std::cerr << "[config] parse error: " << e.what() << "\n";
+			}
+		}
+	}
 
 	for (int i = 1; i < argc; ++i) {
 		std::string arg = argv[i];
-		if (arg == "--restarts" && i + 1 < argc) restarts = std::stoi(argv[++i]);
+		if (arg == "--config"  && i + 1 < argc) config_path = argv[++i];
+		else if (arg == "--restarts" && i + 1 < argc) restarts = std::stoi(argv[++i]);
 		else if (arg == "--grasp-alpha" && i + 1 < argc) grasp_alpha = std::stod(argv[++i]);
 		else if (arg == "--seed" && i + 1 < argc) seed = static_cast<uint32_t>(std::stoul(argv[++i]));
 		else if (arg == "--macc" && i + 1 < argc) max_acc = std::stoi(argv[++i]);
@@ -426,21 +405,15 @@ int main(int argc, char* argv[]) {
 		else if (arg == "--xend" && i + 1 < argc) x_end = std::stod(argv[++i]);
 		else if (arg == "--yini" && i + 1 < argc) y_ini = std::stod(argv[++i]);
 		else if (arg == "--yend" && i + 1 < argc) y_end = std::stod(argv[++i]);
-		else if (arg == "--pr" && i + 1 < argc) p_relocate = std::stod(argv[++i]);
-		else if (arg == "--pe"   && i + 1 < argc) p_eliminate = std::stod(argv[++i]);
 		else if (arg == "--runs" && i + 1 < argc) runs        = std::stoi(argv[++i]);
 		else if (arg == "--search-seconds" && i + 1 < argc) search_seconds = std::stod(argv[++i]);
 		else if (arg == "--rl"   && i + 1 < argc) rl_type     = std::stoi(argv[++i]);
-		else if (arg == "--fast-mode") fast_mode = true;
-		else if (arg == "--non-strict-success") strict_bandit_success = false;
-		else if (arg == "--no-auto-prune") auto_prune_dead_llh = false;
-		else if (arg == "--prune-min-usage" && i + 1 < argc) prune_min_usage = std::stoi(argv[++i]);
-		else if (arg == "--eps" && i + 1 < argc) explore_eps = std::stod(argv[++i]);
-		else if (arg == "--kick-blocks" && i + 1 < argc) kick_blocks = std::stoi(argv[++i]);
-		else if (arg == "--kick-val" && i + 1 < argc) kick_val = std::stod(argv[++i]);
+		else if (arg == "--hard-reset-blocks" && i + 1 < argc) hard_reset_after_blocks = std::stoi(argv[++i]);
 		else if (arg == "--output" && i + 1 < argc) output_path = argv[++i];
 		else if (arg[0] != '-') scenario_path = arg;
 	}
+
+	hard_reset_after_blocks = std::max(1, hard_reset_after_blocks);
 
 	if (output_path.empty()) {
 		output_path = scenario_path;
@@ -468,6 +441,7 @@ int main(int argc, char* argv[]) {
 			  << "  search_seconds=" << search_seconds
 			  << "  cooling_alpha=" << cooling_alpha
 			  << "  limit=" << limit
+			  << "  hard_reset_after_blocks=" << hard_reset_after_blocks
 			  << "  rl=" << rl_type
 			  << "  runs=" << runs << "\n";
 
@@ -487,19 +461,9 @@ int main(int argc, char* argv[]) {
 	const auto wall_start = std::chrono::steady_clock::now();
 
 	std::vector<char> llh_enabled(N, 1);
-	if (fast_mode && N >= 14) {
-		llh_enabled[12] = 0;
-		llh_enabled[13] = 0;
-	}
 	int enabled_count = 0;
 	for (char e : llh_enabled) enabled_count += (e ? 1 : 0);
-	std::cout << "  fast_mode=" << (fast_mode ? 1 : 0)
-			  << "  active_llh=" << enabled_count << "/" << N << "\n";
-	std::cout << "  strict_success=" << (strict_bandit_success ? 1 : 0)
-			  << "  auto_prune=" << (auto_prune_dead_llh ? 1 : 0)
-			  << "  eps=" << explore_eps
-			  << "  kick_blocks=" << kick_blocks
-			  << "  kick_val=" << kick_val << "\n";
+	std::cout << "  active_llh=" << enabled_count << "/" << N << "\n";
 
 	for (int run = 0; run < runs; ++run) {
 		uint32_t run_seed = seed + static_cast<uint32_t>(run);
@@ -543,7 +507,7 @@ int main(int argc, char* argv[]) {
 
 		int acc = 0;
 		int hup = 0;
-		int stagnation_blocks = 0;
+		int non_improving_blocks = 0;
 		const bool use_time_budget = (search_seconds > 0.0);
 
 		while (acc < max_acc) {
@@ -557,17 +521,6 @@ int main(int argc, char* argv[]) {
 		std::vector<int>    pulls(N, 0);    // selection count
 		int total_pulls = 0;
 		std::vector<char> llh_enabled_block = llh_enabled;
-		if (auto_prune_dead_llh) {
-			for (int i = 0; i < N; ++i) {
-				if (!llh_enabled_block[i]) continue;
-				if (usage[i] >= prune_min_usage && improved_cnt[i] == 0 && best_improve_cnt[i] == 0) {
-					llh_enabled_block[i] = 0;
-				}
-			}
-			int active_block = 0;
-			for (char e : llh_enabled_block) active_block += (e ? 1 : 0);
-			if (active_block == 0) llh_enabled_block = llh_enabled;
-		}
 
 		Solution block_best;
 		bool block_best_updated = false;
@@ -583,9 +536,7 @@ int main(int argc, char* argv[]) {
 				if (elapsed >= search_seconds) break;
 			}
 			int heur;
-			if (unit01(rng) < std::clamp(explore_eps, 0.0, 1.0)) {
-				heur = select_random_enabled(llh_enabled_block, rng);
-			} else if (rl_type == 3) {
+			if (rl_type == 3) {
 				heur = select_llh_ucb_enabled(suc, pulls, llh_enabled_block, std::max(1, total_pulls), rng);
 			} else if (rl_type == 2) {
 				heur = select_llh_thompson_enabled(suc, llh_enabled_block, rng);
@@ -631,15 +582,6 @@ int main(int argc, char* argv[]) {
 				}
 			}
 
-			// Adjust Station proxy: bb varies from 1.0 (never) to ~0.89 (11% chance)
-			// matching EVRPSARL.m Rutas(): bb = 1 - it/(MaxIter*9)
-			double progress = static_cast<double>(acc) / std::max(1.0, static_cast<double>(max_acc));
-			if (use_time_budget) {
-				progress = progress_time_ratio;
-			}
-			double bb = 1.0 - progress / 9.0;
-			adjust_station_block(cand, rng, p_relocate, p_eliminate, bb, val);
-
 			double fit_cand = cand.objective();
 			double delta = fit_cand - fit_cur_state;
 			acc++;
@@ -662,11 +604,7 @@ int main(int argc, char* argv[]) {
 			bool accept = false;
 			if (delta <= 0.0) {
 				accept = true;
-				if (strict_bandit_success) {
-					if (delta < 0.0) suc[heur] += 1.0;
-				} else {
-					suc[heur] += 1.0;
-				}
+				if (delta < 0.0) suc[heur] += 1.0;
 				if (delta < 0.0) improved_cnt[heur]++;
 				if (delta < 0.0 && fit_cand < fit_best) best_improve_cnt[heur]++;
 			} else {
@@ -704,10 +642,49 @@ int main(int argc, char* argv[]) {
 				fit_best = fit_block_best;
 				best_improve_iters += 1;
 				hup = 0;
-				stagnation_blocks = 0;
+				non_improving_blocks = 0;
 			} else {
 				hup += 1;
-				stagnation_blocks += 1;
+				non_improving_blocks += 1;
+			}
+
+			if (non_improving_blocks >= hard_reset_after_blocks) {
+				uint32_t reset_seed = run_seed
+					+ static_cast<uint32_t>(acc)
+					+ static_cast<uint32_t>(best_improve_iters)
+					+ static_cast<uint32_t>(non_improving_blocks)
+					+ 1u;
+
+				Solution reset_sol = grasp(
+					sc.weapons, sc.targets, sc.p_ij, sc.windows,
+					sc.burst_dur, sc.max_shots, sc.vessel_id_map,
+					sc.horizon, grasp_alpha, restarts, reset_seed);
+
+				s = reset_sol.copy();
+				fit_cur_state = s.objective();
+
+				double reset_T0 = (temp_init > 0.0)
+					? temp_init
+					: std::max(1e-6, 0.01 * std::max(1.0, fit_cur_state));
+				T = reset_T0;
+
+				val.assign(N, 0.2);
+				hup = 0;
+				non_improving_blocks = 0;
+
+				if (fit_cur_state < fit_best) {
+					s_best = s.copy();
+					fit_best = fit_cur_state;
+					best_improve_iters += 1;
+				}
+
+				std::cout << "  [hard-reset] reinitialized after "
+					<< hard_reset_after_blocks
+					<< " non-improving blocks"
+					<< "  seed=" << reset_seed
+					<< "  obj=" << std::fixed << std::setprecision(10)
+					<< fit_cur_state << "\n";
+				continue;
 			}
 
 			if (hup < limit) {
@@ -720,19 +697,6 @@ int main(int argc, char* argv[]) {
 				double beta = dynamic_beta(progress * 100.0, x_ini, x_end, y_ini, y_end);
 				T = std::max(1e-12, T + beta);
 				hup = 0;
-			}
-
-			if (kick_blocks > 0 && stagnation_blocks >= kick_blocks) {
-				Solution kicked = s_best.copy();
-				perturbation::apply_llh(
-					perturbation::LLHId::M10_RUIN_RANDOM__H_SPREAD_THEN_FOCUS,
-					kicked,
-					rng,
-					perturbation::ApplyParams{std::clamp(kick_val, 0.2, 1.0)});
-				s = std::move(kicked);
-				fit_cur_state = s.objective();
-				T = std::max(T, 0.5 * T0);
-				stagnation_blocks = 0;
 			}
 		} // end while acc < max_acc
 
@@ -811,4 +775,4 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
-// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp && ./wta_solver_hhasa_rl data/scenario_022.json --runs 1 --search-seconds 5 --macc 100000 --iiter 100 --seed 42 --rl 3
+// Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp && ./wta_solver_hhasa_rl data/scenario_022.json --runs 1 --search-seconds 5 --macc 100000 --iiter 100 --seed 42 --rl 3 --hard-reset-blocks 6

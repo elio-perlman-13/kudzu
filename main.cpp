@@ -15,8 +15,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <nlohmann/json.hpp>
-
+#include "json.hpp"
 #include "heuristic.hpp"
 
 using json = nlohmann::json;
@@ -224,17 +223,38 @@ int main(int argc, char* argv[]) {
 
     std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
     std::string output_path;
-    int    restarts            = 5;    // number of restarts or minimum restarts when using search-time termination
-    double alpha               = 0.85; // GRASP alpha parameter: 0.0 = pure random, 1.0 = greedy    
+    int    restarts            = 5;
+    double alpha               = 0.85;
     uint32_t seed              = 42;
     double search_seconds      = 5.0;
     TerminationMode term_mode  = TerminationMode::Restarts;
+    std::string config_path    = "config.json";
+
+    // --- load config.json ("grasp" section) before parsing CLI args ---
+    {
+        std::ifstream cfg_f(config_path);
+        if (cfg_f) {
+            try {
+                json cfg = json::parse(cfg_f);
+                if (cfg.contains("grasp")) {
+                    auto& g = cfg["grasp"];
+                    if (g.contains("seed"))           seed           = g["seed"].get<uint32_t>();
+                    if (g.contains("restarts"))       restarts       = g["restarts"].get<int>();
+                    if (g.contains("alpha"))          alpha          = g["alpha"].get<double>();
+                    if (g.contains("search_seconds")) search_seconds = g["search_seconds"].get<double>();
+                }
+            } catch (const std::exception& e) {
+                std::cerr << "[config] parse error: " << e.what() << "\n";
+            }
+        }
+    }
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
-        if (arg == "--restarts"       && i + 1 < argc) restarts       = std::stoi(argv[++i]);
-        else if (arg == "--alpha"     && i + 1 < argc) alpha          = std::stod(argv[++i]);
-        else if (arg == "--seed"      && i + 1 < argc) seed           = static_cast<uint32_t>(std::stoul(argv[++i]));
+        if (arg == "--config"         && i + 1 < argc) config_path    = argv[++i];
+        else if (arg == "--restarts"   && i + 1 < argc) restarts       = std::stoi(argv[++i]);
+        else if (arg == "--alpha"      && i + 1 < argc) alpha          = std::stod(argv[++i]);
+        else if (arg == "--seed"       && i + 1 < argc) seed           = static_cast<uint32_t>(std::stoul(argv[++i]));
         else if (arg == "--search-seconds" && i + 1 < argc) search_seconds = std::stod(argv[++i]);
         else if (arg == "--terminate-by" && i + 1 < argc) {
             std::string mode = argv[++i];

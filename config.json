@@ -1,0 +1,36 @@
+{
+  "grasp": {
+    "seed": 42,
+    "restarts": 5,
+    "alpha": 0.85,
+    "search_seconds": 5.0
+  },
+  "lean_gihh": {
+    "seed": 42,
+    "restarts": 1,
+    "alpha": 0.85,
+    "search_seconds": 5.0,
+    "bestlist_size": 6,
+    "stagnation_window": 100,
+    "restart_cutoff": 0.5,
+    "post_polish": true
+  },
+  "hhasa_rl": {
+    "seed": 42,
+    "restarts": 1,
+    "grasp_alpha": 0.85,
+    "runs": 1,
+    "search_seconds": 5.0,
+    "max_acc": 0,
+    "iiter": 0,
+    "temp_init": 1.0,
+    "cooling_alpha": 0.99,
+    "limit": 20,
+    "x_ini": 0.0,
+    "x_end": 100.0,
+    "y_ini": 1.0,
+    "y_end": 0.05,
+    "rl_type": 2,
+    "hard_reset_after_blocks": 6
+  }
+}
