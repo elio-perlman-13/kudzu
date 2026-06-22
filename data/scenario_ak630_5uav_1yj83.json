@@ -1,0 +1,229 @@
+{
+  "weapon_infos": [
+    {
+      "ID": 1,
+      "Code": "AK630_A",
+      "Type": 2,
+      "MinRange": 0,
+      "MaxRange": 4000,
+      "MinAltitude": 0,
+      "MaxAltitude": 4000,
+      "AzimuthFromDeg": 320,
+      "AzimuthToDeg": 180,
+      "ElevationMinDeg": -15,
+      "ElevationMaxDeg": 85,
+      "MaxShotsPerTarget": 8,
+      "RoundsPerBurst": 100,
+      "BurstInterval": 2.0,
+      "ReloadTime": 1.0
+    },
+    {
+      "ID": 2,
+      "Code": "AK630_B",
+      "Type": 2,
+      "MinRange": 0,
+      "MaxRange": 4000,
+      "MinAltitude": 0,
+      "MaxAltitude": 4000,
+      "AzimuthFromDeg": 180,
+      "AzimuthToDeg": 40,
+      "ElevationMinDeg": -15,
+      "ElevationMaxDeg": 85,
+      "MaxShotsPerTarget": 8,
+      "RoundsPerBurst": 100,
+      "BurstInterval": 2.0,
+      "ReloadTime": 1.0
+    }
+  ],
+  "target_infos": [
+    {
+      "ID": 1,
+      "Code": "TGT_UAV_FIXED",
+      "Description": "Fixed-wing UAV",
+      "Type": 3
+    },
+    {
+      "ID": 2,
+      "Code": "TGT_YJ83",
+      "Description": "YJ-83 anti-ship missile",
+      "Type": 1
+    }
+  ],
+  "probability_table": [
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_A",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_A",
+      "WTATargetInfoCode": "TGT_YJ83"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630_B",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630_B",
+      "WTATargetInfoCode": "TGT_YJ83"
+    }
+  ],
+  "assignment_request": {
+    "vessels": [
+      {
+        "ID": 1,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Speed": 0.0,
+        "HeadingX": 0.0,
+        "HeadingY": 1.0,
+        "HeadingZ": 0.0,
+        "DefenseRadius": 4.0
+      }
+    ],
+    "weapons": [
+      {
+        "ID": 1,
+        "WTAVesselID": 1,
+        "Ammo": 3000,
+        "WTAWeaponInfoCode": "AK630_A",
+        "Status": 1
+      },
+      {
+        "ID": 2,
+        "WTAVesselID": 1,
+        "Ammo": 3000,
+        "WTAWeaponInfoCode": "AK630_B",
+        "Status": 1
+      }
+    ],
+    "targets": [
+      {
+        "ID": 1,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -2.164165,
+        "Y": 3.748444,
+        "Z": 0.2,
+        "VX": 0.5,
+        "VY": -0.866025,
+        "VZ": 0.0,
+        "Speed": 55.555556,
+        "ThreatScore": 0.5
+      },
+      {
+        "ID": 2,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -1.120254,
+        "Y": 4.180846,
+        "Z": 0.2,
+        "VX": 0.258819,
+        "VY": -0.965926,
+        "VZ": 0.0,
+        "Speed": 55.555556,
+        "ThreatScore": 0.5
+      },
+      {
+        "ID": 3,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 0.0,
+        "Y": 4.32833,
+        "Z": 0.2,
+        "VX": -0.0,
+        "VY": -1.0,
+        "VZ": 0.0,
+        "Speed": 55.555556,
+        "ThreatScore": 0.5
+      },
+      {
+        "ID": 4,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 1.120254,
+        "Y": 4.180846,
+        "Z": 0.2,
+        "VX": -0.258819,
+        "VY": -0.965926,
+        "VZ": 0.0,
+        "Speed": 55.555556,
+        "ThreatScore": 0.5
+      },
+      {
+        "ID": 5,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": 2.164165,
+        "Y": 3.748444,
+        "Z": 0.2,
+        "VX": -0.5,
+        "VY": -0.866025,
+        "VZ": 0.0,
+        "Speed": 55.555556,
+        "ThreatScore": 0.5
+      },
+      {
+        "ID": 6,
+        "WTATargetInfoCode": "TGT_YJ83",
+        "X": 0.0,
+        "Y": 9.399987,
+        "Z": 0.01,
+        "VX": -0.0,
+        "VY": -1.0,
+        "VZ": 0.0,
+        "Speed": 150.0,
+        "ThreatScore": 2.0
+      }
+    ]
+  },
+  "engagement_windows": {
+    "1_1": [
+      6.0,
+      60.0
+    ],
+    "1_2": [
+      6.0,
+      60.0
+    ],
+    "1_3": [
+      6.0,
+      60.0
+    ],
+    "1_4": [
+      6.0,
+      60.0
+    ],
+    "1_5": [
+      6.0,
+      60.0
+    ],
+    "1_6": [
+      18.0,
+      60.0
+    ],
+    "2_1": [
+      6.0,
+      60.0
+    ],
+    "2_2": [
+      6.0,
+      60.0
+    ],
+    "2_3": [
+      6.0,
+      60.0
+    ],
+    "2_4": [
+      6.0,
+      60.0
+    ],
+    "2_5": [
+      6.0,
+      60.0
+    ],
+    "2_6": [
+      18.0,
+      60.0
+    ]
+  }
+}

@@ -134,7 +134,13 @@ static Scenario load_scenario(const std::string& path) {
 		if (pit == prob_map.end() || pit->second <= 0.0) continue;
 
 		uint64_t k = pair_key(wid, tid);
-		sc.windows[k] = {a, b};
+		const WeaponInfo& wi =
+			winfo_map.at(weapon_info_code.at(wid));
+
+		sc.windows[k] = {
+			a,
+			b + wi.reload_time
+		};
 		sc.p_ij[k]    = pit->second;
 	}
 

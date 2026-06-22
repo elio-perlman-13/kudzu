@@ -3,8 +3,9 @@
 plot.py — Visualise a WTA solution as a Gantt chart.
 
 Two subplots:
-  Top   : Weapon schedule — each weapon is a row; each burst is a coloured bar;
-          colour encodes target ID.  Engagement windows shown as thin outlines.
+  Top   : Weapon schedule — each weapon is a row. Actual firing intervals are
+          solid target-coloured bars; reload intervals are lighter hatched bars.
+          Engagement windows are shown as thin underlines.
   Bottom: Target survival — bar chart of per-target residual threat w_j * Π(1-p)^k.
 
 Usage:
@@ -42,7 +43,9 @@ def load(scenario_path: str, solution_path: str):
     for d in req["weapons"]:
         d = dict(d)
         wi = weapon_info[d["WTAWeaponInfoCode"]]
-        d["_burst_dur"] = wi["BurstInterval"] + wi["ReloadTime"]
+        d["_fire_dur"] = wi["BurstInterval"]
+        d["_reload_dur"] = wi["ReloadTime"]
+        d["_cycle_dur"] = wi["BurstInterval"] + wi["ReloadTime"]
         weapons[d["ID"]] = d
 
     targets = {d["ID"]: d for d in req["targets"]}
@@ -66,7 +69,19 @@ def load(scenario_path: str, solution_path: str):
 
     assignments = sol.get("assignments", [])
     objective = sol.get("objective")
-    horizon = max(b for _, b in windows.values()) if windows else 60.0
+    window_horizon = max((b for _, b in windows.values()), default=60.0)
+
+    assignment_horizon = 0.0
+    for assignment in assignments:
+        wid = assignment["WTAWeaponID"]
+        fire_times = assignment.get("FireTimes") or [assignment["FireTime"]]
+        cycle_dur = weapons[wid]["_cycle_dur"]
+        assignment_horizon = max(
+            assignment_horizon,
+            max(fire_times) + cycle_dur,
+        )
+
+    horizon = max(window_horizon, assignment_horizon, 1.0)
 
     return weapons, targets, windows, p_ij, assignments, objective, horizon
 
@@ -135,28 +150,67 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         ax_gantt.plot([a_win, b_win], [row - bh * 0.75, row - bh * 0.75],
                       color=(*color[:3], 0.25), linewidth=2, solid_capstyle="butt")
 
-    # Draw burst bars
+    # Draw firing and reload intervals separately.
+    #
+    # Firing interval:
+    #   [FireTime, FireTime + BurstInterval]
+    #
+    # Reload interval:
+    #   [FireTime + BurstInterval,
+    #    FireTime + BurstInterval + ReloadTime]
     for a in assignments:
-        wid  = a["WTAWeaponID"]
-        tid  = a["WTATargetID"]
-        ammo = a["AmmoUsed"]
-        d    = weapons[wid]["_burst_dur"]
+        wid = a["WTAWeaponID"]
+        tid = a["WTATargetID"]
+
+        fire_dur = weapons[wid]["_fire_dur"]
+        reload_dur = weapons[wid]["_reload_dur"]
+
         color = tid_color[tid]
-        row   = wid_to_row[wid]
+        row = wid_to_row[wid]
         fire_times: List[float] = a.get("FireTimes") or [a["FireTime"]]
 
         for ft in fire_times:
-            rect = mpatches.Rectangle(
-                (ft, row - bh / 2), d, bh,
-                facecolor=color, edgecolor="black", linewidth=0.4, alpha=0.85,
+            # Actual firing interval: solid target colour.
+            firing_rect = mpatches.Rectangle(
+                (ft, row - bh / 2),
+                fire_dur,
+                bh,
+                facecolor=color,
+                edgecolor="black",
+                linewidth=0.5,
+                alpha=0.9,
+                zorder=3,
             )
-            ax_gantt.add_patch(rect)
-            # Label target inside bar if wide enough
-            if d > horizon * 0.012:
+            ax_gantt.add_patch(firing_rect)
+
+            # Reload interval: lighter target colour with a dashed/hatched pattern.
+            if reload_dur > 0:
+                reload_rect = mpatches.Rectangle(
+                    (ft + fire_dur, row - bh / 2),
+                    reload_dur,
+                    bh,
+                    facecolor=(*color[:3], 0.14),
+                    edgecolor=(*color[:3], 0.95),
+                    linewidth=1.0,
+                    linestyle="--",
+                    hatch="///",
+                    zorder=2,
+                )
+                ax_gantt.add_patch(reload_rect)
+
+            # Put the target ID only inside the actual firing interval.
+            if fire_dur > horizon * 0.012:
                 ax_gantt.text(
-                    ft + d / 2, row, str(tid),
-                    ha="center", va="center", fontsize=5, color="white",
-                    fontweight="bold", clip_on=True,
+                    ft + fire_dur / 2,
+                    row,
+                    str(tid),
+                    ha="center",
+                    va="center",
+                    fontsize=5,
+                    color="white",
+                    fontweight="bold",
+                    clip_on=True,
+                    zorder=4,
                 )
 
     ax_gantt.set_xlim(0, horizon)
@@ -180,12 +234,41 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
             ax_gantt.axhline(i - 0.5, color="navy", linewidth=1.2, linestyle="-")
         prev_vessel = v
 
-    # Legend (up to 30 targets)
+    # Legend: target colours plus firing/reload styles.
     legend_tids = sorted({a["WTATargetID"] for a in assignments})
-    patches = [mpatches.Patch(color=tid_color[t], label=f"T{t}") for t in legend_tids[:30]]
-    ax_gantt.legend(handles=patches, loc="upper right", ncol=6,
-                    fontsize=6, title="Target", title_fontsize=7,
-                    framealpha=0.8)
+    target_patches = [
+        mpatches.Patch(
+            facecolor=tid_color[t],
+            edgecolor="black",
+            label=f"T{t}",
+        )
+        for t in legend_tids[:30]
+    ]
+
+    style_patches = [
+        mpatches.Patch(
+            facecolor="0.35",
+            edgecolor="black",
+            label="Firing interval",
+        ),
+        mpatches.Patch(
+            facecolor=(0.8, 0.8, 0.8, 0.25),
+            edgecolor="0.35",
+            linestyle="--",
+            hatch="///",
+            label="Reload interval",
+        ),
+    ]
+
+    ax_gantt.legend(
+        handles=target_patches + style_patches,
+        loc="upper right",
+        ncol=6,
+        fontsize=6,
+        title="Targets and interval type",
+        title_fontsize=7,
+        framealpha=0.85,
+    )
 
     # -------------------------------------------------------- Target survival
     sorted_tids = sorted(targets.keys(), key=lambda t: -targets[t]["ThreatScore"])

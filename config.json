@@ -21,7 +21,7 @@
     "runs": 1,
     "search_seconds": 5.0,
     "max_acc": 0,
-    "iiter": 0,
+    "iiter": 100,
     "temp_init": 1.0,
     "cooling_alpha": 0.99,
     "limit": 20,

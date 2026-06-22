@@ -10,7 +10,7 @@ Checks:
   2. Per-weapon fire times are non-overlapping (timeline feasibility).
   3. Per-weapon ammo limits respected.
   4. Per-(weapon, target) burst cap M_i respected.
-  5. Each fire time falls within the engagement window [a, b-d].
+  5. Each firing burst [FireTime, FireTime + BurstInterval] lies inside the engagement window.
   6. Reported PKill matches  1 - (1-p)^ammo_used.
   7. Reported EndTime matches last_fire_time + burst_duration.
   8. Reported objective matches computed Σ_j w_j Π_i (1-p_ij)^k_ij.
@@ -43,7 +43,12 @@ def load_scenario(path: str):
     for d in req["weapons"]:
         d = dict(d)
         wi = weapon_info_by_code[d["WTAWeaponInfoCode"]]
-        d["_burst_dur"] = wi["BurstInterval"] + wi["ReloadTime"]
+        # Time during which the target must remain inside the engagement window.
+        d["_fire_dur"] = wi["BurstInterval"]
+
+        # Time during which the weapon remains unavailable, including reload.
+        d["_cycle_dur"] = wi["BurstInterval"] + wi["ReloadTime"]
+
         d["_max_shots"] = wi["MaxShotsPerTarget"]
         weapons[d["ID"]] = d
 
@@ -97,7 +102,8 @@ def check(scenario_path: str, solution_path: str) -> bool:
             errors.append(f"[#{idx}] unknown WTATargetID={tid}")
             continue
 
-        d = weapons[wid]["_burst_dur"]
+        fire_dur = weapons[wid]["_fire_dur"]
+        cycle_dur = weapons[wid]["_cycle_dur"]
 
         # 2. Engagement window exists
         key = (wid, tid)
@@ -118,13 +124,16 @@ def check(scenario_path: str, solution_path: str) -> bool:
                 errors.append(
                     f"[#{idx}] weapon={wid} target={tid}: burst at {ft:.4f} < window_start={a_win:.4f}"
                 )
-            if ft + d > b_win + 1e-6:
+            # Only the actual firing interval must fit inside the target window.
+            # Reload may continue after the target leaves the envelope.
+            if ft + fire_dur > b_win + 1e-6:
                 errors.append(
-                    f"[#{idx}] weapon={wid} target={tid}: burst ends {ft+d:.4f} > window_end={b_win:.4f}"
+                    f"[#{idx}] weapon={wid} target={tid}: firing ends "
+                    f"{ft + fire_dur:.4f} > window_end={b_win:.4f}"
                 )
 
-        # 4. EndTime = last_fire + d
-        expected_end = last_fire + d
+        # 4. EndTime includes firing plus reload, matching the solver timeline.
+        expected_end = last_fire + cycle_dur
         if not isclose(end, expected_end, rel_tol=1e-4, abs_tol=1e-4):
             warnings.append(
                 f"[#{idx}] weapon={wid} target={tid}: EndTime={end:.4f} expected {expected_end:.4f}"
@@ -145,7 +154,8 @@ def check(scenario_path: str, solution_path: str) -> bool:
 
         by_weapon_target[key].append(a)
         for ft in individual_times:
-            by_weapon[wid].append((ft, ft + d))
+            # The weapon remains occupied through the reload period.
+            by_weapon[wid].append((ft, ft + cycle_dur))
 
     # 7. Per-(weapon, target) burst cap M
     for (wid, tid), recs in by_weapon_target.items():

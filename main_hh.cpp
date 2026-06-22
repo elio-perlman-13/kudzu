@@ -140,7 +140,13 @@ static Scenario load_scenario(const std::string& path) {
 		if (pit == prob_map.end() || pit->second <= 0.0) continue;
 
 		uint64_t k = pair_key(wid, tid);
-		sc.windows[k] = {a, b};
+		const WeaponInfo& wi =
+			winfo_map.at(weapon_info_code.at(wid));
+
+		sc.windows[k] = {
+			a,
+			b + wi.reload_time
+		};
 		sc.p_ij[k]    = pit->second;
 	}
 
@@ -527,3 +533,5 @@ int main(int argc, char* argv[]) {
 // Run:
 // g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_035.json
 // Check && plot: python check_solution.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json && python plot.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json --out plot.png
+
+//python check_solution.py data/scenario_ak630_5uav_1yj83.json data/scenario_ak630_5uav_1yj83_solution.json && python plot.py data/scenario_ak630_5uav_1yj83.json data/scenario_ak630_5uav_1yj83_solution.json --out plot.png
