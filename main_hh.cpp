@@ -461,6 +461,7 @@ int main(int argc, char* argv[]) {
 				}
 			}
 		}
+		
 
 		if (accept) {
 			incumbent = proposed.copy();
