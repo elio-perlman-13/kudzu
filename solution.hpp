@@ -80,6 +80,34 @@ struct Solution {
 
     double objective() const { return _obj; }
 
+    // Secondary lexicographic objective: total avoidable separation between
+    // bursts assigned to the same (weapon, target) pair. Lower is better.
+    //
+    // For ordered times t1 < ... < tk and weapon cycle duration d:
+    //     compactness_ij = (tk - t1) - (k - 1) * d
+    // This is zero when all bursts of the pair are consecutive.
+    double compactness() const {
+        if (burst_dur == nullptr) return 0.0;
+
+        double total = 0.0;
+        constexpr double eps = 1e-9;
+
+        for (const auto& [key, times] : fire_times) {
+            const std::size_t count = times.size();
+            if (count < 2) continue;
+
+            const int wid = static_cast<int>(key >> 32);
+            const double d = burst_dur->at(wid);
+            const auto mm = std::minmax_element(times.begin(), times.end());
+            const double span = *mm.second - *mm.first;
+            const double unavoidable = static_cast<double>(count - 1) * d;
+            const double extra_gap = span - unavoidable;
+
+            if (extra_gap > eps) total += extra_gap;
+        }
+        return total;
+    }
+
     double first_slot(int wid, int tid) const {
         auto it = first_slot_cache.find(pair_key(wid, tid));
         return it != first_slot_cache.end() ? it->second : NO_SLOT;
@@ -337,3 +365,54 @@ struct Solution {
         return result;
     }
 };
+
+// ---------------------------------------------------------------------------
+// Lexicographic evaluation helpers
+// Primary objective: residual threat.
+// Secondary objective: same-(weapon,target) shot compactness.
+// Lower is better for both.
+// ---------------------------------------------------------------------------
+struct LexScore {
+    double primary;
+    double compactness;
+};
+
+enum class LexRelation { Better, Equal, Worse };
+
+inline LexScore lex_score(const Solution& sol) {
+    return {sol.objective(), sol.compactness()};
+}
+
+inline int lex_compare(const LexScore& lhs, const LexScore& rhs) {
+    constexpr double primary_eps = 1e-10;
+    constexpr double secondary_eps = 1e-9;
+
+    const double primary_scale = std::max({1.0, std::fabs(lhs.primary), std::fabs(rhs.primary)});
+    const double primary_tol = primary_eps * primary_scale;
+
+    if (lhs.primary < rhs.primary - primary_tol) return -1;
+    if (lhs.primary > rhs.primary + primary_tol) return 1;
+
+    const double secondary_scale = std::max({1.0, std::fabs(lhs.compactness), std::fabs(rhs.compactness)});
+    const double secondary_tol = secondary_eps * secondary_scale;
+
+    if (lhs.compactness < rhs.compactness - secondary_tol) return -1;
+    if (lhs.compactness > rhs.compactness + secondary_tol) return 1;
+    return 0;
+}
+
+inline bool lex_better(const LexScore& lhs, const LexScore& rhs) {
+    return lex_compare(lhs, rhs) < 0;
+}
+
+inline bool lex_not_worse(const LexScore& lhs, const LexScore& rhs) {
+    return lex_compare(lhs, rhs) <= 0;
+}
+
+inline LexRelation lex_relation(const LexScore& lhs, const LexScore& rhs) {
+    const int cmp = lex_compare(lhs, rhs);
+    if (cmp < 0) return LexRelation::Better;
+    if (cmp > 0) return LexRelation::Worse;
+    return LexRelation::Equal;
+}
+

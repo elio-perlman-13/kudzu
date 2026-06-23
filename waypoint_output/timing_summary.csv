@@ -1,0 +1,5 @@
+﻿target,launch_rule,launch_time_s,launch_time_hms,calculated_distance_km,estimated_distance_km,distance_difference_km,calculated_travel_time_s,calculated_travel_time_hms,estimated_travel_time_s,estimated_travel_time_hms,travel_time_difference_s,global_arrival_time_s,global_arrival_time_hms
+USV TN-0302,T0: launch from enemy destroyer at D0,0.0,0:00,130.19,130.28,-0.09,5513.93,1:31:54,6013,1:40:13,-499.07,5513.93,1:31:54
+USV TN-0301,T0 + 87 s: launch from moving enemy destroyer,87.0,1:27,127.3178,128.39,-1.0722,5392.283,1:29:52,5926,1:38:46,-533.717,5479.283,1:31:19
+UAV TN-0201,Launch when enemy destroyer reaches D1,1653.842,27:34,124.1481,122.8,1.3481,3886.375,1:04:46,2947,49:07,939.375,5540.217,1:32:20
+Tên lửa YJ-83,Launch when enemy destroyer reaches D2,5197.332,1:26:37,71.2226,70.6,0.6226,256.401,4:16,235,3:55,21.401,5453.734,1:30:54

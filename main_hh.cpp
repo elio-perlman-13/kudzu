@@ -173,6 +173,7 @@ static void write_solution(const Solution& sol, const std::string& path) {
 
 	json out;
 	out["objective"] = sol.objective();
+	out["compactness"] = sol.compactness();
 	json arr = json::array();
 	for (auto& a : assignments) {
 		json rec = {
@@ -203,8 +204,8 @@ int main(int argc, char* argv[]) {
 	std::string output_path;
 	std::string config_path   = "config.json";
 	int    restarts = 1;
-	double alpha    = 0.85;
-	uint32_t seed   = 42;
+	double alpha    = 0.6;
+	uint32_t seed   = 40;
 	double search_seconds = 5.0;
 
 	// --- load config.json ("lean_gihh" section) before parsing CLI args ---
@@ -267,16 +268,16 @@ int main(int argc, char* argv[]) {
 	Solution runbest = incumbent.copy();
 	Solution best    = incumbent.copy();
 
-	double f_initial   = incumbent.objective();
-	double f_incumbent = f_initial;
-	double f_runbest   = f_initial;
-	double f_best      = f_initial;
+	LexScore score_initial   = lex_score(incumbent);
+	LexScore score_incumbent = score_initial;
+	LexScore score_runbest   = score_initial;
+	LexScore score_best      = score_initial;
 
 	constexpr int bestlist_size = 6;
 	constexpr int K = 100;
 
-	std::vector<double> runbest_list(bestlist_size, f_initial);
-	std::vector<double> best_list(bestlist_size, f_initial);
+	std::vector<LexScore> runbest_list(bestlist_size, score_initial);
+	std::vector<LexScore> best_list(bestlist_size, score_initial);
 	int index = 1;
 	int counter_K = 0;
 	bool stuck = false;
@@ -309,22 +310,26 @@ int main(int argc, char* argv[]) {
 		"M15_RUIN_CONGESTED__H_FUTURE_FLEX_PRESERVER",
 		"M16_RUIN_RANDOM__H_BASELINE_TWO_STAGE",
 		"L1_REASSIGN_BEST_DELTA",
-		"L2_SWAP_BEST_PAIR"
+		"L2_SWAP_BEST_PAIR",
+		"L3_COMPACT_TIME_SWAP"
 	};
 
-	constexpr int N_MACROS = N - 1; // 13: indices 0..12
+	// Select from all 15 LLHs. The old N - 1 bound selected indices 0..12,
+	// which accidentally included L1 but permanently excluded L2.
+	constexpr int N_SELECTABLE = N;
 
-	auto roulette_macro = [&]() -> int {
+	auto roulette_llh = [&]() -> int {
 		double norm = 0.0;
-		for (int i = 0; i < N_MACROS; ++i) norm += pr[i];
-		if (norm <= 0.0) return std::uniform_int_distribution<int>(0, N_MACROS - 1)(rng);
+		for (int i = 0; i < N_SELECTABLE; ++i) norm += pr[i];
+		if (norm <= 0.0)
+			return std::uniform_int_distribution<int>(0, N_SELECTABLE - 1)(rng);
 		double pivot = std::uniform_real_distribution<double>(0.0, norm)(rng);
 		double accum = 0.0;
-		for (int i = 0; i < N_MACROS; ++i) {
+		for (int i = 0; i < N_SELECTABLE; ++i) {
 			accum += pr[i];
 			if (accum >= pivot) return i;
 		}
-		return N_MACROS - 1;
+		return N_SELECTABLE - 1;
 	};
 
 	constexpr double diff[4] = {0.0025, 0.00025, -0.00025, -0.00005};
@@ -336,18 +341,19 @@ int main(int argc, char* argv[]) {
 			sc.horizon, alpha, restarts, local_seed);
 		incumbent = s.copy();
 		runbest = s.copy();
-		f_incumbent = f_runbest = s.objective();
-		runbest_list.assign(bestlist_size, f_incumbent);
+		score_incumbent = score_runbest = lex_score(s);
+		runbest_list.assign(bestlist_size, score_incumbent);
 		counter_K = 0;
 		index = 1;
 		stuck = false;
 		std::cout << "Stucked, Initialized from baseline with seed=" << local_seed
-			 << " objective=" << std::fixed << std::setprecision(10) << f_incumbent << "\n";
+			 << " objective=" << std::fixed << std::setprecision(10) << score_incumbent.primary
+			 << " compactness=" << std::setprecision(4) << score_incumbent.compactness << "\n";
 	};
 
 	auto begin = std::chrono::steady_clock::now();
-	std::unordered_map<int, double> run_best_per_second;
-	run_best_per_second[0] = f_initial;
+	std::unordered_map<int, LexScore> run_best_per_second;
+	run_best_per_second[0] = score_initial;
 	auto elapsed_seconds = [&]() {
 		auto now = std::chrono::steady_clock::now();
 		return std::chrono::duration<double>(now - begin).count();
@@ -360,9 +366,9 @@ int main(int argc, char* argv[]) {
 		if (!restart_disabled) {
 			if (frac <= 0.5) {
 				if (stuck) {
-					if (f_runbest < f_best) {
+					if (lex_better(score_runbest, score_best)) {
 						best = runbest.copy();
-						f_best = f_runbest;
+						score_best = score_runbest;
 						best_list = runbest_list;
 					}
 					init_from_baseline(seed + static_cast<uint32_t>(perturbations_attempted + 1));
@@ -370,10 +376,10 @@ int main(int argc, char* argv[]) {
 			} else {
 				restart_disabled = true;
 				stuck = false;
-				if (f_best < f_runbest) {
+				if (lex_better(score_best, score_runbest)) {
 					incumbent = best.copy();
 					runbest = best.copy();
-					f_incumbent = f_runbest = f_best;
+					score_incumbent = score_runbest = score_best;
 					runbest_list = best_list;
 					counter_K = 0;
 					index = 1;
@@ -381,15 +387,15 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
-		// Update pr[] using n_best/t_spent for macros only.
+		// Update pr[] using n_best/t_spent for all LLHs.
 		double tf = 1.0 - frac;
 		double expo = 1.0 + 3.0 * tf * tf * tf;
-		for (int i = 0; i < N_MACROS; ++i) {
+		for (int i = 0; i < N_SELECTABLE; ++i) {
 			double denom = std::max(1.0, t_spent_ms[i]);
 			pr[i] = std::pow((static_cast<double>(n_best[i]) + 1.0) / denom, expo);
 		}
 
-		int heur = roulette_macro();
+		int heur = roulette_llh();
 		usage[heur] += 1;
 
 		Solution proposed = incumbent.copy();
@@ -415,42 +421,49 @@ int main(int argc, char* argv[]) {
 		perturbations_attempted += 1;
 		if (changed) perturbations_changed += 1;
 
-		double f_proposed = proposed.objective();
+		const LexScore score_proposed = lex_score(proposed);
+		const LexRelation relation_to_incumbent =
+			lex_relation(score_proposed, score_incumbent);
 
 		int x = 3; // 0:new_best 1:improve 2:worsen 3:equal
-		if (f_proposed < f_incumbent) {
+		if (relation_to_incumbent == LexRelation::Better) {
 			x = 1;
 			n_improve[heur] += 1;
-			if (f_proposed < f_runbest) {
+
+			if (lex_better(score_proposed, score_runbest)) {
 				runbest = proposed.copy();
-				f_runbest = f_proposed;
+				score_runbest = score_proposed;
 				n_best[heur] += 1;
 				n_best_total += 1;
 				x = 0;
 			}
-		} else if (f_proposed > f_incumbent) {
+		} else if (relation_to_incumbent == LexRelation::Worse) {
 			x = 2;
 			n_worsen[heur] += 1;
 		}
+
 		val[heur] += diff[x];
 		val[heur] = std::clamp(val[heur], 0.2, 1.0);
 
-		// AILLA-like acceptance.
+		// AILLA-like acceptance using the complete lexicographic score.
+		// Primary residual threat is always compared first. Compactness is
+		// considered only when the primary values are equal within tolerance.
 		bool accept = false;
-		if (f_proposed < f_incumbent) {
-			if (f_proposed < runbest_list[0]) {
+		if (relation_to_incumbent == LexRelation::Better) {
+			if (lex_better(score_proposed, runbest_list[0])) {
 				stuck = false;
-				runbest_list.insert(runbest_list.begin(), f_proposed);
-				if (static_cast<int>(runbest_list.size()) > bestlist_size) runbest_list.pop_back();
+				runbest_list.insert(runbest_list.begin(), score_proposed);
+				if (static_cast<int>(runbest_list.size()) > bestlist_size)
+					runbest_list.pop_back();
 				index = 1;
 				counter_K = 0;
 			}
 			accept = true;
-		} else if (std::fabs(f_proposed - f_incumbent) <= 1e-12) {
+		} else if (relation_to_incumbent == LexRelation::Equal) {
 			accept = true;
 		} else {
 			index = std::clamp(index, 0, bestlist_size - 1);
-			accept = (f_proposed <= runbest_list[index]);
+			accept = lex_not_worse(score_proposed, runbest_list[index]);
 			counter_K += 1;
 			if (counter_K >= K) {
 				counter_K = 0;
@@ -461,23 +474,23 @@ int main(int argc, char* argv[]) {
 				}
 			}
 		}
-		
 
 		if (accept) {
 			incumbent = proposed.copy();
-			f_incumbent = f_proposed;
+			score_incumbent = score_proposed;
 		}
 
 		// Record cumulative best objective so far at this second.
 		{
 			double elapsed = elapsed_seconds();
 			int sec = static_cast<int>(elapsed);
-			double best_so_far = std::min(f_best, f_runbest);
+			LexScore best_so_far = lex_better(score_best, score_runbest)
+				? score_best : score_runbest;
 			auto it = run_best_per_second.find(sec);
 			if (it == run_best_per_second.end()) {
 				run_best_per_second[sec] = best_so_far;
-			} else {
-				it->second = std::min(it->second, best_so_far);
+			} else if (lex_better(best_so_far, it->second)) {
+				it->second = best_so_far;
 			}
 		}
 
@@ -485,30 +498,36 @@ int main(int argc, char* argv[]) {
 
 	double run_elapsed = elapsed_seconds();
 
-	if (f_runbest < f_best) {
+	if (lex_better(score_runbest, score_best)) {
 		best = runbest.copy();
-		f_best = f_runbest;
+		score_best = score_runbest;
 		best_list = runbest_list;
 	}
 
 	if (!run_best_per_second.empty()) {
 		std::cout << std::fixed << std::setprecision(10)
-				  << "  Best objective per second (init=" << f_initial << "):\n";
+				  << "  Best lexicographic score per second (init=" << score_initial.primary << "):\n";
 		for (int sec = 0; sec <= static_cast<int>(run_elapsed); ++sec) {
 			if (run_best_per_second.find(sec) != run_best_per_second.end()) {
-				double best_at_sec = run_best_per_second[sec];
-				double improvement = f_initial - best_at_sec;
-				double pct = (f_initial > 0.0) ? 100.0 * improvement / f_initial : 0.0;
-				std::cout << "    t=" << std::setw(3) << sec << "s  best=" 
-						  << best_at_sec 
-						  << "  (improvement=" << std::setprecision(10) << improvement 
-						  << " / " << std::setprecision(2) << pct << "%)\n";
+				const LexScore best_at_sec = run_best_per_second[sec];
+				double improvement = score_initial.primary - best_at_sec.primary;
+				double pct = (score_initial.primary > 0.0)
+					? 100.0 * improvement / score_initial.primary : 0.0;
+				std::cout << "    t=" << std::setw(3) << sec
+						  << "s  best=(" << best_at_sec.primary
+						  << ", " << std::setprecision(4) << best_at_sec.compactness << ")"
+						  << "  primary_improvement=" << std::setprecision(10) << improvement
+						  << " / " << std::setprecision(2) << pct << "%\n";
 			}
 		}
 	}
 
-	std::cout << "\nObjective before perturbation: " << std::fixed << std::setprecision(10) << f_initial << "\n";
-	std::cout << "Objective after perturbation:  " << std::fixed << std::setprecision(10) << f_best << "\n";
+	std::cout << "\nLexicographic score before perturbation: ("
+			  << std::fixed << std::setprecision(10) << score_initial.primary
+			  << ", " << std::setprecision(4) << score_initial.compactness << ")\n";
+	std::cout << "Lexicographic score after perturbation:  ("
+			  << std::fixed << std::setprecision(10) << score_best.primary
+			  << ", " << std::setprecision(4) << score_best.compactness << ")\n";
 	std::cout << "Perturbations attempted: " << perturbations_attempted
 			  << "  changed: " << perturbations_changed << "\n";
 
@@ -532,7 +551,7 @@ int main(int argc, char* argv[]) {
 }
 
 // Run:
-// g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_035.json
-// Check && plot: python check_solution.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json && python plot.py data/scenario_035.json /workspaces/WTA/data/scenario_035_solution.json --out plot.png
+// g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_ak630_5uav_1yj83.json
+// Check && plot: python check_solution.py data/scenario_001.json ./data/scenario_001_solution.json && python plot.py data/scenario_001.json ./data/scenario_001_solution.json --out plot.png
 
-//python check_solution.py data/scenario_ak630_5uav_1yj83.json data/scenario_ak630_5uav_1yj83_solution.json && python plot.py data/scenario_ak630_5uav_1yj83.json data/scenario_ak630_5uav_1yj83_solution.json --out plot.png
+//python check_solution.py data/scenario_ak630_3uav_1yj83_h40.json data/scenario_ak630_3uav_1yj83_h40_solution.json && python plot.py data/scenario_ak630_3uav_1yj83_h40.json data/scenario_ak630_3uav_1yj83_h40_solution.json --out plot.png

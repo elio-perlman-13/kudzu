@@ -28,9 +28,9 @@ enum class RuinRule {
 	LOW_MARGINAL_PAIR, // weakest pair by total marginal; remove all bursts on it
 };
 
-// 14 LLHs total:
+// 15 LLHs total:
 // - 12 macro LLHs (M2,M4,M6-M8,M10-M16; M1/M3/M5/M9 removed)
-// - 2 local LLHs
+// - 3 local LLHs
 enum class LLHId {
 	M2_RUIN_RANDOM__H_SURV_THREAT_TIE,
 	M4_RUIN_OVER_COVERED__H_EXCLUSIVE_RESERVE,
@@ -47,9 +47,10 @@ enum class LLHId {
 
 	L1_REASSIGN_BEST_DELTA,
 	L2_SWAP_BEST_PAIR,
+	L3_COMPACT_TIME_SWAP,
 };
 
-inline constexpr int kLLHCount = 14;
+inline constexpr int kLLHCount = 15;
 
 struct MacroSpec {
 	RuinRule               ruin;
@@ -444,7 +445,7 @@ inline bool apply_reassign_pair_best(
 			double gain  = threat_t2 * surv_t2 * (1.0 - std::pow(1.0 - p2, k));
 			double delta = remove_cost - gain; // negative = net improvement
 
-			if (delta < -1e-12)
+			if (delta <= -1e-12)
 				candidates.push_back({wid, tid, t2, k, delta});
 		}
 	}
@@ -473,7 +474,15 @@ inline bool apply_reassign_pair_best(
 			trial.commit(mv.wid, mv.tid2, t);
 			++placed;
 		}
-		if (placed > 0 && trial.objective() < current_obj - 1e-12) {
+		const LexScore current_score =
+			lex_score(sol);
+
+		// After constructing trial:
+		if (placed > 0 &&
+			lex_not_worse(
+				lex_score(trial),
+				current_score)) {
+
 			sol = std::move(trial);
 			return true;
 		}
@@ -537,7 +546,7 @@ inline bool apply_swap_pair_best(
 			double gain_ba = threat_a * surv_a * (1.0 - std::pow(1.0 - p_ba, k_b));
 			double delta   = (cost_a + cost_b) - (gain_ab + gain_ba);
 
-			if (delta < -1e-12)
+			if (delta <= -1e-12)
 				candidates.push_back({wid_a, tid_a, wid_b, tid_b, delta});
 		}
 	}
@@ -574,13 +583,134 @@ inline bool apply_swap_pair_best(
 			trial.commit(sw.wid_b, sw.tid_a, t);
 			++placed_b;
 		}
-		if ((placed_a > 0 || placed_b > 0) && trial.objective() < current_obj - 1e-12) {
+		if ((placed_a > 0 || placed_b > 0) && lex_not_worse(lex_score(trial), lex_score(sol))) {
 			sol = std::move(trial);
 			return true;
 		}
 	}
 	return false;
 }
+
+// L3: compact the timing of same-(weapon,target) bursts without changing
+// assignment counts, survival, ammunition, or occupied weapon intervals.
+//
+// The operator swaps the target labels attached to two already-occupied time
+// slots on the same weapon. Because each pair keeps the same burst count, the
+// primary objective is unchanged. We choose the feasible swap that gives the
+// largest decrease in the secondary compactness objective.
+inline bool apply_compact_time_swap(
+	Solution& sol,
+	std::mt19937& /*rng*/,
+	const ApplyParams& /*params*/)
+{
+	constexpr double eps = 1e-9;
+
+	auto pair_compactness = [&](const std::vector<double>& times, double d) {
+		if (times.size() < 2) return 0.0;
+		auto mm = std::minmax_element(times.begin(), times.end());
+		double span = *mm.second - *mm.first;
+		double unavoidable =
+			static_cast<double>(times.size() - 1) * d;
+		return std::max(0.0, span - unavoidable);
+	};
+
+	struct BestSwap {
+		bool found = false;
+		uint64_t key_a = 0;
+		uint64_t key_b = 0;
+		std::size_t idx_a = 0;
+		std::size_t idx_b = 0;
+		double improvement = 0.0;
+	};
+
+	BestSwap best;
+
+	// Group active pair keys by weapon.
+	std::unordered_map<int, std::vector<uint64_t>> keys_by_weapon;
+	for (const auto& [key, times] : sol.fire_times) {
+		if (times.empty()) continue;
+		int wid = static_cast<int>(key >> 32);
+		keys_by_weapon[wid].push_back(key);
+	}
+
+	for (const auto& [wid, keys] : keys_by_weapon) {
+		if (keys.size() < 2) continue;
+
+		const double d = sol.burst_dur->at(wid);
+
+		for (std::size_t a = 0; a < keys.size(); ++a) {
+			uint64_t key_a = keys[a];
+			int tid_a = static_cast<int>(key_a & 0xFFFFFFFFu);
+			const auto& times_a = sol.fire_times.at(key_a);
+			const auto [a_start, a_end] = sol.windows->at(key_a);
+
+			for (std::size_t b = a + 1; b < keys.size(); ++b) {
+				uint64_t key_b = keys[b];
+				int tid_b = static_cast<int>(key_b & 0xFFFFFFFFu);
+				if (tid_a == tid_b) continue;
+
+				const auto& times_b = sol.fire_times.at(key_b);
+				const auto [b_start, b_end] = sol.windows->at(key_b);
+
+				const double old_compactness =
+					pair_compactness(times_a, d) +
+					pair_compactness(times_b, d);
+
+				for (std::size_t ia = 0; ia < times_a.size(); ++ia) {
+					double ta = times_a[ia];
+
+					for (std::size_t ib = 0; ib < times_b.size(); ++ib) {
+						double tb = times_b[ib];
+
+						// After swapping labels, target A fires at tb and
+						// target B fires at ta. The weapon occupancy itself
+						// is unchanged, so only target-window feasibility
+						// needs to be checked.
+						if (tb < a_start - eps || tb + d > a_end + eps)
+							continue;
+						if (ta < b_start - eps || ta + d > b_end + eps)
+							continue;
+
+						std::vector<double> new_a = times_a;
+						std::vector<double> new_b = times_b;
+						new_a[ia] = tb;
+						new_b[ib] = ta;
+
+						const double new_compactness =
+							pair_compactness(new_a, d) +
+							pair_compactness(new_b, d);
+
+						const double improvement =
+							old_compactness - new_compactness;
+
+						if (improvement >= best.improvement) {
+							best = {
+								true,
+								key_a,
+								key_b,
+								ia,
+								ib,
+								improvement
+							};
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (!best.found) return false;
+
+	auto& times_a = sol.fire_times.at(best.key_a);
+	auto& times_b = sol.fire_times.at(best.key_b);
+
+	std::swap(times_a[best.idx_a], times_b[best.idx_b]);
+	std::sort(times_a.begin(), times_a.end());
+	std::sort(times_b.begin(), times_b.end());
+
+	return true;
+}
+
 
 inline bool apply_llh(
 	LLHId llh,
@@ -618,6 +748,8 @@ inline bool apply_llh(
 			return apply_reassign_pair_best(sol, rng, params);
 		case LLHId::L2_SWAP_BEST_PAIR:
 			return apply_swap_pair_best(sol, rng, params);
+		case LLHId::L3_COMPACT_TIME_SWAP:
+			return apply_compact_time_swap(sol, rng, params);
 	}
 	throw std::logic_error("Unhandled LLHId in apply_llh");
 }

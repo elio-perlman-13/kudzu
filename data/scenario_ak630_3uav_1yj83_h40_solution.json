@@ -1,0 +1,71 @@
+{
+  "assignments": [
+    {
+      "AmmoUsed": 1,
+      "EndTime": 9.0,
+      "FireTime": 6.0,
+      "FireTimes": [
+        6.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 1,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 12.0,
+      "FireTime": 9.0,
+      "FireTimes": [
+        9.0
+      ],
+      "PKill": 0.6,
+      "WTATargetID": 3,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 21.0,
+      "FireTime": 12.0,
+      "FireTimes": [
+        12.0,
+        15.0,
+        18.0
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 2,
+      "EndTime": 12.0,
+      "FireTime": 6.0,
+      "FireTimes": [
+        6.0,
+        9.0
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 2,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 2
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 21.0,
+      "FireTime": 12.0,
+      "FireTimes": [
+        12.0,
+        15.0,
+        18.0
+      ],
+      "PKill": 0.4879999999999999,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 2
+    }
+  ],
+  "compactness": 0.0,
+  "objective": 0.45414399999999994
+}

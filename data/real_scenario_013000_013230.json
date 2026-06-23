@@ -1,0 +1,513 @@
+{
+  "scenario_metadata": {
+    "source_timeline": "waypoint_timeline.csv",
+    "source_catalog": "scenario.xlsx",
+    "global_start_time": "1:30:00",
+    "global_end_time": "1:32:30",
+    "global_start_s": 5400.0,
+    "global_end_s": 5550.0,
+    "scenario_horizon_s": 150.0,
+    "own_ship_heading_deg": 280.160985,
+    "time_mapping": "JSON target positions are evaluated at global 01:30:00; JSON engagement windows use local seconds in [0, 150]."
+  },
+  "weapon_infos": [
+    {
+      "ID": 1,
+      "Code": "AK176",
+      "Type": 2,
+      "MinRange": 0,
+      "MaxRange": 11000,
+      "MinAltitude": 0,
+      "MaxAltitude": 11000,
+      "AzimuthFromDeg": 300.0,
+      "AzimuthToDeg": 160.0,
+      "ElevationMinDeg": -15.0,
+      "ElevationMaxDeg": 85.0,
+      "MaxShotsPerTarget": 20,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 1.0,
+      "ReloadTime": 1.0
+    },
+    {
+      "ID": 2,
+      "Code": "AK630",
+      "Type": 2,
+      "MinRange": 0,
+      "MaxRange": 4000,
+      "MinAltitude": 0,
+      "MaxAltitude": 4000,
+      "AzimuthFromDeg": 300.0,
+      "AzimuthToDeg": 160.0,
+      "ElevationMinDeg": -15.0,
+      "ElevationMaxDeg": 85.0,
+      "MaxShotsPerTarget": 4,
+      "RoundsPerBurst": 100,
+      "BurstInterval": 2.0,
+      "ReloadTime": 1.0
+    },
+    {
+      "ID": 3,
+      "Code": "TCDT_BV15",
+      "Type": 3,
+      "MinRange": 0,
+      "MaxRange": 15000,
+      "MinAltitude": -1000,
+      "MaxAltitude": 100000,
+      "AzimuthFromDeg": 0.0,
+      "AzimuthToDeg": 360.0,
+      "ElevationMinDeg": -90.0,
+      "ElevationMaxDeg": 90.0,
+      "MaxShotsPerTarget": 1,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 5.0,
+      "ReloadTime": 5.0
+    },
+    {
+      "ID": 4,
+      "Code": "VCM_T",
+      "Type": 4,
+      "MinRange": 5000,
+      "MaxRange": 260000,
+      "MinAltitude": -1000,
+      "MaxAltitude": 100000,
+      "AzimuthFromDeg": 0.0,
+      "AzimuthToDeg": 360.0,
+      "ElevationMinDeg": -90.0,
+      "ElevationMaxDeg": 90.0,
+      "MaxShotsPerTarget": 3,
+      "RoundsPerBurst": 1,
+      "BurstInterval": 5.0,
+      "ReloadTime": 20.0
+    }
+  ],
+  "target_infos": [
+    {
+      "ID": 1,
+      "Code": "TGT_SHIP",
+      "Description": "Enemy destroyer",
+      "Type": 4
+    },
+    {
+      "ID": 2,
+      "Code": "TGT_YJ83",
+      "Description": "YJ-83 anti-ship missile",
+      "Type": 1
+    },
+    {
+      "ID": 3,
+      "Code": "TGT_USV",
+      "Description": "Unmanned surface vehicle",
+      "Type": 5
+    },
+    {
+      "ID": 4,
+      "Code": "TGT_UAV_FIXED",
+      "Description": "Fixed-wing UAV",
+      "Type": 3
+    }
+  ],
+  "probability_table": [
+    {
+      "Score": 0.1,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_SHIP"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "VCM_T",
+      "WTATargetInfoCode": "TGT_SHIP"
+    },
+    {
+      "Score": 0.2,
+      "WTAWeaponInfoCode": "AK630",
+      "WTATargetInfoCode": "TGT_YJ83"
+    },
+    {
+      "Score": 0.5,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_YJ83"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK176",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.4,
+      "WTAWeaponInfoCode": "AK630",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_USV"
+    },
+    {
+      "Score": 0.6,
+      "WTAWeaponInfoCode": "AK630",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    },
+    {
+      "Score": 0.8,
+      "WTAWeaponInfoCode": "TCDT_BV15",
+      "WTATargetInfoCode": "TGT_UAV_FIXED"
+    }
+  ],
+  "assignment_request": {
+    "vessels": [
+      {
+        "ID": 1,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Speed": 0.0,
+        "HeadingX": -0.984316,
+        "HeadingY": 0.176415,
+        "HeadingZ": 0.0,
+        "DefenseRadius": 25.0
+      }
+    ],
+    "weapons": [
+      {
+        "ID": 1,
+        "WTAVesselID": 1,
+        "Ammo": 300,
+        "WTAWeaponInfoCode": "AK176",
+        "Status": 1
+      },
+      {
+        "ID": 2,
+        "WTAVesselID": 1,
+        "Ammo": 3000,
+        "WTAWeaponInfoCode": "AK630",
+        "Status": 1
+      },
+      {
+        "ID": 3,
+        "WTAVesselID": 1,
+        "Ammo": 200,
+        "WTAWeaponInfoCode": "TCDT_BV15",
+        "Status": 1
+      },
+      {
+        "ID": 4,
+        "WTAVesselID": 1,
+        "Ammo": 8,
+        "WTAWeaponInfoCode": "VCM_T",
+        "Status": 1
+      }
+    ],
+    "targets": [
+      {
+        "ID": 1,
+        "WTATargetInfoCode": "TGT_SHIP",
+        "X": -64.196058,
+        "Y": 11.505571,
+        "Z": 0.0,
+        "VX": 0.995368,
+        "VY": -0.096137,
+        "VZ": 0.0,
+        "Speed": 12.5,
+        "ThreatScore": 0.95
+      },
+      {
+        "ID": 2,
+        "WTATargetInfoCode": "TGT_YJ83",
+        "X": -10.52927,
+        "Y": 7.993045,
+        "Z": 0.01,
+        "VX": 0.997773,
+        "VY": -0.066699,
+        "VZ": 0.0,
+        "Speed": 277.777778,
+        "ThreatScore": 0.95
+      },
+      {
+        "ID": 3,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": -1.867099,
+        "Y": 0.135502,
+        "Z": 0.0,
+        "VX": 0.997377,
+        "VY": -0.072383,
+        "VZ": 0.0,
+        "Speed": 23.611111,
+        "ThreatScore": 0.8
+      },
+      {
+        "ID": 4,
+        "WTATargetInfoCode": "TGT_USV",
+        "X": -2.385439,
+        "Y": -1.242615,
+        "Z": 0.0,
+        "VX": 0.886884,
+        "VY": 0.461993,
+        "VZ": 0.0,
+        "Speed": 23.611111,
+        "ThreatScore": 0.8
+      },
+      {
+        "ID": 5,
+        "WTATargetInfoCode": "TGT_UAV_FIXED",
+        "X": -3.486523,
+        "Y": -2.771635,
+        "Z": 0.471655,
+        "VX": 0.778438,
+        "VY": 0.618825,
+        "VZ": -0.105307,
+        "Speed": 31.944444,
+        "ThreatScore": 0.5
+      }
+    ]
+  },
+  "engagement_windows": {
+    "1_3": [
+      0.0,
+      79.283
+    ],
+    "1_4": [
+      0.0,
+      113.93
+    ],
+    "2_2": [
+      39.333552,
+      53.734
+    ],
+    "2_3": [
+      0.0,
+      79.283
+    ],
+    "2_4": [
+      0.0,
+      113.93
+    ],
+    "2_5": [
+      14.991618,
+      140.217
+    ],
+    "3_2": [
+      0.0,
+      53.734
+    ],
+    "3_3": [
+      0.0,
+      79.283
+    ],
+    "3_4": [
+      0.0,
+      113.93
+    ],
+    "3_5": [
+      0.0,
+      140.217
+    ],
+    "4_1": [
+      0.0,
+      150.0
+    ]
+  },
+  "pair_max_shots": {
+    "1_3": 5,
+    "1_4": 5,
+    "2_2": 4,
+    "2_3": 2,
+    "2_4": 2,
+    "2_5": 2,
+    "3_2": 1,
+    "3_3": 1,
+    "3_4": 1,
+    "3_5": 1,
+    "4_1": 3
+  },
+  "all_engagement_intervals": {
+    "1_3": [
+      [
+        0.0,
+        79.283
+      ]
+    ],
+    "1_4": [
+      [
+        0.0,
+        113.93
+      ]
+    ],
+    "2_2": [
+      [
+        39.333552,
+        53.734
+      ]
+    ],
+    "2_3": [
+      [
+        0.0,
+        79.283
+      ]
+    ],
+    "2_4": [
+      [
+        0.0,
+        113.93
+      ]
+    ],
+    "2_5": [
+      [
+        14.991618,
+        140.217
+      ]
+    ],
+    "3_2": [
+      [
+        0.0,
+        53.734
+      ]
+    ],
+    "3_3": [
+      [
+        0.0,
+        79.283
+      ]
+    ],
+    "3_4": [
+      [
+        0.0,
+        113.93
+      ]
+    ],
+    "3_5": [
+      [
+        0.0,
+        140.217
+      ]
+    ],
+    "4_1": [
+      [
+        0.0,
+        150.0
+      ]
+    ]
+  },
+  "target_trajectories": {
+    "1": [
+      {
+        "Time": 0.0,
+        "GlobalTime": 5400.0,
+        "Waypoint": "D2->D3",
+        "X": -64.196058,
+        "Y": 11.505571,
+        "Z": 0.0
+      },
+      {
+        "Time": 150.0,
+        "GlobalTime": 5550.0,
+        "Waypoint": "D2->D3",
+        "X": -62.329131,
+        "Y": 11.325255,
+        "Z": 0.0
+      }
+    ],
+    "2": [
+      {
+        "Time": 0.0,
+        "GlobalTime": 5400.0,
+        "Waypoint": "D0->D1",
+        "X": -10.52927,
+        "Y": 7.993045,
+        "Z": 0.01
+      },
+      {
+        "Time": 22.254,
+        "GlobalTime": 5422.254,
+        "Waypoint": "D1",
+        "X": -4.3594,
+        "Y": 7.5806,
+        "Z": 0.01
+      },
+      {
+        "Time": 37.993,
+        "GlobalTime": 5437.993,
+        "Waypoint": "D2",
+        "X": -2.1797,
+        "Y": 3.7903,
+        "Z": 0.01
+      },
+      {
+        "Time": 53.734,
+        "GlobalTime": 5453.734,
+        "Waypoint": "D3",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    ],
+    "3": [
+      {
+        "Time": 0.0,
+        "GlobalTime": 5400.0,
+        "Waypoint": "D3->D4",
+        "X": -1.867099,
+        "Y": 0.135502,
+        "Z": 0.0
+      },
+      {
+        "Time": 79.283,
+        "GlobalTime": 5479.283,
+        "Waypoint": "D4",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    ],
+    "4": [
+      {
+        "Time": 0.0,
+        "GlobalTime": 5400.0,
+        "Waypoint": "D3->D4",
+        "X": -2.385439,
+        "Y": -1.242615,
+        "Z": 0.0
+      },
+      {
+        "Time": 113.93,
+        "GlobalTime": 5513.93,
+        "Waypoint": "D4",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    ],
+    "5": [
+      {
+        "Time": 0.0,
+        "GlobalTime": 5400.0,
+        "Waypoint": "D3->D4",
+        "X": -3.486523,
+        "Y": -2.771635,
+        "Z": 0.471655
+      },
+      {
+        "Time": 140.217,
+        "GlobalTime": 5540.217,
+        "Waypoint": "D4",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    ]
+  }
+}

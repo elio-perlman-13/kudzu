@@ -1,13 +1,26 @@
 {
   "assignments": [
     {
-      "AmmoUsed": 3,
-      "EndTime": 24.0,
-      "FireTime": 9.0,
+      "AmmoUsed": 2,
+      "EndTime": 12.0,
+      "FireTime": 6.0,
       "FireTimes": [
-        9.0,
-        15.0,
-        21.0
+        6.0,
+        9.0
+      ],
+      "PKill": 0.84,
+      "WTATargetID": 1,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 42.0,
+      "FireTime": 33.0,
+      "FireTimes": [
+        33.0,
+        36.0,
+        39.0
       ],
       "PKill": 0.9359999999999999,
       "WTATargetID": 2,
@@ -15,39 +28,38 @@
       "WTAWeaponID": 1
     },
     {
-      "AmmoUsed": 2,
+      "AmmoUsed": 3,
       "EndTime": 51.0,
-      "FireTime": 27.0,
+      "FireTime": 42.0,
       "FireTimes": [
-        27.0,
+        42.0,
+        45.0,
         48.0
       ],
-      "PKill": 0.84,
+      "PKill": 0.9359999999999999,
       "WTATargetID": 3,
       "WTAVesselID": 1,
       "WTAWeaponID": 1
     },
     {
-      "AmmoUsed": 4,
-      "EndTime": 57.0,
-      "FireTime": 6.0,
+      "AmmoUsed": 2,
+      "EndTime": 60.0,
+      "FireTime": 54.0,
       "FireTimes": [
-        6.0,
-        12.0,
-        39.0,
-        54.0
+        54.0,
+        57.0
       ],
-      "PKill": 0.9744,
+      "PKill": 0.84,
       "WTATargetID": 4,
       "WTAVesselID": 1,
       "WTAWeaponID": 1
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 60.0,
-      "FireTime": 57.0,
+      "EndTime": 54.0,
+      "FireTime": 51.0,
       "FireTimes": [
-        57.0
+        51.0
       ],
       "PKill": 0.6,
       "WTATargetID": 5,
@@ -55,45 +67,42 @@
       "WTAWeaponID": 1
     },
     {
-      "AmmoUsed": 8,
-      "EndTime": 54.0,
-      "FireTime": 18.0,
+      "AmmoUsed": 7,
+      "EndTime": 33.0,
+      "FireTime": 12.0,
       "FireTimes": [
-        30.0,
-        42.0,
-        51.0,
+        12.0,
+        15.0,
         18.0,
+        21.0,
         24.0,
-        33.0,
-        36.0,
-        45.0
+        27.0,
+        30.0
       ],
-      "PKill": 0.8322278399999999,
+      "PKill": 0.7902847999999999,
       "WTATargetID": 6,
       "WTAVesselID": 1,
       "WTAWeaponID": 1
     },
     {
-      "AmmoUsed": 4,
-      "EndTime": 45.0,
-      "FireTime": 6.0,
+      "AmmoUsed": 2,
+      "EndTime": 60.0,
+      "FireTime": 54.0,
       "FireTimes": [
-        6.0,
-        9.0,
-        15.0,
-        42.0
+        54.0,
+        57.0
       ],
-      "PKill": 0.9744,
+      "PKill": 0.84,
       "WTATargetID": 1,
       "WTAVesselID": 1,
       "WTAWeaponID": 2
     },
     {
       "AmmoUsed": 1,
-      "EndTime": 48.0,
-      "FireTime": 45.0,
+      "EndTime": 54.0,
+      "FireTime": 51.0,
       "FireTimes": [
-        45.0
+        51.0
       ],
       "PKill": 0.6,
       "WTATargetID": 2,
@@ -101,26 +110,39 @@
       "WTAWeaponID": 2
     },
     {
-      "AmmoUsed": 2,
-      "EndTime": 42.0,
-      "FireTime": 21.0,
+      "AmmoUsed": 1,
+      "EndTime": 51.0,
+      "FireTime": 48.0,
       "FireTimes": [
-        21.0,
-        39.0
+        48.0
       ],
-      "PKill": 0.84,
+      "PKill": 0.6,
       "WTATargetID": 3,
       "WTAVesselID": 1,
       "WTAWeaponID": 2
     },
     {
       "AmmoUsed": 3,
-      "EndTime": 51.0,
-      "FireTime": 12.0,
+      "EndTime": 15.0,
+      "FireTime": 6.0,
       "FireTimes": [
-        12.0,
-        24.0,
-        48.0
+        6.0,
+        9.0,
+        12.0
+      ],
+      "PKill": 0.9359999999999999,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 2
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 48.0,
+      "FireTime": 39.0,
+      "FireTimes": [
+        39.0,
+        42.0,
+        45.0
       ],
       "PKill": 0.9359999999999999,
       "WTATargetID": 5,
@@ -129,17 +151,17 @@
     },
     {
       "AmmoUsed": 8,
-      "EndTime": 60.0,
-      "FireTime": 18.0,
+      "EndTime": 39.0,
+      "FireTime": 15.0,
       "FireTimes": [
+        15.0,
         18.0,
+        21.0,
+        24.0,
         27.0,
         30.0,
         33.0,
-        36.0,
-        51.0,
-        54.0,
-        57.0
+        36.0
       ],
       "PKill": 0.8322278399999999,
       "WTATargetID": 6,
@@ -147,5 +169,6 @@
       "WTAWeaponID": 2
     }
   ],
-  "objective": 0.12029499534202481
+  "compactness": 0.0,
+  "objective": 0.13934511626649754
 }

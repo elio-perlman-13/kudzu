@@ -104,16 +104,28 @@ def compute_survival(targets, p_ij, assignments):
 # Plot
 # ---------------------------------------------------------------------------
 
+def _target_color_map(targets):
+    """Use the same target-ID colour mapping as draw_scenario.py."""
+    all_tids = sorted(targets.keys())
+    cmap = (
+        matplotlib.colormaps["tab20"]
+        if len(all_tids) <= 20
+        else matplotlib.colormaps["hsv"]
+    )
+    return {
+        tid: cmap(i / max(len(all_tids) - 1, 1))
+        for i, tid in enumerate(all_tids)
+    }
+
+
 def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
     weapons, targets, windows, p_ij, assignments, objective, horizon = \
         load(scenario_path, solution_path)
 
     survival, threat = compute_survival(targets, p_ij, assignments)
 
-    # --- colour map: one colour per target ID ---
-    all_tids = sorted(targets.keys())
-    cmap = matplotlib.colormaps["tab20"] if len(all_tids) <= 20 else matplotlib.colormaps["hsv"]
-    tid_color = {tid: cmap(i / max(len(all_tids) - 1, 1)) for i, tid in enumerate(all_tids)}
+    # --- colour map: shared with draw_scenario.py ---
+    tid_color = _target_color_map(targets)
 
     # --- weapon ordering: group by vessel ---
     weapon_ids = sorted(weapons.keys(), key=lambda w: (weapons[w]["WTAVesselID"], w))

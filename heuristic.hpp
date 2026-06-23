@@ -25,7 +25,7 @@ static double score(const Solution& sol, int wid, int tid, double t,
     (void)t;
     (void)wid;
     (void)exclusive_cnt;
-    return sol.threat_score.at(tid) * sol.survival(tid);
+    return sol.survival(tid) * sol.threat_score.at(tid);
 }
 
 // ---------------------------------------------------------------------------
@@ -122,7 +122,7 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng) {
         // 1. scarcity (fewer live targets) ascending — most constrained weapon first
         // 2. p_ij(wid, selected_tid) descending — most effective weapon
         // 3. earliest fire time
-        // 4. smallest weapon id (deterministic tie-break)
+        // 4. weapon id (deterministic tie-break)
         bool   have_choice  = false;
         int    chosen_wid   = -1;
         int    chosen_tid   = selected_tid;
@@ -143,8 +143,9 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng) {
             if (!have_choice
                 || scarcity < best_scarcity
                 || (scarcity == best_scarcity && p_this > best_p + eps)
-                || (scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps && cs.t < chosen_t - eps)
-                || (scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps && std::fabs(cs.t - chosen_t) <= eps && wid < chosen_wid)) {
+                || (scarcity == best_scarcity && std::fabs(p_this - best_p) <= eps
+                    && (cs.t < chosen_t - eps
+                        || (std::fabs(cs.t - chosen_t) <= eps && wid < chosen_wid)))) {
                 have_choice   = true;
                 chosen_wid    = wid;
                 chosen_t      = cs.t;
@@ -204,7 +205,7 @@ Solution grasp(
             weapons, targets, p_ij, windows,
             burst_dur, max_shots, vessel_id_map, horizon);
         grasp_construction(sol, alpha, rng);
-        if (!have_best || sol.objective() < best.objective()) {
+        if (!have_best || lex_better(lex_score(sol), lex_score(best))) {
             best      = sol;
             have_best = true;
         }
