@@ -35,11 +35,7 @@ struct Candidate {
 };
 
 struct SelectContext {
-	// 0 = early, 1 = late. Used by H_SPREAD_THEN_FOCUS.
 	double phase = 0.0;
-
-	// Optional previous step feature for H_OPPORTUNITY_LOCK.
-	// tid -> previous feasible weapon count.
 	const std::unordered_map<int, int>* prev_target_feasible_weapons = nullptr;
 };
 
@@ -133,7 +129,7 @@ static inline double marginal_objective_drop(const Solution& sol, const Candidat
 	return surv * threat * p;
 }
 
-} // namespace detail
+}
 
 static inline SelectResult select_candidate(
 	HeuristicId h,
@@ -159,7 +155,6 @@ static inline SelectResult select_candidate(
 
 	switch (h) {
 		case HeuristicId::H_SURV:
-		// Choose weapon with regretted best survival impact: best - second-best, choose target by best survival
 			{
 				constexpr double rho = 0.05;
 				std::unordered_map<int, Candidate> best_by_weapon;
@@ -220,7 +215,6 @@ static inline SelectResult select_candidate(
 			}
 
 		case HeuristicId::H_SURV_THREAT_TIE:
-		// same as H_SURV, but break survival ties by threat score, then time, then weapon id, then target id
 			choose_global([&](const Candidate& a, const Candidate& b) {
 				return detail::better_surv_then_threat(sol, a, b);
 			});
@@ -228,7 +222,6 @@ static inline SelectResult select_candidate(
 
 		case HeuristicId::H_EXCLUSIVE_GUARD:
 		case HeuristicId::H_EXCLUSIVE_RESERVE: {
-			// Per weapon: if it has any exclusive target, only keep exclusive options.
 			std::vector<Candidate> filtered;
 			filtered.reserve(candidates.size());
 			for (const auto& c : candidates) {
@@ -335,7 +328,6 @@ static inline SelectResult select_candidate(
 			return out;
 
 		case HeuristicId::H_ANTI_BOTTLENECK: {
-			// Weapon with latest next feasible fire time (largest min-t among its options).
 			std::unordered_map<int, double> min_t_by_weapon;
 			for (const auto& c : candidates) {
 				auto it = min_t_by_weapon.find(c.wid);
@@ -466,10 +458,6 @@ static inline SelectResult select_candidate(
 			return out;
 
 		case HeuristicId::H_BASELINE_TWO_STAGE: {
-			// Exact two-stage lexicographic baseline.
-			// Stage 1: pick target with highest survival*threat; tie-break by threat, window_end, tid.
-			// Stage 2: for that target, pick weapon by fewest feasible targets (scarcity),
-			//          then pij, then earliest fire time, then wid.
 			int    sel_tid = -1;
 			double sel_sc  = -std::numeric_limits<double>::infinity();
 			double sel_th  = -std::numeric_limits<double>::infinity();
@@ -536,4 +524,4 @@ static inline SelectResult select_candidate(
 	return out;
 }
 
-} // namespace portfolio
+}

@@ -1,0 +1,118 @@
+{
+  "assignments": [
+    {
+      "AmmoUsed": 20,
+      "EndTime": 40.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0
+      ],
+      "PKill": 0.9999999890048837,
+      "WTATargetID": 3,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 20,
+      "EndTime": 80.0,
+      "FireTime": 40.0,
+      "FireTimes": [
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0,
+        62.0,
+        64.0,
+        66.0,
+        68.0,
+        70.0,
+        72.0,
+        74.0,
+        76.0,
+        78.0
+      ],
+      "PKill": 0.9999999890048837,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 1
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 10.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 3,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 3
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 20.0,
+      "FireTime": 10.0,
+      "FireTimes": [
+        10.0
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 4,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 3
+    },
+    {
+      "AmmoUsed": 1,
+      "EndTime": 105.374841,
+      "FireTime": 95.374841,
+      "FireTimes": [
+        95.374841
+      ],
+      "PKill": 0.8,
+      "WTATargetID": 5,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 3
+    },
+    {
+      "AmmoUsed": 3,
+      "EndTime": 75.0,
+      "FireTime": 0.0,
+      "FireTimes": [
+        0.0,
+        25.0,
+        50.0
+      ],
+      "PKill": 0.784,
+      "WTATargetID": 1,
+      "WTAVesselID": 1,
+      "WTAWeaponID": 4
+    }
+  ],
+  "compactness": 0.0,
+  "objective": 1.2552000035184363
+}

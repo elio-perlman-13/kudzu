@@ -223,7 +223,7 @@ def plot_scenario(
 		vx = float(vessel.get("HeadingX", 0.0)) * spd_km_s
 		vy = float(vessel.get("HeadingY", 0.0)) * spd_km_s
 
-		ax.scatter(x, y, marker="^", s=220, c="#0b7285", edgecolors="black", linewidths=0.8, zorder=5)
+		ax.scatter(x, y, marker="o", s=220, c="#0b7285", edgecolors="black", linewidths=0.8, zorder=5)
 		ax.text(x + 0.12, y + 0.12, f"V{vid}", fontsize=10, weight="bold", zorder=6)
 
 		if dr and dr > 0:
@@ -280,7 +280,7 @@ def plot_scenario(
 		tcode = tgt["WTATargetInfoCode"]
 		color = tid_color[tid]
 
-		ax.scatter(x, y, marker="o", s=110, c=[color], edgecolors="black", linewidths=0.6, zorder=7)
+		ax.scatter(x, y, marker="^", s=120, c=[color], edgecolors="black", linewidths=0.6, zorder=7)
 
 		threat = tgt.get("ThreatScore", None)
 		threat_txt = f" {threat:.2f}" if isinstance(threat, (int, float)) else ""
@@ -358,7 +358,7 @@ def plot_scenario(
 		Line2D(
 			[0],
 			[0],
-			marker="^",
+			marker="o",
 			color="none",
 			markerfacecolor="#0b7285",
 			markeredgecolor="black",
@@ -382,7 +382,7 @@ def plot_scenario(
 			Line2D(
 				[0],
 				[0],
-				marker="o",
+				marker="^",
 				color="none",
 				markerfacecolor=tid_color[tid],
 				markeredgecolor="black",

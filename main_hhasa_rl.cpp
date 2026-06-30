@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <chrono>
+#include <cmath>
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
@@ -16,9 +17,6 @@
 
 using json = nlohmann::json;
 
-// ---------------------------------------------------------------------------
-// Scenario — owns all static tables; Solution holds const pointers into them
-// ---------------------------------------------------------------------------
 struct Scenario {
 	std::vector<Weapon>  weapons;
 	std::vector<Target>  targets;
@@ -30,9 +28,6 @@ struct Scenario {
 	double horizon = 60.0;
 };
 
-// ---------------------------------------------------------------------------
-// load_scenario — parse JSON into a Scenario
-// ---------------------------------------------------------------------------
 static Scenario load_scenario(const std::string& path) {
 	std::ifstream f(path);
 	if (!f) throw std::runtime_error("cannot open: " + path);
@@ -40,7 +35,6 @@ static Scenario load_scenario(const std::string& path) {
 
 	Scenario sc;
 
-	// --- weapon infos ---
 	std::unordered_map<std::string, WeaponInfo> winfo_map;
 	for (auto& item : data["weapon_infos"]) {
 		WeaponInfo wi;
@@ -62,7 +56,6 @@ static Scenario load_scenario(const std::string& path) {
 		winfo_map[wi.code]      = wi;
 	}
 
-	// --- target infos ---
 	std::unordered_map<std::string, TargetInfo> tinfo_map;
 	for (auto& item : data["target_infos"]) {
 		TargetInfo ti;
@@ -73,8 +66,6 @@ static Scenario load_scenario(const std::string& path) {
 		tinfo_map[ti.code] = ti;
 	}
 
-	// --- probability table ---
-	// key: "weapon_code|target_code"
 	std::unordered_map<std::string, double> prob_map;
 	for (auto& row : data["probability_table"]) {
 		std::string key = std::string(row["WTAWeaponInfoCode"]) + "|"
@@ -84,8 +75,7 @@ static Scenario load_scenario(const std::string& path) {
 
 	auto& req = data["assignment_request"];
 
-	// --- weapons + static tables ---
-	std::unordered_map<int, std::string> weapon_info_code; // wid -> info_code
+	std::unordered_map<int, std::string> weapon_info_code;
 	for (auto& item : req["weapons"]) {
 		Weapon w;
 		w.id        = item["ID"];
@@ -102,8 +92,7 @@ static Scenario load_scenario(const std::string& path) {
 		weapon_info_code[w.id] = w.info_code;
 	}
 
-	// --- targets ---
-	std::unordered_map<int, std::string> target_info_code; // tid -> info_code
+	std::unordered_map<int, std::string> target_info_code;
 	for (auto& item : req["targets"]) {
 		Target t;
 		t.id           = item["ID"];
@@ -120,9 +109,7 @@ static Scenario load_scenario(const std::string& path) {
 		target_info_code[t.id] = t.info_code;
 	}
 
-	// --- engagement windows + p_ij ---
 	for (auto& [key_str, ab] : data["engagement_windows"].items()) {
-		// key_str = "wid_tid"
 		auto sep = key_str.find('_');
 		int wid = std::stoi(key_str.substr(0, sep));
 		int tid = std::stoi(key_str.substr(sep + 1));
@@ -153,9 +140,6 @@ static Scenario load_scenario(const std::string& path) {
 	return sc;
 }
 
-// ---------------------------------------------------------------------------
-// write_solution — emit best solution as JSON (WTAAssignmentResponse schema)
-// ---------------------------------------------------------------------------
 static void write_solution(const Solution& sol, const std::string& path) {
 	auto assignments = sol.assignments();
 	std::sort(assignments.begin(), assignments.end(),
@@ -167,6 +151,11 @@ static void write_solution(const Solution& sol, const std::string& path) {
 
 	json out;
 	out["objective"] = sol.objective();
+	out["compactness"] = sol.compactness();
+	out["lexicographic_objective"] = {
+		{"primary", sol.objective()},
+		{"secondary", sol.compactness()}
+	};
 	json arr = json::array();
 	for (auto& a : assignments) {
 		json rec = {
@@ -213,8 +202,38 @@ static double dynamic_beta(
          + ratio * (y_end - y_ini);
 }
 
-// UCB1 — exact EVRPSARL.m case 3: Suc/Selected + sqrt(2*ln(k)/Selected)
-// suc = success counts (delta<=0), selected = pull counts
+static bool lex_primary_equal(
+    const LexScore& lhs,
+    const LexScore& rhs)
+{
+    constexpr double eps = 1e-10;
+    const double scale = std::max({
+        1.0,
+        std::fabs(lhs.primary),
+        std::fabs(rhs.primary)
+    });
+    return std::fabs(lhs.primary - rhs.primary) <= eps * scale;
+}
+
+static double lex_worsening_energy(
+    const LexScore& candidate,
+    const LexScore& incumbent,
+    double primary_scale,
+    double compactness_scale)
+{
+    if (!lex_primary_equal(candidate, incumbent)) {
+        return std::max(0.0, candidate.primary - incumbent.primary);
+    }
+
+    const double compactness_delta =
+        std::max(0.0, candidate.compactness - incumbent.compactness);
+
+    return compactness_delta
+         / std::max(1e-12, compactness_scale)
+         * std::max(1e-12, primary_scale);
+}
+
+// UCB Sampling
 static int select_llh_ucb(
 	const std::vector<double>& suc,
 	const std::vector<int>& selected,
@@ -222,7 +241,6 @@ static int select_llh_ucb(
 	std::mt19937& /*rng*/)
 {
 	const int n = static_cast<int>(suc.size());
-	// Try each arm at least once in order (mirrors MATLAB: action=k for k<=nbandits)
 	for (int i = 0; i < n; ++i)
 		if (selected[i] == 0) return i;
 	double best = -std::numeric_limits<double>::infinity();
@@ -259,8 +277,7 @@ static int select_llh_ucb_enabled(
 	return argbest;
 }
 
-// Thompson Sampling — exact EVRPSARL.m case 2: betarand(Suc+1, Fail+1) with Fail=0
-// = sample from Beta(Suc+1, 1) via Gamma ratio
+// Thompson Sampling
 static int select_llh_thompson(
 	const std::vector<double>& suc,
 	std::mt19937& rng)
@@ -270,8 +287,6 @@ static int select_llh_thompson(
 	int argbest = 0;
 	std::uniform_real_distribution<double> u01(std::numeric_limits<double>::min(), 1.0);
 	for (int i = 0; i < n; ++i) {
-		// Beta(a,1) with a=suc+1 has inverse-CDF sample: U^(1/a), U~Unif(0,1).
-		// This avoids per-arm Gamma/Exponential sampling overhead.
 		double a = suc[i] + 1.0;
 		double theta = std::pow(u01(rng), 1.0 / std::max(1e-12, a));
 		if (theta > best) { best = theta; argbest = i; }
@@ -365,7 +380,7 @@ int main(int argc, char* argv[]) {
 	int    rl_type       = 2;
 	int    hard_reset_after_blocks = 6;
 
-	// --- load config.json ("hhasa_rl" section) before parsing CLI args ---
+	// load config.json ("hhasa_rl" section) before parsing CLI args
 	{
 		std::ifstream cfg_f(config_path);
 		if (cfg_f) {
@@ -435,7 +450,6 @@ int main(int argc, char* argv[]) {
 			  << "  pairs=" << sc.windows.size()
 			  << "  horizon=" << sc.horizon << "s\n";
 
-	// Derive nc-scaled parameters (paper: MAcc = 25000*nc, IIter = 40*nc)
 	const int nc = static_cast<int>(sc.targets.size());
 	if (max_acc <= 0) max_acc = 25000 * nc;
 	if (iiter   <= 0) iiter   = 40    * nc;
@@ -453,16 +467,15 @@ int main(int argc, char* argv[]) {
 
 	constexpr int N = perturbation::kLLHCount;
 
-	// Track overall best across all runs.
 	Solution overall_best;
-	double   overall_best_fit = std::numeric_limits<double>::infinity();
-	bool     have_overall     = false;
+	LexScore overall_best_score{
+		std::numeric_limits<double>::infinity(),
+		std::numeric_limits<double>::infinity()
+	};
+	bool have_overall = false;
 
-	std::vector<double> run_results;
+	std::vector<LexScore> run_results;
 	run_results.reserve(runs);
-
-	// Time-based tracking: second -> best objective found by that second
-	std::unordered_map<int, double> best_per_second;
 
 	const auto wall_start = std::chrono::steady_clock::now();
 
@@ -477,30 +490,37 @@ int main(int argc, char* argv[]) {
 
 		const auto run_start = std::chrono::steady_clock::now();
 
-		// Per-run time tracking
-		std::unordered_map<int, double> run_best_per_second;
+		std::unordered_map<int, LexScore> run_best_per_second;
 
-		// --- Initialization: GRASP ---
 		Solution s = grasp(
 			sc.weapons, sc.targets, sc.p_ij, sc.windows,
 			sc.burst_dur, sc.max_shots, sc.vessel_id_map,
 			sc.horizon, grasp_alpha, restarts, run_seed);
 
-		double fit_init = s.objective();
+		const LexScore score_init = lex_score(s);
 		std::cout << std::fixed << std::setprecision(10)
 				  << "[run " << (run + 1) << "/" << runs
 				  << "  seed=" << run_seed
-				  << "]  GRASP init obj=" << fit_init << "\n";
+				  << "]  GRASP init score=(" << score_init.primary
+				  << ", " << std::setprecision(4) << score_init.compactness
+				  << ")\n";
 
-		// Record initial solution at t=0
-		run_best_per_second[0] = fit_init;
+		run_best_per_second[0] = score_init;
 
-		Solution s_best   = s.copy();
-		double   fit_best = fit_init;
-		double   fit_cur_state = fit_init;
+		Solution s_best = s.copy();
+		LexScore score_best = score_init;
+		LexScore score_cur_state = score_init;
+
+		double primary_energy_scale =
+			std::max(1.0, score_init.primary);
+		double compactness_energy_scale = std::max({
+			1.0,
+			score_init.compactness,
+			sc.horizon
+		});
 
 		double T0 = (temp_init > 0.0) ? temp_init
-					                   : std::max(1e-6, 0.01 * std::max(1.0, fit_init));
+					                   : std::max(1e-6, 0.01 * primary_energy_scale);
 		double T = T0;
 
 		std::vector<double> val(N, 0.2);
@@ -523,14 +543,14 @@ int main(int argc, char* argv[]) {
 				if (elapsed >= search_seconds) break;
 			}
 		// Per-block bandit state (reset after each inner loop, matching EVRPSARL.m)
-		std::vector<double> suc(N, 0.0);    // success count: delta<=0
-		std::vector<int>    pulls(N, 0);    // selection count
+		std::vector<double> suc(N, 0.0);    
+		std::vector<int>    pulls(N, 0);    
 		int total_pulls = 0;
 		std::vector<char> llh_enabled_block = llh_enabled;
 
 		Solution block_best;
 		bool block_best_updated = false;
-		double fit_block_best = fit_cur_state;
+		LexScore score_block_best = score_cur_state;
 		double progress_time_ratio = 0.0;
 		int clock_tick = 0;
 
@@ -561,13 +581,11 @@ int main(int argc, char* argv[]) {
 				perturbation::ApplyParams{val[heur]});
 
 			if (!changed) {
-				// Do not count as success; still count as selection (mirrors MATLAB Selected++)
 				pulls[heur]++;
 				total_pulls++;
 				continue;
 			}
 
-			// Repair block: if the generated move breaks basic feasibility, try targeted local repairs.
 			if (!lightweight_feasible(cand)) {
 				bool repaired = perturbation::apply_llh(
 					perturbation::LLHId::L1_REASSIGN_BEST_DELTA,
@@ -588,38 +606,45 @@ int main(int argc, char* argv[]) {
 				}
 			}
 
-			double fit_cand = cand.objective();
-			double delta = fit_cand - fit_cur_state;
+			const LexScore score_cand = lex_score(cand);
+			const LexRelation relation_to_current =
+				lex_relation(score_cand, score_cur_state);
+
+			const LexScore best_reference =
+				(block_best_updated &&
+				 lex_better(score_block_best, score_best))
+				? score_block_best
+				: score_best;
+
+			const bool is_new_run_best =
+				lex_better(score_cand, best_reference);
+
 			acc++;
 
-			// Record cumulative best objective so far at this second
-			{
-				double elapsed = std::chrono::duration<double>(
-					std::chrono::steady_clock::now() - run_start).count();
-				int sec = static_cast<int>(elapsed);
-				
-				// Store the best found anywhere up to this point
-				if (run_best_per_second.find(sec) == run_best_per_second.end()) {
-					run_best_per_second[sec] = fit_best;
-				} else {
-					// Keep the better cumulative value
-					run_best_per_second[sec] = std::min(run_best_per_second[sec], fit_best);
-				}
-			}
-
 			bool accept = false;
-			if (delta <= 0.0) {
+			if (relation_to_current == LexRelation::Better) {
 				accept = true;
-				if (delta < 0.0) suc[heur] += 1.0;
-				if (delta < 0.0) improved_cnt[heur]++;
-				if (delta < 0.0 && fit_cand < fit_best) best_improve_cnt[heur]++;
+				suc[heur] += 1.0;
+				improved_cnt[heur]++;
+				if (is_new_run_best) {
+					best_improve_cnt[heur]++;
+				}
+			} else if (relation_to_current == LexRelation::Equal) {
+				accept = true;
 			} else {
-				double p = std::exp(-delta / std::max(1e-12, T));
-				double r = unit01(rng);
-				if (r < p) {
+				const double worsening_energy =
+					lex_worsening_energy(
+						score_cand,
+						score_cur_state,
+						primary_energy_scale,
+						compactness_energy_scale);
+
+				const double p = std::exp(
+					-worsening_energy / std::max(1e-12, T));
+
+				if (unit01(rng) < p) {
 					accept = true;
 					accepted_worse[heur]++;
-					// Note: Metropolis-accepted worsening moves are NOT rewarded in EVRPSARL.m
 				}
 			}
 
@@ -628,24 +653,60 @@ int main(int argc, char* argv[]) {
 
 			if (accept) {
 				s = std::move(cand);
-				fit_cur_state = fit_cand;
-				if (fit_cand < fit_block_best) {
+				score_cur_state = score_cand;
+
+				if (lex_better(score_cur_state, score_block_best)) {
 					block_best = s.copy();
-					fit_block_best = fit_cand;
+					score_block_best = score_cur_state;
 					block_best_updated = true;
 				}
 			}
 
-			int reward_case = 3; // 0: new best, 1: improve, 2: worsen, 3: equal
-			if (delta < 0.0) reward_case = (fit_cand < fit_best) ? 0 : 1;
-			else if (delta > 0.0) reward_case = 2;
-			static constexpr double diff[4] = {0.0025, 0.00025, -0.00025, -0.00005};
-			val[heur] = std::clamp(val[heur] + diff[reward_case], 0.2, 1.0);
+			int reward_case = 3;
+			// 0: new run best, 1: improve current, 2: worsen current, 3: equal
+			if (relation_to_current == LexRelation::Better) {
+				reward_case = is_new_run_best ? 0 : 1;
+			} else if (relation_to_current == LexRelation::Worse) {
+				reward_case = 2;
+			}
+
+			static constexpr double diff[4] = {
+				0.0025, 0.00025, -0.00025, -0.00005
+			};
+			val[heur] = std::clamp(
+				val[heur] + diff[reward_case],
+				0.2,
+				1.0);
+
+			// Record the cumulative lexicographic best found by this second.
+			{
+				double elapsed = std::chrono::duration<double>(
+					std::chrono::steady_clock::now() - run_start).count();
+				int sec = static_cast<int>(elapsed);
+
+				if (sec == 0) {
+					continue;
+				}
+
+				const LexScore best_so_far =
+					(block_best_updated &&
+					 lex_better(score_block_best, score_best))
+					? score_block_best
+					: score_best;
+
+				auto it = run_best_per_second.find(sec);
+				if (it == run_best_per_second.end()) {
+					run_best_per_second[sec] = best_so_far;
+				} else if (lex_better(best_so_far, it->second)) {
+					it->second = best_so_far;
+				}
+			}
 		}
 
-			if (block_best_updated && fit_block_best < fit_best) {
-				s_best   = std::move(block_best);
-				fit_best = fit_block_best;
+			if (block_best_updated &&
+				lex_better(score_block_best, score_best)) {
+				s_best = std::move(block_best);
+				score_best = score_block_best;
 				best_improve_iters += 1;
 				hup = 0;
 				non_improving_blocks = 0;
@@ -667,20 +728,29 @@ int main(int argc, char* argv[]) {
 					sc.horizon, grasp_alpha, restarts, reset_seed);
 
 				s = reset_sol.copy();
-				fit_cur_state = s.objective();
+				score_cur_state = lex_score(s);
+
+				primary_energy_scale = std::max(
+					primary_energy_scale,
+					std::max(1.0, score_cur_state.primary));
+				compactness_energy_scale = std::max({
+					compactness_energy_scale,
+					score_cur_state.compactness,
+					sc.horizon
+				});
 
 				double reset_T0 = (temp_init > 0.0)
 					? temp_init
-					: std::max(1e-6, 0.01 * std::max(1.0, fit_cur_state));
+					: std::max(1e-6, 0.01 * primary_energy_scale);
 				T = reset_T0;
 
 				val.assign(N, 0.2);
 				hup = 0;
 				non_improving_blocks = 0;
 
-				if (fit_cur_state < fit_best) {
+				if (lex_better(score_cur_state, score_best)) {
 					s_best = s.copy();
-					fit_best = fit_cur_state;
+					score_best = score_cur_state;
 					best_improve_iters += 1;
 				}
 
@@ -688,8 +758,10 @@ int main(int argc, char* argv[]) {
 					<< hard_reset_after_blocks
 					<< " non-improving blocks"
 					<< "  seed=" << reset_seed
-					<< "  obj=" << std::fixed << std::setprecision(10)
-					<< fit_cur_state << "\n";
+					<< "  score=(" << std::fixed << std::setprecision(10)
+					<< score_cur_state.primary
+					<< ", " << std::setprecision(4)
+					<< score_cur_state.compactness << ")\n";
 				continue;
 			}
 
@@ -709,10 +781,11 @@ int main(int argc, char* argv[]) {
 		const auto run_end = std::chrono::steady_clock::now();
 		double run_elapsed = std::chrono::duration<double>(run_end - run_start).count();
 
-		run_results.push_back(fit_best);
+		run_results.push_back(score_best);
 		std::cout << std::fixed << std::setprecision(10)
 				  << "[run " << (run + 1) << "/" << runs << "]  "
-				  << "best=" << fit_best
+				  << "best=(" << score_best.primary
+				  << ", " << std::setprecision(4) << score_best.compactness << ")"
 				  << "  evals=" << acc
 				  << "  best-improve-iters=" << best_improve_iters
 				  << "  elapsed=" << std::setprecision(3) << run_elapsed << "s\n";
@@ -727,51 +800,120 @@ int main(int argc, char* argv[]) {
 					  << "  " << std::setprecision(4) << val[i] << "\n";
 		}
 
-		// Print best objective per second
 		if (!run_best_per_second.empty()) {
 			std::cout << std::fixed << std::setprecision(10)
-					  << "  Best objective per second (init=" << fit_init << "):\n";
+					  << "  Best lexicographic score per second (init=("
+					  << score_init.primary << ", "
+					  << std::setprecision(4) << score_init.compactness
+					  << ")):\n";
+
 			for (int sec = 0; sec <= static_cast<int>(run_elapsed); ++sec) {
-				if (run_best_per_second.find(sec) != run_best_per_second.end()) {
-					double best_at_sec = run_best_per_second[sec];
-					double improvement = fit_init - best_at_sec;
-					double pct = (fit_init > 0.0) ? 100.0 * improvement / fit_init : 0.0;
-					std::cout << "    t=" << std::setw(3) << sec << "s  best=" 
-							  << best_at_sec 
-							  << "  (improvement=" << std::setprecision(10) << improvement 
-							  << " / " << std::setprecision(2) << pct << "%)\n";
-				}
+				auto it = run_best_per_second.find(sec);
+				if (it == run_best_per_second.end()) continue;
+
+				const LexScore best_at_sec = it->second;
+				const double improvement =
+					score_init.primary - best_at_sec.primary;
+				const double pct = (score_init.primary > 0.0)
+					? 100.0 * improvement / score_init.primary
+					: 0.0;
+
+				std::cout << "    t=" << std::setw(3) << sec
+						  << "s  best=(" << std::setprecision(10)
+						  << best_at_sec.primary << ", "
+						  << std::setprecision(4)
+						  << best_at_sec.compactness << ")"
+						  << "  primary_improvement="
+						  << std::setprecision(10) << improvement
+						  << " / " << std::setprecision(2)
+						  << pct << "%\n";
 			}
 		}
 
-		if (!have_overall || fit_best < overall_best_fit) {
-			overall_best     = s_best.copy();
-			overall_best_fit = fit_best;
-			have_overall     = true;
+		if (!have_overall ||
+			lex_better(score_best, overall_best_score)) {
+			overall_best = s_best.copy();
+			overall_best_score = score_best;
+			have_overall = true;
 		}
-	} // end for run
+	}
 
 	const auto wall_end = std::chrono::steady_clock::now();
 	double wall_elapsed = std::chrono::duration<double>(wall_end - wall_start).count();
 
 	// Summary statistics across all runs.
 	if (runs > 1) {
-		double sum = 0.0, sum2 = 0.0;
-		double best_r = run_results[0], worst_r = run_results[0];
-		for (double v : run_results) {
-			sum  += v; sum2 += v * v;
-			if (v < best_r)  best_r  = v;
-			if (v > worst_r) worst_r = v;
+		LexScore best_run = run_results.front();
+		LexScore worst_run = run_results.front();
+
+		double primary_sum = 0.0;
+		double primary_sum2 = 0.0;
+
+		for (const LexScore& score : run_results) {
+			if (lex_better(score, best_run)) {
+				best_run = score;
+			}
+			if (lex_better(worst_run, score)) {
+				worst_run = score;
+			}
+
+			primary_sum += score.primary;
+			primary_sum2 += score.primary * score.primary;
 		}
-		double mean = sum / runs;
-		double var  = sum2 / runs - mean * mean;
-		double sd   = (var > 0.0) ? std::sqrt(var) : 0.0;
+
+		const double primary_mean =
+			primary_sum / static_cast<double>(runs);
+		const double primary_var =
+			primary_sum2 / static_cast<double>(runs)
+			- primary_mean * primary_mean;
+		const double primary_sd =
+			primary_var > 0.0 ? std::sqrt(primary_var) : 0.0;
+
+		std::vector<double> best_primary_compactness;
+		for (const LexScore& score : run_results) {
+			LexScore same_primary_reference{
+				best_run.primary,
+				score.compactness
+			};
+			if (lex_primary_equal(score, same_primary_reference)) {
+				best_primary_compactness.push_back(score.compactness);
+			}
+		}
+
+		double compactness_min = 0.0;
+		double compactness_max = 0.0;
+		double compactness_mean = 0.0;
+		if (!best_primary_compactness.empty()) {
+			compactness_min = *std::min_element(
+				best_primary_compactness.begin(),
+				best_primary_compactness.end());
+			compactness_max = *std::max_element(
+				best_primary_compactness.begin(),
+				best_primary_compactness.end());
+			for (double value : best_primary_compactness) {
+				compactness_mean += value;
+			}
+			compactness_mean /=
+				static_cast<double>(best_primary_compactness.size());
+		}
+
 		std::cout << std::fixed << std::setprecision(10)
 				  << "\n=== Summary over " << runs << " runs ==="
-				  << "\n  best    = " << best_r
-				  << "\n  worst   = " << worst_r
-				  << "\n  mean    = " << mean
-				  << "\n  std-dev = " << sd << "\n";
+				  << "\n  lex-best  = (" << best_run.primary
+				  << ", " << std::setprecision(4)
+				  << best_run.compactness << ")"
+				  << "\n  lex-worst = (" << std::setprecision(10)
+				  << worst_run.primary << ", "
+				  << std::setprecision(4)
+				  << worst_run.compactness << ")"
+				  << "\n  primary mean    = "
+				  << std::setprecision(10) << primary_mean
+				  << "\n  primary std-dev = " << primary_sd
+				  << "\n  compactness among best-primary runs"
+				  << " (n=" << best_primary_compactness.size() << ")"
+				  << ": min=" << std::setprecision(4) << compactness_min
+				  << " mean=" << compactness_mean
+				  << " max=" << compactness_max << "\n";
 	}
 
 	std::cout << std::setprecision(3)
@@ -782,3 +924,4 @@ int main(int argc, char* argv[]) {
 }
 
 // Run: g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hhasa_rl main_hhasa_rl.cpp && ./wta_solver_hhasa_rl data/scenario_022.json --runs 1 --search-seconds 5 --macc 100000 --iiter 100 --seed 42 --rl 3 --hard-reset-blocks 6
+// python check_solution.py data/scenario_022.json data/scenario_022_solution.json && python plot.py data/scenario_022.json data/scenario_022_solution.json --out plot.png

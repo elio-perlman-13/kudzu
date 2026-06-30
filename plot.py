@@ -25,11 +25,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
 
-
-# ---------------------------------------------------------------------------
-# Load
-# ---------------------------------------------------------------------------
-
 def load(scenario_path: str, solution_path: str):
     with open(scenario_path) as f:
         sc = json.load(f)
@@ -86,10 +81,6 @@ def load(scenario_path: str, solution_path: str):
     return weapons, targets, windows, p_ij, assignments, objective, horizon
 
 
-# ---------------------------------------------------------------------------
-# Build per-target survival
-# ---------------------------------------------------------------------------
-
 def compute_survival(targets, p_ij, assignments):
     survival = {tid: 1.0 for tid in targets}
     for a in assignments:
@@ -100,9 +91,6 @@ def compute_survival(targets, p_ij, assignments):
     return survival, threat
 
 
-# ---------------------------------------------------------------------------
-# Plot
-# ---------------------------------------------------------------------------
 
 def _target_color_map(targets):
     """Use the same target-ID colour mapping as draw_scenario.py."""
@@ -124,15 +112,12 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
 
     survival, threat = compute_survival(targets, p_ij, assignments)
 
-    # --- colour map: shared with draw_scenario.py ---
     tid_color = _target_color_map(targets)
 
-    # --- weapon ordering: group by vessel ---
     weapon_ids = sorted(weapons.keys(), key=lambda w: (weapons[w]["WTAVesselID"], w))
     wid_to_row = {wid: i for i, wid in enumerate(weapon_ids)}
     n_weapons  = len(weapon_ids)
 
-    # Separate weapons that appear in the solution
     active_wids = {a["WTAWeaponID"] for a in assignments}
 
     fig, (ax_gantt, ax_surv) = plt.subplots(
@@ -141,10 +126,8 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         gridspec_kw={"height_ratios": [max(4, 0.35 * n_weapons), 3]},
     )
 
-    # ------------------------------------------------------------------ Gantt
-    bh = 0.6   # bar half-height
+    bh = 0.6  
 
-    # Draw engagement window outlines (light, behind burst bars)
     drawn_windows: set = set()
     for (wid, tid), (a_win, b_win) in windows.items():
         if wid not in wid_to_row:
@@ -158,18 +141,10 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
             color=(*color[:3], 0.18),
             linewidth=6,
         )
-        # Simpler: just a thin underline
         ax_gantt.plot([a_win, b_win], [row - bh * 0.75, row - bh * 0.75],
                       color=(*color[:3], 0.25), linewidth=2, solid_capstyle="butt")
 
-    # Draw firing and reload intervals separately.
-    #
-    # Firing interval:
-    #   [FireTime, FireTime + BurstInterval]
-    #
-    # Reload interval:
-    #   [FireTime + BurstInterval,
-    #    FireTime + BurstInterval + ReloadTime]
+    # Draw firing and reload intervals
     for a in assignments:
         wid = a["WTAWeaponID"]
         tid = a["WTATargetID"]
@@ -182,7 +157,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         fire_times: List[float] = a.get("FireTimes") or [a["FireTime"]]
 
         for ft in fire_times:
-            # Actual firing interval: solid target colour.
             firing_rect = mpatches.Rectangle(
                 (ft, row - bh / 2),
                 fire_dur,
@@ -195,7 +169,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
             )
             ax_gantt.add_patch(firing_rect)
 
-            # Reload interval: lighter target colour with a dashed/hatched pattern.
             if reload_dur > 0:
                 reload_rect = mpatches.Rectangle(
                     (ft + fire_dur, row - bh / 2),
@@ -210,7 +183,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
                 )
                 ax_gantt.add_patch(reload_rect)
 
-            # Put the target ID only inside the actual firing interval.
             if fire_dur > horizon * 0.012:
                 ax_gantt.text(
                     ft + fire_dur / 2,
@@ -238,7 +210,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         fontsize=11,
     )
     ax_gantt.grid(axis="x", linestyle="--", linewidth=0.4, alpha=0.5)
-    # Vessel boundary lines
     prev_vessel = None
     for i, wid in enumerate(weapon_ids):
         v = weapons[wid]["WTAVesselID"]
@@ -246,7 +217,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
             ax_gantt.axhline(i - 0.5, color="navy", linewidth=1.2, linestyle="-")
         prev_vessel = v
 
-    # Legend: target colours plus firing/reload styles.
     legend_tids = sorted({a["WTATargetID"] for a in assignments})
     target_patches = [
         mpatches.Patch(
@@ -282,7 +252,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         framealpha=0.85,
     )
 
-    # -------------------------------------------------------- Target survival
     sorted_tids = sorted(targets.keys(), key=lambda t: -targets[t]["ThreatScore"])
     threat_vals  = [threat[t] for t in sorted_tids]
     initial_vals = [targets[t]["ThreatScore"] for t in sorted_tids]
@@ -309,11 +278,6 @@ def plot(scenario_path: str, solution_path: str, out_path: str | None = None):
         print(f"Saved to {out_path}")
     else:
         plt.show()
-
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Plot WTA solution Gantt chart")

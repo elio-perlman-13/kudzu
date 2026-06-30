@@ -22,9 +22,6 @@
 
 using json = nlohmann::json;
 
-// ---------------------------------------------------------------------------
-// Scenario — owns all static tables; Solution holds const pointers into them
-// ---------------------------------------------------------------------------
 struct Scenario {
 	std::vector<Weapon>  weapons;
 	std::vector<Target>  targets;
@@ -36,9 +33,6 @@ struct Scenario {
 	double horizon = 60.0;
 };
 
-// ---------------------------------------------------------------------------
-// load_scenario — parse JSON into a Scenario
-// ---------------------------------------------------------------------------
 static Scenario load_scenario(const std::string& path) {
 	std::ifstream f(path);
 	if (!f) throw std::runtime_error("cannot open: " + path);
@@ -46,7 +40,6 @@ static Scenario load_scenario(const std::string& path) {
 
 	Scenario sc;
 
-	// --- weapon infos ---
 	std::unordered_map<std::string, WeaponInfo> winfo_map;
 	for (auto& item : data["weapon_infos"]) {
 		WeaponInfo wi;
@@ -68,7 +61,6 @@ static Scenario load_scenario(const std::string& path) {
 		winfo_map[wi.code]      = wi;
 	}
 
-	// --- target infos ---
 	std::unordered_map<std::string, TargetInfo> tinfo_map;
 	for (auto& item : data["target_infos"]) {
 		TargetInfo ti;
@@ -79,8 +71,6 @@ static Scenario load_scenario(const std::string& path) {
 		tinfo_map[ti.code] = ti;
 	}
 
-	// --- probability table ---
-	// key: "weapon_code|target_code"
 	std::unordered_map<std::string, double> prob_map;
 	for (auto& row : data["probability_table"]) {
 		std::string key = std::string(row["WTAWeaponInfoCode"]) + "|"
@@ -90,8 +80,7 @@ static Scenario load_scenario(const std::string& path) {
 
 	auto& req = data["assignment_request"];
 
-	// --- weapons + static tables ---
-	std::unordered_map<int, std::string> weapon_info_code; // wid -> info_code
+	std::unordered_map<int, std::string> weapon_info_code;
 	for (auto& item : req["weapons"]) {
 		Weapon w;
 		w.id        = item["ID"];
@@ -108,8 +97,7 @@ static Scenario load_scenario(const std::string& path) {
 		weapon_info_code[w.id] = w.info_code;
 	}
 
-	// --- targets ---
-	std::unordered_map<int, std::string> target_info_code; // tid -> info_code
+	std::unordered_map<int, std::string> target_info_code;
 	for (auto& item : req["targets"]) {
 		Target t;
 		t.id           = item["ID"];
@@ -126,9 +114,7 @@ static Scenario load_scenario(const std::string& path) {
 		target_info_code[t.id] = t.info_code;
 	}
 
-	// --- engagement windows + p_ij ---
 	for (auto& [key_str, ab] : data["engagement_windows"].items()) {
-		// key_str = "wid_tid"
 		auto sep = key_str.find('_');
 		int wid = std::stoi(key_str.substr(0, sep));
 		int tid = std::stoi(key_str.substr(sep + 1));
@@ -159,9 +145,6 @@ static Scenario load_scenario(const std::string& path) {
 	return sc;
 }
 
-// ---------------------------------------------------------------------------
-// write_solution — emit best solution as JSON (WTAAssignmentResponse schema)
-// ---------------------------------------------------------------------------
 static void write_solution(const Solution& sol, const std::string& path) {
 	auto assignments = sol.assignments();
 	std::sort(assignments.begin(), assignments.end(),
@@ -196,9 +179,6 @@ static void write_solution(const Solution& sol, const std::string& path) {
 	std::cout << "Solution written to " << path << "\n";
 }
 
-// ---------------------------------------------------------------------------
-// main
-// ---------------------------------------------------------------------------
 int main(int argc, char* argv[]) {
 	std::string scenario_path = "/workspaces/WTA/data/scenario_001.json";
 	std::string output_path;
@@ -208,7 +188,7 @@ int main(int argc, char* argv[]) {
 	uint32_t seed   = 40;
 	double search_seconds = 5.0;
 
-	// --- load config.json ("lean_gihh" section) before parsing CLI args ---
+	// load config.json ("lean_gihh" section) before parsing CLI args 
 	{
 		std::ifstream cfg_f(config_path);
 		if (cfg_f) {
@@ -314,8 +294,6 @@ int main(int argc, char* argv[]) {
 		"L3_COMPACT_TIME_SWAP"
 	};
 
-	// Select from all 15 LLHs. The old N - 1 bound selected indices 0..12,
-	// which accidentally included L1 but permanently excluded L2.
 	constexpr int N_SELECTABLE = N;
 
 	auto roulette_llh = [&]() -> int {
@@ -362,7 +340,7 @@ int main(int argc, char* argv[]) {
 	while (elapsed_seconds() < search_seconds) {
 		double frac = std::min(1.0, elapsed_seconds() / std::max(1e-9, search_seconds));
 
-		// Restart logic (Lean-style): active in first half only.
+		// Restart logic
 		if (!restart_disabled) {
 			if (frac <= 0.5) {
 				if (stuck) {
@@ -387,7 +365,7 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
-		// Update pr[] using n_best/t_spent for all LLHs.
+		// Update pr[] using n_best/t_spent for all LLHs
 		double tf = 1.0 - frac;
 		double expo = 1.0 + 3.0 * tf * tf * tf;
 		for (int i = 0; i < N_SELECTABLE; ++i) {
@@ -445,9 +423,7 @@ int main(int argc, char* argv[]) {
 		val[heur] += diff[x];
 		val[heur] = std::clamp(val[heur], 0.2, 1.0);
 
-		// AILLA-like acceptance using the complete lexicographic score.
-		// Primary residual threat is always compared first. Compactness is
-		// considered only when the primary values are equal within tolerance.
+		// AILLA-like acceptance 
 		bool accept = false;
 		if (relation_to_incumbent == LexRelation::Better) {
 			if (lex_better(score_proposed, runbest_list[0])) {
@@ -552,6 +528,6 @@ int main(int argc, char* argv[]) {
 
 // Run:
 // g++ -std=c++17 -O3 -march=native -I/opt/conda/include -o wta_solver_hh main_hh.cpp && ./wta_solver_hh data/scenario_ak630_5uav_1yj83.json
-// Check && plot: python check_solution.py data/scenario_001.json ./data/scenario_001_solution.json && python plot.py data/scenario_001.json ./data/scenario_001_solution.json --out plot.png
+// Check && plot: python check_solution.py data/real_scenario_012500_012730.json ./data/real_scenario_012500_012730_solution.json && python plot.py data/real_scenario_012500_012730.json ./data/real_scenario_012500_012730_solution.json --out plot.png
 
 //python check_solution.py data/scenario_ak630_3uav_1yj83_h40.json data/scenario_ak630_3uav_1yj83_h40_solution.json && python plot.py data/scenario_ak630_3uav_1yj83_h40.json data/scenario_ak630_3uav_1yj83_h40_solution.json --out plot.png

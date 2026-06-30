@@ -8,9 +8,6 @@
 #include <unordered_map>
 #include <vector>
 
-// ---------------------------------------------------------------------------
-// slots_overlap — number of d-wide slots fitting in [a,b] ∩ [s,e]
-// ---------------------------------------------------------------------------
 static inline int slots_overlap(double a, double b, double s, double e, double d) {
     double lo     = std::max(a, s);
     double hi     = std::min(b, e);
@@ -18,9 +15,6 @@ static inline int slots_overlap(double a, double b, double s, double e, double d
     return length >= d ? static_cast<int>(length / d) : 0;
 }
 
-// ---------------------------------------------------------------------------
-// score — pair score used only to rank targets for a chosen weapon
-// ---------------------------------------------------------------------------
 static double score(const Solution& sol, int wid, int tid, double t,
                     int exclusive_cnt) {
     (void)t;
@@ -29,31 +23,16 @@ static double score(const Solution& sol, int wid, int tid, double t,
     return sol.survival(tid) * (1.0 - p);
 }
 
-// ---------------------------------------------------------------------------
-// grasp_construction — incremental-scoring GRASP construction (mutates sol)
-//
-// Scoring invariant:
-//   After committing (wid*, tid*), two things change:
-//     1. free[wid*] and cap[(wid*,·)] change  → all pairs of wid* need rescoring
-//     2. survival[tid*] decreases             → gain/opp terms for every weapon
-//        that targets tid* need rescoring
-//   Dirty set = {wid*} ∪ {w : tid* ∈ weapon_targets[w]}
-//   target_weapons (reverse lookup) is built once; stale entries are harmless —
-//   try_score returns immediately when a pair is no longer live.
-// ---------------------------------------------------------------------------
 Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh::UCBTable& ucb_table) {
     (void)rng;
-    // Reverse lookup: tid -> weapons that initially target it
     std::unordered_map<int, std::vector<int>> target_weapons;
     for (auto& [wid, tgts] : sol.weapon_targets)
         for (int tid : tgts)
             target_weapons[tid].push_back(wid);
 
-    // Score cache: wid -> { tid -> {fire_time, score} }
     struct CS { double t, sc; };
     std::unordered_map<int, std::unordered_map<int, CS>> cache;
 
-    // Score one pair and insert into cache if feasible
     auto try_score = [&](int wid, int tid) {
         uint64_t key    = pair_key(wid, tid);
         auto     cap_it = sol.cap.find(key);
@@ -66,7 +45,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         double t = sol.first_slot(wid, tid);
         if (std::isnan(t)) return;
 
-        // exclusive(wid): targets covered exclusively by this weapon
         int excl = 0;
         auto wt_it = sol.weapon_targets.find(wid);
         if (wt_it != sol.weapon_targets.end()) {
@@ -80,12 +58,10 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         cache[wid][tid] = {t, score(sol, wid, tid, t, excl)};
     };
 
-    // Initial full scoring
     for (auto& [wid, tgts] : sol.weapon_targets)
         for (int tid : tgts)
             try_score(wid, tid);
 
-    // UCB1 selector state over a fixed heuristic portfolio.
     const std::vector<portfolio::HeuristicId> active_heuristics = {
         portfolio::HeuristicId::H_SURV,
         portfolio::HeuristicId::H_SURV_THREAT_TIE,
@@ -117,7 +93,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
     std::unordered_map<int, int> prev_target_feasible_weapons;
 
     while (!cache.empty()) {
-        // Find best score — O(live pairs), fast linear scan in C++
         double best_sc = -std::numeric_limits<double>::infinity();
         for (auto& [wid, inner] : cache)
             for (auto& [tid, cs] : inner)
@@ -126,7 +101,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         constexpr double eps = 1e-12;
         double threshold = (1.0 - alpha) * best_sc;
 
-        // Build candidate set above GRASP threshold.
         std::vector<portfolio::Candidate> candidates;
         candidates.reserve(64);
         for (auto& [wid, inner] : cache) {
@@ -137,7 +111,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         }
         if (candidates.empty()) break;
 
-        // Coverage guard: if there are feasible untouched targets, prioritize them.
         std::unordered_map<int, int> target_engaged_count;
         for (const auto& [key, shots] : sol.k) {
             if (shots <= 0) continue;
@@ -153,7 +126,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         if (!untouched_candidates.empty())
             candidates.swap(untouched_candidates);
 
-        // Track feasible-weapon counts for H_OPPORTUNITY_LOCK in next step.
         std::unordered_map<int, int> cur_target_feasible_weapons;
         for (const auto& c : candidates) cur_target_feasible_weapons[c.tid]++;
 
@@ -171,7 +143,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         portfolio::SelectResult selected = portfolio::select_candidate(
             active_heuristics[chosen_h_idx], sol, candidates, ctx);
         if (!selected.found) {
-            // Robust fallback when a restrictive heuristic yields no option.
             selected = portfolio::select_candidate(portfolio::HeuristicId::H_SURV, sol, candidates, ctx);
             chosen_h_idx = 0;
         }
@@ -184,13 +155,11 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
 
         double obj_before = sol.objective();
 
-        // Dirty weapons before state mutates
         std::vector<int> dirty = {chosen_wid};
         if (auto it = target_weapons.find(chosen_tid); it != target_weapons.end())
             for (int w : it->second)
                 if (w != chosen_wid) dirty.push_back(w);
 
-        // Invalidate cache for dirty weapons
         for (int w : dirty) cache.erase(w);
 
         sol.commit(chosen_wid, chosen_tid, chosen_t);
@@ -229,7 +198,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         prev_target_feasible_weapons = std::move(cur_target_feasible_weapons);
         step += 1;
 
-        // Rescore surviving pairs of dirty weapons
         for (int w : dirty) {
             auto tgts_it = sol.weapon_targets.find(w);
             if (tgts_it == sol.weapon_targets.end()) continue;
@@ -239,7 +207,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
         }
     }
 
-    // Flush residual delayed credits at the end of construction.
     for (const auto& pc : pending_credits) {
         ucb_table.record(pc.context_bin, pc.arm_idx, pc.acc);
     }
@@ -247,9 +214,6 @@ Solution& grasp_construction(Solution& sol, double alpha, std::mt19937& rng, hh:
     return sol;
 }
 
-// ---------------------------------------------------------------------------
-// grasp — run `restarts` constructions, return best solution
-// ---------------------------------------------------------------------------
 Solution grasp(
     const std::vector<Weapon>&  weapons,
     const std::vector<Target>&  targets,
